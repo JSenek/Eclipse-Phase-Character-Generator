@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE positiveTraits SYSTEM "positiveTraits.dtd">
+<positiveTraits>
+	<trait>
+		<name>Adaptability (Level 1)</name>
+		<source>Ego</source>
+		<description>Resleeving is a breeze for this character. They adjust to new morphs much more quickly than most other people. Apply a +10 modifier per level for Integration Tests (p. 271) and Alienation Tests (p. 272).</description>
+		<CP>10</CP>
+		<enables>Adaptability (Level 2)</enables>
+	</trait>
+	<trait>
+		<name>Adaptability (Level 2)</name>
+		<source>Ego</source>
+		<description>See Adaptability (Level 1)</description>
+		<requires>Adaptability (Level 1)</requires>
+		<CP>10</CP>
+	</trait>
+	<trait>
+		<name>Allies</name>
+		<source>Ego</source>
+		<description>The character is part of or has a relationship with some influential group that they can occasionally call on for support. For example, this could be their old gatecrashing crew, former research lab co-workers, a criminal cartel they are part of, or an elite social clique. The gamemaster and player should work out what the character?s relationship is with this group, and why the character can call on them for aid. Gamemaster?s should take care that these allies are not abused, such as calling on them more than once per game session. The character?s ties to this group are also a two-way street?they will be expected to perform duties for the group on occasion as well (a potential plot seed for scenarios).</description>
+		<CP>30</CP>
+	</trait>
+	<trait>
+		<name>Ambidextrous</name>
+		<source>Ego</source>
+		<description>The character can use and manipulate objects equally well with both hands (they do not suffer the off-hand modifier, as noted under Wielding Two or More Weapons, p. 206). If the character has other prehensile limbs (feet, tail, tentacles, etc.), this trait may be applied to a limb other than the hand. This trait may be taken multiple times for multiple limbs.</description>
+		<CP>10</CP>
+		<numcopies>Any</numcopies>
+	</trait>
+	<trait>
+		<name>Animal Empathy</name>
+		<source>Ego</source>
+		<description>The character has an instinctive feel for handling and working with non-sapient animals of all kinds. Apply a +10 modifier to Animal Handling skill tests or whenever the character makes a test to influence or interact with an animal.</description>
+		<skillmod>
+			<name>Animal Handling</name>
+			<amount>10</amount>
+		</skillmod>
+		<CP>5</CP>
+	</trait>
+	<trait>
+		<name>Brave</name>
+		<source>Ego</source>
+		<description>This character does not scare easily and will face threats, intimidation, and certain bodily harm without flinching. As a side effect, the character is not always the best at gauging risks, especially when it comes to factoring in danger to others. The character receives a +10 modifier on all tests to resist fear or intimidation.</description>
+		<CP>10</CP>
+	</trait>
+	<trait>
+		<name>Common Sense</name>
+		<source>Ego</source>
+		<description>The character has an innate sense of judgment that cuts through other distractions and factors that might cloud a decision. Once per game session, the player may ask the gamemaster what choice they should make or what course of action they should take, and the gamemaster should give them solid advice based on what the character knows. Alternatively, if the character is about to make a disastrous decision, the gamemaster can use the character?s free hint and warn the player they are making a mistake.</description>
+		<CP>10</CP>
+	</trait>
+	<trait>
+		<name>Danger Sense</name>
+		<source>Ego</source>
+		<description>The character has an intuitive sixth sense that warns them of imminent threats. They receive a +10 modifier on Surprise Tests (p. 204).</description>
+		<CP>10</CP>
+	</trait>
+	<trait>
+		<name>Direction Sense</name>
+		<source>Ego</source>
+		<description>Somehow the character always knows which way is up, north, etc., even when blinded. The character receives a +10 modifier for figuring out complex directions, reading maps, and remembering or retracing a path they have taken.</description>
+		<CP>5</CP>
+	</trait>
+	<trait>
+		<name>Eidetic Memory</name>
+		<source>Ego</source>
+		<description>Much like a computer, the character has perfect memory recall. They can remember anything they have sensed, often even from a single glance. This works the same as the eidetic memory implant (p. 301).</description>
+		<CP>10</CP>
+	</trait>
+	<trait>
+		<name>Eidetic Memory</name>
+		<source>Morph</source>
+		<description>Much like a computer, the character has perfect memory recall. They can remember anything they have sensed, often even from a single glance. This works the same as the eidetic memory implant (p. 301).</description>
+		<CP>10</CP>
+	</trait>
+	<trait>
+		<name>Exceptional Aptitude</name>
+		<source>Ego</source>
+		<description>As an ego trait, the character may raise the maximum for a particular chosen aptitude to 40 rather than 30 (p. 122). Note that this trait just raises the maximum, it does not give the character 10 more aptitude points. This trait may only be taken by a morph or ego once.</description>
+		<choice>Aptitude</choice>		
+		<CP>20</CP>
+	</trait>
+	<trait>
+		<name>Exceptional Aptitude</name>
+		<source>Morph</source>
+		<description>As a morph trait, it raises the morph aptitude maximum (p. 124) for a particular chosen aptitude by 10 (30 for flats, 35 for splicers, 40 for all others). Note that this trait just raises the maximum, it does not give the character 10 more aptitude points. This trait may only be taken by a morph or ego once.</description>
+		<choice>Aptitude</choice>
+		<CP>20</CP>
+	</trait>
+	<trait>
+		<name>Expert</name>
+		<source>Ego</source>
+		<description>The character is a legend in the use of one particular skill. The character may raise one learned skill over 80, to a maximum of 90, during character creation. This trait does not actually increase the skill, it just raises the maximum. This trait may only be taken once.</description>
+		<choice>Skill</choice>
+		<CP>10</CP>
+	</trait>
+	<trait>
+		<name>Fast Learner</name>
+		<source>Ego</source>
+		<description>The character improves skills and learns new ones in half the time it normally takes (see Improving Skills, p. 152).</description>
+		<CP>10</CP>
+	</trait>
+	<trait>
+		<name>First Impression</name>
+		<source>Ego</source>
+		<description>The character has a way of charming or otherwise making a good impression the first time they interact with someone. This innate social lubricant allows them to more readily deal with new contacts and slip right into new social environments. Apply a +10 modifier on social skill tests when the character is interacting with another character for the first time only.</description>
+		<CP>10</CP>
+	</trait>
+	<trait>
+		<name>Hyper Linguist</name>
+		<source>Ego</source>
+		<description>The character has an intuitive understanding of linguistic structures that facilitates learning new languages easily. The character requires one-third the normal amount of time and experience to learn any language (see Improving Skills, p. 152). The character can also learn any human language in one day simply by constant immersive exposure to it. Additionally, the character receives a +10 modifier when attempting to interpret languages they don?t know.</description>
+		<CP>10</CP>
+	</trait>
+	<trait>
+		<name>Improved Immune System (Level 1)</name>
+		<source>Morph</source>
+		<description>The morph?s immune system is robust and more resistant to diseases, drugs, and toxins?even more than basic biomods. At Level 1, apply a +10 modifier whenever making a test to resist infection or the effectsof a toxin or drug. This trait is only available to biomorphs.</description>
+		<CP>10</CP>
+		<requiredmorph>Biomorph</requiredmorph>
+		<enables>Improved Immune System (Level 2)</enables>
+	</trait>
+	<trait>
+		<name>Improved Immune System (Level 2)</name>
+		<source>Morph</source>
+		<description>At Level 2, increase this modifier to +20.</description>
+		<CP>10</CP>
+		<requires>Improved Immune System (Level 1)</requires>
+	</trait>
+	<trait>
+		<name>Innocuous</name>
+		<source>Morph</source>
+		<description>In an age when exotic appearances and good looks are commonplace, the morph?s look is surprisingly bland and undistinguished, in that cookie cutter sort of way. The character?s physical looks are so mundane that others have a hard time picking them out of a crowd, describing their appearance, or otherwise remembering physical details. Apply a ?10 modifier to all tests made to spot, describe, or remember the character. This modifier does not apply to psi or mesh searches.</description>
+		<CP>10</CP>
+	</trait>
+	<trait>
+		<name>Limber (Level 1)</name>
+		<source>Morph</source>
+		<description>The morph is especially flexible and supple, capable of graceful contortions and interesting positions. At Level 1, the character can smoke with their toes, do the splits, and squeeze into small, cramped spaces. Each level provides a +10 modifier to escaping from bonds, fitting into narrow confines, and other acts relying on contortion or flexibility. This trait is only available to biomorphs.</description>
+		<CP>10</CP>
+		<requiredmorph>Biomorph</requiredmorph>
+		<enables>Limber (Level 2)</enables>
+	</trait>
+	<trait>
+		<name>Limber (Level 2)</name>
+		<source>Morph</source>
+		<description>At Level 2, they are double-jointed escape artists. Each level provides a +10 modifier to escaping from bonds, fitting into narrow confines, and other acts relying on contortion or flexibility.</description>
+		<CP>10</CP>
+		<requires>Limber (Level 1)</requires>
+	</trait>
+	<trait>
+		<name>Math Wiz</name>
+		<source>Ego</source>
+		<description>The character can perform any feat of calculation, including the most complex and advanced mathematics, instantly and with great precision, with the same ease an unmodified human can add 2 + 3. The character can calculate odds, find correlations in numerical data, and perform similar tasks with great ease. Apply a +30 modifier on tests involving math calculations.</description>
+		<CP>10</CP>
+	</trait>
+	<trait>
+		<name>Natural Immunity</name>
+		<source>Ego</source>
+		<description>The morph has a natural immunity to a specific drug, disease, or toxin. When afflicted with that specific chemical, poison, or pathogen, the character remains unaffected. This immunity may not be applied to nanodrugs or nanotoxins and at the gamemaster's discretion may not be applied to other specific agents. This trait is only available to biomorphs.</description>
+		<CP>10</CP>
+		<requiredmorph>Biomorph</requiredmorph>
+	</trait>
+	<trait>
+		<name>Pain Tolerance (Level 1)</name>
+		<source>Ego</source>
+		<description>The character has a high threshold for pain tolerance and is better at ignoring the effects of pain on their abilities and concentration. Level 1 allows them to ignore the -10 modifier from 1 wound.</description>
+		<CP>10</CP>
+		<enables>Pain Tolerance (Level 2)</enables>
+	</trait>
+	<trait>
+		<name>Pain Tolerance (Level 2)</name>
+		<source>Ego</source>
+		<description>Level 2 allows them to ignore the -10 modifiers from 2 wounds.</description>
+		<CP>10</CP>
+		<requires>Pain Tolerance (Level 1)</requires>
+	</trait>
+	<trait>
+		<name>Pain Tolerance (Level 1)</name>
+		<source>Morph</source>
+		<description>The character has a high threshold for pain tolerance and is better at ignoring the effects of pain on their abilities and concentration. Level 1 allows them to ignore the -10 modifier from 1 wound. This trait is only available for biomorphs.</description>
+		<CP>10</CP>
+		<requiredmorph>Biomorph</requiredmorph>
+		<enables>Pain Tolerance (Level 2)</enables>
+	</trait>
+	<trait>
+		<name>Pain Tolerance (Level 2)</name>
+		<source>Morph</source>
+		<description>Level 2 allows them to ignore the -10 modifiers from 2 wounds.</description>
+		<CP>10</CP>
+		<requires>Pain Tolerance (Level 1)</requires>
+	</trait>
+	<trait>
+		<name>Patron</name>
+		<source>Ego</source>
+		<description>The character has an influential person in their life who can be relied on for occasional support. This could be a wealthy hyperelite family member, a high-ranking triad boss, or an anarchist networker with an unbeatable reputation. When called upon, this patron can pull strings on the character's behalf, supply resources, introduce them to people they need to know, and bail them out of trouble. The player and gamemaster should work together to define exactly who this NPC is and what their relationship with the player character is. Specifically, the question of why this patron is supporting the character should be answered (familial obligation? childhood buddies? the character saved their life once?). Gamemasters should be careful that this trait does not get abused. The patron should be an occasional help (probably no more than once per game session at most) but is not always at the character's beck-and-call. If the character asks for too much, too often, they should find the patron's support drying up. Additionally, the character may need to take action to maintain the relationship, such as undertaking a mission on the patron's behalf. In fact, the character may only have their patronage because they are on-call or of use to the NPC in some way.</description>
+		<CP>30</CP>
+	</trait>
+	<trait>
+		<name>Psi (Level 1)</name>
+		<source>Ego</source>
+		<description>The character has been infected with the Watts-MacLeod strain of the exsurgent virus, which altered their brain structure and opened the potential for their mind to enhance their cognitive abilities and read and manipulate the biological minds of others (see Psi, p. 220). The character may purchase and learn sleights (see Psi-Chi Sleights, p. 223). At Level 1, the character may only use psi-chi sleights. Though this trait is not very expensive, gamemasters should not allow it to be abused. There are a number of negative side effects to Watts-MacLeod infection, noted under Psi Drawbacks, p. 220.</description>
+		<CP>20</CP>
+		<enables>Psi (Level 2)</enables>
+	</trait>
+	<trait>
+		<name>Psi (Level 2)</name>
+		<source>Ego</source>
+		<description>At Level 2, the character may use both psi-chi and psi-gamma sleights. </description>
+		<CP>25</CP>
+		<requires>Psi (Level 1)</requires>
+	</trait>
+	<trait>
+		<name>Psi Chameleon</name>
+		<source>Ego</source>
+		<description>The character's mental state is naturally resistant to psi sensing. Apply a -10 modifier to any attempts to locate or detect the character via psi sleights.</description>
+		<CP>10</CP>
+	</trait>
+	<trait>
+		<name>Psi Chameleon</name>
+		<source>Morph</source>
+		<description>The character's mental state is naturally resistant to psi sensing. Apply a -10 modifier to any attempts to locate or detect the character via psi sleights.</description>
+		<CP>10</CP>
+	</trait>
+	<trait>
+		<name>Psi Defense (Level 1)</name>
+		<source>Ego</source>
+		<description>The character's mind is inherently resistant to mental attacks. At Level 1, apply a +10 modifier to all defense tests made against psi attacks.</description>
+		<CP>10</CP>
+		<enables>Psi Defense (Level 2)</enables>
+	</trait>
+	<trait>
+		<name>Psi Defense (Level 2)</name>
+		<source>Ego</source>
+		<description>At Level 2, apply a +20 modifier.</description>
+		<CP>10</CP>
+		<requires>Psi Defense (Level 1)</requires>
+	</trait>
+	<trait>
+		<name>Psi Defense (Level 1)</name>
+		<source>Morph</source>
+		<description>The character's mind is inherently resistant to mental attacks. At Level 1, apply a +10 modifier to all defense tests made against psi attacks.</description>
+		<CP>10</CP>
+		<requiredmorph>Biomorph</requiredmorph>
+		<enables>Psi Defense (Level 2)</enables>
+	</trait>
+	<trait>
+		<name>Psi Defense (Level 2)</name>
+		<source>Morph</source>
+		<description>At Level 2, apply a +20 modifier.</description>
+		<CP>10</CP>
+		<requires>Psi Defense (Level 1)</requires>
+	</trait>
+	<trait>
+		<name>Rapid Healer</name>
+		<source>Morph</source>
+		<description>The morph recovers from damage more quickly. Reduce the timeframes for healing by half, as noted on the Healing table, p. 208. This trait is only available to biomorphs.</description>
+		<CP>10</CP>
+		<requiredmorph>Biomorph</requiredmorph>
+	</trait>
+	<trait>
+		<name>Right At Home</name>
+		<source>Ego</source>
+		<description>The character chooses one type of morph (splicer, neo-hominid, case, etc.). The character always feels right at home in morphs of this type. When resleeving into this type of morph, the character automatically adjusts to the new body, no Integration or Alienation Test needed, suffering no penalties and no mental stress.</description>
+		<CP>10</CP>
+		<choice>Morph</choice>
+	</trait>
+	<trait>
+		<name>Second Skin</name>
+		<source>Ego</source>
+		<description>If your character background or faction enforces a restriction on your starting morph (for example, uplifts must start with an uplift morph), this trait allows you to ignore that restriction and purchase a starting morph of your choice.</description>
+		<CP>15</CP>
+	</trait>
+	<trait>
+		<name>Situational Awareness</name>
+		<source>Ego</source>
+		<description>The character is very good at maintaining continuous partial awareness of the goings-on in their immediate environment. In game terms, they do not suffer the Distracted modifier on Perception Tests to notice things even when their attention is focused elsewhere or when making Quick Perception Tests during combat.</description>
+		<CP>10</CP>
+	</trait>
+	<trait>
+		<name>Striking Looks (Level 1)</name>
+		<source>Morph</source>
+		<description>In an age where biosculpting is easy, good looks are both cheap and commonplace. This morph, however, possesses a physical look that can only be described as striking and unusual, but also somehow alluring and fascinating-even the gorgeous and chiseled glitterati take notice. On social skill tests where the character's beauty may affect the outcome, they receive a +10 (for Level 1) or +20 (for Level 2) modifier. This modifier is ineffective against xenomorphs or those with the infolife or uplift backgrounds. This trait is only available to biomorphs. This modifier may be purchased for uplift morphs, but at half the cost, and it is only effective against characters with that specific uplift background (i.e., neo-avians, neo-hominids, etc.). The one drawback to this trait is that the character is more easily noticed and remembered.</description>
+		<CP>10</CP>
+		<requiredmorph>Biomorph</requiredmorph>
+		<enables>Striking Looks (Level 2)</enables>
+	</trait>
+	<trait>
+		<name>Striking Looks (Level 2)</name>
+		<source>Morph</source>
+		<description>See Striking Looks (Level 1)</description>
+		<CP>10</CP>
+		<requires>Striking Looks (Level 1)</requires>
+	</trait>
+	<trait>
+		<name>Tough (Level 1)</name>
+		<source>Morph</source>
+		<description>This morph is resilient than others of its type and can take more physical abuse. Increase their Durability by +5 per level (+5 at Level 1, +10 at Level 2, and +15 at Level 3). This also increases Wound Threshold by +1, +2, and +3 respectively.</description>
+		<CP>10</CP>
+		<enables>Tough (Level 2)</enables>
+	</trait>
+	<trait>
+		<name>Tough (Level 2)</name>
+		<source>Morph</source>
+		<description>See Tough (Level 1)</description>
+		<CP>10</CP>
+		<requires>Tough (Level 1)</requires>
+		<enables>Tough (Level 3)</enables>
+	</trait>
+	<trait>
+		<name>Tough (Level 3)</name>
+		<source>Morph</source>
+		<description>See Tough (Level 1)</description>
+		<CP>10</CP>
+		<requires>Tough (Level 2)</requires>
+	</trait>
+	<trait>
+		<name>Zoosemiotics</name>
+		<source>Ego</source>
+		<description>A character with this trait and the Psi trait does not suffer a modifier when using psi sleights on nonsapient or partly sapient animal species.</description>
+		<CP>5</CP>
+	</trait>
+</positiveTraits>

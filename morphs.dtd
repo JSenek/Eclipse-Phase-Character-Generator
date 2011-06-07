@@ -1,0 +1,50 @@
+<!DOCTYPE morphs [
+
+<!ELEMENT morphs (morph+)>
+<!ELEMENT morph (name,type,description,implants,mobility*,aptitudeMax,durability,woundThreshold,advantages,disadvantages,CPCost,creditCost,creditmin?,vision*)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT type (#PCDATA)>
+<!ELEMENT description (#PCDATA)>
+<!ELEMENT implants (text,implant*)>
+<!ELEMENT aptitudeMax (text,COG,COO,INT,REF,SAV,SOM,WIL)>
+<!ELEMENT durability (#PCDATA)>
+<!ELEMENT woundThreshold (#PCDATA)>
+<!ELEMENT advantages (text,statmod*,aptmod*,trait*,skillmod*,armor?,size?,attack*,limbs?)>
+<!ELEMENT disadvantages (text,statmod*,aptmod*,trait*)>
+<!ELEMENT CPCost (#PCData)>
+<!ELEMENT creditCost (#PCData)>
+
+<!ELEMENT text (#PCDATA)>
+<!ELEMENT implant (#PCDATA)>
+<!ELEMENT mobility (name,walk,run)>
+<!ELEMENT COG (#PCDATA)>
+<!ELEMENT COO (#PCDATA)>
+<!ELEMENT INT (#PCDATA)>
+<!ELEMENT REF (#PCDATA)>
+<!ELEMENT SAV (#PCDATA)>
+<!ELEMENT SOM (#PCDATA)>
+<!ELEMENT WIL (#PCDATA)>
+<!ELEMENT statmod (name,quantity?,amount)>
+<!ELEMENT aptmod (name,choice*,quantity?,amount)>
+<!ELEMENT trait (#PCDATA)>
+<!ELEMENT skillmod ((name|category),choice*,field?,quantity?,amount)>
+<!ELEMENT armor (energy,kinetic)>
+<!ELEMENT size (#PCDATA)>
+<!ELEMENT attack (name,dv*,skill*,field*,special*)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT walk (#PCDATA)>
+<!ELEMENT run (#PCDATA)>
+<!ELEMENT choice (#PCDATA)>
+<!ELEMENT quantity (#PCDATA)>
+<!ELEMENT amount (#PCDATA)>
+<!ELEMENT category (#PCDATA)>
+<!ELEMENT choice (#PCDATA)>
+<!ELEMENT field (#PCDATA)>
+<!ELEMENT energy (#PCDATA)>
+<!ELEMENT kinetic (#PCDATA)>
+<!ELEMENT limbs (#PCDATA)>
+<!ELEMENT vision (#PCDATA)>
+
+<!ATTLIST morph id ID #REQUIRED>
+
+]>

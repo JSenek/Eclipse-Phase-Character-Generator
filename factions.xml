@@ -1,0 +1,455 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE factions SYSTEM "factions.dtd">
+<factions>
+	<faction>
+		<name>Anarchist</name>
+		<description>You are opposed to hierarchy, favoring flat forms of social organization and directly democratic decisionmaking. You believe power is always corrupting and everyone should have a say in the decisions that affect their lives. According to the primitive and restrictive policies of the inner system and Jovian Junta, this makes you an irresponsible hoodlum at best and a terrorist at worst. In your opinion, that’s comedy coming from governments that keep their populations in line with economic oppression and threats of violence.</description>
+		<advantages>
+			<text>+10 to a skill of your choice, +30 Networking: Autonomists skill</text>
+			<skillmod>
+				<name>Choice</name>
+				<choice>Any</choice>
+				<amount>10</amount>
+			</skillmod>
+			<skillmod>
+				<name>Networking</name>
+				<field>Autonomists</field>
+				<amount>30</amount>
+			</skillmod>
+		</advantages>
+		<disadvantages>
+			<text>None</text>
+			
+		</disadvantages>
+		<commonmorphs>
+			<text>All</text>
+			
+		</commonmorphs>
+	</faction>
+	<faction>
+		<name>Argonaut</name>
+		<description>You are part of a scientific technoprogressive movement that seeks to solve transhumanity’s injustices and inequalities with technology. You support universal access to technology and healthcare, open-source models of production, morphological freedom, and democratization. You try to avoid factionalism and divisive politics, seeing transhumanity’s splintering as a hindrance to its perpetuation.</description>
+		<advantages>
+			<text>+10 to two Technical, Academic: [Field], or Profession: [Field] skills; +20 Networking: Scientists</text>
+			<skillmod>
+				<name>Choice</name>
+				<choice>Technical</choice>
+				<choice>Academic</choice>
+				<choice>Profession</choice>
+				<amount>10</amount>
+				<quantity>2</quantity>
+			</skillmod>
+			<skillmod>
+				<name>Networking</name>
+				<field>Scientists</field>
+				<amount>20</amount>
+			</skillmod>
+		</advantages>
+		<disadvantages>
+			<text>None</text>
+			
+		</disadvantages>
+		<commonmorphs>
+			<text>All</text>
+			
+		</commonmorphs>
+	</faction>
+	<faction>
+		<name>Barsoomian</name>
+		<description>You call the Martian outback and wilds your home. You are a “redneck,” a lower-class Martian from the rural areas that often find themselves in conflict with the policies and goals of the hypercorp domes and Tharsis League.</description>
+		<advantages>
+			<text>+10 Freerunning, +10 to one skill of your choice, +20 Networking: Autonomists skill</text>
+			<skillmod>
+				<name>Freerunning</name>
+				<amount>10</amount>
+			</skillmod>
+			<skillmod>
+				<name>Choice</name>
+				<choice>Any</choice>
+				<amount>10</amount>
+			</skillmod>
+			<skillmod>
+				<name>Networking</name>
+				<field>Autonomists</field>
+				<amount>20</amount>
+			</skillmod>
+		</advantages>
+		<disadvantages>
+			<text>None</text>
+			
+		</disadvantages>
+		<commonmorphs>
+			<text>Cases, Flats, Rusters, Splicers, Synths</text>
+			<commonmorph>Case</commonmorph>
+			<commonmorph>Flat</commonmorph>
+			<commonmorph>Ruster</commonmorph>
+			<commonmorph>Splicer</commonmorph>
+			<commonmorph>Synth</commonmorph>
+		</commonmorphs>
+	</faction>
+	<faction>
+		<name>Brinker</name>
+		<description>You or your faction is reluctant to deal with the rest of the transhumanity and the various goings-on in the rest of the system. Your particular grouping may have sought out self-imposed isolation to pursue their own interests, or they may have been exiled for their unpopular beliefs. Or you may simply be a loner who prefers the vast emptiness of space to socializing with others. You might be a religious cultist, a primitivist, a utopian, or something altogether uninterested in transhumanity.</description>
+		<advantages>
+			<text>+10 Pilot: Spacecraft skill, +10 to a skill of your choice, +20 to a Networking: [Field] skill of your choice</text>
+			<skillmod>
+				<name>Pilot</name>
+				<field>Spacecraft</field>
+				<amount>10</amount>
+			</skillmod>
+			<skillmod>
+				<name>Choice</name>
+				<choice>Any</choice>
+				<amount>10</amount>
+			</skillmod>
+			<skillmod>
+				<name>Choice</name>
+				<choice>Networking</choice>
+				<amount>20</amount>
+			</skillmod>
+		</advantages>
+		<disadvantages>
+			<text>None</text>
+			
+		</disadvantages>
+		<commonmorphs>
+			<text>All</text>
+			
+		</commonmorphs>
+	</faction>
+	<faction>
+		<name>Criminal</name>
+		<description>You are involved with the crime-oriented underworld. You may work with one of the Sol system’s major criminal factions—triads, the Night Cartel, the ID Crew, Nine Lives, Pax Familae—or one of the smaller, local operators with a big stake in a specific habitat. You might be a vetted member-for-life, a reluctant recruit, or just a freelancer looking for the next gig.</description>
+		<advantages>
+			<text>+10 Intimidation skill, +30 Networking: Criminal skill</text>
+			<skillmod>
+				<name>Intimidation</name>
+				<amount>10</amount>
+			</skillmod>
+			<skillmod>
+				<name>Networking</name>
+				<field>Criminal</field>
+				<amount>30</amount>
+			</skillmod>
+		</advantages>
+		<disadvantages>
+			<text>None</text>
+			
+		</disadvantages>
+		<commonmorphs>
+			<text>All</text>
+			
+		</commonmorphs>
+	</faction>
+	<faction>
+		<name>Extropian</name>
+		<description>You are an anarchistic supporter of the free market and private property. You oppose government and favor a system where security and legal matters are handled by private competitors. Whether you consider yourself an anarcho-capitalist or a mutualist (a difference only other Extropians can figure out), you occupy a middle ground between the hypercorps and autonomists, dealing with both and yet trusted by neither.</description>
+		<advantages>
+			<text>+10 Persuasion skill, +20 Networking: Autonomists skill, +10 Networking: Hypercorps skill</text>
+			<skillmod>
+				<name>Persuasion</name>
+				<amount>10</amount>
+			</skillmod>
+			<skillmod>
+				<name>Networking</name>
+				<field>Autonomists</field>
+				<amount>20</amount>
+			</skillmod>
+			<skillmod>
+				<name>Networking</name>
+				<field>Hypercorps</field>
+				<amount>10</amount>
+			</skillmod>
+		</advantages>
+		<disadvantages>
+			<text>None</text>
+			
+		</disadvantages>
+		<commonmorphs>
+			<text>All</text>
+			
+		</commonmorphs>
+	</faction>
+	<faction>
+		<name>Hypercorp</name>
+		<description>You hail from a habitat controlled by the hypercorps. You might be a hypercapitalist entrepeneur, a hedonistic socialite, or a lowly vacworker, but you accept that certain liberties must be sacrificed for security and freedom.</description>
+		<advantages>
+			<text>+10 Protocol skill, +20 Networking: Hypercorps skill, +10 to any Networking: [Field] skill</text>
+			<skillmod>
+				<name>Protocol</name>
+				<amount>10</amount>
+			</skillmod>
+			<skillmod>
+				<name>Networking</name>
+				<field>Hypercorps</field>
+				<amount>20</amount>
+			</skillmod>
+			<skillmod>
+				<name>Choice</name>
+				<choice>Networking</choice>
+				<amount>10</amount>
+			</skillmod>
+		</advantages>
+		<disadvantages>
+			<text>None</text>
+			
+		</disadvantages>
+		<commonmorphs>
+			<text>Exalts, Olympians, Splicers, Sylphs</text>
+			<commonmorph>Exalt</commonmorph>
+			<commonmorph>Olympian</commonmorph>
+			<commonmorph>Splicer</commonmorph>
+			<commonmorph>Slyph</commonmorph>
+		</commonmorphs>
+	</faction>
+	<faction>
+		<name>Jovian</name>
+		<description>Your faction is noted for its authoritarian regime, bioconservative ideologies, and militaristic tendencies. Where you come from, technology is not to be trusted and humans need to be protected from themselves. To ensure its survival, humanity must be able to defend itself and unfettered growth must be checked.</description>
+		<advantages>
+			<text>+10 to two weapon skills of your choice, +10 Fray, +20 Networking: Hypercorps skill</text>
+			<skillmod>
+				<name>Choice</name>
+				<choice>Weapon</choice>
+				<amount>10</amount>
+				<quantity>2</quantity>
+			</skillmod>
+			<skillmod>
+				<name>Fray</name>
+				<amount>10</amount>
+			</skillmod>
+			<skillmod>
+				<name>Networking</name>
+				<field>Hypercorps</field>
+				<amount>20</amount>
+			</skillmod>
+		</advantages>
+		<disadvantages>
+			<text>Must start with a Flat or Splicer morph, may not start with any nanoware/advanced nanotech</text>
+			<requiredmorph>Flat</requiredmorph>
+			<requiredmorph>Splicer</requiredmorph>
+			<restrictedgear>Nanoware</restrictedgear>
+			<restrictedgear>Advanced Nanotech</restrictedgear>
+		</disadvantages>
+		<commonmorphs>
+			<text>Flats and Splicers</text>
+			<commonmorph>Flat</commonmorph>
+			<commonmorph>Splicer</commonmorph>
+		</commonmorphs>
+	</faction>
+	<faction>
+		<name>Lunar</name>
+		<description>You hail from Luna, the original off-Earth colony world. Now overpopulated and in decline, Luna is one of the few places where people still cling to old-Earth ethnic and national identities. Your home is also within sight of Earth, a constant reminder that encourages many “Loonies” to be reclaimers, deploring the hypercorp interdiction and arguing that you have a right to return to Earth, terraform it, and re-establish it as a living homeworld.</description>
+		<advantages>
+			<text>+10 to one Language: [Field] of your choice, +20 Networking: Hypercorps skill, +10 Networking: Ecologists skill</text>
+			<skillmod>
+				<name>Choice</name>
+				<choice>Language</choice>
+				<amount>10</amount>
+			</skillmod>
+			<skillmod>
+				<name>Networking</name>
+				<field>Hypercorps</field>
+				<amount>20</amount>
+			</skillmod>
+			<skillmod>
+				<name>Networking</name>
+				<field>Ecologists</field>
+				<amount>10</amount>
+			</skillmod>
+		</advantages>
+		<disadvantages>
+			<text>None</text>
+			
+		</disadvantages>
+		<commonmorphs>
+			<text>Cases, Exalts, Flats, Splicers, Synths</text>
+			<commonmorph>Case</commonmorph>
+			<commonmorph>Exalt</commonmorph>
+			<commonmorph>Flat</commonmorph>
+			<commonmorph>Splicer</commonmorph>
+			<commonmorph>Synth</commonmorph>
+		</commonmorphs>
+	</faction>
+	<faction>
+		<name>Mercurial</name>
+		<description>Your faction has no interest in co-opting their true natures in order to become more “human.” You might be an AGI that does not necessarily intertwine its destiny with transhumanity or an uplift that seeks to preserve and promote non-human life (or at least your own species). You might even be an infomorph or posthuman who has strayed so far from transhuman interests and values that you now consider yourself to be forging a unique new path of life.</description>
+		<advantages>
+			<text>+10 to any two skills of your choice, +20 to a Networking: [Field] skill of your choice</text>
+			<skillmod>
+				<name>Choice</name>
+				<choice>Any</choice>
+				<amount>10</amount>
+				<quantity>2</quantity>
+			</skillmod>
+			<skillmod>
+				<name>Choice</name>
+				<choice>Networking</choice>
+				<amount>20</amount>
+			</skillmod>
+		</advantages>
+		<disadvantages>
+			<text>None</text>
+			
+		</disadvantages>
+		<commonmorphs>
+			<text>Infomorphs, Synths, uplift morphs</text>
+			<commonmorph>Infomorph</commonmorph>
+			<commonmorph>Synth</commonmorph>
+			<commonmorph>Uplift</commonmorph>
+		</commonmorphs>
+	</faction>
+	<faction>
+		<name>Scum</name>
+		<description>This is the future we’ve all been waiting for, and you’re going to enjoy it to the max. A paradigm shift has occurred, and while everyone else is catching up, your faction embraces and revels in it. There is no more want, no more death, no more limits on what you can be. The scum have immersed themselves in a new way of life, changing themselves as they see fit, trying out new experiences, and pushing the boundaries wherever they can … and fuck anyone who can’t deal with that.</description>
+		<advantages>
+			<text>+10 Freefall skill, +10 to a skill of your choice, +20 Networking: Autonomists skill</text>
+			<skillmod>
+				<name>Free Fall</name>
+				<amount>10</amount>
+			</skillmod>
+			<skillmod>
+				<name>Choice</name>
+				<choice>Any</choice>
+				<amount>10</amount>
+			</skillmod>
+			<skillmod>
+				<name>Networking</name>
+				<field>Autonomists</field>
+				<amount>20</amount>
+			</skillmod>
+		</advantages>
+		<disadvantages>
+			<text>None</text>
+			
+		</disadvantages>
+		<commonmorphs>
+			<text>All</text>
+			
+		</commonmorphs>
+	</faction>
+	<faction>
+		<name>Socialite</name>
+		<description>You are a member of the inner system glitterati, the media-saturated social cliques that set trends, spread memes, and make or break lives with whispers, innuendo, and backroom deals. You are simultaneously an icon and a devout follower. Culture isn’t just your life, it’s your weapon of choice.</description>
+		<advantages>
+			<text>+10 Persuasion skill, +10 Protocol skill, +20 Networking: Media skill</text>
+			<skillmod>
+				<name>Persuasion</name>
+				<amount>10</amount>
+			</skillmod>
+			<skillmod>
+				<name>Protocol</name>
+				<amount>10</amount>
+			</skillmod>
+			<skillmod>
+				<name>Networking</name>
+				<field>Media</field>
+				<amount>20</amount>
+			</skillmod>
+		</advantages>
+		<disadvantages>
+			<text>May not start with flat, pod, uplift, or synthetic morphs</text>
+			<restrictedmorph>Flat</restrictedmorph>
+			<restrictedmorph>Pod</restrictedmorph>
+			<restrictedmorph>Uplift</restrictedmorph>
+			<restrictedmorph>Synthetic</restrictedmorph>
+		</disadvantages>
+		<commonmorphs>
+			<text>Exalts, Olympians, Sylphs</text>
+			<commonmorph>Exalt</commonmorph>
+			<commonmorph>Olympian</commonmorph>
+			<commonmorph>Slyph</commonmorph>
+		</commonmorphs>
+	</faction>
+	<faction>
+		<name>Titanian</name>
+		<description>You are a participant in the Titanian Commonwealth’s socialist cyberdemocracy. Unlike other autonomist projects, Titanian joint efforts have assembled some impressive infrastructural projects as approved by the Titanian Plurality and pursued by state-owned microcorps.</description>
+		<advantages>
+			<text>+10 to two Technical or Academic skills of your choice, +20 Networking: Autonomists skill</text>
+			<skillmod>
+				<name>Choice</name>
+				<choice>Technical</choice>
+				<choice>Academic</choice>
+				<amount>10</amount>
+				<quantity>2</quantity>
+			</skillmod>
+			<skillmod>
+				<name>Networking</name>
+				<field>Autonomists</field>
+				<amount>20</amount>
+			</skillmod>
+		</advantages>
+		<disadvantages>
+			<text>None</text>
+			
+		</disadvantages>
+		<commonmorphs>
+			<text>All</text>
+			
+		</commonmorphs>
+	</faction>
+	<faction>
+		<name>Ultimate</name>
+		<description>Your faction sees the potential in transhumanity’s future and looks back upon the rest of transhumanity as weak and hedonistic. Transhumanity is set to take the next evolutionary step and it’s time for transhumans to be redesigned to the best of our capabilities.</description>
+		<advantages>
+			<text>+10 to two skills of your choice, +20 to a Networking: [Field] skill of your choice</text>
+			<skillmod>
+				<name>Choice</name>
+				<choice>Any</choice>
+				<amount>10</amount>
+				<quantity>2</quantity>
+			</skillmod>
+			<skillmod>
+				<name>Networking</name>
+				<field>Any</field>
+				<amount>20</amount>
+			</skillmod>
+		</advantages>
+		<disadvantages>
+			<text>May not start with Flat, Splicer, uplift, or pod morphs</text>
+			<restrictedmorph>Flat</restrictedmorph>
+			<restrictedmorph>Splicer</restrictedmorph>
+			<restrictedmorph>Uplift</restrictedmorph>
+			<restrictedmorph>Pod</restrictedmorph>
+		</disadvantages>
+		<commonmorphs>
+			<text>Exalts, Remades</text>
+			<commonmorph>Exalt</commonmorph>
+			<commonmorph>Remade</commonmorph>
+		</commonmorphs>
+	</faction>
+	<faction>
+		<name>Venusian</name>
+		<description>You are a supporter of the Morningstar Confederation of Venusian aerostats, resentful of the growing influence of the Planetary Consortium and other entrenched and conservative inner system powers. You see your faction’s ascension as a chance to reform the old guard ways of inner system politics.</description>
+		<advantages>
+			<text>+10 Pilot: Aircraft, +10 to one skill of your choice, +20 Networking: Hypercorps skill</text>
+			<skillmod>
+				<name>Pilot</name>
+				<field>Aircraft</field>
+				<amount>10</amount>
+			</skillmod>
+			<skillmod>
+				<name>Choice</name>
+				<choice>Any</choice>
+				<amount>10</amount>
+			</skillmod>
+			<skillmod>
+				<name>Networking</name>
+				<field>Hypercorps</field>
+				<amount>20</amount>
+			</skillmod>
+		</advantages>
+		<disadvantages>
+			<text>None</text>
+			
+		</disadvantages>
+		<commonmorphs>
+			<text>Cases, Exalts, Mentons, Splicers, Sylphs, Synths</text>
+			<commonmorph>Case</commonmorph>
+			<commonmorph>Exalt</commonmorph>
+			<commonmorph>Menton</commonmorph>
+			<commonmorph>Splicer</commonmorph>
+			<commonmorph>Slyph</commonmorph>
+			<commonmorph>Synth</commonmorph>
+		</commonmorphs>
+	</faction>
+</factions>

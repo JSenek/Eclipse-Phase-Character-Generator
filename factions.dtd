@@ -1,0 +1,24 @@
+<!DOCTYPE factions [
+
+<!ELEMENT factions (faction+)>
+<!ELEMENT faction (name,description,advantages,disadvantages,commonmorphs)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT description (#PCDATA)>
+<!ELEMENT advantages (text,skillmod*,statmod*)>
+<!ELEMENT disadvantages (text,restrictedmorph*,restrictedgear*,requiredmorph*,trait*,statmod*)>
+<!ELEMENT commonmorphs (text,commonmorph*)>
+<!ELEMENT restrictedmorph (#PCDATA)>
+<!ELEMENT restrictedgear (#PCDATA)>
+<!ELEMENT requiredmorph (#PCDATA)>
+<!ELEMENT restrictedtrait (#PCDATA)>
+<!ELEMENT text (#PCDATA)>
+<!ELEMENT skillmod (name,choice*,quantity?,(CPcost|amount))>
+<!ELEMENT choice (#PCDATA)>
+<!ELEMENT quantity (#PCDATA)>
+<!ELEMENT CPcost (#PCDATA)>
+<!ELEMENT amount (#PCDATA)>
+<!ELEMENT statmod (name,quantity?,amount)>
+<!ELEMENT trait (#PCDATA)>
+<!ELEMENT commonmorph (#PCDATA)>
+
+]>
