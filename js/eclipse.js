@@ -672,7 +672,7 @@ function saveSection(section) { // Validate and save data
 		}
 		myCharacter.morph.ID = parseInt(document.getElementById("morph").value, 10);
 		document.getElementById("negativeMorphTraitsCPdiv").style.display = "none";
-		document.getElementById("fixeddiv").style.height = "75";
+//		document.getElementById("fixeddiv").style.height = "75";
 	}
 	if (section === "SkillsSection") {
 		// Learned Skills
@@ -1298,7 +1298,7 @@ function updateFixedDiv() {
 	document.getElementById("startingRepdiv").style.display = "none";
 	document.getElementById("startingAptdiv").style.display = "none";
 	document.getElementById("totalCPdiv").style.display = "none";
-	div.style.height = "30px";
+//	div.style.height = "30px";
 	// Enable and resize
 	switch (currentSection) {
 	case "AptitudesFreePointsSection":
@@ -1306,37 +1306,37 @@ function updateFixedDiv() {
 		document.getElementById("negativeTraitsCPdiv").style.display = "block";
 		document.getElementById("startingAptdiv").style.display = "block";
 		document.getElementById("totalCPdiv").style.display = "block";
-		document.getElementById("fixeddiv").style.height = "100";
+//		document.getElementById("fixeddiv").style.height = "100";
 		break;
 	case "EgoTraitsSection":
 		document.getElementById("positiveTraitsCPdiv").style.display = "block";
 		document.getElementById("negativeTraitsCPdiv").style.display = "block";
 		document.getElementById("totalCPdiv").style.display = "block";
-		document.getElementById("fixeddiv").style.height = "75";
+//		document.getElementById("fixeddiv").style.height = "75";
 		break;
 	case "miscCPSection":
 		document.getElementById("totalCPdiv").style.display = "block";
-		document.getElementById("fixeddiv").style.height = "50";
+//		document.getElementById("fixeddiv").style.height = "50";
 		break;
 	case "MorphSection":
 		document.getElementById("positiveTraitsCPdiv").style.display = "block";
 		document.getElementById("negativeTraitsCPdiv").style.display = "block";
 		document.getElementById("negativeMorphTraitsCPdiv").style.display = "block";
 		document.getElementById("totalCPdiv").style.display = "block";
-		document.getElementById("fixeddiv").style.height = "100";
+//		document.getElementById("fixeddiv").style.height = "100";
 		break;
 	case "PsiSleightsSection":
 		document.getElementById("psiChiSleightsdiv").style.display = "block";
 		document.getElementById("psiGammaSleightsdiv").style.display = "block";
 		document.getElementById("totalCPdiv").style.display = "block";
-		document.getElementById("fixeddiv").style.height = "75";
+//		document.getElementById("fixeddiv").style.height = "75";
 		break;
 	case "RepFreePointsSection":
 		document.getElementById("positiveTraitsCPdiv").style.display = "block";
 		document.getElementById("negativeTraitsCPdiv").style.display = "block";
 		document.getElementById("totalCPdiv").style.display = "block";
 		document.getElementById("startingRepdiv").style.display = "block";
-		document.getElementById("fixeddiv").style.height = "100";
+//		document.getElementById("fixeddiv").style.height = "100";
 		break;
 	case "SkillsSection":
 		document.getElementById("positiveTraitsCPdiv").style.display = "block";
@@ -1344,7 +1344,7 @@ function updateFixedDiv() {
 		document.getElementById("activeSkillsCPdiv").style.display = "block";
 		document.getElementById("knowledgeSkillsCPdiv").style.display = "block";
 		document.getElementById("totalCPdiv").style.display = "block";
-		document.getElementById("fixeddiv").style.height = "125";
+//		document.getElementById("fixeddiv").style.height = "125";
 		break;
 	default:
 	}

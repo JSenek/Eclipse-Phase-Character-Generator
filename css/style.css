@@ -5,3 +5,14 @@ strong {
 	position: absolute;
 	bottom: 0px;
 }
+#fixeddiv {
+	display: none; 
+	position: absolute; 
+	width: 250px; 
+	height: auto; 
+	right: 10px; 
+	bottom: 10px; 
+	padding: 16px; 
+	background:#FFFFFF; 
+	border:2px solid black;
+}
