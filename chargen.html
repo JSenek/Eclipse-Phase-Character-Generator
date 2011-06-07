@@ -1,8 +1,6 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-
-
 <title>A Simple Eclipse Character Generator</title>
 <link rel="stylesheet" type="text/css" href="css/style.css" />
 
@@ -44,16 +42,16 @@
 	<p>Your character receives 105 free points to distribute among their 7 aptitudes: Cognition, Coordination, Intuition, Reflexes, Savvy, Somatics, and Willpower (see Aptitudes, p. 122). (That breaks down to an average of 15 per aptitude, so it may be easiest to give each 15 and then adjust accordingly, raising some and lowering others.) Each aptitude must be given at least 5 points (unless you take the Feeble trait, p. 149), and no aptitude may be raised higher than 30 (unless you take the Exceptional Aptitude trait, see p. 146). Note that certain morphs (flats and splicers, for example) may also put a cap on how high you can raise your aptitudes (see Aptitude Maximums, p. 124).</p>
 	<p>For simplicity, it is recommended that aptitude scores be handled as multiples of 5, but this is not a necessity.</p>
 	<table>
-		<tr><td><b>COG</b></td><td><select name="startCOG" id="startCOG"></select></td><td><b>Cognition</b> is your aptitude for problemsolving, logical analysis, and understanding. It also includes memory and recall.</td></tr>
-		<tr><td><b>COO</b></td><td><select name="startCOO" id="startCOO"></select></td><td><b>Coordination</b> is your skill at integrating the actions of different parts of your morph to produce smooth, successful movements. It includes manual dexterity, fine motor control, nimbleness, and balance.</td></tr>
-		<tr><td><b>INT</b></td><td><select name="startINT" id="startINT"></select></td><td><b>Intuition</b> is your skill at following your gut instincts and evaluating on the fly. It includes physical awareness, cleverness, and cunning.</td></tr>
-		<tr><td><b>REF</b></td><td><select name="startREF" id="startREF"></select></td><td><b>Reflexes</b> is your skill at acting quickly. This encompasses your reaction time, your gut-level response, and your ability to think fast.</td></tr>
-		<tr><td><b>SAV</b></td><td><select name="startSAV" id="startSAV"></select></td><td><b>Savvy</b> is your mental adaptability, social intuition, and proficiency for interacting with others. It includes social awareness and manipulation.</td></tr>
-		<tr><td><b>SOM</b></td><td><select name="startSOM" id="startSOM"></select></td><td><b>Somatics</b> is your skill at pushing your morph to the best of its physical ability, including the fundamental utilization of the morph’s strength, endurance, and sustained positioning and motion.</td></tr>
-		<tr><td><b>WIL</b></td><td><select name="startWIL" id="startWIL"></select></td><td><b>Willpower</b> is your skill for self-control, your ability to command your own destiny.</td></tr>
+		<tr><td><strong>COG</strong></td><td><select name="startCOG" id="startCOG"></select></td><td><strong>Cognition</strong> is your aptitude for problemsolving, logical analysis, and understanding. It also includes memory and recall.</td></tr>
+		<tr><td><strong>COO</strong></td><td><select name="startCOO" id="startCOO"></select></td><td><strong>Coordination</strong> is your skill at integrating the actions of different parts of your morph to produce smooth, successful movements. It includes manual dexterity, fine motor control, nimbleness, and balance.</td></tr>
+		<tr><td><strong>INT</strong></td><td><select name="startINT" id="startINT"></select></td><td><strong>Intuition</strong> is your skill at following your gut instincts and evaluating on the fly. It includes physical awareness, cleverness, and cunning.</td></tr>
+		<tr><td><strong>REF</strong></td><td><select name="startREF" id="startREF"></select></td><td><strong>Reflexes</strong> is your skill at acting quickly. This encompasses your reaction time, your gut-level response, and your ability to think fast.</td></tr>
+		<tr><td><strong>SAV</strong></td><td><select name="startSAV" id="startSAV"></select></td><td><strong>Savvy</strong> is your mental adaptability, social intuition, and proficiency for interacting with others. It includes social awareness and manipulation.</td></tr>
+		<tr><td><strong>SOM</strong></td><td><select name="startSOM" id="startSOM"></select></td><td><strong>Somatics</strong> is your skill at pushing your morph to the best of its physical ability, including the fundamental utilization of the morph’s strength, endurance, and sustained positioning and motion.</td></tr>
+		<tr><td><strong>WIL</strong></td><td><select name="startWIL" id="startWIL"></select></td><td><strong>Willpower</strong> is your skill for self-control, your ability to command your own destiny.</td></tr>
 	</table><br />
-	<input type="checkbox" name="traitBox" id="traitExceptional AptitudeEgo" data-trait-name="Exceptional Aptitude" data-trait-type="positive" data-trait-source="Ego" /><b>Exceptional Aptitude Trait (20 CP)</b><select id="traitExceptional AptitudeEgoChoice"><option value="COG">COG</option><option value="COO">COO</option><option value="INT">INT</option><option value="REF">REF</option><option value="SAV">SAV</option><option value="SOM">SOM</option><option value="WIL">WIL</option></select>: As an ego trait, the character may raise the maximum for a particular chosen aptitude to 40 rather than 30 (p. 122). Note that this trait just raises the maximum, it does not give the character 10 more aptitude points. This trait may only be taken by a morph or ego once.<br />
-	<input type="checkbox" name="traitBox" id="traitFeebleEgo" data-trait-name="Feeble" data-trait-type="negative" data-trait-source="Ego" /><b>Feeble Trait (-20 CP)</b><select id="traitFeebleEgoChoice"><option value="COG">COG</option><option value="COO">COO</option><option value="INT">INT</option><option value="REF">REF</option><option value="SAV">SAV</option><option value="SOM">SOM</option><option value="WIL">WIL</option></select>: The character is particularly weak with one aptitude. That aptitude must be purchased at a rating lower than 5 and may never be upgraded during character advancement. The aptitude maximum is 10, no matter what morph the character is wearing.<br />
+	<input type="checkbox" name="traitBox" id="traitExceptional AptitudeEgo" data-trait-name="Exceptional Aptitude" data-trait-type="positive" data-trait-source="Ego" /><strong>Exceptional Aptitude Trait (20 CP)</strong><select id="traitExceptional AptitudeEgoChoice"><option value="COG">COG</option><option value="COO">COO</option><option value="INT">INT</option><option value="REF">REF</option><option value="SAV">SAV</option><option value="SOM">SOM</option><option value="WIL">WIL</option></select>: As an ego trait, the character may raise the maximum for a particular chosen aptitude to 40 rather than 30 (p. 122). Note that this trait just raises the maximum, it does not give the character 10 more aptitude points. This trait may only be taken by a morph or ego once.<br />
+	<input type="checkbox" name="traitBox" id="traitFeebleEgo" data-trait-name="Feeble" data-trait-type="negative" data-trait-source="Ego" /><strong>Feeble Trait (-20 CP)</strong><select id="traitFeebleEgoChoice"><option value="COG">COG</option><option value="COO">COO</option><option value="INT">INT</option><option value="REF">REF</option><option value="SAV">SAV</option><option value="SOM">SOM</option><option value="WIL">WIL</option></select>: The character is particularly weak with one aptitude. That aptitude must be purchased at a rating lower than 5 and may never be upgraded during character advancement. The aptitude maximum is 10, no matter what morph the character is wearing.<br />
 </div>
 <div id="EgoTraitsSection" style="display: none;">
 	<center><h2>Traits</h2></center>
@@ -79,16 +77,16 @@
 	<center><h2>Starting Rep</h2></center>
 	<p>Your character isn’t a complete newbie. You get 50 rep points to divide between the reputation networks of your choice (see Reputation and Social Networks, p. 285).</p>
 	<table>
-		<tr><td><b>The @-list</b></td><td><select name="startARep" id="startARep"></select></td><td>: the Circle-A list for anarchists, Barsoomians, Extropians, scum, and Titanians, noted as @-rep.</td></tr>
-		<tr><td><b>CivicNet</b></td><td><select name="startCRep" id="startCRep"></select></td><td>: used by the Jovian Republic, Lunar-Lagrange Alliance, Morningstar Constellation, Planetary Consortium, and many hypercorps, referred to as c-rep.</td></tr>
-		<tr><td><b>EcoWave</b></td><td><select name="startERep" id="startERep"></select></td><td>: used by nano-ecologists, preservationists, and reclaimers, referred to as e-rep.</td></tr>
-		<tr><td><b>Fame</b></td><td><select name="startFRep" id="startFRep"></select></td><td>: the seen-and-be-seen network used by socialites, artists, glitterati, and media, referred to as f-rep.</td></tr>
-		<tr><td><b>Guanxi</b></td><td><select name="startGRep" id="startGRep"></select></td><td>: used by the triads and numerous criminal entities, referred to as g-rep.</td></tr>
-		<tr><td><b>The Eye</b></td><td><select name="startIRep" id="startIRep"></select></td><td>: used by Firewall, noted as i-rep.</td></tr>
-		<tr><td><b>RNA</b></td><td><select name="startRRep" id="startRRep"></select></td><td>: Research Network Affiliation, used by argonauts, technologists, scientists, and researchers, referred to as r-rep.</td></tr>
+		<tr><td><strong>The @-list</strong></td><td><select name="startARep" id="startARep"></select></td><td>: the Circle-A list for anarchists, Barsoomians, Extropians, scum, and Titanians, noted as @-rep.</td></tr>
+		<tr><td><strong>CivicNet</strong></td><td><select name="startCRep" id="startCRep"></select></td><td>: used by the Jovian Republic, Lunar-Lagrange Alliance, Morningstar Constellation, Planetary Consortium, and many hypercorps, referred to as c-rep.</td></tr>
+		<tr><td><strong>EcoWave</strong></td><td><select name="startERep" id="startERep"></select></td><td>: used by nano-ecologists, preservationists, and reclaimers, referred to as e-rep.</td></tr>
+		<tr><td><strong>Fame</strong></td><td><select name="startFRep" id="startFRep"></select></td><td>: the seen-and-be-seen network used by socialites, artists, glitterati, and media, referred to as f-rep.</td></tr>
+		<tr><td><strong>Guanxi</strong></td><td><select name="startGRep" id="startGRep"></select></td><td>: used by the triads and numerous criminal entities, referred to as g-rep.</td></tr>
+		<tr><td><strong>The Eye</strong></td><td><select name="startIRep" id="startIRep"></select></td><td>: used by Firewall, noted as i-rep.</td></tr>
+		<tr><td><strong>RNA</strong></td><td><select name="startRRep" id="startRRep"></select></td><td>: Research Network Affiliation, used by argonauts, technologists, scientists, and researchers, referred to as r-rep.</td></tr>
 	</table>
 	<br />
-	<input type="checkbox" name="traitBox" id="traitBlacklistedEgo" data-trait-name="Blacklisted" data-trait-type="negative" data-trait-source="Ego" /><b>Blacklisted Trait (-5 or -20 CP)</b><select id="traitBlacklistedChoice"><option value="ARep">The @-list</option><option value="CRep">CivicNet</option><option value="ERep">EcoWave</option><option value="FRep">Fame</option><option value="GRep">Guanxi</option><option value="IRep">The Eye</option><option value="RRep">RNA</option></select>: The character has managed to get themselves blacklisted in certain circles, whether they actually did something to deserve it or not. In game terms, the character is barred from having a Rep score higher than 0 in one particular reputation network. People within that network will refuse to help the character out of fear of reprisals and ruining their own reputation. The bonus for this trait is 20 CP if chosen for the rep network pertaining to the character's own starting faction, and 5 CP if chosen for any other.<br />
+	<input type="checkbox" name="traitBox" id="traitBlacklistedEgo" data-trait-name="Blacklisted" data-trait-type="negative" data-trait-source="Ego" /><strong>Blacklisted Trait (-5 or -20 CP)</strong><select id="traitBlacklistedChoice"><option value="ARep">The @-list</option><option value="CRep">CivicNet</option><option value="ERep">EcoWave</option><option value="FRep">Fame</option><option value="GRep">Guanxi</option><option value="IRep">The Eye</option><option value="RRep">RNA</option></select>: The character has managed to get themselves blacklisted in certain circles, whether they actually did something to deserve it or not. In game terms, the character is barred from having a Rep score higher than 0 in one particular reputation network. People within that network will refuse to help the character out of fear of reprisals and ruining their own reputation. The bonus for this trait is 20 CP if chosen for the rep network pertaining to the character's own starting faction, and 5 CP if chosen for any other.<br />
 </div>
 <div id="MorphSection" style="display: none;">
 	<center><h2>Choose Starting Morph</h2></center><br />
@@ -96,10 +94,10 @@
 	<select name="morph" id="morph"></select><br />
 	<div id="morphDescription"></div><br />
 	<div id="morphOptions" style="display: block;"></div>
-	<b>Background Restrictions</b>: <font id="morphBGRestrictions"></font><br />
-	<b>Faction Restrictions</b>: <font id="morphFacRestrictions"></font><br />
-	<input type="checkbox" name="traitBox" id="traitSecond SkinEgo" data-trait-name="Second Skin" data-trait-type="positive" data-trait-source="Ego" /><b>Second Skin Trait (15 CP)</b>: If your character background or faction enforces a restriction on your starting morph (for example, uplifts must start with an uplift morph), this trait allows you to ignore that restriction and purchase a starting morph of your choice.<br />
-	<input type="checkbox" name="traitBox" id="traitExceptional AptitudeMorph" data-trait-name="Exceptional Aptitude" data-trait-type="positive" data-trait-source="Morph" /><b>Exceptional Aptitude Trait (20 CP)</b><select id="traitExceptional AptitudeMorphChoice"><option value="COG">COG</option><option value="COO">COO</option><option value="INT">INT</option><option value="REF">REF</option><option value="SAV">SAV</option><option value="SOM">SOM</option><option value="WIL">WIL</option></select>: As a morph trait, it raises the morph aptitude maximum (p. 124) for a particular chosen aptitude by 10 (30 for flats, 35 for splicers, 40 for all others). Note that this trait just raises the maximum, it does not give the character 10 more aptitude points. This trait may only be taken by a morph or ego once.<br />
+	<strong>Background Restrictions</strong>: <font id="morphBGRestrictions"></font><br />
+	<strong>Faction Restrictions</strong>: <font id="morphFacRestrictions"></font><br />
+	<input type="checkbox" name="traitBox" id="traitSecond SkinEgo" data-trait-name="Second Skin" data-trait-type="positive" data-trait-source="Ego" /><strong>Second Skin Trait (15 CP)</strong>: If your character background or faction enforces a restriction on your starting morph (for example, uplifts must start with an uplift morph), this trait allows you to ignore that restriction and purchase a starting morph of your choice.<br />
+	<input type="checkbox" name="traitBox" id="traitExceptional AptitudeMorph" data-trait-name="Exceptional Aptitude" data-trait-type="positive" data-trait-source="Morph" /><strong>Exceptional Aptitude Trait (20 CP)</strong><select id="traitExceptional AptitudeMorphChoice"><option value="COG">COG</option><option value="COO">COO</option><option value="INT">INT</option><option value="REF">REF</option><option value="SAV">SAV</option><option value="SOM">SOM</option><option value="WIL">WIL</option></select>: As a morph trait, it raises the morph aptitude maximum (p. 124) for a particular chosen aptitude by 10 (30 for flats, 35 for splicers, 40 for all others). Note that this trait just raises the maximum, it does not give the character 10 more aptitude points. This trait may only be taken by a morph or ego once.<br />
 	<div id="MorphTraitsSection">
 		<center><h2>Choose Morph Traits</h2></center>
 		<p>Traits listed as morph traits apply to the morph and not the ego. If the character switches to a new morph, these traits are lost (and new morph traits may be gained). Morph traits may be bought like other traits during character generation.</p>
@@ -123,8 +121,8 @@
 	<p>Each character must purchase a minimum of 300 CP of Knowledge skills.</p>
 	<div id="KnowledgeSkills"></div>
 	<br />
-	<input type="checkbox" name="traitBox" id="traitExpertEgo" data-trait-name="Expert" data-trait-type="positive" data-trait-source="Ego"/><b>Expert Trait (10 CP)</b><select id="traitExpertChoice"></select><input type="text" id="traitExpertField" maxlength="20" />: The character is a legend in the use of one particular skill. The character may raise one learned skill over 80, to a maximum of 90, during character creation. This trait does not actually increase the skill, it just raises the maximum. This trait may only be taken once.<br />
-	<input type="checkbox" name="traitBox" id="traitIncompetentEgo" data-trait-name="Incompetent" data-trait-type="negative" data-trait-source="Ego"/><b>Incompetent Trait (-10 CP)</b><select id="traitIncompetentChoice"></select>: The character is completely incapable of performing a particular chosen active skill, no matter any training they may receive. They may not buy this skill during character creation or later advancement, and the modifier for defaulting to the linked aptitude of this particular skill is -10. This may not be used for exotic weapon skills, and should be used for a skill that could be of use to the character.<br />
+	<input type="checkbox" name="traitBox" id="traitExpertEgo" data-trait-name="Expert" data-trait-type="positive" data-trait-source="Ego"/><strong>Expert Trait (10 CP)</strong><select id="traitExpertChoice"></select><input type="text" id="traitExpertField" maxlength="20" />: The character is a legend in the use of one particular skill. The character may raise one learned skill over 80, to a maximum of 90, during character creation. This trait does not actually increase the skill, it just raises the maximum. This trait may only be taken once.<br />
+	<input type="checkbox" name="traitBox" id="traitIncompetentEgo" data-trait-name="Incompetent" data-trait-type="negative" data-trait-source="Ego"/><strong>Incompetent Trait (-10 CP)</strong><select id="traitIncompetentChoice"></select>: The character is completely incapable of performing a particular chosen active skill, no matter any training they may receive. They may not buy this skill during character creation or later advancement, and the modifier for defaulting to the linked aptitude of this particular skill is -10. This may not be used for exotic weapon skills, and should be used for a skill that could be of use to the character.<br />
 </div>
 <div id="MiscCPSection" style="display: none;">
 	<center><h2>Spend Remaining CP</h2></center>
@@ -132,16 +130,16 @@
 	<div id="miscCPTable"></div>
 </div>
 <div id="fixeddiv" style="display: none; position: absolute; width: 250px; height: 30px; right: 10px; bottom: 10px; padding: 16px; background:#FFFFFF; border:2px solid black;">
-	<div id="startingRepdiv" style="display: none;"><b>Remaining Rep points</b>:<font id="remainingRepPts" color="red"></font><br /></div>
-	<div id="startingAptdiv" style="display: none;"><b>Remaining Aptitude points</b>:<font id="remainingAptPts" color="black"></font><br /></div>
-	<div id="positiveTraitsCPdiv" style="display: none;"><b>CP Spent on Positive Traits</b>:<font id="positiveTraitsCP" color="black"></font><br /></div>
-	<div id="negativeTraitsCPdiv" style="display: none;"><b>CP Gained from Negative Traits</b>:<font id="negativeTraitsCP" color="black"></font><br /></div>
-	<div id="negativeMorphTraitsCPdiv" style="display: none;"><b>CP Gained from Morph Traits</b>:<font id="negativeMorphTraitsCP" color="black"></font><br /></div>
-	<div id="activeSkillsCPdiv" style="display: none;"><b>CP Spent on Active Skills</b>:<font id="activeSkillsCP" color="black"></font><br /></div>
-	<div id="knowledgeSkillsCPdiv" style="display: none;"><b>CP Spent on Knowledge Skills</b>:<font id="knowledgeSkillsCP" color="black"></font><br /></div>
-	<div id="psiChiSleightsdiv" style="display: none;"><b>Psi-Chi Sleights Purchased</b>:<font id="psiChiSleights" color="black"></font></div>
-	<div id="psiGammaSleightsdiv" style="display: none;"><b>Psi-Gamma Sleights Purchased</b>:<font id="psiGammaSleights" color="black"></font></div>
-	<div id="totalCPdiv" style="display: none;"><b>Total CP Remaining</b>:<font id="totalCP" name="totalCP" color="black"></font><br /></div>
+	<div id="startingRepdiv" style="display: none;"><strong>Remaining Rep points</strong>:<font id="remainingRepPts" color="red"></font><br /></div>
+	<div id="startingAptdiv" style="display: none;"><strong>Remaining Aptitude points</strong>:<font id="remainingAptPts" color="black"></font><br /></div>
+	<div id="positiveTraitsCPdiv" style="display: none;"><strong>CP Spent on Positive Traits</strong>:<font id="positiveTraitsCP" color="black"></font><br /></div>
+	<div id="negativeTraitsCPdiv" style="display: none;"><strong>CP Gained from Negative Traits</strong>:<font id="negativeTraitsCP" color="black"></font><br /></div>
+	<div id="negativeMorphTraitsCPdiv" style="display: none;"><strong>CP Gained from Morph Traits</strong>:<font id="negativeMorphTraitsCP" color="black"></font><br /></div>
+	<div id="activeSkillsCPdiv" style="display: none;"><strong>CP Spent on Active Skills</strong>:<font id="activeSkillsCP" color="black"></font><br /></div>
+	<div id="knowledgeSkillsCPdiv" style="display: none;"><strong>CP Spent on Knowledge Skills</strong>:<font id="knowledgeSkillsCP" color="black"></font><br /></div>
+	<div id="psiChiSleightsdiv" style="display: none;"><strong>Psi-Chi Sleights Purchased</strong>:<font id="psiChiSleights" color="black"></font></div>
+	<div id="psiGammaSleightsdiv" style="display: none;"><strong>Psi-Gamma Sleights Purchased</strong>:<font id="psiGammaSleights" color="black"></font></div>
+	<div id="totalCPdiv" style="display: none;"><strong>Total CP Remaining</strong>:<font id="totalCP" name="totalCP" color="black"></font><br /></div>
 	<input type="button" name="previousButton" id="previousButton" value="Previous" disabled="true"/><input type="button" name="nextButton" id="nextButton" value="Next" /><br />
 </div>
 <div id="FooterSection">

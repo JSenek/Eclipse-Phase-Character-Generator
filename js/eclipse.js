@@ -881,7 +881,7 @@ function setupSection(section) {
 		// Assemble skills output
 		for (q = 0; q < 2; q++) {
 			category = (q === 0) ? "Active" : "Knowledge";
-			output = "<table><tr><td><b>Skill Name<\/b><\/td><td><b>Field<\/b><\/td><td><b>Aptitude<\/b><\/td><td><b>Mods<\/b><\/td><td><b>Base<\/b><\/td><td><b>Purchased<\/b><\/td><td><b>Total<\/b><\/td><td><b>Cost<\/b><\/td><td><b><\/b><\/td><td><b>Specialization<\/b><\/td><\/tr>";
+			output = "<table><tr><td><strong>Skill Name<\/strong><\/td><td><strong>Field<\/b><\/td><td><b>Aptitude<\/b><\/td><td><b>Mods<\/b><\/td><td><b>Base<\/b><\/td><td><b>Purchased<\/b><\/td><td><b>Total<\/b><\/td><td><b>Cost<\/b><\/td><td><b><\/b><\/td><td><b>Specialization<\/b><\/td><\/tr>";
 			for (i = 0; i < myCharacter.ego.skills.length; i++) {
 				field = 1;
 				flag = 0;
@@ -937,7 +937,7 @@ function setupSection(section) {
 		}
 	}
 	if (section === "MiscCPSection") {
-		output = "<table><tr><td><b>Stat Name<\/b><\/td><td><b>Cost to Raise<\/b><\/td><td><b>Current Value<\/b><\/td><td><b>Purchased<\/b><\/td><td><b>Total Cost<\/b><\/td><\/tr>";
+		output = "<table><tr><td><strong>Stat Name<\/strong><\/td><td><strong>Cost to Raise<\/b><\/td><td><b>Current Value<\/b><\/td><td><b>Purchased<\/b><\/td><td><b>Total Cost<\/b><\/td><\/tr>";
 		output+= "<\/table>";
 		document.getElementById("miscCPTable").innerHTML = output;
 	}
@@ -948,13 +948,13 @@ function selectBG() {
 	var output, i, j, k, l, m, quantity, numChoices, value, skillName, num;
 	num = parseInt(document.getElementById("bg").value, 10);
 	// Assemble background descriptive text
-	output = "<b>Description:<\/b> ";
+	output = "<strong>Description:<\/strong> ";
 	output += backgroundData[num].getElementsByTagName("description")[0].childNodes[0].nodeValue + "<br />";
-	output += "<b>Advantages:<\/b> ";
+	output += "<strong>Advantages:<\/strong> ";
 	output += backgroundData[num].getElementsByTagName("advantages")[0].getElementsByTagName("text")[0].childNodes[0].nodeValue + "<br />";
-	output += "<b>Disadvantages:<\/b> ";
+	output += "<strong>Disadvantages:<\/strong> ";
 	output += backgroundData[num].getElementsByTagName("disadvantages")[0].getElementsByTagName("text")[0].childNodes[0].nodeValue + "<br />";
-	output += "<b>Common Morphs:<\/b> ";
+	output += "<strong>Common Morphs:<\/strong> ";
 	output += backgroundData[num].getElementsByTagName("commonmorphs")[0].getElementsByTagName("text")[0].childNodes[0].nodeValue + "<br />";
 	document.getElementById("bgDescription").innerHTML = output;
 	// Assemble background skill choices
@@ -1009,13 +1009,13 @@ function selectFac() {
 	var output = "", i, j, k, l, m, quantity, numChoices, value, skillName, num;
 	num = parseInt(document.getElementById("fac").value, 10);
 	// Assemble new faction descriptive text
-	output += "<b>Description:<\/b> ";
+	output += "<strong>Description:<\/strong> ";
 	output += factionData[num].getElementsByTagName("description")[0].childNodes[0].nodeValue + "<br />";
-	output += "<b>Advantages:<\/b> ";
+	output += "<strong>Advantages:<\/strong> ";
 	output += factionData[num].getElementsByTagName("advantages")[0].getElementsByTagName("text")[0].childNodes[0].nodeValue + "<br />";
-	output += "<b>Disadvantages:<\/b> ";
+	output += "<strong>Disadvantages:<\/strong> ";
 	output += factionData[num].getElementsByTagName("disadvantages")[0].getElementsByTagName("text")[0].childNodes[0].nodeValue + "<br />";
-	output += "<b>Common Morphs:<\/b> ";
+	output += "<strong>Common Morphs:<\/strong> ";
 	output += factionData[num].getElementsByTagName("commonmorphs")[0].getElementsByTagName("text")[0].childNodes[0].nodeValue + "<br />";
 	document.getElementById("facDescription").innerHTML = output;
 	// Assemble faction skill choices
@@ -1076,14 +1076,14 @@ function selectMorph() {
 	myCharacter.CP -= parseInt(morphData[myCharacter.morph.temp].getElementsByTagName("CPCost")[0].childNodes[0].nodeValue, 10);
 	// Assemble morph descriptive text
 	output = "";
-	output += "<b>Description:<\/b> ";
+	output += "<strong>Description:<\/strong> ";
 	output += morphData[num].getElementsByTagName("description")[0].childNodes[0].nodeValue + "<br />";
-	output += "<b>Type:<\/b> ";
+	output += "<strong>Type:<\/strong> ";
 	output += morphData[num].getElementsByTagName("type")[0].childNodes[0].nodeValue + "<br />";
-	output += "<b>Implants/Enhancements:<\/b> ";
+	output += "<strong>Implants/Enhancements:<\/strong> ";
 	output += morphData[num].getElementsByTagName("implants")[0].getElementsByTagName("text")[0].childNodes[0].nodeValue + "<br />";
 	if (morphData[num].getElementsByTagName("mobility").length !== 0) {
-		output += "<b>Mobility:<\/b> ";
+		output += "<strong>Mobility:<\/strong> ";
 		for (i = 0; i < morphData[num].getElementsByTagName("mobility").length; i++) {
 			output += morphData[num].getElementsByTagName("mobility")[i].getElementsByTagName("name")[0].childNodes[0].nodeValue + " ";
 			output += "(" + morphData[num].getElementsByTagName("mobility")[i].getElementsByTagName("walk")[0].childNodes[0].nodeValue + "/";
@@ -1094,19 +1094,19 @@ function selectMorph() {
 		}
 		output += "<br />";
 	}
-	output += "<b>Aptitude Maximum:<\/b> ";
+	output += "<strong>Aptitude Maximum:<\/strong> ";
 	output += morphData[num].getElementsByTagName("aptitudeMax")[0].getElementsByTagName("text")[0].childNodes[0].nodeValue + "<br />";
-	output += "<b>Durability:<\/b> ";
+	output += "<strong>Durability:<\/strong> ";
 	output += morphData[num].getElementsByTagName("durability")[0].childNodes[0].nodeValue + "<br />";
-	output += "<b>Wound Threshold:<\/b> ";
+	output += "<strong>Wound Threshold:<\/strong> ";
 	output += morphData[num].getElementsByTagName("woundThreshold")[0].childNodes[0].nodeValue + "<br />";
-	output += "<b>Advantages:<\/b> ";
+	output += "<strong>Advantages:<\/strong> ";
 	output += morphData[num].getElementsByTagName("advantages")[0].getElementsByTagName("text")[0].childNodes[0].nodeValue + "<br />";
-	output += "<b>Disadvantages:<\/b> ";
+	output += "<strong>Disadvantages:<\/strong> ";
 	output += morphData[num].getElementsByTagName("disadvantages")[0].getElementsByTagName("text")[0].childNodes[0].nodeValue + "<br />";
-	output += "<b>CP Cost:<\/b> ";
+	output += "<strong>CP Cost:<\/strong> ";
 	output += morphData[num].getElementsByTagName("CPCost")[0].childNodes[0].nodeValue + "<br />";
-	output += "<b>Credit Cost:<\/b> ";
+	output += "<strong>Credit Cost:<\/strong> ";
 	output += morphData[num].getElementsByTagName("creditCost")[0].childNodes[0].nodeValue + "<br />";
 	document.getElementById("morphDescription").innerHTML = output;
 	// Assemble morph aptitude choices
@@ -1500,8 +1500,8 @@ function initialSetup() {
 	for (i = 0; i < 2; i++) {
 		type = (i === 0) ? "positive" : "negative";
 		tempData = (i === 0) ? positiveTraitData : negativeTraitData;
-		output = "<table><tr><td><b><\/b><\/td><td><b>Cost<\/b><\/td><td><b>Name<\/b><\/td><td><b>Source<\/b><\/td><td><b>Description<\/b><\/td><\/tr>"; // Ego
-		output2 = "<table><tr><td><b><\/b><\/td><td><b>Cost<\/b><\/td><td><b>Name<\/b><\/td><td><b>Source<\/b><\/td><td><b>Description<\/b><\/td><\/tr>"; // Morph
+		output = "<table><tr><td><strong><\/strong><\/td><td><strong>Cost<\/b><\/td><td><b>Name<\/b><\/td><td><b>Source<\/b><\/td><td><b>Description<\/b><\/td><\/tr>"; // Ego
+		output2 = "<table><tr><td><strong><\/strong><\/td><td><strong>Cost<\/b><\/td><td><b>Name<\/b><\/td><td><b>Source<\/b><\/td><td><b>Description<\/b><\/td><\/tr>"; // Morph
 		for (j = 0; j < tempData.length; j++) {
 			myCharacter.ego[type + "Traits"][j] = 0;
 			myCharacter.morph[type + "Traits"][j] = 0;
@@ -1519,7 +1519,7 @@ function initialSetup() {
 				}
 				temp +="/><\/td>"; // Check box
 				temp += "<td>" + cost + "<\/td>"; // Cost
-				temp += "<td><b>" + name + "<\/b><\/td>"; // Name
+				temp += "<td><strong>" + name + "<\/strong><\/td>"; // Name
 				temp += "<td>" + source + "<\/td>"; // Source
 				temp += "<td>" + description + "<\/td>"; // Description
 				temp += "<\/tr>";
@@ -1545,7 +1545,7 @@ function initialSetup() {
 		myCharacter.ego.psiSleights
 		tempData = psiData[0].getElementsByTagName(type)[0].getElementsByTagName("sleight");
 		// name,description,enables?,requires?,type?,action?,range?,duration?,strainmod?,skill?,skillmod*,othermod*
-		output = "<table><tr><td><\/td><td><b>Name<\/b><\/td><td><b>Type<\/b><\/td><td><b>Action<\/b><\/td><td><b>Range<\/b><\/td><td><b>Duration<\/b><\/td><td><b>Strainmod<\/b><\/td><td><b>Skill<\/b><\/td><\/tr><tr><td><\/td><td><b>Description<\/b><\/td><td><\/td><td><\/td><td><\/td><td><\/td><td><\/td><td><\/td><\/tr>";
+		output = "<table><tr><td><\/td><td><strong>Name<\/strong><\/td><td><strong>Type<\/b><\/td><td><b>Action<\/b><\/td><td><b>Range<\/b><\/td><td><b>Duration<\/b><\/td><td><b>Strainmod<\/b><\/td><td><b>Skill<\/b><\/td><\/tr><tr><td><\/td><td><b>Description<\/b><\/td><td><\/td><td><\/td><td><\/td><td><\/td><td><\/td><td><\/td><\/tr>";
 		for (j = 0; j < tempData.length; j++) {
 			name = tempData[j].getElementsByTagName("name")[0].childNodes[0].nodeValue;
 			output += "<tr>";
@@ -1554,21 +1554,21 @@ function initialSetup() {
 				output += "disabled = \"true\" ";
 			}
 			output += "/><\/td>";
-			output += "<td><b>" + name + "<\/b><\/td>"; // Name
-			output += "<td><b>" + tempData[j].getElementsByTagName("type")[0].childNodes[0].nodeValue + "<\/b><\/td>"; // Type
-			output += "<td><b>" + tempData[j].getElementsByTagName("action")[0].childNodes[0].nodeValue + "<\/b><\/td>"; // Action
-			output += "<td><b>" + tempData[j].getElementsByTagName("range")[0].childNodes[0].nodeValue + "<\/b><\/td>"; // Range
-			output += "<td><b>" + tempData[j].getElementsByTagName("duration")[0].childNodes[0].nodeValue + "<\/b><\/td>"; // Duration
-			output += "<td><b>";
+			output += "<td><strong>" + name + "<\/strong><\/td>"; // Name
+			output += "<td><strong>" + tempData[j].getElementsByTagName("type")[0].childNodes[0].nodeValue + "<\/strong><\/td>"; // Type
+			output += "<td><strong>" + tempData[j].getElementsByTagName("action")[0].childNodes[0].nodeValue + "<\/strong><\/td>"; // Action
+			output += "<td><strong>" + tempData[j].getElementsByTagName("range")[0].childNodes[0].nodeValue + "<\/strong><\/td>"; // Range
+			output += "<td><strong>" + tempData[j].getElementsByTagName("duration")[0].childNodes[0].nodeValue + "<\/strong><\/td>"; // Duration
+			output += "<td><strong>";
 			if (tempData[j].getElementsByTagName("strainmod").length !== 0) {
 				output += tempData[j].getElementsByTagName("strainmod")[0].childNodes[0].nodeValue;
 			}
-			output +="<\/b><\/td>"; // Strainmod
-			output += "<td><b>";
+			output +="<\/strong><\/td>"; // Strainmod
+			output += "<td><strong>";
 			if (tempData[j].getElementsByTagName("skill").length !== 0) {
 				output += tempData[j].getElementsByTagName("skill")[0].childNodes[0].nodeValue;
 			}
-			output += "<\/b><\/td>"; // Skill
+			output += "<\/strong><\/td>"; // Skill
 			output += "<\/tr>";
 			output += "<tr><td><\/td><td>" + tempData[j].getElementsByTagName("description")[0].childNodes[0].nodeValue + "<\/td><td><\/td><td><\/td><td><\/td><td><\/td><td><\/td><td><\/td>"; // Description
 			output += "<\/tr>";
