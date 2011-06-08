@@ -16,3 +16,7 @@ strong {
 	background:#FFFFFF; 
 	border:2px solid black;
 }
+
+.section {
+	display: none;
+}
