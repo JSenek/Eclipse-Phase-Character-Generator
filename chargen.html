@@ -41,10 +41,8 @@ function Character() {
 	this.morph.negativeTraits = [];
 	// Other
 	this.CP = 1000;
-	this.CPSpentOnCredit = 0;
 	this.CPSpentOnKnowledgeSkills = 0;
 	this.CPSpentOnActiveSkills = 0;
-	this.CPSpentOnReputation = 0;
 	this.CPSpentOnPositiveTraits = 0;
 	this.CPGainedFromNegativeTraits = 0;
 	this.CPGainedFromNegativeMorphTraits = 0;
@@ -758,7 +756,7 @@ function saveSection(section) { // Validate and save data
 }
 
 function setupSection(section) {
-	var output, i, q, j, field, flag, category, skillID, output, temp, temp2, tempData;
+	var output, i, q, j, field, flag, type, name, category, skillID, output, temp, temp2, tempData, maxVal, maxCP, costPer, multiplier, newCost, oldCost, newValue, oldValue, newTotal, baseValue;
 	if (section === "MorphSection") {
 		output = "None";
 		// Load background restrictions
@@ -942,9 +940,137 @@ function setupSection(section) {
 		}
 	}
 	if (section === "MiscCPSection") {
-		output = "<table><tr><td><b>Stat Name<\/b><\/td><td><b>Cost to Raise<\/b><\/td><td><b>Current Value<\/b><\/td><td><b>Purchased<\/b><\/td><td><b>Total Cost<\/b><\/td><\/tr>";
-		output+= "<\/table>";
-		document.getElementById("miscCPTable").innerHTML = output;
+		for (i = 1; i <= 16; i++) {
+			switch (i) {
+			case 1:
+				type = "Stat";
+				name = "Moxie";
+				baseValue = myCharacter.ego.MOX;
+				break;
+			case 2:
+				type = "Stat";
+				name = "Credit";
+				baseValue = myCharacter.ego.CRED;
+				break;
+			case 3:
+				type = "Apt";
+				name = "COG";
+				baseValue = myCharacter.ego.COG;
+				break;
+			case 4:
+				type = "Apt";
+				name = "COO";
+				baseValue = myCharacter.ego.COO;
+				break;
+			case 5:
+				type = "Apt";
+				name = "INT";
+				baseValue = myCharacter.ego.INT;
+				break;
+			case 6:
+				type = "Apt";
+				name = "REF";
+				baseValue = myCharacter.ego.REF;
+				break;
+			case 7:
+				type = "Apt";
+				name = "SAV";
+				baseValue = myCharacter.ego.SAV;
+				break;
+			case 8:
+				type = "Apt";
+				name = "SOM";
+				baseValue = myCharacter.ego.SOM;
+				break;
+			case 9:
+				type = "Apt";
+				name = "WIL";
+				baseValue = myCharacter.ego.WIL;
+				break;
+			case 10:
+				type = "Rep";
+				name = "Circle-A";
+				baseValue = myCharacter.ego.reputations.ARep;
+				break;
+			case 11:
+				type = "Rep";
+				name = "CivicNet";
+				baseValue = myCharacter.ego.reputations.CRep;
+				break;
+			case 12:
+				type = "Rep";
+				name = "EcoWave";
+				baseValue = myCharacter.ego.reputations.ERep;
+				break;
+			case 13:
+				type = "Rep";
+				name = "Fame";
+				baseValue = myCharacter.ego.reputations.FRep;
+				break;
+			case 14:
+				type = "Rep";
+				name = "Guanxi";
+				baseValue = myCharacter.ego.reputations.GRep;
+				break;
+			case 15:
+				type = "Rep";
+				name = "The Eye";
+				baseValue = myCharacter.ego.reputations.IRep;
+				break;
+			case 16:
+				type = "Rep";
+				name = "RNA";
+				baseValue = myCharacter.ego.reputations.RRep;
+				break;
+			default:
+				type = "";
+				name = "";
+				cost = "";
+				baseValue = 0;
+			}
+			maxVal = 999999;
+			maxCP = 999999;
+			costPer = 1;
+			multiplier = 1;
+			if (type === "Stat") {
+				switch (name) {
+				case "Credit":
+					multiplier = 1000;
+					maxCP = 100;
+					break;
+				case "Moxie":
+					costPer = 15;
+					maxVal = 10;
+					break;
+				default:
+				 alert("Unknown stat " + name + ".");
+				}
+			}
+			if (type === "Apt") {
+				costPer = 10;
+				maxVal = 30;
+			}
+			if (type === "Rep") {
+				multiplier = 10;
+				maxVal = 80;
+				maxCP = 35;
+			}
+			document.getElementById("misc" + type + name + "Base").innerHTML = baseValue;
+			oldValue = parseInt(document.getElementById("misc" + type + name + "Value").innerHTML, 10);
+			newValue = oldValue;
+			oldCost = parseInt(document.getElementById("misc" + type + name + "Cost").innerHTML, 10);
+			newTotal = oldValue + baseValue;
+			newCost = newValue / multiplier * costPer;
+			// Reset to 0 and refund CP if new value  or cost is out of bounds
+			if ((newTotal < 0) || (newTotal > maxVal) || (newCost > maxCP)) {
+				newValue = 0;
+				newCost = 0;
+				document.getElementById("misc" + type + name + "Value").innerHTML = 0;
+			}
+			myCharacter.CP -= newCost - oldCost;
+			document.getElementById("misc" + type + name + "Cost").innerHTML = newCost;
+			document.getElementById("misc" + type + name + "TotalValue").innerHTML = newTotal;
+		}
 	}
 	return 1;
 }
@@ -1264,6 +1390,46 @@ function updateSkill(id, field, category) {
 	updateCP();
 }
 
+function incrementMiscCP() {
+	var costPer = 1, maxCP = 999999, maxVal = 999999, multiplier = 1, oldCost, newCost, baseValue, oldValue, newValue;
+	if (this.dataset.type === "Stat") {
+		switch (this.dataset.name) {
+		case "Credit":
+			multiplier = 1000;
+			maxCP = 100;
+			break;
+		case "Moxie":
+			costPer = 15;
+			maxVal = 10;
+			break;
+		default:
+		 alert("Unknown stat " + this.dataset.name + ".");
+		}
+	}
+	if (this.dataset.type === "Apt") {
+		costPer = 10;
+		maxVal = 30;
+	}
+	if (this.dataset.type === "Rep") {
+		multiplier = 10;
+		maxVal = 80;
+		maxCP = 35;
+	}
+	baseValue = parseInt(document.getElementById("misc" + this.dataset.type + this.dataset.name + "Base").innerHTML, 10);
+	oldValue = parseInt(document.getElementById("misc" + this.dataset.type + this.dataset.name + "Value").innerHTML, 10);
+	oldCost = parseInt(document.getElementById("misc" + this.dataset.type + this.dataset.name + "Cost").innerHTML, 10);
+	newValue = oldValue + multiplier * parseInt(this.dataset.direction, 10);
+	newCost = oldCost + costPer * parseInt(this.dataset.direction, 10);
+	if ((newValue < 0) || (newValue + baseValue > maxVal) || (newCost > maxCP)) {
+		return;
+	}
+	myCharacter.CP -= newCost - oldCost;
+	document.getElementById("misc" + this.dataset.type + this.dataset.name + "Value").innerHTML = newValue;
+	document.getElementById("misc" + this.dataset.type + this.dataset.name + "Cost").innerHTML = newCost;
+	document.getElementById("misc" + this.dataset.type + this.dataset.name + "TotalValue").innerHTML = newValue + baseValue;
+	updateCP();
+}
+
 function updateStartApt() {
 	var total = 105;
 	total -= parseInt(document.getElementById("startCOG").value, 10);
@@ -1311,37 +1477,37 @@ function updateFixedDiv() {
 		document.getElementById("negativeTraitsCPdiv").style.display = "block";
 		document.getElementById("startingAptdiv").style.display = "block";
 		document.getElementById("totalCPdiv").style.display = "block";
-		document.getElementById("fixeddiv").style.height = "100";
+		document.getElementById("fixeddiv").style.height = "100px";
 		break;
 	case "EgoTraitsSection":
 		document.getElementById("positiveTraitsCPdiv").style.display = "block";
 		document.getElementById("negativeTraitsCPdiv").style.display = "block";
 		document.getElementById("totalCPdiv").style.display = "block";
-		document.getElementById("fixeddiv").style.height = "75";
+		document.getElementById("fixeddiv").style.height = "75px";
 		break;
-	case "miscCPSection":
+	case "MiscCPSection":
 		document.getElementById("totalCPdiv").style.display = "block";
-		document.getElementById("fixeddiv").style.height = "50";
+		document.getElementById("fixeddiv").style.height = "50px";
 		break;
 	case "MorphSection":
 		document.getElementById("positiveTraitsCPdiv").style.display = "block";
 		document.getElementById("negativeTraitsCPdiv").style.display = "block";
 		document.getElementById("negativeMorphTraitsCPdiv").style.display = "block";
 		document.getElementById("totalCPdiv").style.display = "block";
-		document.getElementById("fixeddiv").style.height = "100";
+		document.getElementById("fixeddiv").style.height = "100px";
 		break;
 	case "PsiSleightsSection":
 		document.getElementById("psiChiSleightsdiv").style.display = "block";
 		document.getElementById("psiGammaSleightsdiv").style.display = "block";
 		document.getElementById("totalCPdiv").style.display = "block";
-		document.getElementById("fixeddiv").style.height = "75";
+		document.getElementById("fixeddiv").style.height = "75px";
 		break;
 	case "RepFreePointsSection":
 		document.getElementById("positiveTraitsCPdiv").style.display = "block";
 		document.getElementById("negativeTraitsCPdiv").style.display = "block";
 		document.getElementById("totalCPdiv").style.display = "block";
 		document.getElementById("startingRepdiv").style.display = "block";
-		document.getElementById("fixeddiv").style.height = "100";
+		document.getElementById("fixeddiv").style.height = "100px";
 		break;
 	case "SkillsSection":
 		document.getElementById("positiveTraitsCPdiv").style.display = "block";
@@ -1349,7 +1515,7 @@ function updateFixedDiv() {
 		document.getElementById("activeSkillsCPdiv").style.display = "block";
 		document.getElementById("knowledgeSkillsCPdiv").style.display = "block";
 		document.getElementById("totalCPdiv").style.display = "block";
-		document.getElementById("fixeddiv").style.height = "125";
+		document.getElementById("fixeddiv").style.height = "125px";
 		break;
 	default:
 	}
@@ -1419,6 +1585,19 @@ function loadNext() {
 
 function loadPrevious () {
 	var previousSection;
+	// Check CP
+	if (myCharacter.CP < 0) {
+		alert("You do not have enough CP.");
+		return;
+	}
+	if (myCharacter.CPSpentOnPositiveTraits > 50) {
+		alert("You may not spend more than 50 CP on positive traits.");
+		return;
+	}
+	if (myCharacter.CPGainedFromNegativeTraits > 50) {
+		alert("You may not purchase more than 50 CP worth of negative traits.");
+		return;
+	}
 	switch (currentSection) {
 	case "BackgroundSection":
 		previousSection = "ConceptSection";
@@ -1718,6 +1897,113 @@ function initialSetup() {
 		}
 	}
 	document.getElementById("traitIncompetentChoice").innerHTML = output;
+	// Misc CP setup
+	output = "<table><tr><td><b>Type<\/b><\/td><td><b>Name<\/b><\/td><td><b>Cost to Raise<\/b><\/td><td><b>Base Value<\/b><\/td><td><\/td><td><b>Purchased<\/b><\/td><td><\/td><td><b>Total Value<\/b><\/td><td><b>Total Cost<\/b><\/td><\/tr>";
+	for (i = 1; i <= 16; i++) {
+		switch (i) {
+		case 1:
+			type = "Stat";
+			name = "Moxie";
+			cost = "15";
+			break;
+		case 2:
+			type = "Stat";
+			name = "Credit";
+			cost = "1 per 1000";
+			break;
+		case 3:
+			type = "Apt";
+			name = "COG";
+			cost = "10";
+			break;
+		case 4:
+			type = "Apt";
+			name = "COO";
+			cost = "10";
+			break;
+		case 5:
+			type = "Apt";
+			name = "INT";
+			cost = "10";
+			break;
+		case 6:
+			type = "Apt";
+			name = "REF";
+			cost = "10";
+			break;
+		case 7:
+			type = "Apt";
+			name = "SAV";
+			cost = "10";
+			break;
+		case 8:
+			type = "Apt";
+			name = "SOM";
+			cost = "10";
+			break;
+		case 9:
+			type = "Apt";
+			name = "WIL";
+			cost = "10";
+			break;
+		case 10:
+			type = "Rep";
+			name = "Circle-A";
+			cost = "1 per 10";
+			break;
+		case 11:
+			type = "Rep";
+			name = "CivicNet";
+			cost = "1 per 10";
+			break;
+		case 12:
+			type = "Rep";
+			name = "EcoWave";
+			cost = "1 per 10";
+			break;
+		case 13:
+			type = "Rep";
+			name = "Fame";
+			cost = "1 per 10";
+			break;
+		case 14:
+			type = "Rep";
+			name = "Guanxi";
+			cost = "1 per 10";
+			break;
+		case 15:
+			type = "Rep";
+			name = "The Eye";
+			cost = "1 per 10";
+			break;
+		case 16:
+			type = "Rep";
+			name = "RNA";
+			cost = "1 per 10";
+			break;
+		default:
+			type = "";
+			name = "";
+			cost = "";
+		}
+		output += "<tr>";
+		output += "<td>" + type + "<\/td>";
+		output += "<td>" + name + "<\/td>";
+		output += "<td>" + cost + "<\/td>";
+		output += "<td><div id=\"misc" + type + name + "Base\"><\/div><\/td>";
+		output += "<td><input name=\"miscCPButton\" type=\"button\" value=\"-\" data-type=\"" + type +"\" data-name=\"" + name + "\" data-direction=\"-1\" /><\/td>";
+		output += "<td><div id=\"misc" + type + name + "Value\">0<\/div><\/td>";
+		output += "<td><input name=\"miscCPButton\" type=\"button\" value=\"+\" data-type=\"" + type +"\" data-name=\"" + name + "\" data-direction=\"1\" /><\/td>";
+		output += "<td><div id=\"misc" + type + name + "TotalValue\"><\/div><\/td>";
+		output += "<td><div id=\"misc" + type + name + "Cost\">0<\/div><\/td>";
+		output += "<\/tr>";
+	}
+	output+= "<\/table>";
+	document.getElementById("miscCPTable").innerHTML = output;
+	temp = document.getElementsByName("miscCPButton");
+	for (i = 0; i < temp.length; i++) {
+		temp[i].onclick = incrementMiscCP;
+	}
 	// Misc setup
 	temp = document.getElementsByName("miscBox");
 	for (i = 0; i < temp.length; i++) {
