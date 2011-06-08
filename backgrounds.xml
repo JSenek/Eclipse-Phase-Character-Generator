@@ -187,7 +187,7 @@
 	</background>
 	<background>
 		<name>Lunar Colonist</name>
-		<description>You experienced your childhood in one of the cramped dome cities or underground stations on Luna, Earth's moon. You had a ringside seat to the Fall of Earth.</description>
+		<description>You experienced your childhood in one of the cramped dome cities or underground stations on Luna, Earth&apos;s moon. You had a ringside seat to the Fall of Earth.</description>
 		<advantages>
 			<text>+10 Pilot: Groundcraft skill, +10 to one Technical, Academic: [Field], or Profession: [Field] skill of your choice, +20 Networking: Hypercorps skill</text>
 			<skillmod>

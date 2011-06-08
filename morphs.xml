@@ -52,7 +52,7 @@
 		<durability>30</durability>
 		<woundThreshold>6</woundThreshold>
 		<advantages>
-			<text>+5 to one aptitude of the player's choice</text>
+			<text>+5 to one aptitude of the player&apos;s choice</text>
 			<aptmod>
 				<name>Choice</name>
 				<choice>Any</choice>
@@ -1307,7 +1307,7 @@
 	<morph id="26">
 		<name>Reaper</name>
 		<type>Synthetic</type>
-		<description>The reaper is a common combat bot, used in place of biomorph soldiers and typically operated via teleoperation or by autonomous AI. The reaper's core form is an armored disc, so that it can turn and present a thin profile to an enemy. It uses vector-thrust nozzles to maneuver in microgravity and also takes advantage of an ionic drive for fast movement over distance. Four legs/manipulating arms and four weapon pods are folded inside its frame. The reaper's shell is made of smart materials, allowing these limbs and weapon mounts to extrude in any direction desired and even to change shape and length. In gravity environments, the reaper walks or hops on two or four of these limbs. Reapers are infamous due to numerous war XPs, and bringing one into most habitats will undoubtedly raise eyebrows if not get you arrested.</description>
+		<description>The reaper is a common combat bot, used in place of biomorph soldiers and typically operated via teleoperation or by autonomous AI. The reaper&apos;s core form is an armored disc, so that it can turn and present a thin profile to an enemy. It uses vector-thrust nozzles to maneuver in microgravity and also takes advantage of an ionic drive for fast movement over distance. Four legs/manipulating arms and four weapon pods are folded inside its frame. The reaper&apos;s shell is made of smart materials, allowing these limbs and weapon mounts to extrude in any direction desired and even to change shape and length. In gravity environments, the reaper walks or hops on two or four of these limbs. Reapers are infamous due to numerous war XPs, and bringing one into most habitats will undoubtedly raise eyebrows if not get you arrested.</description>
 		<implants>
 			<text>360-Degree Vision, Access Jacks, Anti-Glare, Basic Mesh Inserts, Cortical Stack, Cyberbrain, Cyber Claws, Magnetic System, Mnemonic Augmentation, Pneumatic Limbs, Puppet Sock, Radar, Reflex Booster, Shape Adjusting, Structural Enhancement, T-Ray Emitter, Weapon Mount (Articulated, 4)</text>
 			<implant>360-Degree Vision</implant>
@@ -1430,7 +1430,7 @@
 		<durability>45</durability>
 		<woundThreshold>9</woundThreshold>
 		<advantages>
-			<text>+5 COO, +5 SOM, +5 to one other aptitude of the player's choice, Armor 8/8</text>
+			<text>+5 COO, +5 SOM, +5 to one other aptitude of the player&apos;s choice, Armor 8/8</text>
 			<aptmod>
 				<name>COO</name>
 				<amount>5</amount>

@@ -158,7 +158,7 @@
 	<trait>
 		<name>Natural Immunity</name>
 		<source>Ego</source>
-		<description>The morph has a natural immunity to a specific drug, disease, or toxin. When afflicted with that specific chemical, poison, or pathogen, the character remains unaffected. This immunity may not be applied to nanodrugs or nanotoxins and at the gamemaster's discretion may not be applied to other specific agents. This trait is only available to biomorphs.</description>
+		<description>The morph has a natural immunity to a specific drug, disease, or toxin. When afflicted with that specific chemical, poison, or pathogen, the character remains unaffected. This immunity may not be applied to nanodrugs or nanotoxins and at the gamemaster&apos;s discretion may not be applied to other specific agents. This trait is only available to biomorphs.</description>
 		<CP>10</CP>
 		<requiredmorph>Biomorph</requiredmorph>
 	</trait>
@@ -194,7 +194,7 @@
 	<trait>
 		<name>Patron</name>
 		<source>Ego</source>
-		<description>The character has an influential person in their life who can be relied on for occasional support. This could be a wealthy hyperelite family member, a high-ranking triad boss, or an anarchist networker with an unbeatable reputation. When called upon, this patron can pull strings on the character's behalf, supply resources, introduce them to people they need to know, and bail them out of trouble. The player and gamemaster should work together to define exactly who this NPC is and what their relationship with the player character is. Specifically, the question of why this patron is supporting the character should be answered (familial obligation? childhood buddies? the character saved their life once?). Gamemasters should be careful that this trait does not get abused. The patron should be an occasional help (probably no more than once per game session at most) but is not always at the character's beck-and-call. If the character asks for too much, too often, they should find the patron's support drying up. Additionally, the character may need to take action to maintain the relationship, such as undertaking a mission on the patron's behalf. In fact, the character may only have their patronage because they are on-call or of use to the NPC in some way.</description>
+		<description>The character has an influential person in their life who can be relied on for occasional support. This could be a wealthy hyperelite family member, a high-ranking triad boss, or an anarchist networker with an unbeatable reputation. When called upon, this patron can pull strings on the character&apos;s behalf, supply resources, introduce them to people they need to know, and bail them out of trouble. The player and gamemaster should work together to define exactly who this NPC is and what their relationship with the player character is. Specifically, the question of why this patron is supporting the character should be answered (familial obligation? childhood buddies? the character saved their life once?). Gamemasters should be careful that this trait does not get abused. The patron should be an occasional help (probably no more than once per game session at most) but is not always at the character&apos;s beck-and-call. If the character asks for too much, too often, they should find the patron&apos;s support drying up. Additionally, the character may need to take action to maintain the relationship, such as undertaking a mission on the patron&apos;s behalf. In fact, the character may only have their patronage because they are on-call or of use to the NPC in some way.</description>
 		<CP>30</CP>
 	</trait>
 	<trait>
@@ -214,19 +214,19 @@
 	<trait>
 		<name>Psi Chameleon</name>
 		<source>Ego</source>
-		<description>The character's mental state is naturally resistant to psi sensing. Apply a -10 modifier to any attempts to locate or detect the character via psi sleights.</description>
+		<description>The character&apos;s mental state is naturally resistant to psi sensing. Apply a -10 modifier to any attempts to locate or detect the character via psi sleights.</description>
 		<CP>10</CP>
 	</trait>
 	<trait>
 		<name>Psi Chameleon</name>
 		<source>Morph</source>
-		<description>The character's mental state is naturally resistant to psi sensing. Apply a -10 modifier to any attempts to locate or detect the character via psi sleights.</description>
+		<description>The character&apos;s mental state is naturally resistant to psi sensing. Apply a -10 modifier to any attempts to locate or detect the character via psi sleights.</description>
 		<CP>10</CP>
 	</trait>
 	<trait>
 		<name>Psi Defense (Level 1)</name>
 		<source>Ego</source>
-		<description>The character's mind is inherently resistant to mental attacks. At Level 1, apply a +10 modifier to all defense tests made against psi attacks.</description>
+		<description>The character&apos;s mind is inherently resistant to mental attacks. At Level 1, apply a +10 modifier to all defense tests made against psi attacks.</description>
 		<CP>10</CP>
 		<enables>Psi Defense (Level 2)</enables>
 	</trait>
@@ -240,7 +240,7 @@
 	<trait>
 		<name>Psi Defense (Level 1)</name>
 		<source>Morph</source>
-		<description>The character's mind is inherently resistant to mental attacks. At Level 1, apply a +10 modifier to all defense tests made against psi attacks.</description>
+		<description>The character&apos;s mind is inherently resistant to mental attacks. At Level 1, apply a +10 modifier to all defense tests made against psi attacks.</description>
 		<CP>10</CP>
 		<requiredmorph>Biomorph</requiredmorph>
 		<enables>Psi Defense (Level 2)</enables>
@@ -281,7 +281,7 @@
 	<trait>
 		<name>Striking Looks (Level 1)</name>
 		<source>Morph</source>
-		<description>In an age where biosculpting is easy, good looks are both cheap and commonplace. This morph, however, possesses a physical look that can only be described as striking and unusual, but also somehow alluring and fascinating-even the gorgeous and chiseled glitterati take notice. On social skill tests where the character's beauty may affect the outcome, they receive a +10 (for Level 1) or +20 (for Level 2) modifier. This modifier is ineffective against xenomorphs or those with the infolife or uplift backgrounds. This trait is only available to biomorphs. This modifier may be purchased for uplift morphs, but at half the cost, and it is only effective against characters with that specific uplift background (i.e., neo-avians, neo-hominids, etc.). The one drawback to this trait is that the character is more easily noticed and remembered.</description>
+		<description>In an age where biosculpting is easy, good looks are both cheap and commonplace. This morph, however, possesses a physical look that can only be described as striking and unusual, but also somehow alluring and fascinating-even the gorgeous and chiseled glitterati take notice. On social skill tests where the character&apos;s beauty may affect the outcome, they receive a +10 (for Level 1) or +20 (for Level 2) modifier. This modifier is ineffective against xenomorphs or those with the infolife or uplift backgrounds. This trait is only available to biomorphs. This modifier may be purchased for uplift morphs, but at half the cost, and it is only effective against characters with that specific uplift background (i.e., neo-avians, neo-hominids, etc.). The one drawback to this trait is that the character is more easily noticed and remembered.</description>
 		<CP>10</CP>
 		<requiredmorph>Biomorph</requiredmorph>
 		<enables>Striking Looks (Level 2)</enables>
