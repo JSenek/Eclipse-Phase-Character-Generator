@@ -2,7 +2,7 @@ strong {
 	font-weight: bold;
 }
 #FooterSection {
-	position: absolute;
+	position: relative;
 	bottom: 0px;
 }
 #fixeddiv {
