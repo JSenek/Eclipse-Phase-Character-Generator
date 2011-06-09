@@ -41,6 +41,15 @@ function Character() {
 	this.CPSpentOnPositiveTraits = 0;
 	this.CPGainedFromNegativeTraits = 0;
 	this.CPGainedFromNegativeMorphTraits = 0;
+	this.creditSpent = 0;
+}
+
+function highlightErrors(target,error) {
+	var color = "black";
+	if (error) {
+		color = "red";
+	}
+	target.style.color = color;
 }
 
 function lookupSkillID(name) {
@@ -437,7 +446,7 @@ function toggleTrait() {
 }
 	
 function saveSection(section) { // Validate and save data
-	var temp, tempArray = [], tempArray2 = [], tempList = {}, invalid = 0, i, j, morphName, morphType, found;
+	var temp, tempArray = [], tempArray2 = [], tempList = {}, invalid = 0, i, j, morphName, morphType, found, error = false;
 	// Check CP
 	if (myCharacter.CP < 0) {
 		alert("You do not have enough CP.");
@@ -464,26 +473,30 @@ function saveSection(section) { // Validate and save data
 				document.getElementById("bgChoice1Field").value = "Spacecraft";
 			}
 		}
+		tempList = {};
 		for (i = 1; i <= bgChoices; i++) {
 			// Check if skill requires a field
 			if (skillData[document.getElementById("bgChoice" + i).value].getElementsByTagName("fields")[0].childNodes[0].nodeValue === "Yes") {
 				if (document.getElementById("bgChoice" + i + "Field").value === "") {
 					alert("One of your selected skills requires a field.");
+					error = true;
 					return 0;
 				}
 			} else { // Clear the field if not required
 				document.getElementById("bgChoice" + i + "Field").value = "";
 			}
 			// Check for duplicate skill selections
-			// Yes, this can be cheated in cases where 3 or more identical skills with fields are selected
-			if (tempArray[document.getElementById("bgChoice" + i).value]) {
-				if (document.getElementById("bgChoice" + i + "Field").value === tempArray2[document.getElementById("bgChoice" + i).value]) {
+			if (tempList.hasOwnProperty("skill" + document.getElementById("bgChoice" + i).value)) {
+				if (tempList["skill" + document.getElementById("bgChoice" + i).value].hasOwnProperty("field" + document.getElementById("bgChoice" + i + "Field").value)) {
 					alert("You may not select the same skill twice.");
 					return 0;
+				} else {
+					tempList["skill" + document.getElementById("bgChoice" + i).value]["field" + document.getElementById("bgChoice" + i + "Field").value] = 1;
 				}
+			} else {
+				tempList["skill" + document.getElementById("bgChoice" + i).value] = {};
+				tempList["skill" + document.getElementById("bgChoice" + i).value]["field" + document.getElementById("bgChoice" + i + "Field").value] = 1;
 			}
-			tempArray[document.getElementById("bgChoice" + i).value] = 1;
-			tempArray2[document.getElementById("bgChoice" + i).value] = document.getElementById("bgChoice" + i + "Field").value;
 		}
 		removeTemplate("background");
 		myCharacter.ego.background = document.getElementById("bg").value;
@@ -491,6 +504,7 @@ function saveSection(section) { // Validate and save data
 	}
 	if (section === "FactionSection") {
 		// Faction
+		tempList = {};
 		for (i = 1; i <= facChoices; i++) {
 			// Check if skill requires a field
 			if (skillData[document.getElementById("facChoice" + i).value].getElementsByTagName("fields")[0].childNodes[0].nodeValue === "Yes") {
@@ -502,15 +516,17 @@ function saveSection(section) { // Validate and save data
 				document.getElementById("facChoice" + i + "Field").value = "";
 			}
 			// Check for duplicate skill selections
-			// Yes, this can be cheated in cases where 3 or more identical skills with fields are selected
-			if (tempArray[document.getElementById("facChoice" + i).value]) {
-				if (document.getElementById("facChoice" + i + "Field").value === tempArray2[document.getElementById("facChoice" + i).value]) {
+			if (tempList.hasOwnProperty("skill" + document.getElementById("bgChoice" + i).value)) {
+				if (tempList["skill" + document.getElementById("bgChoice" + i).value].hasOwnProperty("field" + document.getElementById("bgChoice" + i + "Field").value)) {
 					alert("You may not select the same skill twice.");
 					return 0;
+				} else {
+					tempList["skill" + document.getElementById("bgChoice" + i).value]["field" + document.getElementById("bgChoice" + i + "Field").value] = 1;
 				}
+			} else {
+				tempList["skill" + document.getElementById("bgChoice" + i).value] = {};
+				tempList["skill" + document.getElementById("bgChoice" + i).value]["field" + document.getElementById("bgChoice" + i + "Field").value] = 1;
 			}
-			tempArray[document.getElementById("facChoice" + i).value] = 1;
-			tempArray2[document.getElementById("facChoice" + i).value] = document.getElementById("facChoice" + i + "Field").value;
 		}
 		removeTemplate("faction");
 		myCharacter.ego.faction = parseInt(document.getElementById("fac").value, 10);
@@ -605,16 +621,15 @@ function saveSection(section) { // Validate and save data
 	}
 	if (section === "MorphSection") {
 		// Morph
+		tempList = {};
 		// Check aptitude bonus selections
 		for (i = 1; i <= morphChoices; i++) {
-			if (tempList[document.getElementById("morphChoice" + i).value]) {
-				invalid = 1;
+			if (tempList.hasOwnProperty(document.getElementById("morphChoice" + i).value)) {
+				alert("You cannot select the same aptitude twice.");
+				return 0;
+			} else {
+				tempList[document.getElementById("morphChoice" + i).value] = 1;
 			}
-			tempList[document.getElementById("morphChoice" + i).value] = 1;
-		}
-		if (invalid) {
-			alert("You cannot select the same aptitude twice.");
-			return 0;
 		}
 		// Check CP
 		if (myCharacter.CPGainedFromNegativeMorphTraits > 25) {
