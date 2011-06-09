@@ -10,158 +10,154 @@
 <![endif]-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
 <script src="js/modernizr.min.js"></script>
-<script>
-Modernizr.addTest('dataset', function(){ return 'dataset' in document.documentElement; });
-Modernizr.load([{
-test : Modernizr.dataset,
-nope : ['js/html5-dataset.js']
-}]);		
-</script>
-<script src="js/chargen.js" type="text/javascript"></script>
-	</head>
-	<body>
-	<div class="container">
-	<div name="LoadingSection" id="LoadingSection" style="display: block;">
-	Loading, please wait...
-	</div>
-	<div id="ConceptSection" class="section" >
-	<center><h2>Choose Concept</h2></center><br />
-	<p>Deciding what/who you want to play before you make the character is usually the best route. Pick a simple archetype that fits your character and work from there. Do you want to play an explorer? Someone sneaky, like a spy or thief? Someone cerebral, like a scientist? A hardened criminal or ex-cop? Or do you prefer to be a rabble-rousing agitator? You can also start with a personality type and choose an associated profession. If you want a social butterfly who excels at manipulating people, you can play a media personality, blogger, or party-going socialite. Perhaps you’d prefer a bottomedout reject with substance abuse problems, in which case an ex-merc or former hypercapitalist who lost their fortune and family during the Fall might fit. How about an energetic, live-life-to-the-fullest, must-see-itall character? Then a habitat freerunner or professional gatecrasher might be what you’re looking for.</p>
-	<p>Make sure to check in with the other players and try to create a character that’s complementary to the rest of the team—preferably one who provides some skill-set the group lacks. Why create a research archeologist if someone else is already set on playing one, especially when the team lacks a good combat specialist or async? On the other hand, if your team is going to be running an alien archeological expedition, then having more than one researcher (each with distinct areas of expertise) might not be bad.</p>
-	<p>Once you have the basic concept, try to fill it in with a few more details, making it into a one-sentence summary. If you started with the concept of “xenosociologist,” expand it to “open-minded amateur linguist and expert xenosociologist who is fascinated by alien cultures, collects Factor kitsch, has a high tolerance for ‘yuck factors,’ and whose best friends tend to be uplifts and AIs.” This will give you a few more details around which you can focus the character’s strengths and weaknesses.</p>
-	Name:<input type="text" maxlength="30" name="charName" id="charName"/><br />
-	Concept:<input type="text" maxlength="90" name="concept" id="concept"/><br />
-	</div>
-	<div id="BackgroundSection" class="section">
-	<center><h2>Choose Background</h2></center><br />
-	<p>The first step to creating your character is to choose a background. Was your character born on Earth before the Fall? Were they raised on a habitat commune? Or did they start existence as a disembodied AI?</p>
-	<p>You must choose one of the backgrounds for your character from the list below. Choose wisely, as each background may provide your character with certain skills, traits, limitations, or other characteristics to start with. Keep in mind that your background is where you came from, not who you are now. It is the past, whereas your faction represents whom your character is currently aligned with. Your future, of course, is yours to make.</p>
-	<p>The background options presented below cover a wide selection of transhumanity, but they cannot cover every possibility. If your gamemaster allows it, you may work with them to develop a background that is not included on this list, using these as guidelines to keep it balanced.</p>
-	<select name="bg" id="bg"></select><br />
-	<div id="bgDescription"></div>
-	<div id="bgOptions" style="display: block;"></div>
-	</div>
-	<div id="FactionSection" class="section">
-	<center><h2>Choose Faction</h2></center><br />
-	<p>After choosing your background, you now choose which primary faction your character belongs to. This faction most likely represents the grouping that controls your character’s current home habitat/station, and to which your character holds allegiance, but this need not be the case. You may be a dissident member of your faction, living among them but opposing some (or all) of their core memes and perhaps agitating for change. Whatever the case, your faction defines how your character represents themself in the struggle between ideologies post-Fall.</p>
-	<p>You must choose one of the factions listed below. Like your character’s background, it will provide your character with certain skills, traits, limitations, or other characteristics.</p>
-	<p>The factions presented here outline the most numerous and influential among transhumanity, but others may also exist. At your gamemaster’s discretion, you may develop another starting faction with them not included on this list.</p>
-	<select name="fac" id="fac"></select><br />
-	<div id="facDescription"></div>
-	<div id="facOptions" style="display: block;"></div>
-	</div>
-	<div id="AptitudesFreePointsSection" class="section">
-	<center><h2>Starting Aptitudes</h2></center>
-	<p>Your character receives 105 free points to distribute among their 7 aptitudes: Cognition, Coordination, Intuition, Reflexes, Savvy, Somatics, and Willpower (see Aptitudes, p. 122). (That breaks down to an average of 15 per aptitude, so it may be easiest to give each 15 and then adjust accordingly, raising some and lowering others.) Each aptitude must be given at least 5 points (unless you take the Feeble trait, p. 149), and no aptitude may be raised higher than 30 (unless you take the Exceptional Aptitude trait, see p. 146). Note that certain morphs (flats and splicers, for example) may also put a cap on how high you can raise your aptitudes (see Aptitude Maximums, p. 124).</p>
-	<p>For simplicity, it is recommended that aptitude scores be handled as multiples of 5, but this is not a necessity.</p>
-	<table>
-	<tr><td><strong>COG</strong></td><td><select name="startCOG" id="startCOG"></select></td><td><strong>Cognition</strong> is your aptitude for problemsolving, logical analysis, and understanding. It also includes memory and recall.</td></tr>
-	<tr><td><strong>COO</strong></td><td><select name="startCOO" id="startCOO"></select></td><td><strong>Coordination</strong> is your skill at integrating the actions of different parts of your morph to produce smooth, successful movements. It includes manual dexterity, fine motor control, nimbleness, and balance.</td></tr>
-	<tr><td><strong>INT</strong></td><td><select name="startINT" id="startINT"></select></td><td><strong>Intuition</strong> is your skill at following your gut instincts and evaluating on the fly. It includes physical awareness, cleverness, and cunning.</td></tr>
-	<tr><td><strong>REF</strong></td><td><select name="startREF" id="startREF"></select></td><td><strong>Reflexes</strong> is your skill at acting quickly. This encompasses your reaction time, your gut-level response, and your ability to think fast.</td></tr>
-	<tr><td><strong>SAV</strong></td><td><select name="startSAV" id="startSAV"></select></td><td><strong>Savvy</strong> is your mental adaptability, social intuition, and proficiency for interacting with others. It includes social awareness and manipulation.</td></tr>
-	<tr><td><strong>SOM</strong></td><td><select name="startSOM" id="startSOM"></select></td><td><strong>Somatics</strong> is your skill at pushing your morph to the best of its physical ability, including the fundamental utilization of the morph’s strength, endurance, and sustained positioning and motion.</td></tr>
-	<tr><td><strong>WIL</strong></td><td><select name="startWIL" id="startWIL"></select></td><td><strong>Willpower</strong> is your skill for self-control, your ability to command your own destiny.</td></tr>
-	</table><br />
-	<input type="checkbox" name="traitBox" id="traitExceptional AptitudeEgo" data-trait-name="Exceptional Aptitude" data-trait-type="positive" data-trait-source="Ego" /><strong>Exceptional Aptitude Trait (20 CP)</strong><select id="traitExceptional AptitudeEgoChoice"><option value="COG">COG</option><option value="COO">COO</option><option value="INT">INT</option><option value="REF">REF</option><option value="SAV">SAV</option><option value="SOM">SOM</option><option value="WIL">WIL</option></select>: As an ego trait, the character may raise the maximum for a particular chosen aptitude to 40 rather than 30 (p. 122). Note that this trait just raises the maximum, it does not give the character 10 more aptitude points. This trait may only be taken by a morph or ego once.<br />
-	<input type="checkbox" name="traitBox" id="traitFeebleEgo" data-trait-name="Feeble" data-trait-type="negative" data-trait-source="Ego" /><strong>Feeble Trait (-20 CP)</strong><select id="traitFeebleEgoChoice"><option value="COG">COG</option><option value="COO">COO</option><option value="INT">INT</option><option value="REF">REF</option><option value="SAV">SAV</option><option value="SOM">SOM</option><option value="WIL">WIL</option></select>: The character is particularly weak with one aptitude. That aptitude must be purchased at a rating lower than 5 and may never be upgraded during character advancement. The aptitude maximum is 10, no matter what morph the character is wearing.<br />
-	</div>
-	<div id="EgoTraitsSection" class="section">
-	<center><h2>Traits</h2></center>
-	<p>Traits represent specific qualities your character has that may help or hinder them. Note that traits you receive from your background or faction do not cost or provide you with bonus CP. </p>
-	<center><h3>Positive Traits</h3></center>
-	<p>Positive traits supply bonuses in certain situations, and each has a listed CP cost. You may not spend more than 50 CP on positive traits.</p>
-	<div id="positiveEgoTraits"></div>
-	<hr></hr>
-	<center><h3>Negative Traits</h3></center>
-	<p>Negative traits inflict disadvantages on your character, but they also give you extra CP that you can spend on customizing your character. You may not purchase more than 50 CP worth of negative traits.</p>
-	<div id="negativeEgoTraits"></div>
-	</div>
-	<div id="PsiSleightsSection" class="section">
-	<center><h2>Psi Sleights</h2></center>
-	<p>Characters who purchase the Psi trait, (p. 147) may spend CP to purchase sleights (see Psi-Chi Sleights, p. 223). These represent specific psi abilities the character has learned. The cost to buy a sleight is 5 CP. No more than 5 psi-chi and 5 psi-gamma sleights may be bought during character creation.</p>
-	<center><h3>Psi-Chi Sleights</h3></center>
-	<p>Psi-chi sleights are async abilities that speed up cognitive informatics (internal information processing) and enhance the user’s perception and cognition.</p>
-	<div id="psi-Chi"></div>
-	<center><h3>Psi-Gamma Sleights</h3></center>
-	<p>Psi-gamma sleights deal with contacting (reading and communicating) and influencing the function of biological minds (egos within a biomorph, but also including animal life). Psi-gamma is only available to characters with Level 2 of the Psi trait. Most psi-gamma use is handled as an Opposed Test between the async and the target (p. 222).</p>
-	<div id="psi-Gamma"></div>
-	</div>
-	<div id="RepFreePointsSection" class="section">
-	<center><h2>Starting Rep</h2></center>
-	<p>Your character isn’t a complete newbie. You get 50 rep points to divide between the reputation networks of your choice (see Reputation and Social Networks, p. 285).</p>
-	<table>
-	<tr><td><strong>The @-list</strong></td><td><select name="startARep" id="startARep"></select></td><td>: the Circle-A list for anarchists, Barsoomians, Extropians, scum, and Titanians, noted as @-rep.</td></tr>
-	<tr><td><strong>CivicNet</strong></td><td><select name="startCRep" id="startCRep"></select></td><td>: used by the Jovian Republic, Lunar-Lagrange Alliance, Morningstar Constellation, Planetary Consortium, and many hypercorps, referred to as c-rep.</td></tr>
-	<tr><td><strong>EcoWave</strong></td><td><select name="startERep" id="startERep"></select></td><td>: used by nano-ecologists, preservationists, and reclaimers, referred to as e-rep.</td></tr>
-	<tr><td><strong>Fame</strong></td><td><select name="startFRep" id="startFRep"></select></td><td>: the seen-and-be-seen network used by socialites, artists, glitterati, and media, referred to as f-rep.</td></tr>
-	<tr><td><strong>Guanxi</strong></td><td><select name="startGRep" id="startGRep"></select></td><td>: used by the triads and numerous criminal entities, referred to as g-rep.</td></tr>
-	<tr><td><strong>The Eye</strong></td><td><select name="startIRep" id="startIRep"></select></td><td>: used by Firewall, noted as i-rep.</td></tr>
-	<tr><td><strong>RNA</strong></td><td><select name="startRRep" id="startRRep"></select></td><td>: Research Network Affiliation, used by argonauts, technologists, scientists, and researchers, referred to as r-rep.</td></tr>
-	</table>
-	<br />
-	<input type="checkbox" name="traitBox" id="traitBlacklistedEgo" data-trait-name="Blacklisted" data-trait-type="negative" data-trait-source="Ego" /><strong>Blacklisted Trait (-5 or -20 CP)</strong><select id="traitBlacklistedChoice"><option value="ARep">The @-list</option><option value="CRep">CivicNet</option><option value="ERep">EcoWave</option><option value="FRep">Fame</option><option value="GRep">Guanxi</option><option value="IRep">The Eye</option><option value="RRep">RNA</option></select>: The character has managed to get themselves blacklisted in certain circles, whether they actually did something to deserve it or not. In game terms, the character is barred from having a Rep score higher than 0 in one particular reputation network. People within that network will refuse to help the character out of fear of reprisals and ruining their own reputation. The bonus for this trait is 20 CP if chosen for the rep network pertaining to the character's own starting faction, and 5 CP if chosen for any other.<br />
-	</div>
-	<div id="MorphSection" class="section">
-	<center><h2>Choose Starting Morph</h2></center><br />
-	<p>Perhaps the most important use of CP is to buy the morph with which your character begins play. This may be the original bodily form in which your character started life or it may simply be the sleeve they are currently inhabiting.</p>
-	<select name="morph" id="morph"></select><br />
-	<div id="morphDescription"></div><br />
-	<div id="morphOptions" style="display: block;"></div>
-	<strong>Background Restrictions</strong>: <font id="morphBGRestrictions"></font><br />
-	<strong>Faction Restrictions</strong>: <font id="morphFacRestrictions"></font><br />
-	<input type="checkbox" name="traitBox" id="traitSecond SkinEgo" data-trait-name="Second Skin" data-trait-type="positive" data-trait-source="Ego" /><strong>Second Skin Trait (15 CP)</strong>: If your character background or faction enforces a restriction on your starting morph (for example, uplifts must start with an uplift morph), this trait allows you to ignore that restriction and purchase a starting morph of your choice.<br />
-	<input type="checkbox" name="traitBox" id="traitExceptional AptitudeMorph" data-trait-name="Exceptional Aptitude" data-trait-type="positive" data-trait-source="Morph" /><strong>Exceptional Aptitude Trait (20 CP)</strong><select id="traitExceptional AptitudeMorphChoice"><option value="COG">COG</option><option value="COO">COO</option><option value="INT">INT</option><option value="REF">REF</option><option value="SAV">SAV</option><option value="SOM">SOM</option><option value="WIL">WIL</option></select>: As a morph trait, it raises the morph aptitude maximum (p. 124) for a particular chosen aptitude by 10 (30 for flats, 35 for splicers, 40 for all others). Note that this trait just raises the maximum, it does not give the character 10 more aptitude points. This trait may only be taken by a morph or ego once.<br />
-	<div id="MorphTraitsSection">
-	<center><h2>Choose Morph Traits</h2></center>
-	<p>Traits listed as morph traits apply to the morph and not the ego. If the character switches to a new morph, these traits are lost (and new morph traits may be gained). Morph traits may be bought like other traits during character generation.</p>
-	<center><h3>Positive Traits</h3></center>
-	<div id="positiveMorphTraits"></div>
-	<center><h3>Negative Traits</h3></center>
-	<p>No more than 25 CP worth of negative traits may be negative morph traits (no matter how many morphs you buy).</p>
-	<div id="negativeMorphTraits"></div>
-	</div>
-	</div>
-	<div id="SkillsSection" style="display: none;">
-	<center><h2>Learned Skills</h2></center>
-	<p>Skills are bought at the cost of 1 CP per point. Keep in mind that learned skills start at the rating of the linked aptitude. For example, if you want to raise a skill to 30 and the skill’s linked aptitude is 10, you’ll need to spend 20 CP. Skill bonuses from background or faction should also be applied to the rating before you start raising the skill. For simplicity, it is recommended that skills be purchased as multiples of 5, but this is not a necessity.</p>
-	<p>Raising a skill over 60 is expensive. Each point over 60 costs double. Raising a skill with a linked attribute of 20 up to 70 would cost 60 CP: 40 points to get from 20 to 60, and 20 more points to get from 60 to 70.</p>
-	<p>No learned skill may be raised over 80 during character creation (unless you have the Expert trait, p. 146).</p>
-	<p>Specializations may also be purchased at the cost of 5 CP per specialization. You may purchase specializations for both Active and Knowledge skills. Only 1 specialization may be purchased per skill, and they may only be bought for skills with a rating of 30+.</p>
-	<center><h3>Active Skills</h3></center>
-	<p>Each character must purchase a minimum of 400 CP of Active skills.</p>
-	<div id="ActiveSkills"></div>
-	<center><h3>Knowledge Skills</h3></center>
-	<p>Each character must purchase a minimum of 300 CP of Knowledge skills.</p>
-	<div id="KnowledgeSkills"></div>
-	<br />
-	<input type="checkbox" name="traitBox" id="traitExpertEgo" data-trait-name="Expert" data-trait-type="positive" data-trait-source="Ego"/><strong>Expert Trait (10 CP)</strong><select id="traitExpertChoice"></select><input type="text" id="traitExpertField" maxlength="20" />: The character is a legend in the use of one particular skill. The character may raise one learned skill over 80, to a maximum of 90, during character creation. This trait does not actually increase the skill, it just raises the maximum. This trait may only be taken once.<br />
-	<input type="checkbox" name="traitBox" id="traitIncompetentEgo" data-trait-name="Incompetent" data-trait-type="negative" data-trait-source="Ego"/><strong>Incompetent Trait (-10 CP)</strong><select id="traitIncompetentChoice"></select>: The character is completely incapable of performing a particular chosen active skill, no matter any training they may receive. They may not buy this skill during character creation or later advancement, and the modifier for defaulting to the linked aptitude of this particular skill is -10. This may not be used for exotic weapon skills, and should be used for a skill that could be of use to the character.<br />
-	</div>
-	<div id="MiscCPSection" style="display: none;">
-	<center><h2>Spend Remaining CP</h2></center>
-	<p>Now that you have the basics of your character fleshed out, you can spend additional Customization Points (CP) to fine-tune your character. Not all customizations are equal—aptitudes, for example, are considerably more valuable than individual skills. To reflect this, CP must be spent at a specific ratio according to the specific boost desired.</p>
-	<div id="miscCPTable"></div>
-	</div>
-	<div id="fixeddiv">
-	<div id="startingRepdiv" style="display: none;"><strong>Remaining Rep points</strong>:<font id="remainingRepPts" color="red"></font><br /></div>
-	<div id="startingAptdiv" style="display: none;"><strong>Remaining Aptitude points</strong>:<font id="remainingAptPts" color="black"></font><br /></div>
-	<div id="positiveTraitsCPdiv" style="display: none;"><strong>CP Spent on Positive Traits</strong>:<font id="positiveTraitsCP" color="black"></font><br /></div>
-	<div id="negativeTraitsCPdiv" style="display: none;"><strong>CP Gained from Negative Traits</strong>:<font id="negativeTraitsCP" color="black"></font><br /></div>
-	<div id="negativeMorphTraitsCPdiv" style="display: none;"><strong>CP Gained from Morph Traits</strong>:<font id="negativeMorphTraitsCP" color="black"></font><br /></div>
-	<div id="activeSkillsCPdiv" style="display: none;"><strong>CP Spent on Active Skills</strong>:<font id="activeSkillsCP" color="black"></font><br /></div>
-	<div id="knowledgeSkillsCPdiv" style="display: none;"><strong>CP Spent on Knowledge Skills</strong>:<font id="knowledgeSkillsCP" color="black"></font><br /></div>
-	<div id="psiChiSleightsdiv" style="display: none;"><strong>Psi-Chi Sleights Purchased</strong>:<font id="psiChiSleights" color="black"></font></div>
-	<div id="psiGammaSleightsdiv" style="display: none;"><strong>Psi-Gamma Sleights Purchased</strong>:<font id="psiGammaSleights" color="black"></font></div>
-	<div id="totalCPdiv" style="display: none;"><strong>Total CP Remaining</strong>:<font id="totalCP" name="totalCP" color="black"></font><br /></div>
-	<input type="button" name="previousButton" id="previousButton" value="Previous" disabled="true"/><input type="button" name="nextButton" id="nextButton" value="Next" /><br />
-	</div>
-	<div id="FooterSection">
-	<a href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img src="http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png"></a><br />
-	Eclipse Phase products are produced by <a href="http://eclipsephase.com/">Posthuman Studios</a> and are licensed under a <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-Noncommercial-Share Alike 3.0 License</a>.<br />
-	In accordance with that license, this content is also provided under the same license.<br />
-	</div>
-	</div> <!-- container div -->
-	</body> 
-	<script src="js/fixeddiv.js"></script> 
+<script src="js/dataset-test.js"></script>
+<script src="js/chargen.js" type="text/javascript"></script>	
+</head>
+<body>
+<div class="container">
+<div id="chargen">
+<div name="LoadingSection" id="LoadingSection" style="display: block;">
+Loading, please wait...
+</div>
+<div id="ConceptSection" class="section" >
+<center><h2>Choose Concept</h2></center><br />
+<p>Deciding what/who you want to play before you make the character is usually the best route. Pick a simple archetype that fits your character and work from there. Do you want to play an explorer? Someone sneaky, like a spy or thief? Someone cerebral, like a scientist? A hardened criminal or ex-cop? Or do you prefer to be a rabble-rousing agitator? You can also start with a personality type and choose an associated profession. If you want a social butterfly who excels at manipulating people, you can play a media personality, blogger, or party-going socialite. Perhaps you’d prefer a bottomedout reject with substance abuse problems, in which case an ex-merc or former hypercapitalist who lost their fortune and family during the Fall might fit. How about an energetic, live-life-to-the-fullest, must-see-itall character? Then a habitat freerunner or professional gatecrasher might be what you’re looking for.</p>
+<p>Make sure to check in with the other players and try to create a character that’s complementary to the rest of the team—preferably one who provides some skill-set the group lacks. Why create a research archeologist if someone else is already set on playing one, especially when the team lacks a good combat specialist or async? On the other hand, if your team is going to be running an alien archeological expedition, then having more than one researcher (each with distinct areas of expertise) might not be bad.</p>
+<p>Once you have the basic concept, try to fill it in with a few more details, making it into a one-sentence summary. If you started with the concept of “xenosociologist,” expand it to “open-minded amateur linguist and expert xenosociologist who is fascinated by alien cultures, collects Factor kitsch, has a high tolerance for ‘yuck factors,’ and whose best friends tend to be uplifts and AIs.” This will give you a few more details around which you can focus the character’s strengths and weaknesses.</p>
+Name:<input type="text" maxlength="30" name="charName" id="charName"/><br />
+Concept:<input type="text" maxlength="90" name="concept" id="concept"/><br />
+</div>
+<div id="BackgroundSection" class="section">
+<center><h2>Choose Background</h2></center><br />
+<p>The first step to creating your character is to choose a background. Was your character born on Earth before the Fall? Were they raised on a habitat commune? Or did they start existence as a disembodied AI?</p>
+<p>You must choose one of the backgrounds for your character from the list below. Choose wisely, as each background may provide your character with certain skills, traits, limitations, or other characteristics to start with. Keep in mind that your background is where you came from, not who you are now. It is the past, whereas your faction represents whom your character is currently aligned with. Your future, of course, is yours to make.</p>
+<p>The background options presented below cover a wide selection of transhumanity, but they cannot cover every possibility. If your gamemaster allows it, you may work with them to develop a background that is not included on this list, using these as guidelines to keep it balanced.</p>
+<select name="bg" id="bg"></select><br />
+<div id="bgDescription"></div>
+<div id="bgOptions" style="display: block;"></div>
+</div>
+<div id="FactionSection" class="section">
+<center><h2>Choose Faction</h2></center><br />
+<p>After choosing your background, you now choose which primary faction your character belongs to. This faction most likely represents the grouping that controls your character’s current home habitat/station, and to which your character holds allegiance, but this need not be the case. You may be a dissident member of your faction, living among them but opposing some (or all) of their core memes and perhaps agitating for change. Whatever the case, your faction defines how your character represents themself in the struggle between ideologies post-Fall.</p>
+<p>You must choose one of the factions listed below. Like your character’s background, it will provide your character with certain skills, traits, limitations, or other characteristics.</p>
+<p>The factions presented here outline the most numerous and influential among transhumanity, but others may also exist. At your gamemaster’s discretion, you may develop another starting faction with them not included on this list.</p>
+<select name="fac" id="fac"></select><br />
+<div id="facDescription"></div>
+<div id="facOptions" style="display: block;"></div>
+</div>
+<div id="AptitudesFreePointsSection" class="section">
+<center><h2>Starting Aptitudes</h2></center>
+<p>Your character receives 105 free points to distribute among their 7 aptitudes: Cognition, Coordination, Intuition, Reflexes, Savvy, Somatics, and Willpower (see Aptitudes, p. 122). (That breaks down to an average of 15 per aptitude, so it may be easiest to give each 15 and then adjust accordingly, raising some and lowering others.) Each aptitude must be given at least 5 points (unless you take the Feeble trait, p. 149), and no aptitude may be raised higher than 30 (unless you take the Exceptional Aptitude trait, see p. 146). Note that certain morphs (flats and splicers, for example) may also put a cap on how high you can raise your aptitudes (see Aptitude Maximums, p. 124).</p>
+<p>For simplicity, it is recommended that aptitude scores be handled as multiples of 5, but this is not a necessity.</p>
+<table>
+<tr><td><strong>COG</strong></td><td><select name="startCOG" id="startCOG"></select></td><td><strong>Cognition</strong> is your aptitude for problemsolving, logical analysis, and understanding. It also includes memory and recall.</td></tr>
+<tr><td><strong>COO</strong></td><td><select name="startCOO" id="startCOO"></select></td><td><strong>Coordination</strong> is your skill at integrating the actions of different parts of your morph to produce smooth, successful movements. It includes manual dexterity, fine motor control, nimbleness, and balance.</td></tr>
+<tr><td><strong>INT</strong></td><td><select name="startINT" id="startINT"></select></td><td><strong>Intuition</strong> is your skill at following your gut instincts and evaluating on the fly. It includes physical awareness, cleverness, and cunning.</td></tr>
+<tr><td><strong>REF</strong></td><td><select name="startREF" id="startREF"></select></td><td><strong>Reflexes</strong> is your skill at acting quickly. This encompasses your reaction time, your gut-level response, and your ability to think fast.</td></tr>
+<tr><td><strong>SAV</strong></td><td><select name="startSAV" id="startSAV"></select></td><td><strong>Savvy</strong> is your mental adaptability, social intuition, and proficiency for interacting with others. It includes social awareness and manipulation.</td></tr>
+<tr><td><strong>SOM</strong></td><td><select name="startSOM" id="startSOM"></select></td><td><strong>Somatics</strong> is your skill at pushing your morph to the best of its physical ability, including the fundamental utilization of the morph’s strength, endurance, and sustained positioning and motion.</td></tr>
+<tr><td><strong>WIL</strong></td><td><select name="startWIL" id="startWIL"></select></td><td><strong>Willpower</strong> is your skill for self-control, your ability to command your own destiny.</td></tr>
+</table><br />
+<input type="checkbox" name="traitBox" id="traitExceptional AptitudeEgo" data-trait-name="Exceptional Aptitude" data-trait-type="positive" data-trait-source="Ego" /><strong>Exceptional Aptitude Trait (20 CP)</strong><select id="traitExceptional AptitudeEgoChoice"><option value="COG">COG</option><option value="COO">COO</option><option value="INT">INT</option><option value="REF">REF</option><option value="SAV">SAV</option><option value="SOM">SOM</option><option value="WIL">WIL</option></select>: As an ego trait, the character may raise the maximum for a particular chosen aptitude to 40 rather than 30 (p. 122). Note that this trait just raises the maximum, it does not give the character 10 more aptitude points. This trait may only be taken by a morph or ego once.<br />
+<input type="checkbox" name="traitBox" id="traitFeebleEgo" data-trait-name="Feeble" data-trait-type="negative" data-trait-source="Ego" /><strong>Feeble Trait (-20 CP)</strong><select id="traitFeebleEgoChoice"><option value="COG">COG</option><option value="COO">COO</option><option value="INT">INT</option><option value="REF">REF</option><option value="SAV">SAV</option><option value="SOM">SOM</option><option value="WIL">WIL</option></select>: The character is particularly weak with one aptitude. That aptitude must be purchased at a rating lower than 5 and may never be upgraded during character advancement. The aptitude maximum is 10, no matter what morph the character is wearing.<br />
+</div>
+<div id="EgoTraitsSection" class="section">
+<center><h2>Traits</h2></center>
+<p>Traits represent specific qualities your character has that may help or hinder them. Note that traits you receive from your background or faction do not cost or provide you with bonus CP. </p>
+<center><h3>Positive Traits</h3></center>
+<p>Positive traits supply bonuses in certain situations, and each has a listed CP cost. You may not spend more than 50 CP on positive traits.</p>
+<div id="positiveEgoTraits"></div>
+<hr></hr>
+<center><h3>Negative Traits</h3></center>
+<p>Negative traits inflict disadvantages on your character, but they also give you extra CP that you can spend on customizing your character. You may not purchase more than 50 CP worth of negative traits.</p>
+<div id="negativeEgoTraits"></div>
+</div>
+<div id="PsiSleightsSection" class="section">
+<center><h2>Psi Sleights</h2></center>
+<p>Characters who purchase the Psi trait, (p. 147) may spend CP to purchase sleights (see Psi-Chi Sleights, p. 223). These represent specific psi abilities the character has learned. The cost to buy a sleight is 5 CP. No more than 5 psi-chi and 5 psi-gamma sleights may be bought during character creation.</p>
+<center><h3>Psi-Chi Sleights</h3></center>
+<p>Psi-chi sleights are async abilities that speed up cognitive informatics (internal information processing) and enhance the user’s perception and cognition.</p>
+<div id="psi-Chi"></div>
+<center><h3>Psi-Gamma Sleights</h3></center>
+<p>Psi-gamma sleights deal with contacting (reading and communicating) and influencing the function of biological minds (egos within a biomorph, but also including animal life). Psi-gamma is only available to characters with Level 2 of the Psi trait. Most psi-gamma use is handled as an Opposed Test between the async and the target (p. 222).</p>
+<div id="psi-Gamma"></div>
+</div>
+<div id="RepFreePointsSection" class="section">
+<center><h2>Starting Rep</h2></center>
+<p>Your character isn’t a complete newbie. You get 50 rep points to divide between the reputation networks of your choice (see Reputation and Social Networks, p. 285).</p>
+<table>
+<tr><td><strong>The @-list</strong></td><td><select name="startARep" id="startARep"></select></td><td>: the Circle-A list for anarchists, Barsoomians, Extropians, scum, and Titanians, noted as @-rep.</td></tr>
+<tr><td><strong>CivicNet</strong></td><td><select name="startCRep" id="startCRep"></select></td><td>: used by the Jovian Republic, Lunar-Lagrange Alliance, Morningstar Constellation, Planetary Consortium, and many hypercorps, referred to as c-rep.</td></tr>
+<tr><td><strong>EcoWave</strong></td><td><select name="startERep" id="startERep"></select></td><td>: used by nano-ecologists, preservationists, and reclaimers, referred to as e-rep.</td></tr>
+<tr><td><strong>Fame</strong></td><td><select name="startFRep" id="startFRep"></select></td><td>: the seen-and-be-seen network used by socialites, artists, glitterati, and media, referred to as f-rep.</td></tr>
+<tr><td><strong>Guanxi</strong></td><td><select name="startGRep" id="startGRep"></select></td><td>: used by the triads and numerous criminal entities, referred to as g-rep.</td></tr>
+<tr><td><strong>The Eye</strong></td><td><select name="startIRep" id="startIRep"></select></td><td>: used by Firewall, noted as i-rep.</td></tr>
+<tr><td><strong>RNA</strong></td><td><select name="startRRep" id="startRRep"></select></td><td>: Research Network Affiliation, used by argonauts, technologists, scientists, and researchers, referred to as r-rep.</td></tr>
+</table>
+<br />
+<input type="checkbox" name="traitBox" id="traitBlacklistedEgo" data-trait-name="Blacklisted" data-trait-type="negative" data-trait-source="Ego" /><strong>Blacklisted Trait (-5 or -20 CP)</strong><select id="traitBlacklistedChoice"><option value="ARep">The @-list</option><option value="CRep">CivicNet</option><option value="ERep">EcoWave</option><option value="FRep">Fame</option><option value="GRep">Guanxi</option><option value="IRep">The Eye</option><option value="RRep">RNA</option></select>: The character has managed to get themselves blacklisted in certain circles, whether they actually did something to deserve it or not. In game terms, the character is barred from having a Rep score higher than 0 in one particular reputation network. People within that network will refuse to help the character out of fear of reprisals and ruining their own reputation. The bonus for this trait is 20 CP if chosen for the rep network pertaining to the character's own starting faction, and 5 CP if chosen for any other.<br />
+</div>
+<div id="MorphSection" class="section">
+<center><h2>Choose Starting Morph</h2></center><br />
+<p>Perhaps the most important use of CP is to buy the morph with which your character begins play. This may be the original bodily form in which your character started life or it may simply be the sleeve they are currently inhabiting.</p>
+<select name="morph" id="morph"></select><br />
+<div id="morphDescription"></div><br />
+<div id="morphOptions" style="display: block;"></div>
+<strong>Background Restrictions</strong>: <font id="morphBGRestrictions"></font><br />
+<strong>Faction Restrictions</strong>: <font id="morphFacRestrictions"></font><br />
+<input type="checkbox" name="traitBox" id="traitSecond SkinEgo" data-trait-name="Second Skin" data-trait-type="positive" data-trait-source="Ego" /><strong>Second Skin Trait (15 CP)</strong>: If your character background or faction enforces a restriction on your starting morph (for example, uplifts must start with an uplift morph), this trait allows you to ignore that restriction and purchase a starting morph of your choice.<br />
+<input type="checkbox" name="traitBox" id="traitExceptional AptitudeMorph" data-trait-name="Exceptional Aptitude" data-trait-type="positive" data-trait-source="Morph" /><strong>Exceptional Aptitude Trait (20 CP)</strong><select id="traitExceptional AptitudeMorphChoice"><option value="COG">COG</option><option value="COO">COO</option><option value="INT">INT</option><option value="REF">REF</option><option value="SAV">SAV</option><option value="SOM">SOM</option><option value="WIL">WIL</option></select>: As a morph trait, it raises the morph aptitude maximum (p. 124) for a particular chosen aptitude by 10 (30 for flats, 35 for splicers, 40 for all others). Note that this trait just raises the maximum, it does not give the character 10 more aptitude points. This trait may only be taken by a morph or ego once.<br />
+<div id="MorphTraitsSection">
+<center><h2>Choose Morph Traits</h2></center>
+<p>Traits listed as morph traits apply to the morph and not the ego. If the character switches to a new morph, these traits are lost (and new morph traits may be gained). Morph traits may be bought like other traits during character generation.</p>
+<center><h3>Positive Traits</h3></center>
+<div id="positiveMorphTraits"></div>
+<center><h3>Negative Traits</h3></center>
+<p>No more than 25 CP worth of negative traits may be negative morph traits (no matter how many morphs you buy).</p>
+<div id="negativeMorphTraits"></div>
+</div>
+</div>
+<div id="SkillsSection" style="display: none;">
+<center><h2>Learned Skills</h2></center>
+<p>Skills are bought at the cost of 1 CP per point. Keep in mind that learned skills start at the rating of the linked aptitude. For example, if you want to raise a skill to 30 and the skill’s linked aptitude is 10, you’ll need to spend 20 CP. Skill bonuses from background or faction should also be applied to the rating before you start raising the skill. For simplicity, it is recommended that skills be purchased as multiples of 5, but this is not a necessity.</p>
+<p>Raising a skill over 60 is expensive. Each point over 60 costs double. Raising a skill with a linked attribute of 20 up to 70 would cost 60 CP: 40 points to get from 20 to 60, and 20 more points to get from 60 to 70.</p>
+<p>No learned skill may be raised over 80 during character creation (unless you have the Expert trait, p. 146).</p>
+<p>Specializations may also be purchased at the cost of 5 CP per specialization. You may purchase specializations for both Active and Knowledge skills. Only 1 specialization may be purchased per skill, and they may only be bought for skills with a rating of 30+.</p>
+<center><h3>Active Skills</h3></center>
+<p>Each character must purchase a minimum of 400 CP of Active skills.</p>
+<div id="ActiveSkills"></div>
+<center><h3>Knowledge Skills</h3></center>
+<p>Each character must purchase a minimum of 300 CP of Knowledge skills.</p>
+<div id="KnowledgeSkills"></div>
+<br />
+<input type="checkbox" name="traitBox" id="traitExpertEgo" data-trait-name="Expert" data-trait-type="positive" data-trait-source="Ego"/><strong>Expert Trait (10 CP)</strong><select id="traitExpertChoice"></select><input type="text" id="traitExpertField" maxlength="20" />: The character is a legend in the use of one particular skill. The character may raise one learned skill over 80, to a maximum of 90, during character creation. This trait does not actually increase the skill, it just raises the maximum. This trait may only be taken once.<br />
+<input type="checkbox" name="traitBox" id="traitIncompetentEgo" data-trait-name="Incompetent" data-trait-type="negative" data-trait-source="Ego"/><strong>Incompetent Trait (-10 CP)</strong><select id="traitIncompetentChoice"></select>: The character is completely incapable of performing a particular chosen active skill, no matter any training they may receive. They may not buy this skill during character creation or later advancement, and the modifier for defaulting to the linked aptitude of this particular skill is -10. This may not be used for exotic weapon skills, and should be used for a skill that could be of use to the character.<br />
+</div>
+<div id="MiscCPSection" style="display: none;">
+<center><h2>Spend Remaining CP</h2></center>
+<p>Now that you have the basics of your character fleshed out, you can spend additional Customization Points (CP) to fine-tune your character. Not all customizations are equal—aptitudes, for example, are considerably more valuable than individual skills. To reflect this, CP must be spent at a specific ratio according to the specific boost desired.</p>
+<div id="miscCPTable"></div>
+</div>
+<div id="fixeddiv">
+<div id="startingRepdiv" style="display: none;"><strong>Remaining Rep points</strong>:<font id="remainingRepPts" color="red"></font><br /></div>
+<div id="startingAptdiv" style="display: none;"><strong>Remaining Aptitude points</strong>:<font id="remainingAptPts" color="black"></font><br /></div>
+<div id="positiveTraitsCPdiv" style="display: none;"><strong>CP Spent on Positive Traits</strong>:<font id="positiveTraitsCP" color="black"></font><br /></div>
+<div id="negativeTraitsCPdiv" style="display: none;"><strong>CP Gained from Negative Traits</strong>:<font id="negativeTraitsCP" color="black"></font><br /></div>
+<div id="negativeMorphTraitsCPdiv" style="display: none;"><strong>CP Gained from Morph Traits</strong>:<font id="negativeMorphTraitsCP" color="black"></font><br /></div>
+<div id="activeSkillsCPdiv" style="display: none;"><strong>CP Spent on Active Skills</strong>:<font id="activeSkillsCP" color="black"></font><br /></div>
+<div id="knowledgeSkillsCPdiv" style="display: none;"><strong>CP Spent on Knowledge Skills</strong>:<font id="knowledgeSkillsCP" color="black"></font><br /></div>
+<div id="psiChiSleightsdiv" style="display: none;"><strong>Psi-Chi Sleights Purchased</strong>:<font id="psiChiSleights" color="black"></font></div>
+<div id="psiGammaSleightsdiv" style="display: none;"><strong>Psi-Gamma Sleights Purchased</strong>:<font id="psiGammaSleights" color="black"></font></div>
+<div id="totalCPdiv" style="display: none;"><strong>Total CP Remaining</strong>:<font id="totalCP" name="totalCP" color="black"></font><br /></div>
+<input type="button" name="previousButton" id="previousButton" value="Previous" disabled="true"/><input type="button" name="nextButton" id="nextButton" value="Next" /><br />
+</div>
+</div> <!-- chargen -->
+<div id="FooterSection">
+<a href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img src="http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png"></a><br />
+Eclipse Phase products are produced by <a href="http://eclipsephase.com/">Posthuman Studios</a> and are licensed under a <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-Noncommercial-Share Alike 3.0 License</a>.<br />
+In accordance with that license, this content is also provided under the same license.<br />
+</div>
+</div> <!-- container div -->
+</body> 
+<script src="js/fixeddiv.js"></script> 
 </html>
