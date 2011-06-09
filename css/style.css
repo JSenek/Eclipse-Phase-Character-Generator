@@ -12,16 +12,15 @@ strong {
 	position : relative;
 }
 #chargen {
-	padding-bottom : 0px;
+	padding-bottom : 100px;
 }	
 #FooterSection {
 	position: absolute;
 	width: 80%;
-	height : 60px;
+	height : auto;
 	bottom: 0px;
 }
 #fixeddiv {
-	
 	display: none; 
 	position: absolute; 
 	width: 250px; 
@@ -31,6 +30,7 @@ strong {
 	padding: 16px; 
 	background:#FFFFFF; 
 	border:2px solid black;
+	z-index: 100;
 }
 
 .section {
