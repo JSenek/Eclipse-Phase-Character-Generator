@@ -517,7 +517,7 @@ function saveSection(section) { // Validate and save data
 			}
 			// Check for duplicate skill selections
 			if (tempList.hasOwnProperty("skill" + document.getElementById("facChoice" + i).value)) {
-				if (tempList["skill" + document.getElementById("facChoice" + i).value].hasOwnProperty("field" + document.getElementById("bgChoice" + i + "Field").value)) {
+				if (tempList["skill" + document.getElementById("facChoice" + i).value].hasOwnProperty("field" + document.getElementById("facChoice" + i + "Field").value)) {
 					alert("You may not select the same skill twice.");
 					return 0;
 				} else {
