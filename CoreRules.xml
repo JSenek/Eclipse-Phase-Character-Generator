@@ -1,0 +1,3924 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE CoreRules SYSTEM "CoreRules.dtd">
+<CoreRules>
+	<backgrounds>
+		<background>
+			<name>Drifter</name>
+			<description>You were raised with a social grouping that remained on the move throughout the Sol system. This could have been free traders, pirates, asteroid farmers, scavengers, or just migrant workers. You are used to roaming space travel between habitats and stations.</description>
+			<advantages>
+				<text>+10 Navigation skill, +20 Pilot: Spacecraft skill, +10 Networking [Field] skill of your choice</text>
+				<skillmod>
+					<name>Navigation</name>
+					<amount>10</amount>
+				</skillmod>
+				<skillmod>
+					<name>Pilot</name>
+					<field>Spacecraft</field>
+					<amount>20</amount>
+				</skillmod>
+				<skillmod>
+					<name>Choice</name>
+					<choice>Networking</choice>
+					<amount>10</amount>
+				</skillmod>
+			</advantages>
+			<disadvantages>
+				<text>None</text>
+			</disadvantages>
+			<commonmorphs>
+				<text>All, especially Bouncers and Hibernoids</text>
+				<commonmorph>Bouncer</commonmorph>
+				<commonmorph>Hibernoid</commonmorph>
+			</commonmorphs>
+		</background>
+		<background>
+			<name>Fall Evacuee</name>
+			<description>You were born and raised on Earth and evacuated during the horrors of the Fall, leaving your old life (and possibly your friends, family, and loved ones) behind you. You were lucky enough to survive with your body intact and continue to make a life for yourself out in the system.</description>
+			<advantages>
+				<text>+10 Pilot: Groundcraft skill, +10 Networking: [Field] skill of your choice, +1 Moxie</text>
+				<skillmod>
+					<name>Pilot</name>
+					<field>Groundcraft</field>
+					<amount>10</amount>
+				</skillmod>
+				<skillmod>
+					<name>Choice</name>
+					<choice>Networking</choice>
+					<amount>10</amount>
+				</skillmod>
+				<statmod>
+					<name>MOX</name>
+					<amount>1</amount>
+				</statmod>
+			</advantages>
+			<disadvantages>
+				<text>Only 2,500 Starting Credit (can still buy credit with CP)</text>
+				<statmod>
+					<name>CRED</name>
+					<amount>-2500</amount>
+				</statmod>
+			</disadvantages>
+			<commonmorphs>
+				<text>Flats, Splicers</text>
+				<commonmorph>Flat</commonmorph>
+				<commonmorph>Splicer</commonmorph>
+			</commonmorphs>
+			</background>
+		<background>
+			<name>Hyper Elite</name>
+			<description>You are privileged to have been raised as part of the immortal upper class that rules many inner system habitats and hypercorps. You were pampered withwealth and influence that most people can only dream of.</description>
+			<advantages>
+				<text>+10 Protocol skill, +10,000 Credit, +20 Networking: Hypercorps skill</text>
+				<skillmod>
+					<name>Protocol</name>
+					<amount>10</amount>
+				</skillmod>
+				<skillmod>
+					<name>Networking</name>
+					<field>Hypercorps</field>
+					<amount>20</amount>
+				</skillmod>
+				<statmod>
+					<name>CRED</name>
+					<amount>10000</amount>
+				</statmod>
+			</advantages>
+			<disadvantages>
+				<text>May not start with flat, splicer, or any pod, uplift, or synthetic morphs</text>
+				<restrictedmorph>Flat</restrictedmorph>
+				<restrictedmorph>Splicer</restrictedmorph>
+				<restrictedmorph>Pod</restrictedmorph>
+				<restrictedmorph>Uplift</restrictedmorph>
+				<restrictedmorph>Synthetic</restrictedmorph>
+			</disadvantages>
+			<commonmorphs>
+				<text>Exalts, Sylphs</text>
+				<commonmorph>Exalt</commonmorph>
+				<commonmorph>Slyph</commonmorph>
+			</commonmorphs>
+	</background>
+		<background>
+			<name>Infolife</name>
+			<description>You entered existence as a digital consciousness- an artificial general intelligence (AGI). Your very existence is illegal in certain habitats (a legacy of those who place the Fall at the feet of rampant AIs). Unlike the seed AIs responsible for their Fall, your capacity for self-improvement is limited, though you do have full autonomy.</description>
+			<advantages>
+				<text>+30 Interfacing skill, Computer skills (Infosec, Interfacing, Programming, Research) bought with Customization Points are half price</text>
+				<skillmod>
+					<name>Interfacing</name>
+					<amount>30</amount>
+				</skillmod>
+				<skillmod>
+					<name>Infosec</name>
+					<CPcost>0.5</CPcost>
+				</skillmod>
+				<skillmod>
+					<name>Interfacing</name>
+					<CPcost>0.5</CPcost>
+				</skillmod>
+				<skillmod>
+					<name>Programming</name>
+					<CPcost>0.5</CPcost>
+				</skillmod>
+				<skillmod>
+					<name>Research</name>
+					<CPcost>0.5</CPcost>
+				</skillmod>
+			</advantages>
+			<disadvantages>
+				<text>Real World Naiveté trait, Social Stigma (AGI) trait, may not purchase Psi trait, Social skills bought with Customization Points are double price</text>
+				<trait>Real World Naiveté</trait>
+				<trait>Social Stigma</trait>
+				<restrictedtrait>Psi (Level 1)</restrictedtrait>
+				<restrictedtrait>Psi (Level 2)</restrictedtrait>
+				<skillmod>
+					<name>Social</name>
+					<CPcost>2.0</CPcost>
+				</skillmod>
+			</disadvantages>
+			<commonmorphs>
+				<text>Infomorphs, synthetic morphs</text>
+				<commonmorph>Infomorph</commonmorph>
+			</commonmorphs>
+		</background>
+		<background>
+			<name>Isolate</name>
+			<description>You were raised as part of a self-exiled grouping on the fringes of the system. Whether raised as part of a religious group, cult, social experiment, anti-tech cell, or a group that just wanted to be isolated, you spent most if not all of your upbringing isolated from other factions.</description>
+			<advantages>
+				<text>+20 to two skills of your choice</text>
+				<skillmod>
+					<name>Choice</name>
+					<choice>Any</choice>
+					<amount>20</amount>
+					<quantity>2</quantity>
+				</skillmod>
+			</advantages>
+			<disadvantages>
+				<text>-10 starting Rep</text>
+				<statmod>
+					<name>REP</name>
+					<amount>-10</amount>
+				</statmod>
+			</disadvantages>
+			<commonmorphs>
+				<text>All</text>
+			</commonmorphs>
+		</background>
+		<background>
+			<name>Lost</name>
+			<description>You are a legacy of one of the most infamous debacles since the Fall. As a member of the "Lost generation," you went through an accelerated-growth childhood, somehow surviving where others of your kind died, went insane, or were persecuted (see The Lost, p. 233). Your background is a social stigma, but it does provide you with certain advantages . and burdens.</description>
+			<advantages>
+				<text>+20 to two Knowledge skills of your choice, Psi trait (Level 1)</text>
+				<skillmod>
+					<name>Choice</name>
+					<choice>Knowledge</choice>
+					<amount>20</amount>
+					<quantity>2</quantity>
+				</skillmod>
+				<trait>Psi (Level 1)</trait>
+			</advantages>
+			<disadvantages>
+				<text>Mental Disorder (choose two, this includes the one from Psi) trait, Social Stigma (Lost) trait, must start with Futura morph</text>
+				<trait>Mental Disorder</trait>
+				<trait>Social Stigma</trait>
+				<requiredmorph>Futura</requiredmorph>
+			</disadvantages>
+			<commonmorphs>
+				<text>Futuras</text>
+				<commonmorph>Futura</commonmorph>
+			</commonmorphs>
+		</background>
+		<background>
+			<name>Lunar Colonist</name>
+			<description>You experienced your childhood in one of the cramped dome cities or underground stations on Luna, Earth&apos;s moon. You had a ringside seat to the Fall of Earth.</description>
+			<advantages>
+				<text>+10 Pilot: Groundcraft skill, +10 to one Technical, Academic: [Field], or Profession: [Field] skill of your choice, +20 Networking: Hypercorps skill</text>
+				<skillmod>
+					<name>Pilot</name>
+					<field>Groundcraft</field>
+					<amount>10</amount>
+				</skillmod>
+				<skillmod>
+					<name>Choice</name>
+					<choice>Technical</choice>
+					<choice>Academic</choice>
+					<choice>Profession</choice>
+					<amount>10</amount>
+				</skillmod>
+				<skillmod>
+					<name>Networking</name>
+					<field>Hypercorps</field>
+					<amount>20</amount>
+				</skillmod>
+			</advantages>
+			<disadvantages>
+				<text>None</text>
+			</disadvantages>
+			<commonmorphs>
+				<text>Flats, Splicers</text>
+				<commonmorph>Flat</commonmorph>
+				<commonmorph>Splicer</commonmorph>
+			</commonmorphs>
+		</background>
+		<background>
+			<name>Martian</name>
+			<description>You were raised in a station on or above Mars, now the most populated planet in the system. Your home town may or may not have survived the Fall.</description>
+			<advantages>
+				<text>+10 Pilot: Groundcraft skill, +10 to one Technical, Academic: [Field], or Profession: [Field] skill of your choice, +20 Networking: Hypercorps skill</text>
+				<skillmod>
+					<name>Pilot</name>
+					<field>Groundcraft</field>
+					<amount>10</amount>
+				</skillmod>
+				<skillmod>
+					<name>Choice</name>
+					<choice>Technical</choice>
+					<choice>Academic</choice>
+					<choice>Profession</choice>
+					<amount>10</amount>
+				</skillmod>
+				<skillmod>
+					<name>Networking</name>
+					<field>Hypercorps</field>
+					<amount>20</amount>
+				</skillmod>
+			</advantages>
+			<disadvantages>
+				<text>None</text>
+			</disadvantages>
+			<commonmorphs>
+				<text>Flats, Splicers, and Rusters</text>
+				<commonmorph>Flat</commonmorph>
+				<commonmorph>Splicer</commonmorph>
+				<commonmorph>Ruster</commonmorph>
+			</commonmorphs>
+		</background>
+		<background>
+			<name>Original Space Colonist</name>
+			<description>You or your parents were part of the first "generations" of colonists/workers sent out from Earth to stake a claim in space, so you are familiar with the cramped confines of spaceflight and life aboard older stations and habitats. As a "zero-one g" (zero-gravity, firstgen), you were never part of the elite. People from your background typically have some sort of specialized tech training as vacworkers or habtechs.</description>
+			<advantages>
+				<text>+10 Pilot: Spacecraft or Freefall skill, +10 to a Technical, Academic: [Field], or Profession: [Field] skill of your choice, +20 to a Networking: [Field] skill of your choice</text>
+				<skillmod>
+					<name>Choice</name>
+					<choice>Pilot</choice>
+					<choice>Free Fall</choice>
+					<amount>10</amount>
+				</skillmod>
+				<skillmod>
+					<name>Choice</name>
+					<choice>Technical</choice>
+					<choice>Academic</choice>
+					<choice>Profession</choice>
+					<amount>10</amount>
+				</skillmod>
+				<skillmod>
+					<name>Choice</name>
+					<choice>Networking</choice>
+					<amount>20</amount>
+				</skillmod>
+			</advantages>
+			<disadvantages>
+				<text>None</text>
+			</disadvantages>
+			<commonmorphs>
+				<text>All. Use of exotic morphs is common</text>
+			</commonmorphs>
+		</background>
+		<background>
+			<name>Re-Instantiated</name>
+			<description>You were born and raised on Earth, but you did not survive the Fall. All that you know is that your body died there, but your backup was transmitted offworld, and you were one of the lucky few to be re-instantiated with a new morph. You may have spent years in dead storage, simulspace, or as an infomorph slave.</description>
+			<advantages>
+				<text>+10 Pilot: Groundcraft skill, +10 to a Networking: [Field] skill of your choice, +2 Moxie</text>
+				<skillmod>
+					<name>Pilot</name>
+					<field>Groundcraft</field>
+					<amount>10</amount>
+				</skillmod>
+				<skillmod>
+					<name>Choice</name>
+					<choice>Networking</choice>
+					<amount>10</amount>
+				</skillmod>
+				<statmod>
+					<name>MOX</name>
+					<amount>2</amount>
+				</statmod>
+			</advantages>
+			<disadvantages>
+				<text>Edited Memories trait, 0 Starting Credit (can still buy credit with CP)</text>
+				<trait>Edited Memories</trait>
+				<statmod>
+					<name>CRED</name>
+					<amount>-5000</amount>
+				</statmod>
+			</disadvantages>
+			<commonmorphs>
+				<text>Cases, Infomorphs, Synths</text>
+				<commonmorph>Case</commonmorph>
+				<commonmorph>Infomorph</commonmorph>
+				<commonmorph>Synth</commonmorph>
+			</commonmorphs>
+		</background>
+		<background>
+			<name>Scumborn</name>
+			<description>You were raised in the nomadic and chaotic lifestyle common to scum barges.</description>
+			<advantages>
+				<text>+10 Persuasion or Deception skill, +10 Scrounging skill, +20 Networking: Autonomists skill</text>
+				<skillmod>
+					<name>Choice</name>
+					<choice>Persuasion</choice>
+					<choice>Deception</choice>
+					<amount>10</amount>
+				</skillmod>
+				<skillmod>
+					<name>Scrounging</name>
+					<amount>10</amount>
+				</skillmod>
+				<skillmod>
+					<name>Networking</name>
+					<field>Autonomists</field>
+					<amount>20</amount>
+				</skillmod>
+			</advantages>
+			<disadvantages>
+				<text>None</text>
+			</disadvantages>
+			<commonmorphs>
+				<text>All, especially Bouncers</text>
+				<commonmorph>Bouncer</commonmorph>
+			</commonmorphs>
+		</background>
+		<background>
+			<name>Uplift</name>
+			<description>You are not even human. You were born as an uplifted animal: chimpanzee, gorilla, orangutan, parrot, raven, crow, or octopus.</description>
+			<advantages>
+				<text>+10 Fray skill, +10 Perception skill, +20 to two Knowledge skills of your choice</text>
+				<skillmod>
+					<name>Fray</name>
+					<amount>10</amount>
+				</skillmod>
+				<skillmod>
+					<name>Perception</name>
+					<amount>10</amount>
+				</skillmod>
+				<skillmod>
+					<name>Choice</name>
+					<choice>Knowledge</choice>
+					<amount>20</amount>
+					<quantity>2</quantity>
+				</skillmod>
+			</advantages>
+			<disadvantages>
+				<text>Must choose an uplift morph to start</text>
+				<requiredmorph>Uplift</requiredmorph>
+			</disadvantages>
+			<commonmorphs>
+				<text>Neo-Avian, Neo-Hominid, Octomorph</text>
+				<commonmorph>Neo-Avian</commonmorph>
+				<commonmorph>Neo-Hominid</commonmorph>
+				<commonmorph>Octomorph</commonmorph>
+			</commonmorphs>
+		</background>
+	</backgrounds>
+	<factions>
+		<faction>
+			<name>Anarchist</name>
+			<description>You are opposed to hierarchy, favoring flat forms of social organization and directly democratic decisionmaking. You believe power is always corrupting and everyone should have a say in the decisions that affect their lives. According to the primitive and restrictive policies of the inner system and Jovian Junta, this makes you an irresponsible hoodlum at best and a terrorist at worst. In your opinion, that?s comedy coming from governments that keep their populations in line with economic oppression and threats of violence.</description>
+			<advantages>
+				<text>+10 to a skill of your choice, +30 Networking: Autonomists skill</text>
+				<skillmod>
+					<name>Choice</name>
+					<choice>Any</choice>
+					<amount>10</amount>
+				</skillmod>
+				<skillmod>
+					<name>Networking</name>
+					<field>Autonomists</field>
+					<amount>30</amount>
+				</skillmod>
+			</advantages>
+			<disadvantages>
+				<text>None</text>
+				
+			</disadvantages>
+			<commonmorphs>
+				<text>All</text>
+				
+			</commonmorphs>
+		</faction>
+		<faction>
+			<name>Argonaut</name>
+			<description>You are part of a scientific technoprogressive movement that seeks to solve transhumanity?s injustices and inequalities with technology. You support universal access to technology and healthcare, open-source models of production, morphological freedom, and democratization. You try to avoid factionalism and divisive politics, seeing transhumanity?s splintering as a hindrance to its perpetuation.</description>
+			<advantages>
+				<text>+10 to two Technical, Academic: [Field], or Profession: [Field] skills; +20 Networking: Scientists</text>
+				<skillmod>
+					<name>Choice</name>
+					<choice>Technical</choice>
+					<choice>Academic</choice>
+					<choice>Profession</choice>
+					<amount>10</amount>
+					<quantity>2</quantity>
+				</skillmod>
+				<skillmod>
+					<name>Networking</name>
+					<field>Scientists</field>
+					<amount>20</amount>
+				</skillmod>
+			</advantages>
+			<disadvantages>
+				<text>None</text>
+				
+			</disadvantages>
+			<commonmorphs>
+				<text>All</text>
+				
+			</commonmorphs>
+		</faction>
+		<faction>
+			<name>Barsoomian</name>
+			<description>You call the Martian outback and wilds your home. You are a ?redneck,? a lower-class Martian from the rural areas that often find themselves in conflict with the policies and goals of the hypercorp domes and Tharsis League.</description>
+			<advantages>
+				<text>+10 Freerunning, +10 to one skill of your choice, +20 Networking: Autonomists skill</text>
+				<skillmod>
+					<name>Freerunning</name>
+					<amount>10</amount>
+				</skillmod>
+				<skillmod>
+					<name>Choice</name>
+					<choice>Any</choice>
+					<amount>10</amount>
+				</skillmod>
+				<skillmod>
+					<name>Networking</name>
+					<field>Autonomists</field>
+					<amount>20</amount>
+				</skillmod>
+			</advantages>
+			<disadvantages>
+				<text>None</text>
+				
+			</disadvantages>
+			<commonmorphs>
+				<text>Cases, Flats, Rusters, Splicers, Synths</text>
+				<commonmorph>Case</commonmorph>
+				<commonmorph>Flat</commonmorph>
+				<commonmorph>Ruster</commonmorph>
+				<commonmorph>Splicer</commonmorph>
+				<commonmorph>Synth</commonmorph>
+			</commonmorphs>
+		</faction>
+		<faction>
+			<name>Brinker</name>
+			<description>You or your faction is reluctant to deal with the rest of the transhumanity and the various goings-on in the rest of the system. Your particular grouping may have sought out self-imposed isolation to pursue their own interests, or they may have been exiled for their unpopular beliefs. Or you may simply be a loner who prefers the vast emptiness of space to socializing with others. You might be a religious cultist, a primitivist, a utopian, or something altogether uninterested in transhumanity.</description>
+			<advantages>
+				<text>+10 Pilot: Spacecraft skill, +10 to a skill of your choice, +20 to a Networking: [Field] skill of your choice</text>
+				<skillmod>
+					<name>Pilot</name>
+					<field>Spacecraft</field>
+					<amount>10</amount>
+				</skillmod>
+				<skillmod>
+					<name>Choice</name>
+					<choice>Any</choice>
+					<amount>10</amount>
+				</skillmod>
+				<skillmod>
+					<name>Choice</name>
+					<choice>Networking</choice>
+					<amount>20</amount>
+				</skillmod>
+			</advantages>
+			<disadvantages>
+				<text>None</text>
+				
+			</disadvantages>
+			<commonmorphs>
+				<text>All</text>
+				
+			</commonmorphs>
+		</faction>
+		<faction>
+			<name>Criminal</name>
+			<description>You are involved with the crime-oriented underworld. You may work with one of the Sol system?s major criminal factions?triads, the Night Cartel, the ID Crew, Nine Lives, Pax Familae?or one of the smaller, local operators with a big stake in a specific habitat. You might be a vetted member-for-life, a reluctant recruit, or just a freelancer looking for the next gig.</description>
+			<advantages>
+				<text>+10 Intimidation skill, +30 Networking: Criminal skill</text>
+				<skillmod>
+					<name>Intimidation</name>
+					<amount>10</amount>
+				</skillmod>
+				<skillmod>
+					<name>Networking</name>
+					<field>Criminal</field>
+					<amount>30</amount>
+				</skillmod>
+			</advantages>
+			<disadvantages>
+				<text>None</text>
+				
+			</disadvantages>
+			<commonmorphs>
+				<text>All</text>
+				
+			</commonmorphs>
+		</faction>
+		<faction>
+			<name>Extropian</name>
+			<description>You are an anarchistic supporter of the free market and private property. You oppose government and favor a system where security and legal matters are handled by private competitors. Whether you consider yourself an anarcho-capitalist or a mutualist (a difference only other Extropians can figure out), you occupy a middle ground between the hypercorps and autonomists, dealing with both and yet trusted by neither.</description>
+			<advantages>
+				<text>+10 Persuasion skill, +20 Networking: Autonomists skill, +10 Networking: Hypercorps skill</text>
+				<skillmod>
+					<name>Persuasion</name>
+					<amount>10</amount>
+				</skillmod>
+				<skillmod>
+					<name>Networking</name>
+					<field>Autonomists</field>
+					<amount>20</amount>
+				</skillmod>
+				<skillmod>
+					<name>Networking</name>
+					<field>Hypercorps</field>
+					<amount>10</amount>
+				</skillmod>
+			</advantages>
+			<disadvantages>
+				<text>None</text>
+				
+			</disadvantages>
+			<commonmorphs>
+				<text>All</text>
+				
+			</commonmorphs>
+		</faction>
+		<faction>
+			<name>Hypercorp</name>
+			<description>You hail from a habitat controlled by the hypercorps. You might be a hypercapitalist entrepeneur, a hedonistic socialite, or a lowly vacworker, but you accept that certain liberties must be sacrificed for security and freedom.</description>
+			<advantages>
+				<text>+10 Protocol skill, +20 Networking: Hypercorps skill, +10 to any Networking: [Field] skill</text>
+				<skillmod>
+					<name>Protocol</name>
+					<amount>10</amount>
+				</skillmod>
+				<skillmod>
+					<name>Networking</name>
+					<field>Hypercorps</field>
+					<amount>20</amount>
+				</skillmod>
+				<skillmod>
+					<name>Choice</name>
+					<choice>Networking</choice>
+					<amount>10</amount>
+				</skillmod>
+			</advantages>
+			<disadvantages>
+				<text>None</text>
+				
+			</disadvantages>
+			<commonmorphs>
+				<text>Exalts, Olympians, Splicers, Sylphs</text>
+				<commonmorph>Exalt</commonmorph>
+				<commonmorph>Olympian</commonmorph>
+				<commonmorph>Splicer</commonmorph>
+				<commonmorph>Slyph</commonmorph>
+			</commonmorphs>
+		</faction>
+		<faction>
+			<name>Jovian</name>
+			<description>Your faction is noted for its authoritarian regime, bioconservative ideologies, and militaristic tendencies. Where you come from, technology is not to be trusted and humans need to be protected from themselves. To ensure its survival, humanity must be able to defend itself and unfettered growth must be checked.</description>
+			<advantages>
+				<text>+10 to two weapon skills of your choice, +10 Fray, +20 Networking: Hypercorps skill</text>
+				<skillmod>
+					<name>Choice</name>
+					<choice>Weapon</choice>
+					<amount>10</amount>
+					<quantity>2</quantity>
+				</skillmod>
+				<skillmod>
+					<name>Fray</name>
+					<amount>10</amount>
+				</skillmod>
+				<skillmod>
+					<name>Networking</name>
+					<field>Hypercorps</field>
+					<amount>20</amount>
+				</skillmod>
+			</advantages>
+			<disadvantages>
+				<text>Must start with a Flat or Splicer morph, may not start with any nanoware/advanced nanotech</text>
+				<requiredmorph>Flat</requiredmorph>
+				<requiredmorph>Splicer</requiredmorph>
+				<restrictedgear>Nanoware</restrictedgear>
+				<restrictedgear>Advanced Nanotech</restrictedgear>
+			</disadvantages>
+			<commonmorphs>
+				<text>Flats and Splicers</text>
+				<commonmorph>Flat</commonmorph>
+				<commonmorph>Splicer</commonmorph>
+			</commonmorphs>
+		</faction>
+		<faction>
+			<name>Lunar</name>
+			<description>You hail from Luna, the original off-Earth colony world. Now overpopulated and in decline, Luna is one of the few places where people still cling to old-Earth ethnic and national identities. Your home is also within sight of Earth, a constant reminder that encourages many ?Loonies? to be reclaimers, deploring the hypercorp interdiction and arguing that you have a right to return to Earth, terraform it, and re-establish it as a living homeworld.</description>
+			<advantages>
+				<text>+10 to one Language: [Field] of your choice, +20 Networking: Hypercorps skill, +10 Networking: Ecologists skill</text>
+				<skillmod>
+					<name>Choice</name>
+					<choice>Language</choice>
+					<amount>10</amount>
+				</skillmod>
+				<skillmod>
+					<name>Networking</name>
+					<field>Hypercorps</field>
+					<amount>20</amount>
+				</skillmod>
+				<skillmod>
+					<name>Networking</name>
+					<field>Ecologists</field>
+					<amount>10</amount>
+				</skillmod>
+			</advantages>
+			<disadvantages>
+				<text>None</text>
+				
+			</disadvantages>
+			<commonmorphs>
+				<text>Cases, Exalts, Flats, Splicers, Synths</text>
+				<commonmorph>Case</commonmorph>
+				<commonmorph>Exalt</commonmorph>
+				<commonmorph>Flat</commonmorph>
+				<commonmorph>Splicer</commonmorph>
+				<commonmorph>Synth</commonmorph>
+			</commonmorphs>
+		</faction>
+		<faction>
+			<name>Mercurial</name>
+			<description>Your faction has no interest in co-opting their true natures in order to become more ?human.? You might be an AGI that does not necessarily intertwine its destiny with transhumanity or an uplift that seeks to preserve and promote non-human life (or at least your own species). You might even be an infomorph or posthuman who has strayed so far from transhuman interests and values that you now consider yourself to be forging a unique new path of life.</description>
+			<advantages>
+				<text>+10 to any two skills of your choice, +20 to a Networking: [Field] skill of your choice</text>
+				<skillmod>
+					<name>Choice</name>
+					<choice>Any</choice>
+					<amount>10</amount>
+					<quantity>2</quantity>
+				</skillmod>
+				<skillmod>
+					<name>Choice</name>
+					<choice>Networking</choice>
+					<amount>20</amount>
+				</skillmod>
+			</advantages>
+			<disadvantages>
+				<text>None</text>
+				
+			</disadvantages>
+			<commonmorphs>
+				<text>Infomorphs, Synths, uplift morphs</text>
+				<commonmorph>Infomorph</commonmorph>
+				<commonmorph>Synth</commonmorph>
+				<commonmorph>Uplift</commonmorph>
+			</commonmorphs>
+		</faction>
+		<faction>
+			<name>Scum</name>
+			<description>This is the future we?ve all been waiting for, and you?re going to enjoy it to the max. A paradigm shift has occurred, and while everyone else is catching up, your faction embraces and revels in it. There is no more want, no more death, no more limits on what you can be. The scum have immersed themselves in a new way of life, changing themselves as they see fit, trying out new experiences, and pushing the boundaries wherever they can ? and fuck anyone who can?t deal with that.</description>
+			<advantages>
+				<text>+10 Freefall skill, +10 to a skill of your choice, +20 Networking: Autonomists skill</text>
+				<skillmod>
+					<name>Free Fall</name>
+					<amount>10</amount>
+				</skillmod>
+				<skillmod>
+					<name>Choice</name>
+					<choice>Any</choice>
+					<amount>10</amount>
+				</skillmod>
+				<skillmod>
+					<name>Networking</name>
+					<field>Autonomists</field>
+					<amount>20</amount>
+				</skillmod>
+			</advantages>
+			<disadvantages>
+				<text>None</text>
+				
+			</disadvantages>
+			<commonmorphs>
+				<text>All</text>
+				
+			</commonmorphs>
+		</faction>
+		<faction>
+			<name>Socialite</name>
+			<description>You are a member of the inner system glitterati, the media-saturated social cliques that set trends, spread memes, and make or break lives with whispers, innuendo, and backroom deals. You are simultaneously an icon and a devout follower. Culture isn?t just your life, it?s your weapon of choice.</description>
+			<advantages>
+				<text>+10 Persuasion skill, +10 Protocol skill, +20 Networking: Media skill</text>
+				<skillmod>
+					<name>Persuasion</name>
+					<amount>10</amount>
+				</skillmod>
+				<skillmod>
+					<name>Protocol</name>
+					<amount>10</amount>
+				</skillmod>
+				<skillmod>
+					<name>Networking</name>
+					<field>Media</field>
+					<amount>20</amount>
+				</skillmod>
+			</advantages>
+			<disadvantages>
+				<text>May not start with flat, pod, uplift, or synthetic morphs</text>
+				<restrictedmorph>Flat</restrictedmorph>
+				<restrictedmorph>Pod</restrictedmorph>
+				<restrictedmorph>Uplift</restrictedmorph>
+				<restrictedmorph>Synthetic</restrictedmorph>
+			</disadvantages>
+			<commonmorphs>
+				<text>Exalts, Olympians, Sylphs</text>
+				<commonmorph>Exalt</commonmorph>
+				<commonmorph>Olympian</commonmorph>
+				<commonmorph>Slyph</commonmorph>
+			</commonmorphs>
+		</faction>
+		<faction>
+			<name>Titanian</name>
+			<description>You are a participant in the Titanian Commonwealth?s socialist cyberdemocracy. Unlike other autonomist projects, Titanian joint efforts have assembled some impressive infrastructural projects as approved by the Titanian Plurality and pursued by state-owned microcorps.</description>
+			<advantages>
+				<text>+10 to two Technical or Academic skills of your choice, +20 Networking: Autonomists skill</text>
+				<skillmod>
+					<name>Choice</name>
+					<choice>Technical</choice>
+					<choice>Academic</choice>
+					<amount>10</amount>
+					<quantity>2</quantity>
+				</skillmod>
+				<skillmod>
+					<name>Networking</name>
+					<field>Autonomists</field>
+					<amount>20</amount>
+				</skillmod>
+			</advantages>
+			<disadvantages>
+				<text>None</text>
+				
+			</disadvantages>
+			<commonmorphs>
+				<text>All</text>
+				
+			</commonmorphs>
+		</faction>
+		<faction>
+			<name>Ultimate</name>
+			<description>Your faction sees the potential in transhumanity?s future and looks back upon the rest of transhumanity as weak and hedonistic. Transhumanity is set to take the next evolutionary step and it?s time for transhumans to be redesigned to the best of our capabilities.</description>
+			<advantages>
+				<text>+10 to two skills of your choice, +20 to a Networking: [Field] skill of your choice</text>
+				<skillmod>
+					<name>Choice</name>
+					<choice>Any</choice>
+					<amount>10</amount>
+					<quantity>2</quantity>
+				</skillmod>
+				<skillmod>
+					<name>Networking</name>
+					<field>Any</field>
+					<amount>20</amount>
+				</skillmod>
+			</advantages>
+			<disadvantages>
+				<text>May not start with Flat, Splicer, uplift, or pod morphs</text>
+				<restrictedmorph>Flat</restrictedmorph>
+				<restrictedmorph>Splicer</restrictedmorph>
+				<restrictedmorph>Uplift</restrictedmorph>
+				<restrictedmorph>Pod</restrictedmorph>
+			</disadvantages>
+			<commonmorphs>
+				<text>Exalts, Remades</text>
+				<commonmorph>Exalt</commonmorph>
+				<commonmorph>Remade</commonmorph>
+			</commonmorphs>
+		</faction>
+		<faction>
+			<name>Venusian</name>
+			<description>You are a supporter of the Morningstar Confederation of Venusian aerostats, resentful of the growing influence of the Planetary Consortium and other entrenched and conservative inner system powers. You see your faction?s ascension as a chance to reform the old guard ways of inner system politics.</description>
+			<advantages>
+				<text>+10 Pilot: Aircraft, +10 to one skill of your choice, +20 Networking: Hypercorps skill</text>
+				<skillmod>
+					<name>Pilot</name>
+					<field>Aircraft</field>
+					<amount>10</amount>
+				</skillmod>
+				<skillmod>
+					<name>Choice</name>
+					<choice>Any</choice>
+					<amount>10</amount>
+				</skillmod>
+				<skillmod>
+					<name>Networking</name>
+					<field>Hypercorps</field>
+					<amount>20</amount>
+				</skillmod>
+			</advantages>
+			<disadvantages>
+				<text>None</text>
+				
+			</disadvantages>
+			<commonmorphs>
+				<text>Cases, Exalts, Mentons, Splicers, Sylphs, Synths</text>
+				<commonmorph>Case</commonmorph>
+				<commonmorph>Exalt</commonmorph>
+				<commonmorph>Menton</commonmorph>
+				<commonmorph>Splicer</commonmorph>
+				<commonmorph>Slyph</commonmorph>
+				<commonmorph>Synth</commonmorph>
+			</commonmorphs>
+		</faction>
+	</factions>
+	<morphs>
+		<morph>
+			<name>Flat</name>
+			<type>Biomorph</type>
+			<description>Flats are baseline unmodified humans, born with all of the natural defects, hereditary diseases, and other genetic mutations that evolution so lovingly applies. Flats are increasingly rare?most died off with the rest of humanity during the Fall. Most new children are splicers?screened and genefixed at the least?except in habitats where flats are treated as second-class citizens and indentured labor.</description>
+			<implants>
+				<text>None</text>
+			</implants>
+			<aptitudeMax>
+				<text>20</text>
+				<COG>20</COG>
+				<COO>20</COO>
+				<INT>20</INT>
+				<REF>20</REF>
+				<SAV>20</SAV>
+				<SOM>20</SOM>
+				<WIL>20</WIL>
+			</aptitudeMax>
+			<durability>30</durability>
+			<woundThreshold>6</woundThreshold>
+			<advantages>
+				<text>None</text>
+			</advantages>
+			<disadvantages>
+				<text>None (Genetic Defects trait common)</text>
+			</disadvantages>
+			<CPCost>0</CPCost>
+			<creditCost>High</creditCost>
+		</morph>
+		<morph>
+			<name>Splicer</name>
+			<type>Biomorph</type>
+			<description>Splicers are genefixed humans. Their genome has been cleansed of hereditary diseases and optimized for looks and health, but has not otherwise been substantially upgraded. Splicers make up the majority of transhumanity.</description>
+			<implants>
+				<text>Basic Biomods, Basic Mesh Inserts, Cortical Stack</text>
+				<implant>Basic Biomods</implant>
+				<implant>Basic Mesh Inserts</implant>
+				<implant>Cortical Stack</implant>
+			</implants>
+			<aptitudeMax>
+				<text>25</text>
+				<COG>25</COG>
+				<COO>25</COO>
+				<INT>25</INT>
+				<REF>25</REF>
+				<SAV>25</SAV>
+				<SOM>25</SOM>
+				<WIL>25</WIL>
+			</aptitudeMax>
+			<durability>30</durability>
+			<woundThreshold>6</woundThreshold>
+			<advantages>
+				<text>+5 to one aptitude of the player&apos;s choice</text>
+				<aptmod>
+					<name>Choice</name>
+					<choice>Any</choice>
+					<amount>5</amount>
+				</aptmod>
+			</advantages>
+			<disadvantages>
+				<text>None</text>
+			</disadvantages>
+			<CPCost>10</CPCost>
+			<creditCost>High</creditCost>
+		</morph>
+		<morph>
+			<name>Exalt</name>
+			<type>Biomorph</type>
+			<description>Exalt morphs are genetically enhanced humans, designed to emphasize specific traits. Their genetic code has been tweaked to make them healthier, smarter, and more attractive. Their metabolism is modified to predispose them towards staying fit and athletic for the duration of an extended lifespan.</description>
+			<implants>
+				<text>Basic Biomods, Basic Mesh Inserts, Cortical Stack</text>
+				<implant>Basic Biomods</implant>
+				<implant>Basic Mesh Inserts</implant>
+				<implant>Cortical Stack</implant>
+			</implants>
+			<aptitudeMax>
+				<text>30</text>
+				<COG>30</COG>
+				<COO>30</COO>
+				<INT>30</INT>
+				<REF>30</REF>
+				<SAV>30</SAV>
+				<SOM>30</SOM>
+				<WIL>30</WIL>
+			</aptitudeMax>
+			<durability>35</durability>
+			<woundThreshold>7</woundThreshold>
+			<advantages>
+				<text>+5 COG, +5 to three other aptitudes of the player?s choice</text>
+				<aptmod>
+					<name>Choice</name>
+					<choice>COO</choice>
+					<choice>INT</choice>
+					<choice>REF</choice>
+					<choice>SAV</choice>
+					<choice>SOM</choice>
+					<choice>WIL</choice>
+					<quantity>3</quantity>
+					<amount>5</amount>
+				</aptmod>
+				<aptmod>
+					<name>COG</name>
+					<amount>5</amount>
+				</aptmod>
+			</advantages>
+			<disadvantages>
+				<text>None</text>
+			</disadvantages>
+			<CPCost>30</CPCost>
+			<creditCost>Expensive</creditCost>
+		</morph>
+		<morph>
+			<name>Menton</name>
+			<type>Biomorph</type>
+			<description>Mentons are genetically modified to increase cognitive abilities, particularly learning ability, creativity, attentiveness, and memory. Rumors exist of superenhanced mentons with more extreme intelligence mods, but brain-hacking is notoriously difficult, and many attempts to redesign mental faculties result in impaired functioning, instability, or insanity.</description>
+			<implants>
+				<text>Basic Biomods, Basic Mesh Inserts, Cortical Stack, Eidetic Memory, Hyper Linguist, Math Boost</text>
+				<implant>Basic Biomods</implant>
+				<implant>Basic Mesh Inserts</implant>
+				<implant>Cortical Stack</implant>
+				<implant>Eidetic Memory</implant>
+				<implant>Hyper Linguist</implant>
+				<implant>Math Boost</implant>
+			</implants>
+			<aptitudeMax>
+				<text>30</text>
+				<COG>30</COG>
+				<COO>30</COO>
+				<INT>30</INT>
+				<REF>30</REF>
+				<SAV>30</SAV>
+				<SOM>30</SOM>
+				<WIL>30</WIL>
+			</aptitudeMax>
+			<durability>35</durability>
+			<woundThreshold>7</woundThreshold>
+			<advantages>
+				<text>+10 COG, +5 INT, +5 WIL, +5 to one aptitude of the player?s choice</text>
+				<aptmod>
+					<name>COG</name>
+					<amount>10</amount>
+				</aptmod>
+				<aptmod>
+					<name>INT</name>
+					<amount>5</amount>
+				</aptmod>
+				<aptmod>
+					<name>WIL</name>
+					<amount>5</amount>
+				</aptmod>
+				<aptmod>
+					<name>Choice</name>
+					<choice>Any</choice>
+					<amount>5</amount>
+				</aptmod>
+			</advantages>
+			<disadvantages>
+				<text>None</text>
+			</disadvantages>
+			<CPCost>40</CPCost>
+			<creditCost>Expensive</creditCost>
+		</morph>
+		<morph>
+			<name>Olympians</name>
+			<type>Biomorph</type>
+			<description>Olympians are human upgrades with improved athletic capabilities like endurance, eye-hand coordination, and cardiovascular functions. Olympians are common among athletes, dancers, freerunners, and soldiers.</description>
+			<implants>
+				<text>Basic Biomods, Basic Mesh Inserts, Cortical Stack</text>
+				<implant>Basic Biomods</implant>
+				<implant>Basic Mesh Inserts</implant>
+				<implant>Cortical Stack</implant>
+			</implants>
+			<aptitudeMax>
+				<text>30</text>
+				<COG>30</COG>
+				<COO>30</COO>
+				<INT>30</INT>
+				<REF>30</REF>
+				<SAV>30</SAV>
+				<SOM>30</SOM>
+				<WIL>30</WIL>
+			</aptitudeMax>
+			<durability>40</durability>
+			<woundThreshold>8</woundThreshold>
+			<advantages>
+				<text>+5 COO, +5 REF, +10 SOM, +5 to one other aptitude of the player?s choice</text>
+				<aptmod>
+					<name>COO</name>
+					<amount>5</amount>
+				</aptmod>
+				<aptmod>
+					<name>REF</name>
+					<amount>5</amount>
+				</aptmod>
+				<aptmod>
+					<name>SOM</name>
+					<amount>10</amount>
+				</aptmod>
+				<aptmod>
+					<name>Choice</name>
+					<choice>COG</choice>
+					<choice>INT</choice>
+					<choice>SAV</choice>
+					<choice>WIL</choice>
+					<amount>5</amount>
+				</aptmod>
+			</advantages>
+			<disadvantages>
+				<text>None</text>
+			</disadvantages>
+			<CPCost>40</CPCost>
+			<creditCost>Expensive</creditCost>
+		</morph>
+		<morph>
+			<name>Slyph</name>
+			<type>Biomorph</type>
+			<description>Sylph morphs are tailor-made for media icons, elite socialites, XP stars, models, and narcissists. Sylph gene sequences are specifically designed for distinctive good looks. Ethereal and elfin features are common, with slim and lithe bodies. Their metabolism has also been sanitized to eliminate unpleasant bodily odors and their pheromones adjusted for universal appeal.</description>
+			<implants>
+				<text>Basic Biomods, Basic Mesh Inserts, Clean Metabolism, Cortical Stack, Enhanced Pheromones</text>
+				<implant>Basic Biomods</implant>
+				<implant>Basic Mesh Inserts</implant>
+				<implant>Clean Metabolism</implant>
+				<implant>Cortical Stack</implant>
+				<implant>Enhanced Pheromones</implant>
+			</implants>
+			<aptitudeMax>
+				<text>30</text>
+				<COG>30</COG>
+				<COO>30</COO>
+				<INT>30</INT>
+				<REF>30</REF>
+				<SAV>30</SAV>
+				<SOM>30</SOM>
+				<WIL>30</WIL>
+			</aptitudeMax>
+			<durability>35</durability>
+			<woundThreshold>7</woundThreshold>
+			<advantages>
+				<text>Striking Looks (Level 1) trait, +5 COO, +10 SAV, +5 to one other aptitude of the player?s choice</text>
+				<trait>Striking Looks (Level 1)</trait>
+				<aptmod>
+					<name>COO</name>
+					<amount>5</amount>
+				</aptmod>
+				<aptmod>
+					<name>SAV</name>
+					<amount>10</amount>
+				</aptmod>
+				<aptmod>
+					<name>Choice</name>
+					<choice>COG</choice>
+					<choice>INT</choice>
+					<choice>REF</choice>
+					<choice>SOM</choice>
+					<choice>WIL</choice>
+					<amount>5</amount>
+				</aptmod>
+			</advantages>
+			<disadvantages>
+				<text>None</text>
+			</disadvantages>
+			<CPCost>40</CPCost>
+			<creditCost>Expensive</creditCost>
+		</morph>
+		<morph>
+			<name>Bouncer</name>
+			<type>Biomorph</type>
+			<description>Bouncers are humans genetically adapted for zero-g and microgravity environments. Their legs are more limber, and their feet can grasp as well as their hands.</description>
+			<implants>
+				<text>Basic Biomods, Basic Mesh Inserts, Cortical Stack, Grip Pads, Oxygen Reserve, Prehensile Feet</text>
+				<implant>Basic Biomods</implant>
+				<implant>Basic Mesh Inserts</implant>
+				<implant>Cortical Stack</implant>
+				<implant>Grip Pads</implant>
+				<implant>Oxygen Reserve</implant>
+				<implant>Prehensile Feet</implant>
+			</implants>
+			<aptitudeMax>
+				<text>30</text>
+				<COG>30</COG>
+				<COO>30</COO>
+				<INT>30</INT>
+				<REF>30</REF>
+				<SAV>30</SAV>
+				<SOM>30</SOM>
+				<WIL>30</WIL>
+			</aptitudeMax>
+			<durability>35</durability>
+			<woundThreshold>7</woundThreshold>
+			<advantages>
+				<text>Limber (Level 1) trait, +5 COO, +5 SOM, +5 to one aptitude of the player?s choice</text>
+				<trait>Limber (Level 1)</trait>
+				<aptmod>
+					<name>COO</name>
+					<amount>5</amount>
+				</aptmod>
+				<aptmod>
+					<name>SOM</name>
+					<amount>5</amount>
+				</aptmod>
+				<aptmod>
+					<name>Choice</name>
+					<choice>Any</choice>
+					<amount>5</amount>
+				</aptmod>
+			</advantages>
+			<disadvantages>
+				<text>None</text>
+			</disadvantages>
+			<CPCost>40</CPCost>
+			<creditCost>Expensive</creditCost>
+		</morph>
+		<morph>
+			<name>Fury</name>
+			<type>Biomorph</type>
+			<description>Furies are combat morphs. These transgenic human upgrades feature genetics tailored for endurance, strength, and reflexes, as well as behavioralmodifications for aggressiveness and cunning. To offset tendencies for unruliness and macho behavior patterns, furies feature gene sequences promoting pack mentalities and cooperation, and they tend to be biologically female.</description>
+			<implants>
+				<text>Basic Biomods, Basic Mesh Inserts, Bioweave Armor (Light), Cortical Stack, Enhanced, Vision, Neurachem (Level 1), Toxin Filters</text>
+				<implant>Basic Biomods</implant>
+				<implant>Basic Mesh Inserts</implant>
+				<implant>Bioweave Armor (Light)</implant>
+				<implant>Cortical Stack</implant>
+				<implant>Enhanced Vision</implant>
+				<implant>Neurachem (Level 1)</implant>
+				<implant>Toxin Filters</implant>
+			</implants>
+			<aptitudeMax>
+				<text>30</text>
+				<COG>30</COG>
+				<COO>30</COO>
+				<INT>30</INT>
+				<REF>30</REF>
+				<SAV>30</SAV>
+				<SOM>30</SOM>
+				<WIL>30</WIL>
+			</aptitudeMax>
+			<durability>50</durability>
+			<woundThreshold>10</woundThreshold>
+			<advantages>
+				<text>Speed Modifier +1 (neurachem), +5 COO, +5 REF, +10 SOM, +5 WIL, +5 to one aptitude of the player?s choice</text>
+				<aptmod>
+					<name>COO</name>
+					<amount>5</amount>
+				</aptmod>
+				<aptmod>
+					<name>REF</name>
+					<amount>5</amount>
+				</aptmod>
+				<aptmod>
+					<name>SOM</name>
+					<amount>10</amount>
+				</aptmod>
+				<aptmod>
+					<name>WIL</name>
+					<amount>5</amount>
+				</aptmod>
+				<aptmod>
+					<name>Choice</name>
+					<choice>Any</choice>
+					<amount>5</amount>
+				</aptmod>
+			</advantages>
+			<disadvantages>
+				<text>None</text>
+			</disadvantages>
+			<CPCost>75</CPCost>
+			<creditCost>Expensive</creditCost>
+			<creditmin>40000</creditmin>
+		</morph>
+		<morph>
+			<name>Futura</name>
+			<type>Biomorph</type>
+			<description>An exalt variant, futura morphs were specially crafted for the ?Lost generation.? Tailor-made for accelerated growth and adjusted for confidence, self-reliance, and adaptability, futuras were intended to help transhumanity regain its foothold. These programs proved disastrous and the line was discontinued, but some models remain, viewed by some with distaste and others as collectibles or exotic oddities.</description>
+			<implants>
+				<text>Basic Biomods, Basic Mesh Inserts, Cortical Stack, Eidetic Memory, Emotional Dampers</text>
+				<implant>Basic Biomods</implant>
+				<implant>Basic Mesh Inserts</implant>
+				<implant>Cortical Stack</implant>
+				<implant>Eidetic Memory</implant>
+				<implant>Emotional Dampers</implant>
+			</implants>
+			<aptitudeMax>
+				<text>30</text>
+				<COG>30</COG>
+				<COO>30</COO>
+				<INT>30</INT>
+				<REF>30</REF>
+				<SAV>30</SAV>
+				<SOM>30</SOM>
+				<WIL>30</WIL>
+			</aptitudeMax>
+			<durability>35</durability>
+			<woundThreshold>7</woundThreshold>
+			<advantages>
+				<text>+5 COG, +5 SAV, +10 WIL, +5 to one other aptitude of the player?s choice</text>
+				<aptmod>
+					<name>COG</name>
+					<amount>5</amount>
+				</aptmod>
+				<aptmod>
+					<name>SAV</name>
+					<amount>5</amount>
+				</aptmod>
+				<aptmod>
+					<name>WIL</name>
+					<amount>10</amount>
+				</aptmod>
+				<aptmod>
+					<name>Choice</name>
+					<choice>COO</choice>
+					<choice>INT</choice>
+					<choice>REF</choice>
+					<choice>SOM</choice>
+					<amount>5</amount>
+				</aptmod>
+			</advantages>
+			<disadvantages>
+				<text>None</text>
+			</disadvantages>
+			<CPCost>40</CPCost>
+			<creditCost>Expensive</creditCost>
+			<creditmin>50000</creditmin>
+		</morph>
+		<morph>
+			<name>Ghost</name>
+			<type>Biomod</type>
+			<description>Ghosts are partially designed for combat applications, but their primary focus is stealth and infiltration. Their genetic profile encourages speed, agility, and reflexes, and their minds are modified for patience and problem-solving.</description>
+			<implants>
+				<text>Basic Biomods, Basic Mesh Inserts, Chameleon Skin, Cortical Stack, Adrenal Boost, Enhanced Vision, Grip Pads</text>
+				<implant>Basic Biomods</implant>
+				<implant>Basic Mesh Inserts</implant>
+				<implant>Chameleon Skin</implant>
+				<implant>Cortical Stack</implant>
+				<implant>Adrenal Boost</implant>
+				<implant>Enhanced Vision</implant>
+				<implant>Grip Pads</implant>
+			</implants>
+			<aptitudeMax>
+				<text>30</text>
+				<COG>30</COG>
+				<COO>30</COO>
+				<INT>30</INT>
+				<REF>30</REF>
+				<SAV>30</SAV>
+				<SOM>30</SOM>
+				<WIL>30</WIL>
+			</aptitudeMax>
+			<durability>45</durability>
+			<woundThreshold>9</woundThreshold>
+			<advantages>
+				<text>+10 COO, +5 REF, +5 SOM, +5 WIL, +5 to one aptitude of the player?s choice</text>
+				<aptmod>
+					<name>COO</name>
+					<amount>10</amount>
+				</aptmod>
+				<aptmod>
+					<name>REF</name>
+					<amount>5</amount>
+				</aptmod>
+				<aptmod>
+					<name>SOM</name>
+					<amount>5</amount>
+				</aptmod>
+				<aptmod>
+					<name>WIL</name>
+					<amount>5</amount>
+				</aptmod>
+				<aptmod>
+					<name>Choice</name>
+					<choice>Any</choice>
+					<amount>5</amount>
+				</aptmod>
+			</advantages>
+			<disadvantages>
+				<text>None</text>
+			</disadvantages>
+			<CPCost>70</CPCost>
+			<creditCost>Expensive</creditCost>
+			<creditmin>40000</creditmin>
+		</morph>
+		<morph>
+			<name>Hibernoid</name>
+			<type>Biomorph</type>
+			<description>Hibernoids are transgenic-modified humans with heavily altered sleep patterns and metabolic processes. Hibernoids have a decreased need for sleep, requiring only 1?2 hours a day on average. They also have the ability to trigger a form of voluntary hibernation, effectively stopping their metabolism and need foroxygen. Hibernoids make excellent long-duration space travelers and habtechs, but these morphs are also favored by personal aides and hypercapitalists with non-stop lifestyles.</description>
+			<implants>
+				<text>Basic Biomods, Basic Mesh Inserts, Circadian Regulation, Cortical Stack, Hibernation</text>
+				<implant>Basic Biomods</implant>
+				<implant>Basic Mesh Inserts</implant>
+				<implant>Circadian Regulation</implant>
+				<implant>Cortical Stack</implant>
+				<implant>Hibernation</implant>
+			</implants>
+			<aptitudeMax>
+				<text>25</text>
+				<COG>25</COG>
+				<COO>25</COO>
+				<INT>25</INT>
+				<REF>25</REF>
+				<SAV>25</SAV>
+				<SOM>25</SOM>
+				<WIL>25</WIL>
+			</aptitudeMax>
+			<durability>35</durability>
+			<woundThreshold>7</woundThreshold>
+			<advantages>
+				<text>+5 INT, +5 to one aptitude of the player?s choice</text>
+				<aptmod>
+					<name>INT</name>
+					<amount>5</amount>
+				</aptmod>
+				<aptmod>
+					<name>Choice</name>
+					<choice>Any</choice>
+					<amount>5</amount>
+				</aptmod>
+			</advantages>
+			<disadvantages>
+				<text>None</text>
+			</disadvantages>
+			<CPCost>25</CPCost>
+			<creditCost>Expensive</creditCost>
+		</morph>
+		<morph>
+			<name>Neotenic</name>
+			<type>Biomorph</type>
+			<description>Neotenics are transhumans modified to retain a childlike form. They are smaller, more agile, inquisitive, and less resource-depleting, making them ideal for habitat living and spacecraft. Some people find neotenic sleeves distasteful, especially when employed in certain media and sex work capacities.</description>
+			<implants>
+				<text>Basic Biomods, Basic Mesh Inserts, Cortical Stack</text>
+				<implant>Basic Biomods</implant>
+				<implant>Basic Mesh Inserts</implant>
+				<implant>Cortical Stack</implant>
+			</implants>
+			<aptitudeMax>
+				<text>20 (SOM), 30 (all else)</text>
+				<COG>30</COG>
+				<COO>30</COO>
+				<INT>30</INT>
+				<REF>30</REF>
+				<SAV>30</SAV>
+				<SOM>20</SOM>
+				<WIL>30</WIL>
+			</aptitudeMax>
+			<durability>30</durability>
+			<woundThreshold>6</woundThreshold>
+			<advantages>
+				<text>+5 COO, +5 INT, +5 REF, +5 to one aptitude of the player?s choice; neotenics count as a small target (?10 modifier to hit in combat)</text>
+				<aptmod>
+					<name>COO</name>
+					<amount>5</amount>
+				</aptmod>
+				<aptmod>
+					<name>INT</name>
+					<amount>5</amount>
+				</aptmod>
+				<aptmod>
+					<name>REF</name>
+					<amount>5</amount>
+				</aptmod>
+				<aptmod>
+					<name>Choice</name>
+					<choice>Any</choice>
+					<amount>5</amount>
+				</aptmod>
+				<size>Small</size>
+			</advantages>
+			<disadvantages>
+				<text>Social Stigma (Neotenic) trait</text>
+				<trait>Social Stigma</trait>
+			</disadvantages>
+			<CPCost>25</CPCost>
+			<creditCost>Expensive</creditCost>
+		</morph>
+		<morph>
+			<name>Remade</name>
+			<type>Biomorph</type>
+			<description>The remade are completely redesigned humans: humans 2.0. Their cardiovascular systems are stronger, the digestive tract has been sanitized and restructured to eliminate flaws, and they have otherwise been optimized for good health, smarts, and longevity with numerous transgenic mods. The remade are popular with the ultimates faction. The remade look close to human, but are different in very noticeable and sometimes eerie ways: taller, lack of hair, slightly larger craniums, wider eyes, smaller noses, smaller teeth, and elongated digits.</description>
+			<implants>
+				<text>Basic Biomods, Basic Mesh Inserts, Circadian Regulation, Clean Metabolism, Cortical Stack, Eidetic Memory, Enhanced Respiration, Temperature Tolerance, Toxin Filters</text>
+				<implant>Basic Biomods</implant>
+				<implant>Basic Mesh Inserts</implant>
+				<implant>Circadian Regulation</implant>
+				<implant>Clean Metabolism</implant>
+				<implant>Cortical Stack</implant>
+				<implant>Eidetic Memory</implant>
+				<implant>Enhanced Respiration</implant>
+				<implant>Temperatute Tolerance</implant>
+				<implant>Toxin Filters</implant>
+			</implants>
+			<aptitudeMax>
+				<text>40</text>
+				<COG>40</COG>
+				<COO>40</COO>
+				<INT>40</INT>
+				<REF>40</REF>
+				<SAV>40</SAV>
+				<SOM>40</SOM>
+				<WIL>40</WIL>
+			</aptitudeMax>
+			<durability>40</durability>
+			<woundThreshold>8</woundThreshold>
+			<advantages>
+				<text>+10 COG, +5 SAV, +10 SOM, +5 to two other aptitudes of the player&apos;s choice</text>
+				<aptmod>
+					<name>COG</name>
+					<amount>10</amount>
+				</aptmod>
+				<aptmod>
+					<name>SAV</name>
+					<amount>5</amount>
+				</aptmod>
+				<aptmod>
+					<name>SOM</name>
+					<amount>10</amount>
+				</aptmod>
+				<aptmod>
+					<name>Choice</name>
+					<choice>COO</choice>
+					<choice>INT</choice>
+					<choice>REF</choice>
+					<choice>WIL</choice>
+					<amount>5</amount>
+					<quantity>2</quantity>
+				</aptmod>
+			</advantages>
+			<disadvantages>
+				<text>Uncanny Valley trait</text>
+				<trait>Uncanny Valley</trait>
+			</disadvantages>
+			<CPCost>60</CPCost>
+			<creditCost>Expensive</creditCost>
+			<creditmin>40000</creditmin>
+		</morph>
+		<morph>
+			<name>Ruster</name>
+			<type>Biomorph</type>
+			<description>Adapted for survival with minimum gear in the not-yet-terraformed Martian environment, these transgenic morphs feature insulated skin for more effective thermoregulation and respiratory system improvements to require less oxygen and filter carbon dioxyde, among other mods.</description>
+			<implants>
+				<text>Basic Biomods, Basic Mesh Inserts, Cortical Stack, Enhanced Respiration, Temperature Tolerance</text>
+				<implant>Basic Biomods</implant>
+				<implant>Basic Mesh Inserts</implant>
+				<implant>Cortical Stack</implant>
+				<implant>Enhanced Respiration</implant>
+				<implant>Temperature Tolerance</implant>
+			</implants>
+			<aptitudeMax>
+				<text>25</text>
+				<COG>25</COG>
+				<COO>25</COO>
+				<INT>25</INT>
+				<REF>25</REF>
+				<SAV>25</SAV>
+				<SOM>25</SOM>
+				<WIL>25</WIL>
+			</aptitudeMax>
+			<durability>35</durability>
+			<woundThreshold>7</woundThreshold>
+			<advantages>
+				<text>+5 SOM, +5 to one aptitude of the player?s choice</text>
+				<aptmod>
+					<name>SOM</name>
+					<amount>5</amount>
+				</aptmod>
+				<aptmod>
+					<name>Choice</name>
+					<choice>Any</choice>
+					<amount>5</amount>
+				</aptmod>
+			</advantages>
+			<disadvantages>
+				<text>None</text>
+			</disadvantages>
+			<CPCost>25</CPCost>
+			<creditCost>Expensive</creditCost>
+		</morph>
+		<morph>
+			<name>Neo-Avian</name>
+			<type>Uplift</type>
+			<description>Neo-avians include ravens, crows, and gray parrots uplifted to human-level intelligence. Their physical sizes are much larger than their non-uplifted cousins (to the size of a human child), with larger heads for their increased brain size. Numerous transgenic modifications have been made to their wings, allowing them to retain limited flight capabilities at 1 g, but giving them a more bat-like physiology so they can bend and fold better and adding primitive digits for basic tool manipulation. Their toes are also more articulated and now accompanied with an opposable thumb. Neo-avians have adapted well to microgravity environments, and are favored for their small size and reduced resource use.</description>
+			<implants>
+				<text>Basic Biomods, Basic Mesh Inserts, Cortical Stack</text>
+				<implant>Basic Biomods</implant>
+				<implant>Basic Mesh Inserts</implant>
+				<implant>Cortical Stack</implant>
+			</implants>
+			<aptitudeMax>
+				<text>25 (20 SOM)</text>
+				<COG>25</COG>
+				<COO>25</COO>
+				<INT>25</INT>
+				<REF>25</REF>
+				<SAV>25</SAV>
+				<SOM>20</SOM>
+				<WIL>25</WIL>
+			</aptitudeMax>
+			<durability>20</durability>
+			<woundThreshold>4</woundThreshold>
+			<mobility>
+				<name>Flight</name>
+				<walk>4</walk>
+				<run>20</run>
+			</mobility>
+			<advantages>
+				<text>Beak/Claw Attack (1d10 DV, use Unarmed Combat skill), Flight, +5 INT, +10 REF, +5 to one other aptitude of the player?s choice</text>
+				<attack>
+					<name>Beak</name>
+					<dv>1d10</dv>
+					<skill>Unarmed Combat</skill>
+				</attack>
+				<attack>
+					<name>Claw</name>
+					<dv>1d10</dv>
+					<skill>Unarmed Combat</skill>
+				</attack>
+				<aptmod>
+					<name>INT</name>
+					<amount>5</amount>
+				</aptmod>
+				<aptmod>
+					<name>REF</name>
+					<amount>10</amount>
+				</aptmod>
+				<aptmod>
+					<name>Choice</name>
+					<choice>COG</choice>
+					<choice>COO</choice>
+					<choice>SOM</choice>
+					<choice>SAV</choice>
+					<choice>WIL</choice>
+					<amount>5</amount>
+				</aptmod>
+			</advantages>
+			<disadvantages>
+				<text>None</text>
+			</disadvantages>
+			<CPCost>25</CPCost>
+			<creditCost>Expensive</creditCost>
+		</morph>
+		<morph>
+			<name>Neo-hominid</name>
+			<type>Uplift</type>
+			<description>Neo-hominids are uplifted chimpanzees, gorillas, and orangutans. All feature enhanced intelligence and bipedal frames.</description>
+			<implants>
+				<text>Basic Biomods, Basic Mesh Inserts, Cortical Stack, Prehensile Feet</text>
+				<implant>Basic Biomods</implant>
+				<implant>Basic Mesh Inserts</implant>
+				<implant>Cortical Stack</implant>
+				<implant>Prehensile Feet</implant>
+			</implants>
+			<aptitudeMax>
+				<text>25</text>
+				<COG>25</COG>
+				<COO>25</COO>
+				<INT>25</INT>
+				<REF>25</REF>
+				<SAV>25</SAV>
+				<SOM>25</SOM>
+				<WIL>25</WIL>
+			</aptitudeMax>
+			<durability>30</durability>
+			<woundThreshold>6</woundThreshold>
+			<advantages>
+				<text>+5 COO, +5 INT, +5 SOM, +5 to one other aptitude of the player?s choice, +10 Climbing skill</text>
+				<aptmod>
+					<name>COO</name>
+					<amount>5</amount>
+				</aptmod>
+				<aptmod>
+					<name>INT</name>
+					<amount>5</amount>
+				</aptmod>
+				<aptmod>
+					<name>SOM</name>
+					<amount>5</amount>
+				</aptmod>
+				<aptmod>
+					<name>Choice</name>
+					<choice>COG</choice>
+					<choice>REF</choice>
+					<choice>SAV</choice>
+					<choice>WIL</choice>
+					<amount>5</amount>
+				</aptmod>
+				<skillmod>
+					<name>Climbing</name>
+					<amount>10</amount>
+				</skillmod>
+			</advantages>
+			<disadvantages>
+				<text>None</text>
+			</disadvantages>
+			<CPCost>25</CPCost>
+			<creditCost>Expensive</creditCost>
+		</morph>
+		<morph>
+			<name>Octomorph</name>
+			<type>Uplift</type>
+			<description>These uplifted octopi sleeves have proven quite useful in zero-gravity environments. They retain eight arms, their chameleon ability to change skin color, ink sacs, and a sharp beak. They also have increased brain mass and longevity, can breathe both air and water, and lack a skeletal structure so they can squeeze through tight spaces. Octomorphs typically crawl along in zero gravity using their arm suckers and expelling air for propulsion and can even walk on two of their arms in low gravity. Their eyes have been enhanced with color vision, provide a 360-degree field of vision, and rotationally adjust to keep the slit-shaped pupil aligned with ?up.? A transgenic vocal system allows them to speak.</description>
+			<implants>
+				<text>Basic Biomods, Basic Mesh Inserts, Cortical Stack, Chameleon Skin</text>
+				<implant>Basic Biomods</implant>
+				<implant>Basic Mesh Inserts</implant>
+				<implant>Cortical Stack</implant>
+				<implant>Chameleon Skin</implant>
+			</implants>
+			<aptitudeMax>
+				<text>30</text>
+				<COG>30</COG>
+				<COO>30</COO>
+				<INT>30</INT>
+				<REF>30</REF>
+				<SAV>30</SAV>
+				<SOM>30</SOM>
+				<WIL>30</WIL>
+			</aptitudeMax>
+			<durability>30</durability>
+			<woundThreshold>6</woundThreshold>
+			<advantages>
+				<text>8 Arms, Beak Attack (1d10 DV, use Unarmed Combat skill), Ink Attack (blinding, use Exotic Ranged: Ink Attack skill), Limber (Level 2) trait, 360-degree Vision, +30 Swimming skill, +10 Climbing skill, +5 COO, +5 INT, +5 to one other aptitude of the player?s choice</text>
+				<limbs>8</limbs>
+				<attack>
+					<name>Beak</name>
+					<dv>1d10</dv>
+					<skill>Unarmed Combat</skill>
+				</attack>
+				<attack>
+					<name>Ink</name>
+					<skill>Exotic Ranged</skill>
+					<field>Ink Attack</field>
+					<special>Blinding</special>
+				</attack>
+				<trait>Limber (Level 1)</trait>
+				<trait>Limber (Level 2)</trait>
+				<vision>360-degree</vision>
+				<skillmod>
+					<name>Swimming</name>
+					<amount>30</amount>
+				</skillmod>
+				<skillmod>
+					<name>Climbing</name>
+					<amount>10</amount>
+				</skillmod>
+				<aptmod>
+					<name>COO</name>
+					<amount>5</amount>
+				</aptmod>
+				<aptmod>
+					<name>INT</name>
+					<amount>5</amount>
+				</aptmod>
+				<aptmod>
+					<name>Choice</name>
+					<choice>COG</choice>
+					<choice>REF</choice>
+					<choice>SAV</choice>
+					<choice>SOM</choice>
+					<choice>WIL</choice>
+					<amount>5</amount>
+				</aptmod>
+			</advantages>
+			<disadvantages>
+				<text>None</text>
+			</disadvantages>
+			<CPCost>50</CPCost>
+			<creditCost>Expensive</creditCost>
+			<creditmin>30000</creditmin>
+		</morph>
+		<morph>
+			<name>Pleasure Pod</name>
+			<type>Pod</type>
+			<description>Pleasure pods are exactly what they seem? faux humans designed purely for intimate entertainment purposes. Pleasure pods have extra nerve clusters in their erogenous zones, fine motor control over certain muscle groups, enhanced pheromones, sanitized metabolisms, and the genetics for purring. Naturally, they are crafted for good looks and charisma and enhanced in other areas as well. Pleasure pods are capable of switching their sex at will to male, female, hermaphrodite, neuter, or other intersex variations.</description>
+			<implants>
+				<text>Basic Biomods, Basic Mesh Inserts, Clean Metabolism, Cortical Stack, Cyberbrain, Enhanced Pheromones, Mnemonic Augmentation, Puppet Sock, Sex Switch</text>
+				<implant>Basic Biomods</implant>
+				<implant>Basic Mesh Inserts</implant>
+				<implant>Clean Metabolism</implant>
+				<implant>Cortical Stack</implant>
+				<implant>Cyberbrain</implant>
+				<implant>Enhanced Pheromones</implant>
+				<implant>Mnemonic Augmentation</implant>
+				<implant>Puppet Sock</implant>
+				<implant>Sex Switch</implant>
+			</implants>
+			<aptitudeMax>
+				<text>30</text>
+				<COG>30</COG>
+				<COO>30</COO>
+				<INT>30</INT>
+				<REF>30</REF>
+				<SAV>30</SAV>
+				<SOM>30</SOM>
+				<WIL>30</WIL>
+			</aptitudeMax>
+			<durability>30</durability>
+			<woundThreshold>6</woundThreshold>
+			<advantages>
+				<text>+5 INT, +5 SAV, +5 to one aptitude of the player?s choice</text>
+				<aptmod>
+					<name>INT</name>
+					<amount>5</amount>
+				</aptmod>
+				<aptmod>
+					<name>SAV</name>
+					<amount>5</amount>
+				</aptmod>
+				<aptmod>
+					<name>Choice</name>
+					<choice>COG</choice>
+					<choice>COO</choice>
+					<choice>REF</choice>
+					<choice>SOM</choice>
+					<choice>WIL</choice>
+					<amount>5</amount>
+				</aptmod>
+			</advantages>
+			<disadvantages>
+				<text>Social Stigma (Pleasure Pod) trait</text>
+				<trait>Social Stigma</trait>
+			</disadvantages>
+			<CPCost>20</CPCost>
+			<creditCost>High</creditCost>
+		</morph>
+		<morph>
+			<name>Worker Pod</name>
+			<type>Pod</type>
+			<description>Part exalt human, part machine, these basic pods are virtually indistinguishable from humans. Worker pods are often used in menial labor jobs where interaction with humans is necessary.</description>
+			<implants>
+				<text>Basic Biomods, Basic Mesh Inserts, Cortical Stack, Cyberbrain, Mnemonic Augmentation, Puppet Sock</text>
+				<implant>Basic Biomods</implant>
+				<implant>Basic Mesh Inserts</implant>
+				<implant>Cortical Stack</implant>
+				<implant>Cyberbrain</implant>
+				<implant>Mnemonic Augmentation</implant>
+				<implant>Puppet Sock</implant>
+			</implants>
+			<aptitudeMax>
+				<text>30</text>
+				<COG>30</COG>
+				<COO>30</COO>
+				<INT>30</INT>
+				<REF>30</REF>
+				<SAV>30</SAV>
+				<SOM>30</SOM>
+				<WIL>30</WIL>
+			</aptitudeMax>
+			<durability>35</durability>
+			<woundThreshold>7</woundThreshold>
+			<advantages>
+				<text>+10 SOM, +5 to one aptitude of the player?s choice</text>
+				<aptmod>
+					<name>SOM</name>
+					<amount>10</amount>
+				</aptmod>
+				<aptmod>
+					<name>Choice</name>
+					<choice>Any</choice>
+					<amount>5</amount>
+				</aptmod>
+			</advantages>
+			<disadvantages>
+				<text>Social Stigma (Pod) trait</text>
+				<trait>Social Stigma</trait>
+			</disadvantages>
+			<CPCost>20</CPCost>
+			<creditCost>High</creditCost>
+		</morph>
+		<morph>
+			<name>Novacrab</name>
+			<type>Pod</type>
+			<description>Novacrabs are a pod design bioengineered from coconut crab and spider crab stock and grown to a larger (human) size. Novacrabs are ideal for hazardous work environments as well as vacworker, police, or bodyguard duties, given their ten 2-meter long legs, massive claws, and chitinous armor. They climb and handle microgravity well and can withstand a wide range of atmospheric pressure (and sudden pressure changes) from vacuum to deep sea. Novacrabs feature compound eyes (with human-equivalent image resolution), gills, dexterous manipulatory digits on their fifth set of limbs, and transgenic vocal cords.</description>
+			<implants>
+				<text>Basic Biomods, Basic Mesh Inserts, Carapace Armor, Cortical Stack, Cyberbrain, Enhanced Respiration, Gills, Mnemonic Augmentation, Oxygen Reserve, Puppet Sock, Temperature Tolerance, Vacuum Sealing</text>
+				<implant>Basic Biomods</implant>
+				<implant>Basic Mesh Inserts</implant>
+				<implant>Carapace Armor</implant>
+				<implant>Cortical Stack</implant>
+				<implant>Cyberbrain</implant>
+				<implant>Enhanced Respiration</implant>
+				<implant>Gills</implant>
+				<implant>Mnemonic Augmentation</implant>
+				<implant>Oxygen Reserve</implant>
+				<implant>Puppet Sock</implant>
+				<implant>Temperature Tolerance</implant>
+				<implant>Vacuum Sealing</implant>
+			</implants>
+			<aptitudeMax>
+				<text>30</text>
+				<COG>30</COG>
+				<COO>30</COO>
+				<INT>30</INT>
+				<REF>30</REF>
+				<SAV>30</SAV>
+				<SOM>30</SOM>
+				<WIL>30</WIL>
+			</aptitudeMax>
+			<durability>40</durability>
+			<woundThreshold>8</woundThreshold>
+			<advantages>
+				<text>10 legs, Carapace Armor (11/11), Claw Attack (DV 2d10), +10 SOM, +5 to two other aptitudes of the player?s choice</text>
+				<limbs>10</limbs>
+				<armor>
+					<energy>11</energy>
+					<kinetic>11</kinetic>
+				</armor>
+				<attack>
+					<name>Claw</name>
+					<dv>2d10</dv>
+					<skill>Unarmed Combat</skill>
+				</attack>
+				<aptmod>
+					<name>SOM</name>
+					<amount>10</amount>
+				</aptmod>
+				<aptmod>
+					<name>Choice</name>
+					<choice>COG</choice>
+					<choice>COO</choice>
+					<choice>INT</choice>
+					<choice>REF</choice>
+					<choice>SAV</choice>
+					<choice>WIL</choice>
+					<amount>5</amount>
+					<quantity>2</quantity>
+				</aptmod>
+			</advantages>
+			<disadvantages>
+				<text>None</text>
+			</disadvantages>
+			<CPCost>60</CPCost>
+			<creditCost>Expensive</creditCost>
+			<creditmin>30000</creditmin>
+		</morph>
+		<morph>
+			<name>Case</name>
+			<type>Synthetic</type>
+			<description>Cases are extremely cheap, mass-produced robotic shells intended to provide an affordable remorphing option for the millions of infugees created by the Fall. Though many varieties of case shells exist, they are uniformly regarded as shoddy and inferior. Most case morphs are vaguely anthropomorphic, with a thin framework body standing just shorter than an average human. They suffer from frequent malfunctions.</description>
+			<implants>
+				<text>Access Jacks, Basic Mesh Inserts, Cortical Stack, Cyberbrain, Mnemonic Augmentation</text>
+				<implant>Access Jacks</implant>
+				<implant>Basic Mesh Inserts</implant>
+				<implant>Cortical Stack</implant>
+				<implant>Cyberbrain</implant>
+				<implant>Mnemonic Augmentation</implant>
+			</implants>
+			<mobility>
+				<name>Walker</name>
+				<walk>4</walk>
+				<run>16</run>
+			</mobility>
+			<aptitudeMax>
+				<text>20</text>
+				<COG>20</COG>
+				<COO>20</COO>
+				<INT>20</INT>
+				<REF>20</REF>
+				<SAV>20</SAV>
+				<SOM>20</SOM>
+				<WIL>20</WIL>
+			</aptitudeMax>
+			<durability>20</durability>
+			<woundThreshold>4</woundThreshold>
+			<advantages>
+				<text>Armor (4/4)</text>
+				<armor>
+					<kinetic>4</kinetic>
+					<energy>4</energy>
+				</armor>
+			</advantages>
+			<disadvantages>
+				<text>?5 to one chosen aptitude, Lemon trait, Social Stigma (Clanking Masses) trait</text>
+				<aptmod>
+					<name>Choice</name>
+					<choice>Any</choice>
+					<amount>-5</amount>
+				</aptmod>
+				<trait>Lemon</trait>
+				<trait>Social Stigma</trait>
+			</disadvantages>
+			<CPCost>5</CPCost>
+			<creditCost>Moderate</creditCost>
+		</morph>
+		<morph>
+			<name>Synth</name>
+			<type>Synthetic</type>
+			<description>Synths are anthropomorphic robotic shells (androids and gynoids). They are typically used for menial labor jobs where pods are not as good of an option. Cheaper than many other morphs, they are commonly used for people who need a body quickly and cheaply or simply on a transient basis. Though they look humanoid, synths are easily recognizable as non-biological unless they have the synthetic mask option (p. 311).</description>
+			<implants>
+				<text>Access Jacks, Basic Mesh Inserts, Cortical Stack, Cyberbrain, Mnemonic Augmentation</text>
+				<implant>Access Jacks</implant>
+				<implant>Basic Mesh Inserts</implant>
+				<implant>Cortical Stack</implant>
+				<implant>Cyberbrain</implant>
+				<implant>Mnemonic Augmentation</implant>
+			</implants>
+			<mobility>
+				<name>Walker</name>
+				<walk>4</walk>
+				<run>20</run>
+			</mobility>
+			<aptitudeMax>
+				<text>30</text>
+				<COG>30</COG>
+				<COO>30</COO>
+				<INT>30</INT>
+				<REF>30</REF>
+				<SAV>30</SAV>
+				<SOM>30</SOM>
+				<WIL>30</WIL>
+			</aptitudeMax>
+			<durability>40</durability>
+			<woundThreshold>8</woundThreshold>
+			<advantages>
+				<text>+5 SOM, +5 to one other aptitude of the player?s choice, Armor 6/6</text>
+				<aptmod>
+					<name>SOM</name>
+					<amount>5</amount>
+				</aptmod>
+				<aptmod>
+					<name>Choice</name>
+					<choice>COG</choice>
+					<choice>COO</choice>
+					<choice>INT</choice>
+					<choice>REF</choice>
+					<choice>SAV</choice>
+					<choice>WIL</choice>
+					<amount>5</amount>
+				</aptmod>
+				<armor>
+					<energy>6</energy>
+					<kinetic>6</kinetic>
+				</armor>
+			</advantages>
+			<disadvantages>
+				<text>Social Stigma (Clanking Masses) trait, Uncanny Valley trait</text>
+				<trait>Social Stigma</trait>
+				<trait>Uncanny Valley</trait>
+			</disadvantages>
+			<CPCost>30</CPCost>
+			<creditCost>High</creditCost>
+		</morph>
+		<morph>
+			<name>Arachnoid</name>
+			<type>Synthetic</type>
+			<description>Arachnoid robotic shells are 1-meter in length, segmented into two parts, with a smaller head like a spider or termite. They feature four pairs of 1.5-meterlong retractable arms/legs, capable of rotating around the axis of the body, with built-in pneumatic systems for propelling the bot with small leaps. The manipulator claws on each arm/leg can be switched out with extendable mini-wheels for high-speed skating movement. A smaller pair of manipulator arms near the head allows for closer handling and tool use. In zero-g environments, arachnoids can retract their arms/legs and maneuver with vectored air thrusters.</description>
+			<implants>
+				<text>Access Jacks, Basic Mesh Inserts, Cortical Stack, Cyberbrain, Enhanced Vision, Lidar, Mnemonic Augmentation, Pneumatic Limbs, Radar</text>
+				<implant>Access Jacks</implant>
+				<implant>Basic Mesh Inserts</implant>
+				<implant>Cortical Stack</implant>
+				<implant>Cyberbrain</implant>
+				<implant>Enhanced Vision</implant>
+				<implant>Lidar</implant>
+				<implant>Mnemonic Augmentation</implant>
+				<implant>Pneumatic Limbs</implant>
+				<implant>Radar</implant>
+			</implants>
+			<mobility>
+				<name>Walker</name>
+				<walk>4</walk>
+				<run>24</run>
+			</mobility>
+			<mobility>
+				<name>Thrust Vector</name>
+				<walk>8</walk>
+				<run>40</run>
+			</mobility>
+			<mobility>
+				<name>Wheeled</name>
+				<walk>8</walk>
+				<run>40</run>
+			</mobility>
+			<aptitudeMax>
+				<text>30</text>
+				<COG>30</COG>
+				<COO>30</COO>
+				<INT>30</INT>
+				<REF>30</REF>
+				<SAV>30</SAV>
+				<SOM>30</SOM>
+				<WIL>30</WIL>
+			</aptitudeMax>
+			<durability>40</durability>
+			<woundThreshold>8</woundThreshold>
+			<advantages>
+				<text>+5 COO, +10 SOM, Armor 8/8</text>
+				<limbs>10</limbs>
+				<aptmod>
+					<name>COO</name>
+					<amount>5</amount>
+				</aptmod>
+				<aptmod>
+					<name>SOM</name>
+					<amount>10</amount>
+				</aptmod>
+				<armor>
+					<kinetic>8</kinetic>
+					<energy>8</energy>
+				</armor>
+			</advantages>
+			<disadvantages>
+				<text>None</text>
+			</disadvantages>
+			<CPCost>45</CPCost>
+			<creditCost>Expensive</creditCost>
+			<creditmin>40000</creditmin>
+		</morph>
+		<morph>
+			<name>Dragonfly</name>
+			<type>Synthetic</type>
+			<description>The dragonfly robotic morph takes the shape of a meter-long flexible shell with multiple wings and manipulator arms. Capable of near-silent turbofan aided flight in Earth gravity, dragonfly bots fare even better in microgravity.</description>
+			<implants>
+				<text>Access Jacks, Basic Mesh Inserts, Cortical Stack, Cyberbrain, Mnemonic Augmentation</text>
+				<implant>Access Jacks</implant>
+				<implant>Basic Mesh Inserts</implant>
+				<implant>Cortical Stack</implant>
+				<implant>Cyberbrain</implant>
+				<implant>Mnemonic Augmentation</implant>
+			</implants>
+			<mobility>
+				<name>Winged</name>
+				<walk>8</walk>
+				<run>32</run>
+			</mobility>
+			<aptitudeMax>
+				<text>30 (20 SOM)</text>
+				<COG>30</COG>
+				<COO>30</COO>
+				<INT>30</INT>
+				<REF>30</REF>
+				<SAV>30</SAV>
+				<SOM>20</SOM>
+				<WIL>30</WIL>
+			</aptitudeMax>
+			<durability>25</durability>
+			<woundThreshold>5</woundThreshold>
+			<advantages>
+				<text>Flight, +5 REF, Armor (2/2), dragonflies count as a small target (-10 to hit in combat)</text>
+				<aptmod>
+					<name>REF</name>
+					<amount>5</amount>
+				</aptmod>
+				<armor>
+					<energy>2</energy>
+					<kinetic>2</kinetic>
+				</armor>
+				<size>Small</size>
+			</advantages>
+			<disadvantages>
+				<text>None</text>
+			</disadvantages>
+			<CPCost>20</CPCost>
+			<creditCost>High</creditCost>
+		</morph>
+		<morph>
+			<name>Flexbot</name>
+			<type>Synthetic</type>
+			<description>Designed for multipurpose functions, flexbots can transform their shells to suit a range of situations and tasks. Their core frame consists of a half-dozen interlocking and shape-adjustable modules capable of auto-transforming into a variety of shapes: multilegged walker, tentacle, hovercraft, and many others. Each module features its own sensor units and "bush robot" fractal-branching digits (capable of breaking into smaller digits, down to the micrometer scale, allowing for ultra-fine manipulation). The flexbot control computer is also distributed between modules. Individual flexbots are only the size of a large dog, but multiple flexbots can join together for larger mass operations, even taking on heavy-duty tasks such as demolition, excavation, manufacturing, robotics assembly, and so on.</description>
+			<implants>
+				<text>Access Jacks, Basic Mesh Inserts, Cortical Stack, Cyberbrain, Fractal Digits, Mnemonic Augmentation, Modular Design, Nanoscopic Vision, Shape Adjusting</text>
+				<implant>Access Jacks</implant>
+				<implant>Basic Mesh Inserts</implant>
+				<implant>Cortical Stack</implant>
+				<implant>Cyberbrain</implant>
+				<implant>Fractal Digits</implant>
+				<implant>Mnemonic Augmentation</implant>
+				<implant>Modular Design</implant>
+				<implant>Nanoscopic Vision</implant>
+				<implant>Shape Adjusting</implant>
+			</implants>
+			<mobility>
+				<name>Walker</name>
+				<walk>4</walk>
+				<run>16</run>
+			</mobility>
+			<mobility>
+				<name>Hover</name>
+				<walk>8</walk>
+				<run>40</run>
+			</mobility>
+			<aptitudeMax>
+				<text>30</text>
+				<COG>30</COG>
+				<COO>30</COO>
+				<INT>30</INT>
+				<REF>30</REF>
+				<SAV>30</SAV>
+				<SOM>30</SOM>
+				<WIL>30</WIL>
+			</aptitudeMax>
+			<durability>25</durability>
+			<woundThreshold>5</woundThreshold>
+			<advantages>
+				<text>Armor 4/4, individual flexbots count as a small target (-10 modifier to hit in combat)</text>
+				<armor>
+					<kinetic>8</kinetic>
+					<energy>8</energy>
+				</armor>
+				<size>Small</size>
+			</advantages>
+			<disadvantages>
+				<text>None</text>
+			</disadvantages>
+			<CPCost>20</CPCost>
+			<creditCost>Expensive</creditCost>
+			<creditmin>30000</creditmin>
+		</morph>
+		<morph>
+			<name>Reaper</name>
+			<type>Synthetic</type>
+			<description>The reaper is a common combat bot, used in place of biomorph soldiers and typically operated via teleoperation or by autonomous AI. The reaper&apos;s core form is an armored disc, so that it can turn and present a thin profile to an enemy. It uses vector-thrust nozzles to maneuver in microgravity and also takes advantage of an ionic drive for fast movement over distance. Four legs/manipulating arms and four weapon pods are folded inside its frame. The reaper&apos;s shell is made of smart materials, allowing these limbs and weapon mounts to extrude in any direction desired and even to change shape and length. In gravity environments, the reaper walks or hops on two or four of these limbs. Reapers are infamous due to numerous war XPs, and bringing one into most habitats will undoubtedly raise eyebrows if not get you arrested.</description>
+			<implants>
+				<text>360-Degree Vision, Access Jacks, Anti-Glare, Basic Mesh Inserts, Cortical Stack, Cyberbrain, Cyber Claws, Magnetic System, Mnemonic Augmentation, Pneumatic Limbs, Puppet Sock, Radar, Reflex Booster, Shape Adjusting, Structural Enhancement, T-Ray Emitter, Weapon Mount (Articulated, 4)</text>
+				<implant>360-Degree Vision</implant>
+				<implant>Access Jacks</implant>
+				<implant>Anti-Glare</implant>
+				<implant>Basic Mesh Inserts</implant>
+				<implant>Cortical Stack</implant>
+				<implant>Cyberbrain</implant>
+				<implant>Cyber Claws</implant>
+				<implant>Magnetic System</implant>
+				<implant>Mnemonic Augmentation</implant>
+				<implant>Pneumatic Limbs</implant>
+				<implant>Puppet Sock</implant>
+				<implant>Radar</implant>
+				<implant>Reflex Booster</implant>
+				<implant>Shape Adjusting</implant>
+				<implant>Structural Enhancement</implant>
+				<implant>T-Ray Emitter</implant>
+				<implant>Weapon Mount</implant>
+				<implant>Weapon Mount</implant>
+				<implant>Weapon Mount</implant>
+				<implant>Weapon Mount</implant>
+			</implants>
+			<mobility>
+				<name>Walker</name>
+				<walk>4</walk>
+				<run>20</run>
+			</mobility>
+			<mobility>
+				<name>Hopper</name>
+				<walk>4</walk>
+				<run>20</run>
+			</mobility>
+			<mobility>
+				<name>Ionic</name>
+				<walk>12</walk>
+				<run>40</run>
+			</mobility>
+			<mobility>
+				<name>Vectored Thrust</name>
+				<walk>4</walk>
+				<run>20</run>
+			</mobility>
+			<aptitudeMax>
+				<text>40</text>
+				<COG>40</COG>
+				<COO>40</COO>
+				<INT>40</INT>
+				<REF>40</REF>
+				<SAV>40</SAV>
+				<SOM>40</SOM>
+				<WIL>40</WIL>
+			</aptitudeMax>
+			<durability>60</durability>
+			<woundThreshold>12</woundThreshold>
+			<advantages>
+				<text>4 Limbs, +5 COO, +10 REF (+20 with Reflex Booster), +10 SOM, Armor 16/16</text>
+				<statmod>
+					<name>SPD</name>
+					<amount>1</amount>
+				</statmod>
+				<limbs>4</limbs>
+				<aptmod>
+					<name>COO</name>
+					<amount>5</amount>
+				</aptmod>
+				<aptmod>
+					<name>REF</name>
+					<amount>10</amount>
+				</aptmod>
+				<aptmod>
+					<name>SOM</name>
+					<amount>10</amount>
+				</aptmod>
+				<armor>
+					<energy>16</energy>
+					<kinetic>16</kinetic>
+				</armor>
+			</advantages>
+			<disadvantages>
+				<text>None</text>
+			</disadvantages>
+			<CPCost>100</CPCost>
+			<creditCost>Expensive (minimum 50,000+)</creditCost>
+			<creditmin>50000</creditmin>
+		</morph>
+		<morph>
+			<name>Slitheroid</name>
+			<type>Synthetic</type>
+			<description>Slitheroid bots are synthetic shells taking the form of a 2-meter-long segmented metallic snake, with two retractable arms for tool use. Snake bots can coil, twist, and roll their bodies into a ball or hoop, moving either by slithering, burrowing, rolling, or pulling themselves along by their arms. The sensor suite and control computer are housed in the head.</description>
+			<implants>
+				<text>Access Jacks, Basic Mesh Inserts, Cortical Stack, Cyberbrain, Enhanced Vision, Mnemonic Augmentation</text>
+				<implant>Access Jacks</implant>
+				<implant>Basic Mesh Inserts</implant>
+				<implant>Cortical Stack</implant>
+				<implant>Cyberbrain</implant>
+				<implant>Enhanced Vision</implant>
+				<implant>Mnemonic Augmentation</implant>
+			</implants>
+			<mobility>
+				<name>Snake</name>
+				<walk>4</walk>
+				<run>16</run>
+			</mobility>
+			<mobility>
+				<name>Rolling</name>
+				<walk>8</walk>
+				<run>32</run>
+			</mobility>
+			<aptitudeMax>
+				<text>30</text>
+				<COG>30</COG>
+				<COO>30</COO>
+				<INT>30</INT>
+				<REF>30</REF>
+				<SAV>30</SAV>
+				<SOM>30</SOM>
+				<WIL>30</WIL>
+			</aptitudeMax>
+			<durability>45</durability>
+			<woundThreshold>9</woundThreshold>
+			<advantages>
+				<text>+5 COO, +5 SOM, +5 to one other aptitude of the player&apos;s choice, Armor 8/8</text>
+				<aptmod>
+					<name>COO</name>
+					<amount>5</amount>
+				</aptmod>
+				<aptmod>
+					<name>SOM</name>
+					<amount>5</amount>
+				</aptmod>
+				<aptmod>
+					<name>Choice</name>
+					<choice>COG</choice>
+					<choice>INT</choice>
+					<choice>REF</choice>
+					<choice>SAV</choice>
+					<choice>WIL</choice>
+					<amount>5</amount>
+				</aptmod>
+				<armor>
+					<kinetic>8</kinetic>
+					<energy>8</energy>
+				</armor>
+			</advantages>
+			<disadvantages>
+				<text>None</text>
+			</disadvantages>
+			<CPCost>40</CPCost>
+			<creditCost>Expensive</creditCost>
+		</morph>
+		<morph>
+			<name>Swarmanoid</name>
+			<type>Synthetic</type>
+			<description>The swarmanoid is not a single shell per se, but rather a swarm of hundreds of insect-sized robotic microdrones. Each individual "bug" is capable of crawling, rolling, hopping several meters, or using nanocopter fan blades for airlift. The controlling computer, cortical stack, and sensor systems are distributed throughout the swarm. Though the swarm can "meld" together into a roughly child-sized shape, the swarm is incapable of tackling physical tasks like grabbing, lifting, or holding as a unit. Individual bugs are quite capable of interfacing with electronics.</description>
+			<implants>
+				<text>Access Jacks, Basic Mesh Inserts, Cortical Stack, Cyberbrain, Mnemonic Augmentation, Swarm Composition</text>
+				<implant>Access Jacks</implant>
+				<implant>Basic Mesh Inserts</implant>
+				<implant>Cortical Stack</implant>
+				<implant>Cyberbrain</implant>
+				<implant>Mnemonic Augmentation</implant>
+				<implant>Swarm Composition</implant>
+			</implants>
+			<mobility>
+				<name>Walker</name>
+				<walk>2</walk>
+				<run>8</run>
+			</mobility>
+			<mobility>
+				<name>Hopper</name>
+				<walk>4</walk>
+				<run>20</run>
+			</mobility>
+			<mobility>
+				<name>Rotor</name>
+				<walk>4</walk>
+				<run>32</run>
+			</mobility>
+			<aptitudeMax>
+				<text>30</text>
+				<COG>30</COG>
+				<COO>30</COO>
+				<INT>30</INT>
+				<REF>30</REF>
+				<SAV>30</SAV>
+				<SOM>30</SOM>
+				<WIL>30</WIL>
+			</aptitudeMax>
+			<durability>30</durability>
+			<woundThreshold>6</woundThreshold>
+			<advantages>
+				<text>See Swarm Composition (p. 311)</text>
+			</advantages>
+			<disadvantages>
+				<text>See Swarm Composition (p. 311)</text>
+			</disadvantages>
+			<CPCost>25</CPCost>
+			<creditCost>Expensive</creditCost>
+		</morph>
+		<morph>
+			<name>Infomorph</name>
+			<type>Infomorph</type>
+			<description>Infomorphs are digital-only forms-they lack a physical body. Infomorphs are sometimes carried by other characters instead of (or in addition to) a muse in a ghostrider module (p. 307). Full rules for infomorphs can be found on p. 265.</description>
+			<implants>
+				<text>Mnemonic Augmentation</text>			
+				<implant>Mnemonic Augmentation</implant>
+			</implants>
+			<aptitudeMax>
+				<text>40</text>
+				<COG>40</COG>
+				<COO>40</COO>
+				<INT>40</INT>
+				<REF>40</REF>
+				<SAV>40</SAV>
+				<SOM>40</SOM>
+				<WIL>40</WIL>
+			</aptitudeMax>
+			<durability>0</durability>
+			<woundThreshold>0</woundThreshold>
+			<advantages>
+				<text>Speed modifier +2</text>
+				<statmod>
+					<name>SPD</name>
+					<amount>2</amount>
+				</statmod>
+			</advantages>
+			<disadvantages>
+				<text>No physical form</text>
+			</disadvantages>
+			<CPCost>0</CPCost>
+			<creditCost>0</creditCost>
+		</morph>
+	</morphs>
+	<traits>
+		<negativeTraits>
+			<trait>
+				<name>Addiction (Minor)</name>
+				<source>Ego</source>
+				<description>Addiction comes in two forms: mental (affecting the ego) and physical (affecting the biomorph). The character or morph is addicted to a drug (p. 317), stimulus (XP), or activity (mesh use) to a degree that impacts the character&apos;s physical or mental health. Players and gamemasters should work together to agree on addictions that are appropriate for their game. Addiction comes in three levels of severity: minor, moderate, or major: Minor: A minor addiction is largely kept under control-it does not ruin the character&apos;s life, though it may create some difficulties. The character may not even recognize or admit they have a problem. The character must indulge the addiction at least once a week, though they can go for longer without too much difficulty. If they fail to get their weekly dose, they suffer a -10 modifier on all actions until they get their fix.</description>
+				<CP>5</CP>
+				<enables>Addiction (Moderate)</enables>
+			</trait>
+			<trait>
+				<name>Addiction (Moderate)</name>
+				<source>Ego</source>
+				<description>Moderate: A moderate addiction is in full swing. The character obviously has a problem, and must satisfy the addiction at least once a day. If they fail to do so, they may suffer mood swings, compulsive behavior, physical sickness, or other side effects until they indulge their craving. Apply a -20 modifier to all of the character&apos;s actions until they get their fix. Additionally, a character with this level of addiction suffers a penalty of -5 DUR (physical addiction) or -10 to Willpower Stress Tests (mental addiction).</description>
+				<CP>5</CP>
+				<requires>Addiction (Minor)</requires>
+				<enables>Addiction (Major)</enables>
+			</trait>
+			<trait>
+				<name>Addiction (Major)</name>
+				<source>Ego</source>
+				<description>Major: A character with a major addiction is on the rapid road to ruin. They face cravings every 6 hours and suffer a penalty of -10 DUR (physical addiction) or -20 to Willpower Stress Tests (mental addiction). If they fail to get their regular dosage, they suffer a -30 modifier on all actions until they do. If their life hasn&apos;t already been ruined by their obsession, it soon will be.</description>
+				<CP>10</CP>
+				<requires>Addiction (Moderate)</requires>
+			</trait>
+			<trait>
+				<name>Addiction (Minor)</name>
+				<source>Morph</source>
+				<description>Addiction comes in two forms: mental (affecting the ego) and physical (affecting the biomorph). The character or morph is addicted to a drug (p. 317), stimulus (XP), or activity (mesh use) to a degree that impacts the character&apos;s physical or mental health. Players and gamemasters should work together to agree on addictions that are appropriate for their game. Addiction comes in three levels of severity: minor, moderate, or major: Minor: A minor addiction is largely kept under control-it does not ruin the character&apos;s life, though it may create some difficulties. The character may not even recognize or admit they have a problem. The character must indulge the addiction at least once a week, though they can go for longer without too much difficulty. If they fail to get their weekly dose, they suffer a -10 modifier on all actions until they get their fix.</description>
+				<CP>5</CP>
+				<requiredmorph>Biomorph</requiredmorph>
+				<enables>Addiction (Moderate)</enables>
+			</trait>
+			<trait>
+				<name>Addiction (Moderate)</name>
+				<source>Morph</source>
+				<description>Moderate: A moderate addiction is in full swing. The character obviously has a problem, and must satisfy the addiction at least once a day. If they fail to do so, they may suffer mood swings, compulsive behavior, physical sickness, or other side effects until they indulge their craving. Apply a -20 modifier to all of the character&apos;s actions until they get their fix. Additionally, a character with this level of addiction suffers a penalty of -5 DUR (physical addiction) or -10 to Willpower Stress Tests (mental addiction).</description>
+				<CP>5</CP>
+				<requires>Addiction (Minor)</requires>
+				<enables>Addiction (Major)</enables>
+			</trait>
+			<trait>
+				<name>Addiction (Major)</name>
+				<source>Morph</source>
+				<description>Major: A character with a major addiction is on the rapid road to ruin. They face cravings every 6 hours and suffer a penalty of -10 DUR (physical addiction) or -20 to Willpower Stress Tests (mental addiction). If they fail to get their regular dosage, they suffer a -30 modifier on all actions until they do. If their life hasn&apos;t already been ruined by their obsession, it soon will be.</description>
+				<CP>10</CP>
+				<requires>Addiction (Moderate)</requires>
+			</trait>
+			<trait>
+				<name>Aged</name>
+				<source>Morph</source>
+				<description>The morph is physically aged and has not been rejuvenated. Old morphs are increasingly uncommon, though some people adopt them hoping to gain an air of seniority and respectability. Reduce the character&apos;s aptitude maximums by 5, and apply a -10 modifier on all physical actions. This trait may only be applied to flat and splicer morphs.</description>
+				<CP>10</CP>
+				<requiredmorph>Flat</requiredmorph>
+				<requiredmorph>Splicer</requiredmorph>
+			</trait>
+			<trait>
+				<name>Bad Luck</name>
+				<source>Ego</source>
+				<description>Due to some inexplicable cosmic coincidence, things seem to go wrong around the character. The gamemaster is given a pool of Moxie points equal to the character&apos;s Moxie stat, which also refreshes at the same rate as the character&apos;s Moxie. Only the gamemaster may utilize this Moxie, however, and the purpose is to use it against the character. In other words, the gamemaster can use this bad Moxie to cause the character to automatically fail, flip-flop a roll, and so on. To reflect the black cloud that follows the character, the gamemaster can even use this bad Moxie against the character&apos;s friends and allies, when they are doing something with or related to the character, though this should be used sparingly. Gamemasters who might be reluctant to sabotage the character should remember that the player asked for it by purchasing this trait.</description>
+				<CP>30</CP>
+			</trait>
+			<trait>
+				<name>Blacklisted</name>
+				<source>Ego</source>
+				<description>The character has managed to get themselves blacklisted in certain circles, whether they actually did something to deserve it or not. In game terms, the character is barred from having a Rep score higher than 0 in one particular reputation network. People within that network will refuse to help the character out of fear of reprisals and ruining their own reputation. The bonus for this trait is 20 CP if chosen for the rep network pertaining to the character&apos;s own starting faction, and 5 CP if chosen for any other.</description>
+				<CP>5</CP>
+				<choice>Rep</choice>
+			</trait>
+			<trait>
+				<name>Black Mark (Level 1)</name>
+				<source>Ego</source>
+				<description>At some point in the character&apos;s past, they managed to do something that earned a black mark on their reputation. For some reason, no matter what they do, this black mark cannot be shaken off and continues to haunt their interactions. In game terms, the character picks one faction. Every time they interact with this faction (such as a Networking Test) or with an NPC from this faction (Social Skill Tests) who knows the character, they suffer a -10 modifier per level.</description>
+				<CP>10</CP>
+				<enables>Black Mark (Level 2)</enables>
+			</trait>
+			<trait>
+				<name>Black Mark (Level 2)</name>
+				<source>Ego</source>
+				<description>See Black Mark (Level 1)</description>
+				<CP>10</CP>
+				<requires>Black Mark (Level 1)</requires>
+				<enables>Black Mark (Level 3)</enables>
+			</trait>
+			<trait>
+				<name>Black Mark (Level 3)</name>
+				<source>Ego</source>
+				<description>See Black Mark (Level 1)</description>
+				<CP>10</CP>
+				<requires>Black Mark (Level 2)</requires>
+			</trait>
+			<trait>
+				<name>Combat Paralysis</name>
+				<source>Ego</source>
+				<description>The character has an unfortunate habit of freezing in combat or stressful situations, like a deer caught in headlights. Anytime violence breaks out around the character or they are surprised, the character must make a Willpower Test in order to act or respond in any way. If they fail the test, they lose their action and simply stand there, remaining incapable of reacting to the situation.</description>
+				<CP>20</CP>
+			</trait>
+			<trait>
+				<name>Edited Memories</name>
+				<source>Ego</source>
+				<description>At some point in the character&apos;s past, the character had certain memories strategically removed or otherwise lost to them. This may have been done to intentionally forget an unpleasant or shameful experience or to make a break with the past. The memory may also have been lost by an unexpected death (with no recent backup), or it may have been erased against the character&apos;s will. Whatever the case, the memory should bear some importance, and there should exist either evidence of what happened or NPCs who know the full story. This is a tool the gamemaster can use to haunt the character at some future point with ghosts from their past.</description>
+				<CP>10</CP>
+			</trait>
+			<trait>
+				<name>Enemy</name>
+				<source>Ego</source>
+				<description>At some point in their past, the character made an enemy for life who continues to haunt them. The gamemaster and player should work out the details on this enmity, and the gamemaster should use the enemy as an occasional threat, surprise, and hindrance.</description>
+				<CP>10</CP>
+			</trait>
+			<trait>
+				<name>Feeble</name>
+				<source>Ego</source>
+				<description>The character is particularly weak with one aptitude. That aptitude must be purchased at a rating lower than 5 and may never be upgraded during character advancement. The aptitude maximum is 10, no matter what morph the character is wearing.</description>
+				<CP>20</CP>
+				<choice>Aptitude</choice>
+			</trait>
+			<trait>
+				<name>Frail (Level 1)</name>
+				<source>Morph</source>
+				<description>This morph is not as resilient as others of its type. Its Durability is reduced by 5 per level. This also reduces Wound Threshold by 1 or 2, respectively.</description>
+				<CP>10</CP>
+				<statmod>
+					<name>DUR</name>
+					<amount>-5</amount>
+				</statmod>
+			</trait>
+			<trait>
+				<name>Frail (Level 2)</name>
+				<source>Morph</source>
+				<description>See Frail (Level 1)</description>
+				<CP>10</CP>
+				<statmod>
+					<name>DUR</name>
+					<amount>-5</amount>
+				</statmod>
+			</trait>
+			<trait>
+				<name>Genetic Defect (Minor)</name>
+				<source>Morph</source>
+				<description>The morph is not genefixed, and in fact suffers from a genetic disorder or other impairing mutation. The player and gamemaster should agree on a defect appropriate to their game. Some possibilities include: heart disease, diabetes, cystic fibrosis, sickle-cell disease, hypertension, hemophilia, or color blindness. A genetic disorder that creates minor complications and/or occasional health problems would be worth 10 CP, a defect that significantly impairs the character&apos;s regular functioning or that inflicts chronic health problems is worth 20 CP. The gamemaster must determine the exact effects of the disorder on gameplay, as appropriate. This trait is only available for flats.</description>
+				<CP>10</CP>
+				<requiredmorph>Flat</requiredmorph>
+				<enables>Genetic Defect (Major)</enables>
+			</trait>
+			<trait>
+				<name>Genetic Defect (Major)</name>
+				<source>Morph</source>
+				<description>See Genetic Defect (Minor)</description>
+				<CP>10</CP>
+				<requires>Genetic Defect (Minor)</requires>
+			</trait>
+			<trait>
+				<name>Identity Crisis</name>
+				<source>Ego</source>
+				<description>The character&apos;s ego has trouble adapting itself to the changed look of a new morph-they are stuck with the mental image of their original body and simply do not grow accustomed to their new face(s). As a result, the character has difficulty identifying themselves in the mirror, photos, surveillance feeds, etc. They frequently forget the look and shape of their current morph, acting inappropriately, describing themselves by their original body, forgetting to duck when walking through doorways, etc. This is primarily a roleplaying trait, but the gamemaster may apply appropriate modifiers (usually -10) to tests affected by this inability to adapt.</description>
+				<CP>10</CP>
+			</trait>
+			<trait>
+				<name>Illiterate</name>
+				<source>Ego</source>
+				<description>The character knows how to speak but has difficulty reading or writing. Due to the entoptic-saturated and icon-driven nature of transhuman society, they are able to get by quite comfortably with this handicap. Reduce the character&apos;s Language skills by half (round down) whenever reading or writing.</description>
+				<CP>10</CP>
+			</trait>
+			<trait>
+				<name>Immortality Blues</name>
+				<source>Ego</source>
+				<description>The character has lived so long-over 100 years- they&apos;re bored with life and now have difficulty motivating themselves. They were old when longevitytreatments first became available, survived the Fall, and continue to soldier onward-though they find it increasingly harder to care, take interest in things around them, or fear final death. The character only receives half the Moxie and Rez Points award for completing motivational goals. This trait may not be purchased by characters with the infolife or uplift backgrounds.</description>
+				<CP>10</CP>
+				<restrictedbg>Infolife</restrictedbg>
+				<restrictedbg>Uplift</restrictedbg>
+			</trait>
+			<trait>
+				<name>Implant Rejection (Level 1)</name>
+				<source>Morph</source>
+				<description>This morph does not accept implants well. At Level 1, any implants acquired are more expensive as they required specialized anti-rejection treatments. Increase the Cost category of the implant by one.</description>
+				<requiredmorph>Biomorph</requiredmorph>
+				<CP>5</CP>
+				<enables>Implant Rejection (Level 2)</enables>
+			</trait>
+			<trait>
+				<name>Implant Rejection (Level 2)</name>
+				<source>Morph</source>
+				<description> At Level 2, the morph cannot accept implants of any kind.</description>
+				<CP>10</CP>
+				<requires>Implant Rejection (Level 1)</requires>
+			</trait>
+			<trait>
+				<name>Incompetent</name>
+				<source>Ego</source>
+				<description>The character is completely incapable of performing a particular chosen active skill, no matter any training they may receive. They may not buy this skill during character creation or later advancement, and the modifier for defaulting to the linked aptitude of this particular skill is -10. This may not be used for exotic weapon skills, and should be used for a skill that could be of use to the character.</description>
+				<CP>10</CP>
+				<choice>Active Skill</choice>
+			</trait>
+			<trait>
+				<name>Lemon</name>
+				<source>Morph</source>
+				<description>This trait is only available for synthetic morphs. This particular morph has some unfixable flaws. Once per game session (preferably at a time that will maximize drama or hilarity), the gamemaster can call for the character to make a MOX × 10 Test (using their current Moxie score). If the character fails, the morph immediately suffers 1 wound resulting from some mechanical failure, electrical glitch, or other breakdown. This wound may be repaired as normal.</description>
+				<CP>10</CP>
+				<requiredmorph>Synthetic</requiredmorph>
+			</trait>
+			<trait>
+				<name>Low Pain Tolerance</name>
+				<source>Ego</source>
+				<description>Pain is the character&apos;s enemy. The character has a very low threshold for pain tolerance and is more severely impaired when suffering. Increase the modifier for each wound take by an additional -10 (so the character suffers -20 with one wound, -40 with another, and -60 with a third). Additionally, the character suffers a -30 modifier on any test involving pain resistance. The morph version of this trait is only available for biomorphs.</description>
+				<CP>20</CP>
+			</trait>
+			<trait>
+				<name>Low Pain Tolerance</name>
+				<source>Morph</source>
+				<description>Pain is the character&apos;s enemy. The character has a very low threshold for pain tolerance and is more severely impaired when suffering. Increase the modifier for each wound take by an additional -10 (so the character suffers -20 with one wound, -40 with another, and -60 with a third). Additionally, the character suffers a -30 modifier on any test involving pain resistance. The morph version of this trait is only available for biomorphs.</description>
+				<CP>20</CP>
+				<requiredmorph>Biomorph</requiredmorph>
+			</trait>
+			<trait>
+				<name>Mental Disorder</name>
+				<source>Ego</source>
+				<description>You have a psychological disorder from a previou traumatic experience in your life. Choose one of the disorders listed on p. 211.</description>
+				<CP>10</CP>
+			</trait>
+			<trait>
+				<name>Mild Allergy</name>
+				<source>Morph</source>
+				<description>The morph is allergic to a specific chosen allergen (dust, dander, plant pollen, certain chemicals) and suffers mild discomfort when exposed to it (eye irritation, sneezing, difficult breathing). Apply a -10 modifier to all tests while the character remains exposed. This trait is only available for biomorphs.</description>
+				<CP>5</CP>
+				<requiredmorph>Biomorph</requiredmorph>
+			</trait>
+			<trait>
+				<name>Modified Behavior (Level 1)</name>
+				<source>Ego</source>
+				<description>The character has been conditioned via timeaccelerated behavioral control psychosurgery. This is common among ex-felons, who have been conditioned to respond to a specific idea or activity with vehement horror and disgust, but may have occurred for some other reason or even been self-inflicted. At Level 1, the chosen behavior is either limited or boosted, at Level 2 it is either blocked or encouraged, and at Level 3 it is expunged or enforced (see p. 231 for details). This trait should only be allowed for behaviors that are either limited or, if encouraged, impact the character in a negative way.</description>
+				<CP>5</CP>
+				<enables>Modified Behavior (Level 2)</enables>
+			</trait>
+			<trait>
+				<name>Modified Behavior (Level 2)</name>
+				<source>Ego</source>
+				<description>See Modified Behavior (Level 1)</description>
+				<CP>5</CP>
+				<requires>Modified Behavior (Level 1)</requires>
+				<enables>Modified Behavior (Level 3)</enables>
+			</trait>
+			<trait>
+				<name>Modified Behavior (Level 3)</name>
+				<source>Ego</source>
+				<description>See Modified Behavior (Level 1)</description>
+				<CP>10</CP>
+				<requires>Modified Behavior (Level 2)</requires>
+			</trait>
+			<trait>
+				<name>Morphing Disorder (Level 1)</name>
+				<source>Ego</source>
+				<description>Adapting to new morphs is particularly challenging for this character. The character suffers a -10 modifier per level on Integration Tests (p. 271) and Alienation Tests (p. 272).</description>
+				<CP>10</CP>
+				<enables>Morphing Disorder (Level 2)</enables>
+			</trait>
+			<trait>
+				<name>Morphing Disorder (Level 2)</name>
+				<source>Ego</source>
+				<description>See Morphing Disorder (Level 1)</description>
+				<CP>10</CP>
+				<requires>Morphing Disorder (Level 1)</requires>
+				<enables>Morphing Disorder (Level 3)</enables>
+			</trait>
+			<trait>
+				<name>Morphing Disorder (Level 3)</name>
+				<source>Ego</source>
+				<description>See Morphing Disorder (Level 1)</description>
+				<CP>10</CP>
+				<requires>Morphing Disorder (Level 2)</requires>
+			</trait>
+			<trait>
+				<name>Neural Damage</name>
+				<source>Ego</source>
+				<description>The character has suffered some type of neurological damage that simply cannot be cured. The affliction is now part of the character&apos;s ego and remains with them even when remorphing. This damage may have been inherited, it may have resulted from a poorly designed morph or implant, or it may have been inflicted by one of the TITAN nanoviruses that targeted neural systems during the Fall (p. 384). The gamemaster and player should agree on a specific disorder appropriate to their game. Some possibilities are: . Partial aphasia (difficulty communicating or using words) . Color blindness . Amusica (inability to make or understand music) . Synaesthesia . Logorrhoea (excessive use of words) . Loss of face recognition . Loss of depth perception (double range modifiers) . Repetitive behavior . Mood swings . The inability to shift attention quickly. The gamemaster may decide to inflict modifiers resulting from this affliction as appropriate.</description>
+				<CP>10</CP>
+			</trait>
+			<trait>
+				<name>No Cortical Stack</name>
+				<source>Morph</source>
+				<description>The morph lacks the cortical stack that is common to morphs of its type. This means the character cannot be resleeved from the cortical stack if the character dies, they can only be resleeved from a standard backup. This trait is not available for flats.</description>
+				<CP>10</CP>
+				<restrictedmorph>Flat</restrictedmorph>
+			</trait>
+			<trait>
+				<name>Oblivious</name>
+				<source>Ego</source>
+				<description>The character is particularly oblivious to events around them or anything other than what their attention is focused on. They suffer a -10 modifier to Surprise Tests and their modifier for being Distracted is -30 rather than the usual -20 (see Basic Perception, p. 190).</description>
+				<CP>10</CP>
+			</trait>
+			<trait>
+				<name>On the Run</name>
+				<source>Ego</source>
+				<description>The character is wanted by the authorities of a particular habitat/station or faction, who continue to actively search for the character. They either committed a crime or somehow displeased someone in power. The character deals with that faction in question at their own risk and may occasionally be forced to deal with bounty hunters.</description>
+				<CP>10</CP>
+			</trait>
+			<trait>
+				<name>Psi Vulnerability</name>
+				<source>Ego</source>
+				<description>Something about the character&apos;s mind makes them particularly vulnerable to psi attack. They suffer a -10 modifier when resisting such attacks. The morph version of this trait may only be taken by biomorphs.</description>
+				<CP>10</CP>
+			</trait>
+			<trait>
+				<name>Psi Vulnerability</name>
+				<source>Morph</source>
+				<description>Something about the character&apos;s mind makes them particularly vulnerable to psi attack. They suffer a -10 modifier when resisting such attacks. The morph version of this trait may only be taken by biomorphs.</description>
+				<CP>10</CP>
+				<requiredmorph>Biomorph</requiredmorph>
+			</trait>
+			<trait>
+				<name>Real World Naiveté</name>
+				<source>Ego</source>
+				<description>Due to their background, the character has very limited personal experience with the real (physical) world-or they have spent so much time in simulspace that their functioning in real life is impaired. They lack an understanding of many physical properties, social cues, and other factors that people with standard human upbringings take for granted. This lack of common sense may lead the character to misunderstand how a device works or to misinterpret someone&apos;s body language. Once per game session, the gamemaster may intentionally mislead the character when giving them a description about some thing or some social interaction. This falsehood represents the character&apos;s misunderstanding of the situation and should be roleplayed appropriately, even if the player realizes the character&apos;s mistake. This trait should only be available to characters with the infolife or re-instantiated backgrounds, though the gamemaster may allow it for characters who have extensive virtual reality/XP use in their personal histories.</description>
+				<CP>10</CP>
+			</trait>
+			<trait>
+				<name>Severe Allergy (Uncommon)</name>
+				<source>Morph</source>
+				<description>The morph&apos;s biochemistry suffers a severe allergic reaction (anaphylaxis) when it comes into contact (touched, inhaled, or ingested) with a specific allergen. The allergen may be common (dust, dander, plant pollen, certain foods, latex) or uncommon (certain drugs, insect stings). The player and gamemaster should agree on an allergen that fits the game. If exposed to the allergen, the character breaks into hives, has difficulty to breathing (-30 modifier to all actions), and must make a DUR Test or go into anaphylactic shock (dying of respiratory failure in 2d10 minutes unless medical care is applied). This trait is only available to biomorphs.</description>
+				<CP>10</CP>
+				<requiredmorph>Biomorph</requiredmorph>
+				<enables>Severe Allergy (Common)</enables>
+			</trait>
+			<trait>
+				<name>Severe Allergy (Common)</name>
+				<source>Morph</source>
+				<description>See Severe Allergy (Uncommon). Purchased as an upgrade to Severe Allergy (Uncommon).</description>
+				<CP>10</CP>
+				<requires>Severe Allergy (Uncommon)</requires>
+			</trait>
+			<trait>
+				<name>Slow Learner</name>
+				<source>Ego</source>
+				<description>New skills are not easy for this character to pick up. The character takes twice as long as normal to improve skills or learn new ones (p. 152).</description>
+				<CP>10</CP>
+			</trait>
+			<trait>
+				<name>Social Stigma</name>
+				<source>Ego</source>
+				<description>An unfortunate aspect of the character&apos;s background means that they suffer from a stigma in certain social situations. They may be sleeved in a morph viewed with repugnance, be a survivor of the infamous Lost generation, or may be an AGI in a post-Fall society plagued by fear of artificial intelligence. In social situations where the character&apos;s nature is known to someone who view that nature with distaste, fear, or repugnance, they suffer a -10 to -30 modifier (gamemaster&apos;s discretion) to social skill tests.</description>
+				<CP>10</CP>
+			</trait>
+			<trait>
+				<name>Social Stigma</name>
+				<source>Morph</source>
+				<description>An unfortunate aspect of the character&apos;s background means that they suffer from a stigma in certain social situations. They may be sleeved in a morph viewed with repugnance, be a survivor of the infamous Lost generation, or may be an AGI in a post-Fall society plagued by fear of artificial intelligence. In social situations where the character&apos;s nature is known to someone who view that nature with distaste, fear, or repugnance, they suffer a -10 to -30 modifier (gamemaster&apos;s discretion) to social skill tests.</description>
+				<CP>10</CP>
+			</trait>
+			<trait>
+				<name>Timid</name>
+				<source>Ego</source>
+				<description>This character frightens easily. They suffer a -10 modifier when resisting fear or intimidation.</description>
+				<CP>10</CP>
+			</trait>
+			<trait>
+				<name>Unattractive (Level 1)</name>
+				<source>Morph</source>
+				<description>In a time when good looks are easily purchased, this morph is conspicuously ugly. As unattractiveness is increasingly associated with being poor, backward, or genetically defective, responses to a lack of good looks range from distaste to horror. The character suffers a -10 modifier on social tests for Level 1, -20 for Level 2, and -30 for Level 3. Only biomorphs may take this trait. This modifier does not apply to interactions with xenomorphs or those with the infolife or uplift backgrounds. This modifier may be purchased for uplift morphs, but at half the bonus, and it is only effective against characters with that specific uplift background (i.e., neoavians, neo-hominids, etc.).</description>
+				<CP>10</CP>
+				<requiredmorph>Biomorph</requiredmorph>
+				<enables>Unattractive (Level 2)</enables>
+			</trait>
+			<trait>
+				<name>Unattractive (Level 2)</name>
+				<source>Morph</source>
+				<description>See Unattractive (Level 1)</description>
+				<CP>10</CP>
+				<requires>Unattractive (Level 1)</requires>
+				<enables>Unattractive (Level 3)</enables>
+			</trait>
+			<trait>
+				<name>Unattractive (Level 3)</name>
+				<source>Morph</source>
+				<description>See Unattractive (Level 1)</description>
+				<CP>10</CP>
+				<requires>Unattractive (Level 2)</requires>
+			</trait>
+			<trait>
+				<name>Uncanny Valley</name>
+				<source>Morph</source>
+				<description>There is a point where synthetic human looks become uncannily realistic and human-seeming, but they remain just different enough that their looks seem creepy or even repulsive-a phenomenon called the "uncanny valley." Morphs whose looks fall into this range suffer a -10 modifier on social skill tests when dealing with humans. This modifier does not apply to interactions with xenomorphs or those with the infolife or uplift backgrounds.</description>
+				<CP>10</CP>
+			</trait>
+			<trait>
+				<name>Unfit (Level 1)</name>
+				<source>Morph</source>
+				<description>The morph is either not optimized for health and/or just in bad shape. Reduce the aptitude maximums for Coordination, Reflexes, and Somatics by 5 (Level 1 ) or 10 (Level 2).</description>
+				<CP>10</CP>
+				<enables>Unfit (Level 2)</enables>
+			</trait>
+			<trait>
+				<name>Unfit (Level 2)</name>
+				<source>Morph</source>
+				<description>See Unfit (Level 1)</description>
+				<CP>10</CP>
+				<requires>Unfit (Level 1)</requires>
+			</trait>
+			<trait>
+				<name>VR Vertigo</name>
+				<source>Ego</source>
+				<description>The character experiences intense vertigo and nausea when interfacing with any type of virtual reality, XP, or simulspace. Augmented reality has no effect, but VR inflicts a -30 modifier to all of the character&apos;s actions. Prolonged use of VR (gamemaster&apos;s discretion) may actually incapacitate the character should they fail a WIL × 2 Test.</description>
+				<CP>10</CP>
+			</trait>
+			<trait>
+				<name>Weak Immune System (Level 1)</name>
+				<source>Morph</source>
+				<description>The morph&apos;s immune system is susceptible to diseases, drugs, and toxins. At Level 1, apply a -10 modifier whenever making a test to resist infection or the effects of a toxin or drug. This trait is only available to biomorphs.</description>
+				<CP>10</CP>
+				<requiredmorph>Biomorph</requiredmorph>
+				<enables>Weak Immune System (Level 2)</enables>
+			</trait>
+			<trait>
+				<name>Weak Immune System (Level 2)</name>
+				<source>Morph</source>
+				<description> At Level 2, increase this modifier to -20.</description>
+				<CP>10</CP>
+				<requires>Weak Immune System (Level 1)</requires>
+			</trait>
+			<trait>
+				<name>Zero G Nausea</name>
+				<source>Morph</source>
+				<description>This morph suffers from space sickness and does not fair well in zero gravity. The character suffers a -10 modifier in any microgravity climate. Additionally, whenever the character is first getting acclimated or anytime they must endure excessive movement in microgravity, they must make a WIL Test or spend 1 hour incapacitated by nausea per 10 points of MoF.</description>
+				<CP>10</CP>
+			</trait>
+		</negativeTraits>
+		<positiveTraits>
+			<trait>
+				<name>Adaptability (Level 1)</name>
+				<source>Ego</source>
+				<description>Resleeving is a breeze for this character. They adjust to new morphs much more quickly than most other people. Apply a +10 modifier per level for Integration Tests (p. 271) and Alienation Tests (p. 272).</description>
+				<CP>10</CP>
+				<enables>Adaptability (Level 2)</enables>
+			</trait>
+			<trait>
+				<name>Adaptability (Level 2)</name>
+				<source>Ego</source>
+				<description>See Adaptability (Level 1)</description>
+				<requires>Adaptability (Level 1)</requires>
+				<CP>10</CP>
+			</trait>
+			<trait>
+				<name>Allies</name>
+				<source>Ego</source>
+				<description>The character is part of or has a relationship with some influential group that they can occasionally call on for support. For example, this could be their old gatecrashing crew, former research lab co-workers, a criminal cartel they are part of, or an elite social clique. The gamemaster and player should work out what the character?s relationship is with this group, and why the character can call on them for aid. Gamemaster?s should take care that these allies are not abused, such as calling on them more than once per game session. The character?s ties to this group are also a two-way street?they will be expected to perform duties for the group on occasion as well (a potential plot seed for scenarios).</description>
+				<CP>30</CP>
+			</trait>
+			<trait>
+				<name>Ambidextrous</name>
+				<source>Ego</source>
+				<description>The character can use and manipulate objects equally well with both hands (they do not suffer the off-hand modifier, as noted under Wielding Two or More Weapons, p. 206). If the character has other prehensile limbs (feet, tail, tentacles, etc.), this trait may be applied to a limb other than the hand. This trait may be taken multiple times for multiple limbs.</description>
+				<CP>10</CP>
+				<numcopies>Any</numcopies>
+			</trait>
+			<trait>
+				<name>Animal Empathy</name>
+				<source>Ego</source>
+				<description>The character has an instinctive feel for handling and working with non-sapient animals of all kinds. Apply a +10 modifier to Animal Handling skill tests or whenever the character makes a test to influence or interact with an animal.</description>
+				<skillmod>
+					<name>Animal Handling</name>
+					<amount>10</amount>
+				</skillmod>
+				<CP>5</CP>
+			</trait>
+			<trait>
+				<name>Brave</name>
+				<source>Ego</source>
+				<description>This character does not scare easily and will face threats, intimidation, and certain bodily harm without flinching. As a side effect, the character is not always the best at gauging risks, especially when it comes to factoring in danger to others. The character receives a +10 modifier on all tests to resist fear or intimidation.</description>
+				<CP>10</CP>
+			</trait>
+			<trait>
+				<name>Common Sense</name>
+				<source>Ego</source>
+				<description>The character has an innate sense of judgment that cuts through other distractions and factors that might cloud a decision. Once per game session, the player may ask the gamemaster what choice they should make or what course of action they should take, and the gamemaster should give them solid advice based on what the character knows. Alternatively, if the character is about to make a disastrous decision, the gamemaster can use the character?s free hint and warn the player they are making a mistake.</description>
+				<CP>10</CP>
+			</trait>
+			<trait>
+				<name>Danger Sense</name>
+				<source>Ego</source>
+				<description>The character has an intuitive sixth sense that warns them of imminent threats. They receive a +10 modifier on Surprise Tests (p. 204).</description>
+				<CP>10</CP>
+			</trait>
+			<trait>
+				<name>Direction Sense</name>
+				<source>Ego</source>
+				<description>Somehow the character always knows which way is up, north, etc., even when blinded. The character receives a +10 modifier for figuring out complex directions, reading maps, and remembering or retracing a path they have taken.</description>
+				<CP>5</CP>
+			</trait>
+			<trait>
+				<name>Eidetic Memory</name>
+				<source>Ego</source>
+				<description>Much like a computer, the character has perfect memory recall. They can remember anything they have sensed, often even from a single glance. This works the same as the eidetic memory implant (p. 301).</description>
+				<CP>10</CP>
+			</trait>
+			<trait>
+				<name>Eidetic Memory</name>
+				<source>Morph</source>
+				<description>Much like a computer, the character has perfect memory recall. They can remember anything they have sensed, often even from a single glance. This works the same as the eidetic memory implant (p. 301).</description>
+				<CP>10</CP>
+			</trait>
+			<trait>
+				<name>Exceptional Aptitude</name>
+				<source>Ego</source>
+				<description>As an ego trait, the character may raise the maximum for a particular chosen aptitude to 40 rather than 30 (p. 122). Note that this trait just raises the maximum, it does not give the character 10 more aptitude points. This trait may only be taken by a morph or ego once.</description>
+				<choice>Aptitude</choice>		
+				<CP>20</CP>
+			</trait>
+			<trait>
+				<name>Exceptional Aptitude</name>
+				<source>Morph</source>
+				<description>As a morph trait, it raises the morph aptitude maximum (p. 124) for a particular chosen aptitude by 10 (30 for flats, 35 for splicers, 40 for all others). Note that this trait just raises the maximum, it does not give the character 10 more aptitude points. This trait may only be taken by a morph or ego once.</description>
+				<choice>Aptitude</choice>
+				<CP>20</CP>
+			</trait>
+			<trait>
+				<name>Expert</name>
+				<source>Ego</source>
+				<description>The character is a legend in the use of one particular skill. The character may raise one learned skill over 80, to a maximum of 90, during character creation. This trait does not actually increase the skill, it just raises the maximum. This trait may only be taken once.</description>
+				<choice>Skill</choice>
+				<CP>10</CP>
+			</trait>
+			<trait>
+				<name>Fast Learner</name>
+				<source>Ego</source>
+				<description>The character improves skills and learns new ones in half the time it normally takes (see Improving Skills, p. 152).</description>
+				<CP>10</CP>
+			</trait>
+			<trait>
+				<name>First Impression</name>
+				<source>Ego</source>
+				<description>The character has a way of charming or otherwise making a good impression the first time they interact with someone. This innate social lubricant allows them to more readily deal with new contacts and slip right into new social environments. Apply a +10 modifier on social skill tests when the character is interacting with another character for the first time only.</description>
+				<CP>10</CP>
+			</trait>
+			<trait>
+				<name>Hyper Linguist</name>
+				<source>Ego</source>
+				<description>The character has an intuitive understanding of linguistic structures that facilitates learning new languages easily. The character requires one-third the normal amount of time and experience to learn any language (see Improving Skills, p. 152). The character can also learn any human language in one day simply by constant immersive exposure to it. Additionally, the character receives a +10 modifier when attempting to interpret languages they don?t know.</description>
+				<CP>10</CP>
+			</trait>
+			<trait>
+				<name>Improved Immune System (Level 1)</name>
+				<source>Morph</source>
+				<description>The morph?s immune system is robust and more resistant to diseases, drugs, and toxins?even more than basic biomods. At Level 1, apply a +10 modifier whenever making a test to resist infection or the effectsof a toxin or drug. This trait is only available to biomorphs.</description>
+				<CP>10</CP>
+				<requiredmorph>Biomorph</requiredmorph>
+				<enables>Improved Immune System (Level 2)</enables>
+			</trait>
+			<trait>
+				<name>Improved Immune System (Level 2)</name>
+				<source>Morph</source>
+				<description>At Level 2, increase this modifier to +20.</description>
+				<CP>10</CP>
+				<requires>Improved Immune System (Level 1)</requires>
+			</trait>
+			<trait>
+				<name>Innocuous</name>
+				<source>Morph</source>
+				<description>In an age when exotic appearances and good looks are commonplace, the morph?s look is surprisingly bland and undistinguished, in that cookie cutter sort of way. The character?s physical looks are so mundane that others have a hard time picking them out of a crowd, describing their appearance, or otherwise remembering physical details. Apply a ?10 modifier to all tests made to spot, describe, or remember the character. This modifier does not apply to psi or mesh searches.</description>
+				<CP>10</CP>
+			</trait>
+			<trait>
+				<name>Limber (Level 1)</name>
+				<source>Morph</source>
+				<description>The morph is especially flexible and supple, capable of graceful contortions and interesting positions. At Level 1, the character can smoke with their toes, do the splits, and squeeze into small, cramped spaces. Each level provides a +10 modifier to escaping from bonds, fitting into narrow confines, and other acts relying on contortion or flexibility. This trait is only available to biomorphs.</description>
+				<CP>10</CP>
+				<requiredmorph>Biomorph</requiredmorph>
+				<enables>Limber (Level 2)</enables>
+			</trait>
+			<trait>
+				<name>Limber (Level 2)</name>
+				<source>Morph</source>
+				<description>At Level 2, they are double-jointed escape artists. Each level provides a +10 modifier to escaping from bonds, fitting into narrow confines, and other acts relying on contortion or flexibility.</description>
+				<CP>10</CP>
+				<requires>Limber (Level 1)</requires>
+			</trait>
+			<trait>
+				<name>Math Wiz</name>
+				<source>Ego</source>
+				<description>The character can perform any feat of calculation, including the most complex and advanced mathematics, instantly and with great precision, with the same ease an unmodified human can add 2 + 3. The character can calculate odds, find correlations in numerical data, and perform similar tasks with great ease. Apply a +30 modifier on tests involving math calculations.</description>
+				<CP>10</CP>
+			</trait>
+			<trait>
+				<name>Natural Immunity</name>
+				<source>Ego</source>
+				<description>The morph has a natural immunity to a specific drug, disease, or toxin. When afflicted with that specific chemical, poison, or pathogen, the character remains unaffected. This immunity may not be applied to nanodrugs or nanotoxins and at the gamemaster&apos;s discretion may not be applied to other specific agents. This trait is only available to biomorphs.</description>
+				<CP>10</CP>
+				<requiredmorph>Biomorph</requiredmorph>
+			</trait>
+			<trait>
+				<name>Pain Tolerance (Level 1)</name>
+				<source>Ego</source>
+				<description>The character has a high threshold for pain tolerance and is better at ignoring the effects of pain on their abilities and concentration. Level 1 allows them to ignore the -10 modifier from 1 wound.</description>
+				<CP>10</CP>
+				<enables>Pain Tolerance (Level 2)</enables>
+			</trait>
+			<trait>
+				<name>Pain Tolerance (Level 2)</name>
+				<source>Ego</source>
+				<description>Level 2 allows them to ignore the -10 modifiers from 2 wounds.</description>
+				<CP>10</CP>
+				<requires>Pain Tolerance (Level 1)</requires>
+			</trait>
+			<trait>
+				<name>Pain Tolerance (Level 1)</name>
+				<source>Morph</source>
+				<description>The character has a high threshold for pain tolerance and is better at ignoring the effects of pain on their abilities and concentration. Level 1 allows them to ignore the -10 modifier from 1 wound. This trait is only available for biomorphs.</description>
+				<CP>10</CP>
+				<requiredmorph>Biomorph</requiredmorph>
+				<enables>Pain Tolerance (Level 2)</enables>
+			</trait>
+			<trait>
+				<name>Pain Tolerance (Level 2)</name>
+				<source>Morph</source>
+				<description>Level 2 allows them to ignore the -10 modifiers from 2 wounds.</description>
+				<CP>10</CP>
+				<requires>Pain Tolerance (Level 1)</requires>
+			</trait>
+			<trait>
+				<name>Patron</name>
+				<source>Ego</source>
+				<description>The character has an influential person in their life who can be relied on for occasional support. This could be a wealthy hyperelite family member, a high-ranking triad boss, or an anarchist networker with an unbeatable reputation. When called upon, this patron can pull strings on the character&apos;s behalf, supply resources, introduce them to people they need to know, and bail them out of trouble. The player and gamemaster should work together to define exactly who this NPC is and what their relationship with the player character is. Specifically, the question of why this patron is supporting the character should be answered (familial obligation? childhood buddies? the character saved their life once?). Gamemasters should be careful that this trait does not get abused. The patron should be an occasional help (probably no more than once per game session at most) but is not always at the character&apos;s beck-and-call. If the character asks for too much, too often, they should find the patron&apos;s support drying up. Additionally, the character may need to take action to maintain the relationship, such as undertaking a mission on the patron&apos;s behalf. In fact, the character may only have their patronage because they are on-call or of use to the NPC in some way.</description>
+				<CP>30</CP>
+			</trait>
+			<trait>
+				<name>Psi (Level 1)</name>
+				<source>Ego</source>
+				<description>The character has been infected with the Watts-MacLeod strain of the exsurgent virus, which altered their brain structure and opened the potential for their mind to enhance their cognitive abilities and read and manipulate the biological minds of others (see Psi, p. 220). The character may purchase and learn sleights (see Psi-Chi Sleights, p. 223). At Level 1, the character may only use psi-chi sleights. Though this trait is not very expensive, gamemasters should not allow it to be abused. There are a number of negative side effects to Watts-MacLeod infection, noted under Psi Drawbacks, p. 220.</description>
+				<CP>20</CP>
+				<enables>Psi (Level 2)</enables>
+			</trait>
+			<trait>
+				<name>Psi (Level 2)</name>
+				<source>Ego</source>
+				<description>At Level 2, the character may use both psi-chi and psi-gamma sleights. </description>
+				<CP>25</CP>
+				<requires>Psi (Level 1)</requires>
+			</trait>
+			<trait>
+				<name>Psi Chameleon</name>
+				<source>Ego</source>
+				<description>The character&apos;s mental state is naturally resistant to psi sensing. Apply a -10 modifier to any attempts to locate or detect the character via psi sleights.</description>
+				<CP>10</CP>
+			</trait>
+			<trait>
+				<name>Psi Chameleon</name>
+				<source>Morph</source>
+				<description>The character&apos;s mental state is naturally resistant to psi sensing. Apply a -10 modifier to any attempts to locate or detect the character via psi sleights.</description>
+				<CP>10</CP>
+			</trait>
+			<trait>
+				<name>Psi Defense (Level 1)</name>
+				<source>Ego</source>
+				<description>The character&apos;s mind is inherently resistant to mental attacks. At Level 1, apply a +10 modifier to all defense tests made against psi attacks.</description>
+				<CP>10</CP>
+				<enables>Psi Defense (Level 2)</enables>
+			</trait>
+			<trait>
+				<name>Psi Defense (Level 2)</name>
+				<source>Ego</source>
+				<description>At Level 2, apply a +20 modifier.</description>
+				<CP>10</CP>
+				<requires>Psi Defense (Level 1)</requires>
+			</trait>
+			<trait>
+				<name>Psi Defense (Level 1)</name>
+				<source>Morph</source>
+				<description>The character&apos;s mind is inherently resistant to mental attacks. At Level 1, apply a +10 modifier to all defense tests made against psi attacks.</description>
+				<CP>10</CP>
+				<requiredmorph>Biomorph</requiredmorph>
+				<enables>Psi Defense (Level 2)</enables>
+			</trait>
+			<trait>
+				<name>Psi Defense (Level 2)</name>
+				<source>Morph</source>
+				<description>At Level 2, apply a +20 modifier.</description>
+				<CP>10</CP>
+				<requires>Psi Defense (Level 1)</requires>
+			</trait>
+			<trait>
+				<name>Rapid Healer</name>
+				<source>Morph</source>
+				<description>The morph recovers from damage more quickly. Reduce the timeframes for healing by half, as noted on the Healing table, p. 208. This trait is only available to biomorphs.</description>
+				<CP>10</CP>
+				<requiredmorph>Biomorph</requiredmorph>
+			</trait>
+			<trait>
+				<name>Right At Home</name>
+				<source>Ego</source>
+				<description>The character chooses one type of morph (splicer, neo-hominid, case, etc.). The character always feels right at home in morphs of this type. When resleeving into this type of morph, the character automatically adjusts to the new body, no Integration or Alienation Test needed, suffering no penalties and no mental stress.</description>
+				<CP>10</CP>
+				<choice>Morph</choice>
+			</trait>
+			<trait>
+				<name>Second Skin</name>
+				<source>Ego</source>
+				<description>If your character background or faction enforces a restriction on your starting morph (for example, uplifts must start with an uplift morph), this trait allows you to ignore that restriction and purchase a starting morph of your choice.</description>
+				<CP>15</CP>
+			</trait>
+			<trait>
+				<name>Situational Awareness</name>
+				<source>Ego</source>
+				<description>The character is very good at maintaining continuous partial awareness of the goings-on in their immediate environment. In game terms, they do not suffer the Distracted modifier on Perception Tests to notice things even when their attention is focused elsewhere or when making Quick Perception Tests during combat.</description>
+				<CP>10</CP>
+			</trait>
+			<trait>
+				<name>Striking Looks (Level 1)</name>
+				<source>Morph</source>
+				<description>In an age where biosculpting is easy, good looks are both cheap and commonplace. This morph, however, possesses a physical look that can only be described as striking and unusual, but also somehow alluring and fascinating-even the gorgeous and chiseled glitterati take notice. On social skill tests where the character&apos;s beauty may affect the outcome, they receive a +10 (for Level 1) or +20 (for Level 2) modifier. This modifier is ineffective against xenomorphs or those with the infolife or uplift backgrounds. This trait is only available to biomorphs. This modifier may be purchased for uplift morphs, but at half the cost, and it is only effective against characters with that specific uplift background (i.e., neo-avians, neo-hominids, etc.). The one drawback to this trait is that the character is more easily noticed and remembered.</description>
+				<CP>10</CP>
+				<requiredmorph>Biomorph</requiredmorph>
+				<enables>Striking Looks (Level 2)</enables>
+			</trait>
+			<trait>
+				<name>Striking Looks (Level 2)</name>
+				<source>Morph</source>
+				<description>See Striking Looks (Level 1)</description>
+				<CP>10</CP>
+				<requires>Striking Looks (Level 1)</requires>
+			</trait>
+			<trait>
+				<name>Tough (Level 1)</name>
+				<source>Morph</source>
+				<description>This morph is resilient than others of its type and can take more physical abuse. Increase their Durability by +5 per level (+5 at Level 1, +10 at Level 2, and +15 at Level 3). This also increases Wound Threshold by +1, +2, and +3 respectively.</description>
+				<CP>10</CP>
+				<enables>Tough (Level 2)</enables>
+			</trait>
+			<trait>
+				<name>Tough (Level 2)</name>
+				<source>Morph</source>
+				<description>See Tough (Level 1)</description>
+				<CP>10</CP>
+				<requires>Tough (Level 1)</requires>
+				<enables>Tough (Level 3)</enables>
+			</trait>
+			<trait>
+				<name>Tough (Level 3)</name>
+				<source>Morph</source>
+				<description>See Tough (Level 1)</description>
+				<CP>10</CP>
+				<requires>Tough (Level 2)</requires>
+			</trait>
+			<trait>
+				<name>Zoosemiotics</name>
+				<source>Ego</source>
+				<description>A character with this trait and the Psi trait does not suffer a modifier when using psi sleights on nonsapient or partly sapient animal species.</description>
+				<CP>5</CP>
+			</trait>
+		</positiveTraits>
+	</traits>
+	<psisleights>
+		<Chi>
+			<sleight>
+				<name>Ambience Sense</name>
+				<description>This sleight provides the async with an instinctive sense about an area and any potential threats nearby. The async receives a +10 modifier to all Investigation, Perception, Scrounging, and Surprise Tests.</description>
+				<type>Passive</type>
+				<action>Automatic</action>
+				<range>Self</range>
+				<duration>Constant</duration>
+				<skillmod>
+					<name>Investigation</name>
+					<amount>10</amount>
+				</skillmod>
+				<skillmod>
+					<name>Perception</name>
+					<amount>10</amount>
+				</skillmod>
+				<skillmod>
+					<name>Scrounging</name>
+					<amount>10</amount>
+				</skillmod>
+				<othermod>
+					<name>Surprise</name>
+					<amount>10</amount>
+				</othermod>
+			</sleight>
+			<sleight>
+				<name>Cognitive Boost</name>
+				<description>The async can temporarily elevate their cognitive performance. In game terms, Cognition is raised by 5 for the chosen duration. This boost to Cognition also raises the rating of skills linked to that aptitude.</description>
+				<type>Active</type>
+				<action>Quick</action>
+				<range>Self</range>
+				<duration>Temp (Action Turns)</duration>
+				<strainmod>-1</strainmod>
+			</sleight>
+			<sleight>
+				<name>Downtime</name>
+				<description>This sleight provides the async with the ability to send the mind into a fugue-state regenerative downtime, during which the character&apos;s psyche is repaired. The async must enter the downtime for at least 4 hours; every 4 hours of downtime heals 1 point of stress damage. Traumas, derangements, and disorders are unaffected by this sleight. For all sensory purposes, the async is catatonic during downtime, completely oblivious to the outside world. Only severe disturbances or physical shock (such as being wounded or hit by a shock weapon) will bring the async out of it.</description>
+				<type>Active</type>
+				<action>Task (min. 4 hours)</action>
+				<range>Self</range>
+				<duration>Sustained</duration>
+				<strainmod>0</strainmod>
+			</sleight>
+			<sleight>
+				<name>Emotion Control</name>
+				<description>Emotion Control gives the async tight control over their emotional states. Unwanted emotions can be blocked out and others embraced. This has the benefit of protecting the async from emotional manipulation, such as the Drive Emotion sleight or Intimidation skill tests. The async receives a +30 modifier when defending against such tests.</description>
+				<type>Passive</type>
+				<action>Automatic</action>
+				<range>Self</range>
+				<duration>Constant</duration>
+			</sleight>
+			<sleight>
+				<name>Enhanced Creativity</name>
+				<description>An async with Enhanced Creativity is more imaginative and more inclined to think outside the box. Apply a +20 modifier to any tests where creativity plays a major role. This level of ingenuity can sometimes seem strange and different, manifesting in odd or creepy ways, especially with artwork.</description>
+				<type>Passive</type>
+				<action>Automatic</action>
+				<range>Self</range>
+				<duration>Constant</duration>
+			</sleight>
+			<sleight>
+				<name>Filter</name>
+				<description>Filter allows the async to filter out distractions and eliminate negative situational modifiers from distraction, up to the gamemaster&apos;s discretion.</description>
+				<type>Passive</type>
+				<action>Automatic</action>
+				<range>Self</range>
+				<duration>Constant</duration>
+			</sleight>
+			<sleight>
+				<name>Grok</name>
+				<description>By using the Grok sleight, the async is able to intuitively understand how any unfamiliar object, vehicle, or device is used simply by looking at and handling it. If the character succeeds in a COG x 2 Test, they achieve a basic ability to use the object, vehicle, or device, no matter how alien or bizarre. This sleight does not provide any understanding of the principles or technologies involved-the psi user simply grasps how to make it work. If a test is called for, the psi user receives a +20 modifier to use the device (this bonus only applies to unfamiliar devices, and/or tests the character is defaulting on?it does not apply to devices with which the character is familiar).</description>
+				<type>Active</type>
+				<action>Complex</action>
+				<range>Self</range>
+				<duration>Instant</duration>
+				<strainmod>-1</strainmod>
+			</sleight>
+			<sleight>
+				<name>High Pain Threshold</name>
+				<description>This sleight allows the async to block out, ignore, or otherwise isolate pain. The async reduces negative modifiers from wounds by 10.</description>
+				<type>Passive</type>
+				<action>Automatic</action>
+				<range>Self</range>
+				<duration>Constant</duration>
+			</sleight>
+			<sleight>
+				<name>Hyperthymesia</name>
+				<description>Hyperthymesia grants the async a superior autobiographical memory, allowing them to remember the most trivial of events. A hyperthymestic async can be asked a random date and recall the day of the week it was, the events that occurred that day, what the weather was like, and many seemingly trivial details that most people would not be able to recall.</description>
+				<type>Passive</type>
+				<action>Automatic</action>
+				<range>Self</range>
+				<duration>Constant</duration>
+			</sleight>
+			<sleight>
+				<name>Instinct</name>
+				<description>Instinct bolsters the async&apos;s subconscious ability to gauge a situation and make a snap judgment that is just as accurate as a careful, considered decision. For Task Actions that involve analysis or planning alone (typically Mental skill actions), the async may reduce the timeframe by 90% without suffering a modifier. For Task Actions that involve partial analysis/planning, they may reduce the timeframe by 30% without penalty.</description>
+				<type>Passive</type>
+				<action>Automatic</action>
+				<range>Self</range>
+				<duration>Constant</duration>
+			</sleight>
+			<sleight>
+				<name>Multitasking</name>
+				<description>The async can handle vast amounts of information without overload and can perform more than one mental task at once. The character receives an extra Complex Action each Action Phase that may only be used for mental or mesh actions.</description>
+				<type>Passive</type>
+				<action>Automatic</action>
+				<range>Self</range>
+				<duration>Constant</duration>
+			</sleight>
+			<sleight>
+				<name>Pattern Recognition</name>
+				<description>The character is adept at spotting patterns and correlating the non-random elements of a jumble?related items jump out at them. This is useful for translating languages, breaking codes, or finding clues hidden among massive amounts of data. The character must have a sufficiently large sample and time enough to study, as determined by the gamemaster. This might range from a few hours of listening to a spoken transhuman language to a few days of investigating inscriptions left by long-dead aliens or a week or more of researching a lengthy cipher. Languages may be comprehended by reading or listening to them spoken. Apply a +20 modifier to any appropriate Language, Investigation, Research, or codebreaking Tests (note that this does not apply to Infosec Tests made by software to decrypt a code). The async may also use this ability to more easily learn new languages, reducing the training time by half.</description>
+				<type>Passive</type>
+				<action>Automatic</action>
+				<range>Self</range>
+				<duration>Constant</duration>
+			</sleight>
+			<sleight>
+				<name>Predictive Boost</name>
+				<description>The Bayesian probability machine features of the async&apos;s brain are boosted by this sleight, enhancing their ability to estimate and predict outcomes of events around them as they unfold in real-time and update those predictions as information changes. In effect, the character has a more intuitive sense for which outcomes are most likely. This grants the character a +10 bonus on any skill tests that involve predicting the outcome of events. It also bolsters the async&apos;s decision-making in combat situations by making the best course of action more clear and so provides a +1 bonus to Initiative and +10 to Fray Tests.</description>
+				<type>Passive</type>
+				<action>Automatic</action>
+				<range>Self</range>
+				<duration>Constant</duration>
+				<othermod>
+					<name>Initiative</name>
+					<amount>1</amount>
+				</othermod>
+				<othermod>
+					<name>Fray</name>
+					<amount>10</amount>
+				</othermod>
+			</sleight>
+			<sleight>
+				<name>Qualia</name>
+				<description>The async can temporarily increase their intuitive grasp of things. In game terms, Intuition is raised by 5 for the chosen duration. This boost to Intuition also raises the rating of skills linked to that aptitude.</description>
+				<type>Active</type>
+				<action>Quick</action>
+				<range>Self</range>
+				<duration>Temp (Action Turns)</duration>
+				<strainmod>-1</strainmod>
+			</sleight>
+			<sleight>
+				<name>Savant Calculation</name>
+				<description>The character possesses an incredible facility with intuitive mathematics. They can do everything from calculate the odds exactly when gambling to predicting precisely where a leaf falling from a tree will land by observing the landscape and local wind currents. The character specializes in calculation involving the activity of complex chaotic systems and so can calculate answers that even the fastest computers could not, including things like patterns of rubble distribution from an explosion. However, this mathematic facility is largely intuitive, so the character does not know the equations they are solving, they merely know the solution to the problem. This sleight also provides a +30 modifier to any skill tests involving math (which the character is calculating, not a computer).</description>
+				<type>Passive</type>
+				<action>Automatic</action>
+				<range>Self</range>
+				<duration>Constant</duration>
+			</sleight>
+			<sleight>
+				<name>Sensory Boost</name>
+				<description>An async uses this sleight to increase their natural or augmented sensory perception (visual, audio, olfactory, etc.) by enhanced cerebral processing, granting a +20 modifier to sensory-based Perception Tests.</description>
+				<type>Active</type>
+				<action>Quick</action>
+				<range>Self</range>
+				<duration>Temp (Action Turns)</duration>
+				<strainmod>-2</strainmod>
+			</sleight>
+			<sleight>
+				<name>Superior Kinesics</name>
+				<description>The async acquires more insight into people&apos;s emotive signals, gestures, facial expressions, and body language when it comes to predicting the person&apos;s emotional state, intent, or reactions. Apply a +10 modifier to Kinesics Skill Tests.</description>
+				<type>Passive</type>
+				<action>Automatic</action>
+				<range>Self</range>
+				<duration>Constant</duration>
+				<skillmod>
+					<name>Kinesics</name>
+					<amount>10</amount>
+				</skillmod>
+			</sleight>
+			<sleight>
+				<name>Time Sense</name>
+				<description>An async with this ability can slow down their perception of time, making everything appear to move in slow motion or at reduced speed. In game terms, this sleight grants the async a Speed of +1. This extra Action Phase, however, can only be spent on mental and mesh actions.</description>
+				<type>Active</type>
+				<action>Automatic</action>
+				<range>Self</range>
+				<duration>Temp (Action Turns)</duration>
+				<strainmod>-1</strainmod>
+			</sleight>
+			<sleight>
+				<name>Unconscious Lead</name>
+				<description>This sleight allows the async to override their consciousness and let their unconscious mind take point. While in this state, the async&apos;s conscious mind is only dimly aware of what is transgressing, and any memories of this period will be hazy at best. The advantage is that the unconscious mind acts more quickly, and so the async&apos;s Speed is boosted by +1. The character remains aware and active, but is incapable of complex communication or other mental actions and is motivated by instinct and primitive urges more than conscious thought. Though it is recommended that the player retain control of their character while using Unconscious Lead, the gamemaster should feel free to direct the character&apos;s actions as they see fit.</description>
+				<type>Active</type>
+				<action>Automatic</action>
+				<range>Self</range>
+				<duration>Temp (Action Turns)</duration>
+				<strainmod>0</strainmod>
+			</sleight>
+		</Chi>
+		<Gamma>
+			<sleight>
+				<name>Alienation</name>
+				<description>Alienation is an offensive sleight that create a sense of disconnection between an ego and its morph?similar to that experienced when resleeved into a new body. The ego finds their body cumbersome, strange, and alien, almost like they are a prisoner within it. If the async beats the target in an Opposed Test, treat the result as a failed Integration Test (p. 271) for the target. This effect lasts for the sleight&apos;s duration.</description>
+				<type>Active</type>
+				<action>Complex</action>
+				<range>Touch</range>
+				<duration>Temp (Action Turns)</duration>
+				<strainmod>0</strainmod>
+				<skill>Psi Assault</skill>
+			</sleight>
+			<sleight>
+				<name>Charisma</name>
+				<description>The async uses this sleight to influence the target&apos;s mind on a subconscious level so that the target perceives them to be charming, magnetic, and persuasive. If the async beats the target in an Opposed Test, they gain a +30 modifier on all subsequent Social Skill Tests for the chosen duration.</description>
+				<type>Active</type>
+				<action>Quick</action>
+				<range>Touch</range>
+				<duration>Temp (Minutes)</duration>
+				<strainmod>-1</strainmod>
+				<skill>Control</skill>
+			</sleight>
+			<sleight>
+				<name>Cloud Memory</name>
+				<description>Cloud Memory allows the async to temporarily disrupt the target&apos;s ability to form long-term memories. If the async wins the Opposed Test, the target&apos;s memory-saving ability is negated for the duration. The target will retain short-term memories during this time, but will soon forget anything that occurred while this sleight was in effect.</description>
+				<type>Active</type>
+				<action>Complex</action>
+				<range>Touch</range>
+				<duration>Temp (Minutes)</duration>
+				<strainmod>-1</strainmod>
+				<skill>Control</skill>
+			</sleight>
+			<sleight>
+				<name>Deep Scan</name>
+				<description>Deep Scan is a more intrusive version of Thought Browse (p. 228), made to extract information from the targeted individual. If the Opposed Test succeeds, the async telepathically invades the target&apos;s mind and can probe it for information. For every 10 full points of MoS the async achieves on their test, they retrieve one piece of information. Each item takes one full Action Turn to retrieve, during which the sleight must be sustained. The target is aware of this mental probing, though they will not know what information the async acquired.</description>
+				<type>Active</type>
+				<action>Complex</action>
+				<range>Touch</range>
+				<duration>Sustained</duration>
+				<strainmod>1</strainmod>
+				<skill>Sense</skill>
+			</sleight>
+			<sleight>
+				<name>Drive Emotion</name>
+				<description>This sleight allows the async to stimulate cortical areas of the target&apos;s brain related to emotion. This allows the async to induce, amplify, or tone down specific emotions, thereby manipulating the target. If the async beats the target in an Opposed Test, they will act in accordance with the emotion for the duration and under certain circumstances may suffer from certain penalties (up to +/?30), as determined by the gamemaster. For example, an async might receive a +30 Intimidation Test modifier against a target imbued with fear.</description>
+				<type>Active</type>
+				<action>Complex</action>
+				<range>Touch</range>
+				<duration>Temp (Action Turns)</duration>
+				<strainmod>-1</strainmod>
+				<skill>Control</skill>
+			</sleight>
+			<sleight>
+				<name>Ego Sense</name>
+				<description>Ego Sense can be used to detect the presence and location of other sentient and biological life forms (i.e., egos) within the async&apos;s range. To detect these life forms, the async makes a single Sense Test, opposed by each life form within range. The async may suffer a modifier for detecting small animals and insects, similar to the modifier applied for targeting them in ranged combat (Combat Modifiers table, p. 193); likewise, a modifier for detecting larger life forms may also be applied. If successful, the async detects that the life form is nearby. Every 10 full points of MoS will ascertain another piece of information regarding the detected life: direction from async, approximate size, type of creature, distance from async, etc. The async will know if the target moves, if they do so during the sleight&apos;s duration.</description>
+				<type>Active</type>
+				<action>Complex</action>
+				<range>Close</range>
+				<duration>Temp (Action Turns)</duration>
+				<strainmod>-1</strainmod>
+				<skill>Sense</skill>
+			</sleight>
+			<sleight>
+				<name>Empathic Scan</name>
+				<description>Empathic Scan enables the async to sense the target&apos;s base emotions. If the async wins the Opposed Test, they intuitively feel the target&apos;s current emotional state for as long as the sleight is sustained. At the gamemaster&apos;s discretion, this knowledge may provide a modifier (up to +30) for certain Social skill tests.</description>
+				<type>Active</type>
+				<action>Quick</action>
+				<range>Close</range>
+				<duration>Sustained</duration>
+				<strainmod>-2</strainmod>
+				<skill>Sense</skill>
+			</sleight>
+			<sleight>
+				<name>Implant Memory</name>
+				<description>An async using this sleight can implant a memory of up to an hour&apos;s length inside the target&apos;s mind. This memory very obviously does not belong to the target?there is no way they will confuse it for one of their own. The intent is not to fake memories, but to place one of the async&apos;s memories in the target&apos;s mind so that the target can access it just like any other memory. This can be useful for ?archiving? important data with an ally, providing a literal alternate perspective, or simply making a ?data dump? for the target to peruse. Implant Memory requires an Opposed Test against unwilling participants. At the gamemaster&apos;s discretion, particularly traumatic memories might inflict mental stress on the recipient (p. 214).</description>
+				<type>Active</type>
+				<action>Complex</action>
+				<range>Touch</range>
+				<duration>Instant</duration>
+				<strainmod>0</strainmod>
+				<skill>Control</skill>
+			</sleight>
+			<sleight>
+				<name>Implant Skill</name>
+				<description>Similar to Implant Memory, this sleight allows the async to impart some of their expertise and implant it into the target&apos;s mind. For the duration of the sleight, the target benefits when using that skill. If the async&apos;s skill is between 31 and 60, the target receives a +10 bonus. If the async&apos;s skill is 61+, the target receives a +20 bonus. Implant Skill requires an Opposed Test against unwilling participants. In some cases, the target has been known to use the skill with the async&apos;s flair and mannerisms.</description>
+				<type>Active</type>
+				<action>Complex</action>
+				<range>Touch</range>
+				<duration>Temp (Action Turns)</duration>
+				<strainmod>0</strainmod>
+				<skill>Control</skill>
+			</sleight>
+			<sleight>
+				<name>Mimic</name>
+				<description>In a setting where changing your body and face is not unusual, people learn to recognize habits and personality quirks more often. The async must use this sleight on a target and succeed in a Success Test. If successful, the async acquires an ?imprint? of the target&apos;s mind that they can take advantage of when impersonating that ego. The async then receives a +30 bonus on Impersonation Tests when mimicking the target&apos;s behavior and social cues.</description>
+				<type>Active</type>
+				<action>Quick</action>
+				<range>Close</range>
+				<duration>Instant</duration>
+				<strainmod>0</strainmod>
+				<skill>Sense</skill>
+			</sleight>
+			<sleight>
+				<name>Mindlink</name>
+				<description>Mindlink allows two-way mental communication with a target. This may be used on more than one target simultaneously, in which case the async can act as a telepathic ?server? so that everyone mindlinked with the async may also telepathically communicate with each other (via the async, however, who overhears). Language is still a factor in mindlinked communications, but this barrier may be overcome by transmitting sounds, images, emotions, and other sensations. Mindlink requires an Opposed Test against unwilling participants.</description>
+				<type>Active</type>
+				<action>Quick</action>
+				<range>Touch</range>
+				<duration>Sustained</duration>
+				<strainmod>1/target after the first</strainmod>
+				<skill>Control</skill>
+			</sleight>
+			<sleight>
+				<name>Omni Awareness</name>
+				<description>An async with Omni Awareness is hypersensitive to other biological life that is observing them. During this sleight&apos;s duration, the async makes a Sense Test that is opposed by any life that has focused their attention on them within the sleight&apos;s range; if successful, the async knows they are being watched, but not by whom or what. It does, however, apply a +30 Perception bonus to spot the observer. This sleight does not register partial or fleeting attention, it only notices targets who are actively observing (even if they are concealing their observation). This sleight is effective in spotting a tail, as well as finding potential mates in a bar.</description>
+				<type>Active</type>
+				<action>Quick</action>
+				<range>Close</range>
+				<duration>Temp (Minutes)</duration>
+				<strainmod>-1</strainmod>
+				<skill>Sense</skill>
+			</sleight>
+			<sleight>
+				<name>Penetration</name>
+				<description>Penetration is a sleight that works in conjunction with any offensive sleight that involves the Psi Assault skill. It allows the async to penetrate the Psi Shield of an opponent by concentrating their psi attack. Every point of Armor Penetration applied to a psi attack inflicts 1 point of strain. The maximum AP that may be applied equals the async&apos;s Psi Assault skill divided by 10 (round down).</description>
+				<type>Active</type>
+				<action>Quick</action>
+				<range>Touch</range>
+				<duration>Instant</duration>
+				<strainmod>1 per AP point</strainmod>
+				<skill>Psi Assault</skill>
+			</sleight>
+			<sleight>
+				<name>Psi Shield</name>
+				<description>Psi Shield bolsters the async&apos;s mind to psi attack and manipulation. If the async is hit by a psi attack, they receive WIL ÷ 5 (round up) points of armor, reducing the amount of damage inflicted. They also receive a +10 modifier when resisting any other sleights.</description>
+				<type>Passive</type>
+				<action>Automatic</action>
+				<range>Self</range>
+				<duration>Constant</duration>
+			</sleight>
+			<sleight>
+				<name>Psychic Stab</name>
+				<description>Psychic Stab is an offensive sleight that seeks to inflict physical damage on the target&apos;s brain and nervous system. Each successful attack inflicts 1d10 + (WIL ÷ 10, round up) damage. Increase the damage by +5 if an Excellent Success (MoS of 30+) is scored.</description>
+				<type>Active</type>
+				<action>Complex</action>
+				<range>Touch</range>
+				<duration>Instant</duration>
+				<strainmod>0</strainmod>
+				<skill>Psi Assault</skill>
+			</sleight>
+			<sleight>
+				<name>Scramble</name>
+				<description>Scramble allows the async using the sleight to hide from another async using the Ego Sense or Omni Awareness sleights. Apply a +30 modifier to the defending async&apos;s Opposed Test.</description>
+				<type>Passive</type>
+				<action>Automatic</action>
+				<range>Self</range>
+				<duration>Constant</duration>
+			</sleight>
+			<sleight>
+				<name>Sense Block</name>
+				<description>Sense Block disables and short circuits one of the target&apos;s sensory cortices (chosen by the async), interfering with and possibly negating a specific source of sensory input for the chosen duration. If the async beats the target in the Opposed Test, the target suffers a ?30 modifier to Perception Tests with that sense (doubled to ?60 if the async scores an Excellent Success).</description>
+				<type>Active</type>
+				<action>Complex</action>
+				<range>Touch</range>
+				<duration>Temp (Action Turns)</duration>
+				<strainmod>-1</strainmod>
+				<skill>Psi Assault</skill>
+			</sleight>
+			<sleight>
+				<name>Spam</name>
+				<description>This sleight allows the async to overload and flood one of the target&apos;s sensory cortices (chosen by the async), spamming them with confusing and distracting sensory input and thereby impairing them. If the async wins the Opposed Test, the target suffers a ?10 modifier to all tests the duration of the sleight (doubled to ?20 if the async scores an Excellent Success).</description>
+				<type>Active</type>
+				<action>Complex</action>
+				<range>Touch</range>
+				<duration>Temp (Action Turns)</duration>
+				<strainmod>0</strainmod>
+				<skill>Psi Assault</skill>
+			</sleight>
+			<sleight>
+				<name>Static</name>
+				<description>The async generates an anti-psi jamming field, impeding any use of ranged sleights within their range. All such ranged sleights suffer a ?30 modifier. This sleight has no effect on self or touch-range sleights.</description>
+				<type>Active</type>
+				<action>Complex</action>
+				<range>Close</range>
+				<duration>Sustained</duration>
+				<strainmod>0</strainmod>
+				<skill>None</skill>
+			</sleight>
+			<sleight>
+				<name>Subliminal</name>
+				<description>The Subliminal sleight allows the async to influence another person by implementing a single post-hypnotic suggestion into the mind of the target. If the async wins the Opposed Test, the recipient will carry out this suggestion as if it was their own idea. Implanted suggestions must be short and simple; the gamemaster may require suggestions be encompassed in a short sentence (for example: ?open the airlock,? or ?hand over the weapon?). The target may receive a bonus for resisting suggestions that are immediately life threatening (?jump off the bridge?) or that violate their motivations or personal strictures. Suggestions may be implanted with a short trigger condition (?when the alarm goes off, ignore it?).</description>
+				<type>Active</type>
+				<action>Complex</action>
+				<range>Touch</range>
+				<duration>Instant</duration>
+				<strainmod>2</strainmod>
+				<skill>Control</skill>
+			</sleight>
+			<sleight>
+				<name>Thought Browse</name>
+				<description>Thought Browse is a less-intrusive form of mind reading that scans the target&apos;s surface thoughts for certain ?keywords? like a particular word, phrase, sound, or image chosen by the async. Rather than digging through the target&apos;s ego as with the Deep Scan sleight, Thought Browse merely verifies whether a target has a particular person, place, event, or thing in mind, which can be used by a savvy investigator to draw conclusions without the need to invade the mind directly. Thought Browse may be sustained, allowing the async to continue scanning the target&apos;s thoughts over time. The async must beat the target in an Opposed Test for each scanned item.</description>
+				<type>Active</type>
+				<action>Complex</action>
+				<range>Touch</range>
+				<duration>Sustained</duration>
+				<strainmod>-1</strainmod>
+				<skill>Sense</skill>
+			</sleight>
+		</Gamma>
+	</psisleights>
+	<skills>
+		<skill>
+			<name>Academics</name>
+			<fields>Yes</fields>
+			<apt>COG</apt>
+			<defaulting>Yes</defaulting>
+			<category>Knowledge</category>
+		</skill>
+		<skill>
+			<name>Animal Handling</name>
+			<fields>No</fields>
+			<apt>SAV</apt>
+			<defaulting>Yes</defaulting>
+			<category>Active</category>
+			<category>Social</category>
+		</skill>
+		<skill>
+			<name>Art</name>
+			<fields>Yes</fields>
+			<apt>INT</apt>
+			<defaulting>Yes</defaulting>
+			<category>Knowledge</category>
+		</skill>
+		<skill>
+			<name>Beam Weapons</name>
+			<fields>No</fields>
+			<apt>COO</apt>
+			<defaulting>Yes</defaulting>
+			<category>Active</category>
+			<category>Combat</category>
+			<category>Weapon</category>
+		</skill>
+		<skill>
+			<name>Blades</name>
+			<fields>No</fields>
+			<apt>SOM</apt>
+			<defaulting>Yes</defaulting>
+			<category>Active</category>
+			<category>Combat</category>
+			<category>Weapon</category>
+		</skill>
+		<skill>
+			<name>Climbing</name>
+			<fields>No</fields>
+			<apt>SOM</apt>
+			<defaulting>Yes</defaulting>
+			<category>Active</category>
+			<category>Physical</category>
+		</skill>
+		<skill>
+			<name>Clubs</name>
+			<fields>No</fields>
+			<apt>SOM</apt>
+			<defaulting>Yes</defaulting>
+			<category>Active</category>
+			<category>Combat</category>
+			<category>Weapons</category>
+		</skill>
+		<skill>
+			<name>Control</name>
+			<fields>No</fields>
+			<apt>WIL</apt>
+			<defaulting>No</defaulting>
+			<category>Active</category>
+			<category>Mental</category>
+			<category>Psi</category>
+		</skill>
+		<skill>
+			<name>Deception</name>
+			<fields>No</fields>
+			<apt>SAV</apt>
+			<defaulting>Yes</defaulting>
+			<category>Active</category>
+			<category>Social</category>
+		</skill>
+		<skill>
+			<name>Demolitions</name>
+			<fields>No</fields>
+			<apt>COG</apt>
+			<defaulting>No</defaulting>
+			<category>Active</category>
+			<category>Technical</category>
+		</skill>
+		<skill>
+			<name>Disguise</name>
+			<fields>No</fields>
+			<apt>INT</apt>
+			<defaulting>Yes</defaulting>
+			<category>Active</category>
+			<category>Physical</category>
+		</skill>
+		<skill>
+			<name>Exotic Melee Weapon</name>
+			<fields>Yes</fields>
+			<apt>SOM</apt>
+			<defaulting>Yes</defaulting>
+			<category>Active</category>
+			<category>Combat</category>
+			<category>Weapon</category>
+		</skill>
+		<skill>
+			<name>Exotic Range Weapon</name>
+			<fields>Yes</fields>
+			<apt>COO</apt>
+			<defaulting>Yes</defaulting>
+			<category>Active</category>
+			<category>Combat</category>
+			<category>Weapon</category>
+		</skill>
+		<skill>
+			<name>Flight</name>
+			<fields>No</fields>
+			<apt>SOM</apt>
+			<defaulting>Yes</defaulting>
+			<category>Active</category>
+			<category>Physical</category>
+		</skill>
+		<skill>
+			<name>Fray</name>
+			<fields>No</fields>
+			<apt>REF</apt>
+			<defaulting>Yes</defaulting>
+			<category>Active</category>
+			<category>Combat</category>
+		</skill>
+		<skill>
+			<name>Free Fall</name>
+			<fields>No</fields>
+			<apt>REF</apt>
+			<defaulting>Yes</defaulting>
+			<category>Active</category>
+			<category>Physical</category>
+		</skill>
+		<skill>
+			<name>Freerunning</name>
+			<fields>No</fields>
+			<apt>SOM</apt>
+			<defaulting>Yes</defaulting>
+			<category>Active</category>
+			<category>Physical</category>
+		</skill>
+		<skill>
+			<name>Gunnery</name>
+			<fields>No</fields>
+			<apt>INT</apt>
+			<defaulting>Yes</defaulting>
+			<category>Active</category>
+			<category>Combat</category>
+			<category>Weapon</category>
+		</skill>
+		<skill>
+			<name>Hardware</name>
+			<fields>Yes</fields>
+			<apt>COG</apt>
+			<defaulting>Yes</defaulting>
+			<category>Active</category>
+			<category>Technical</category>
+		</skill>
+		<skill>
+			<name>Impersonation</name>
+			<fields>No</fields>
+			<apt>SAV</apt>
+			<defaulting>Yes</defaulting>
+			<category>Active</category>
+			<category>Social</category>
+		</skill>
+		<skill>
+			<name>Infiltration</name>
+			<fields>No</fields>
+			<apt>COO</apt>
+			<defaulting>Yes</defaulting>
+			<category>Active</category>
+			<category>Physical</category>
+		</skill>
+		<skill>
+			<name>Infosec</name>
+			<fields>No</fields>
+			<apt>COG</apt>
+			<defaulting>No</defaulting>
+			<category>Active</category>
+			<category>Technical</category>
+		</skill>
+		<skill>
+			<name>Interest</name>
+			<fields>Yes</fields>
+			<apt>COG</apt>
+			<defaulting>Yes</defaulting>
+			<category>Knowledge</category>
+		</skill>
+		<skill>
+			<name>Interfacing</name>
+			<fields>No</fields>
+			<apt>COG</apt>
+			<defaulting>Yes</defaulting>
+			<category>Active</category>
+			<category>Technical</category>
+		</skill>
+		<skill>
+			<name>Intimidation</name>
+			<fields>No</fields>
+			<apt>SAV</apt>
+			<defaulting>Yes</defaulting>
+			<category>Active</category>
+			<category>Social</category>
+		</skill>
+		<skill>
+			<name>Investigation</name>
+			<fields>No</fields>
+			<apt>INT</apt>
+			<defaulting>Yes</defaulting>
+			<category>Active</category>
+			<category>Mental</category>
+		</skill>
+		<skill>
+			<name>Kinesics</name>
+			<fields>No</fields>
+			<apt>SAV</apt>
+			<defaulting>Yes</defaulting>
+			<category>Active</category>
+			<category>Social</category>
+		</skill>
+		<skill>
+			<name>Kinetic Weapons</name>
+			<fields>No</fields>
+			<apt>COO</apt>
+			<defaulting>Yes</defaulting>
+			<category>Active</category>
+			<category>Combat</category>
+			<category>Weapon</category>
+		</skill>
+		<skill>
+			<name>Language</name>
+			<fields>Yes</fields>
+			<apt>INT</apt>
+			<defaulting>Yes</defaulting>
+			<category>Knowledge</category>
+		</skill>
+		<skill>
+			<name>Medicine</name>
+			<fields>Yes</fields>
+			<apt>COG</apt>
+			<defaulting>Yes</defaulting>
+			<category>Active</category>
+			<category>Technical</category>
+		</skill>
+		<skill>
+			<name>Navigation</name>
+			<fields>No</fields>
+			<apt>INT</apt>
+			<defaulting>Yes</defaulting>
+			<category>Active</category>
+			<category>Mental</category>
+		</skill>
+		<skill>
+			<name>Networking</name>
+			<fields>Yes</fields>
+			<apt>SAV</apt>
+			<defaulting>Yes</defaulting>
+			<category>Active</category>
+			<category>Social</category>
+		</skill>
+		<skill>
+			<name>Palming</name>
+			<fields>No</fields>
+			<apt>COO</apt>
+			<defaulting>Yes</defaulting>
+			<category>Active</category>
+			<category>Physical</category>
+		</skill>
+		<skill>
+			<name>Perception</name>
+			<fields>No</fields>
+			<apt>INT</apt>
+			<defaulting>Yes</defaulting>
+			<category>Active</category>
+			<category>Mental</category>
+		</skill>
+		<skill>
+			<name>Persuasion</name>
+			<fields>No</fields>
+			<apt>SAV</apt>
+			<defaulting>Yes</defaulting>
+			<category>Active</category>
+			<category>Social</category>
+		</skill>
+		<skill>
+			<name>Pilot</name>
+			<fields>Yes</fields>
+			<apt>REF</apt>
+			<defaulting>Yes</defaulting>
+			<category>Active</category>
+			<category>Vehicle</category>
+		</skill>
+		<skill>
+			<name>Profession</name>
+			<fields>Yes</fields>
+			<apt>COG</apt>
+			<defaulting>Yes</defaulting>
+			<category>Knowledge</category>
+		</skill>
+		<skill>
+			<name>Programming</name>
+			<fields>No</fields>
+			<apt>COG</apt>
+			<defaulting>No</defaulting>
+			<category>Active</category>
+			<category>Technical</category>
+		</skill>
+		<skill>
+			<name>Protocol</name>
+			<fields>No</fields>
+			<apt>SAV</apt>
+			<defaulting>Yes</defaulting>
+			<category>Active</category>
+			<category>Social</category>
+		</skill>
+		<skill>
+			<name>Psi Assault</name>
+			<fields>No</fields>
+			<apt>WIL</apt>
+			<defaulting>No</defaulting>
+			<category>Active</category>
+			<category>Mental</category>
+			<category>Psi</category>
+		</skill>
+		<skill>
+			<name>Psychosurgery</name>
+			<fields>No</fields>
+			<apt>INT</apt>
+			<defaulting>Yes</defaulting>
+			<category>Active</category>
+			<category>Technical</category>
+		</skill>
+		<skill>
+			<name>Research</name>
+			<fields>No</fields>
+			<apt>COG</apt>
+			<defaulting>Yes</defaulting>
+			<category>Active</category>
+			<category>Technical</category>
+		</skill>
+		<skill>
+			<name>Scrounging</name>
+			<fields>No</fields>
+			<apt>INT</apt>
+			<defaulting>Yes</defaulting>
+			<category>Active</category>
+			<category>Mental</category>
+		</skill>
+		<skill>
+			<name>Seeker Weapons</name>
+			<fields>No</fields>
+			<apt>COO</apt>
+			<defaulting>Yes</defaulting>
+			<category>Active</category>
+			<category>Combat</category>
+			<category>Weapon</category>
+		</skill>
+		<skill>
+			<name>Sense</name>
+			<fields>No</fields>
+			<apt>INT</apt>
+			<defaulting>No</defaulting>
+			<category>Active</category>
+			<category>Mental</category>
+			<category>Psi</category>
+		</skill>
+		<skill>
+			<name>Spray Weapons</name>
+			<fields>No</fields>
+			<apt>COO</apt>
+			<defaulting>Yes</defaulting>
+			<category>Active</category>
+			<category>Combat</category>
+			<category>Weapon</category>
+		</skill>
+		<skill>
+			<name>Swimming</name>
+			<fields>No</fields>
+			<apt>SOM</apt>
+			<defaulting>Yes</defaulting>
+			<category>Active</category>
+			<category>Physical</category>
+		</skill>
+		<skill>
+			<name>Throwing Weapons</name>
+			<fields>No</fields>
+			<apt>COO</apt>
+			<defaulting>Yes</defaulting>
+			<category>Active</category>
+			<category>Combat</category>
+			<category>Weapon</category>
+		</skill>
+		<skill>
+			<name>Unarmed Combat</name>
+			<fields>No</fields>
+			<apt>SOM</apt>
+			<defaulting>Yes</defaulting>
+			<category>Active</category>
+			<category>Combat</category>
+			<category>Weapon</category>
+		</skill>
+	</skills>
+</CoreRules>

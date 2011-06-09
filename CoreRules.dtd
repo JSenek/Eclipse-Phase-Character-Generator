@@ -1,0 +1,80 @@
+<!DOCTYPE CoreRules [
+
+<!ELEMENT CoreRules (backgrounds,factions,morphs,traits,psisleights,skills)>
+
+<!ELEMENT backgrounds (background+)>
+	<!ELEMENT background (name,description,advantages,disadvantages,commonmorphs)>
+<!ELEMENT factions (faction+)>
+	<!ELEMENT faction (name,description,advantages,disadvantages,commonmorphs)>
+<!ELEMENT morphs (morph+)>
+	<!ELEMENT morph (name,type,description,implants,mobility*,aptitudeMax,durability,woundThreshold,advantages,disadvantages,CPCost,creditCost,creditmin?,vision*)>
+<!ELEMENT traits (negativeTraits,positiveTraits)>
+	<!ELEMENT negativeTraits (trait+)>
+		<!ELEMENT trait (name,type,description,choice*,skillmod*,statmod*,enables?,requires?,requiredmorph*,restrictedbg*,numcopies?,CP)>
+	<!ELEMENT positiveTraits (trait+)>
+<!ELEMENT psisleights (chi,gamma)>
+	<!ELEMENT chi (sleight*)>
+	<!ELEMENT gamma (sleight*)>
+	<!ELEMENT sleight (name,description,enables?,requires?,type,action,range,duration,strainmod?,skill?,skillmod*,othermod*>
+<!ELEMENT skills (skill+)>
+	<!ELEMENT skill (name,fields,apt,defaulting,category+)>
+	
+<!ELEMENT advantages (text,statmod*,aptmod*,trait*,skillmod*,armor?,size?,attack*,limbs?)>
+<!ELEMENT aptitudeMax (text,COG,COO,INT,REF,SAV,SOM,WIL)>
+<!ELEMENT aptmod (name,choice*,quantity?,amount)>
+<!ELEMENT armor (energy,kinetic)>
+<!ELEMENT attack (name,dv*,skill*,field*,special*)>
+<!ELEMENT commonmorphs (text,commonmorph*)>
+<!ELEMENT disadvantages (text,restrictedmorph*,restrictedgear*,requiredmorph*,trait*,statmod*,aptmod*)>
+<!ELEMENT implants (text,implant*)>
+<!ELEMENT mobility (name,walk,run)>
+<!ELEMENT othermod (name,choice*,quantity?,(CPcost|amount))>
+<!ELEMENT skillmod ((name|category),choice*,field*,quantity?,(CPcost|amount))>
+<!ELEMENT statmod (name,quantity?,amount)>
+
+<!ELEMENT action (#PCDATA)>
+<!ELEMENT apt (#PCDATA)>
+<!ELEMENT amount (#PCDATA)>
+<!ELEMENT category (#PCDATA)>
+<!ELEMENT choice (#PCDATA)>
+<!ELEMENT COG (#PCDATA)>
+<!ELEMENT commonmorph (#PCDATA)>
+<!ELEMENT COO (#PCDATA)>
+<!ELEMENT CP (#PCDATA)>
+<!ELEMENT CPcost (#PCDATA)>
+<!ELEMENT creditCost (#PCData)>
+<!ELEMENT defaulting (#PCDATA)>
+<!ELEMENT description (#PCDATA)>
+<!ELEMENT durability (#PCDATA)>
+<!ELEMENT duration (#PCDATA)>
+<!ELEMENT enables (#PCDATA)>
+<!ELEMENT energy (#PCDATA)>
+<!ELEMENT field (#PCDATA)>
+<!ELEMENT implant (#PCDATA)>
+<!ELEMENT INT (#PCDATA)>
+<!ELEMENT kinetic (#PCDATA)>
+<!ELEMENT limbs (#PCDATA)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT quantity (#PCDATA)>
+<!ELEMENT range (#PCDATA)>
+<!ELEMENT REF (#PCDATA)>
+<!ELEMENT requiredmorph (#PCDATA)>
+<!ELEMENT requires (#PCDATA)>
+<!ELEMENT restrictedbg (#PCDATA)>
+<!ELEMENT restrictedgear (#PCDATA)>
+<!ELEMENT restrictedmorph (#PCDATA)>
+<!ELEMENT restrictedtrait (#PCDATA)>
+<!ELEMENT run (#PCDATA)>
+<!ELEMENT SAV (#PCDATA)>
+<!ELEMENT size (#PCDATA)>
+<!ELEMENT SOM (#PCDATA)>
+<!ELEMENT strainmod (#PCDATA)>
+<!ELEMENT text (#PCDATA)>
+<!ELEMENT trait (#PCDATA)>
+<!ELEMENT type (#PCDATA)>
+<!ELEMENT vision (#PCDATA)>
+<!ELEMENT walk (#PCDATA)>
+<!ELEMENT WIL (#PCDATA)>
+<!ELEMENT woundThreshold (#PCDATA)>
+
+]>
