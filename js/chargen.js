@@ -1061,6 +1061,14 @@ function setupSection(section) {
 			if (type === "Apt") {
 				costPer = 10;
 				maxVal = 30;
+				// Check exceptional aptitude trait
+				if ((document.getElementById("traitExceptional AptitudeEgo").checked) && (document.getElementById("traitExceptional AptitudeEgoChoice").value === name)) {
+					maxVal = 40;
+				}
+				// Check feeble trait
+				if ((document.getElementById("traitFeebleEgo").checked) && (document.getElementById("traitFeebleEgoChoice").value === name)) {
+					maxVal = 4;
+				}
 			}
 			if (type === "Rep") {
 				multiplier = 10;
@@ -1436,6 +1444,14 @@ function incrementMiscCP() {
 	if (this.dataset.type === "Apt") {
 		costPer = 10;
 		maxVal = 30;
+		// Check exceptional aptitude trait
+		if ((document.getElementById("traitExceptional AptitudeEgo").checked) && (document.getElementById("traitExceptional AptitudeEgoChoice").value === this.dataset.name)) {
+			maxVal = 40;
+		}
+		// Check feeble trait
+		if ((document.getElementById("traitFeebleEgo").checked) && (document.getElementById("traitFeebleEgoChoice").value === this.dataset.name)) {
+			maxVal = 4;
+		}
 	}
 	if (this.dataset.type === "Rep") {
 		// Check blacklisted trait

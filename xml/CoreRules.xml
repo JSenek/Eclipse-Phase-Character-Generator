@@ -1680,6 +1680,446 @@
 			</augmentation>
 		</personalAugmentation>
 		<otherGear>
+			<armor>
+				<name>Armor Clothing</name>
+				<description>The extra-resilient organoweave fibers and fullerene materials that offer basic protection against kinetic and energy weapons can be woven in with normal smart materials to create a wide range of discreet armor clothing that provides a subtle level of security. Such protective garments are indistinguishable from regular clothing and come in all styles and designs. Armor clothing provides an Armor Value of 3/4. </description>
+				<energy>3</energy>
+				<kinetic>4</kinetic>
+				<creditCost>Trivial</creditCost>
+			</armor>
+			<armor>
+				<name>Armor Vest</name>
+				<description>Armor vests provide more thorough protection to a body&apos;s vital areas, covering the abdomen and torso completely, protecting the neck with a rigid collar, and even providing wrap-under protection for the groin. Though armor vests are not bulky, they are obvious as armor. Armor vests may be worn with armor clothing without penalty. Armor vests provide an Armor Value of 6/6.</description>
+				<energy>6</energy>
+				<kinetic>6</kinetic>
+				<creditCost>Low</creditCost>
+				<noPenaltyWith>Armor Clothing</noPenaltyWith>
+			</armor>
+			<armor>
+				<name>Body Armor (Light)</name>
+				<description>These high performance armor outfits protect the wearer from head to toe. An integrated armor vest is supplemented with increased protection on the limbs and joints, while still managing to be flexible and non-restrictive. Body armor is typically worn by security and police forces, and supplemented with a helmet. It provides an Armor Value of 10/10.</description>
+				<energy>10</energy>
+				<kinetic>10</kinetic>
+				<creditCost>Low</creditCost>
+			</armor>
+			<armor>
+				<name>Body Armor (Heavy)</name>
+				<description>Similar to light body armor, but with extra protective layers, often ergonomically manufactured to conform to a specific character&apos;s body, and an environmental seal with climate control to protect the wearer from hostile environments. It provides an Armor Value of 13/13.</description>
+				<energy>13</energy>
+				<kinetic>13</kinetic>
+				<creditCost>Moderate</creditCost>
+			</armor>
+			<armor>
+				<name>Crash Suit</name>
+				<description>Designed for both industrial worksite safety and protection from accidental zero-G collisions, crash suits are also favored by sports enthusiasts and explorers. The basic jumpsuit offers comfortable protection equal to that of armor clothing. When activated with an electronic signal, however, elastic polymers within the suit stiffen and form rigid impact protection for vital areas. Crash suits provide an Armor Value of 3/4 when inactive and 4/6 when activated.</description>
+				<energy>4</energy>
+				<kinetic>6</kinetic>
+				<creditCost>Low</creditCost>
+			</armor>
+			<armorAccessory>
+				<name>Helmet (Light)</name>
+				<description>This armor accessory is usually worn with body armor or a battle suit. Light helmets are open and provide an Armor Value bonus of +2/+2. Helmets are often equipped with an ecto (p. 325), a radio booster (p. 313), and sensors equal to specs (see p. 325).</description>
+				<energy>2</energy>
+				<kinetic>2</kinetic>
+				<creditCost>Trivial</creditCost>
+			</armorAccessory>
+			<armorAccessory>
+				<name>Helmet (Heavy)</name>
+				<description>This armor accessory is usually worn with body armor or a battle suit. Full helmets latch on and provide an environmental seal with a 12 hour supply of air and add +3/+3. Helmets are often equipped with an ecto (p. 325), a radio booster (p. 313), and sensors equal to specs (see p. 325).</description>
+				<energy>3</energy>
+				<kinetic>3</kinetic>
+				<creditCost>Trivial</creditCost>
+			</armorAccessory>
+			<armorAccessory>
+				<name>Riot Shield</name>
+				<description>Used for mob suppression, riots shields are light-weight, tough, and may be set to electrify on command, stunning anyone who comes into contact with the outer surface (treat as shock glove effects, p. 334). Riot shields provide an Armor Value bonus of +3/+2.</description>
+				<energy>3</energy>
+				<kinetic>2</kinetic>
+				<creditCost>Low</creditCost>
+			</armorAccessory>
+			<armorAccessory>
+				<name>Second Skin</name>
+				<description>This lightweight bodysuit, woven from spider silks and fullerenes, is typically worn as an underlayer, though some athletes use it as a uniform. It provides minimal protection, but may be worn with other armor without penalty. It provides an Armor Value of 1/3.</description>
+				<energy>1</energy>
+				<kinetic>3</kinetic>
+				<creditCost>Low</creditCost>
+			</armorAccessory>
+			<armorAccessory>
+				<name>Smart Skin</name>
+				<description>Smart skin is an advanced nanofluid that covers the wearer&apos;s skin. It resembles liquid mercury but retains the texture and flexibility of normal skin until activated, at which point the material becomes rigid enough to protect the wearer and distribute the kinetic energy (though still flexible enough at the joints not to impede movement). A specialized hive, worn by the character, replenishes the nanobots and stores them when not in use. Deploying the nanobots across the body takes a full Action Turn. Smart skin has an Armor Value of 3/2, and may be worn with other armor without penalty.</description>
+				<energy>3</energy>
+				<kinetic>2</kinetic>
+				<creditCost>Low</creditCost>
+			</armorAccessory>
+			<gear>
+				<name>Spray Armor</name>
+				<description>This fast armor application comes in a spray can and disperses a smart chemical polymer that sticks to bare flesh (but does not adhere to hair and eyes). The polymer solidifies into a form fitting body armor fabric when exposed to body temperature with the look and feel of a latex suit. Spray armor does not work on synthetic morphs or on clothing or other armor. The color and feel of the armor can be adjusted with electric currents and additional polymers, making it popular among some socialite and nightlife scenes. The spray-on armor does not wash off, but degrades 1 point of armor (both energy and kinetic) every 12 hours. It may be removed with a special nanotech solvent. Spray armor has an Armor Value of 2/2.</description>
+				<creditCost>Low</creditCost>
+				<type>Armor</type>
+			</gear>
+			<armorMod>
+				<name>Ablative Patches</name>
+				<description>These thin and light slap-on patches of stick to armor and are designed to absorb heat and energy from beams and explosions, safely vaporizing and blowing hot gas away. Ablative patches increases the Armor Value by +4/+2, but each hit reduces both the energy and kinetic value of the ablative armor by 1.</description>
+				<energy>4</energy>
+				<kinetic>2</kinetic>
+				<creditCost>Trivial</creditCost>
+			</armorMod>
+			<armorMod>
+				<name>Chameleon Coating</name>
+				<description>This provides the armor with the same effect as the chameleon cloak (p. 315).</description>
+				<energy>0</energy>
+				<kinetic>0</kinetic>
+				<creditCost>Trivial</creditCost>
+			</armorMod>
+			<armorMod>
+				<name>Fireproofing</name>
+				<description>Fireproofing includes the addition of heat-resistant ceramic or fire-resistant layers, both capable of withstanding extremely high temperatures. Fireproofing increases the Armor Value by +2/+0, and provides an additional 10 points of armor against heat or fire specifically.</description>
+				<energy>2</energy>
+				<kinetic>0</kinetic>
+				<creditCost>Trivial</creditCost>
+			</armorMod>
+			<armorMod>
+				<name>Immunogenic System</name>
+				<description>The immunogenic mod adds an active nanobot swarm, maintained by a specialized hive, that coats the outer layer of armor and also the non-armored parts of the wearer&apos;s morph. It acts as an outer immune system designed to neutralize toxic agents and nanotoxins with which it comes into contact. This provides immunity to drugs, toxins, and nanotoxins applied dermally, such as with a slap patch or splash grenade. It has no effect on inhaled, oral, or injected drugs (including coated weapons).</description>
+				<energy>0</energy>
+				<kinetic>0</kinetic>
+				<creditCost>Low</creditCost>
+			</armorMod>
+			<armorMod>
+				<name>Lotus Coating</name>
+				<description>The armor has been impregnated with a superhydrophic coating (contact angle of around 170 degrees) that repels all water-like liquids. If the armor is splashed by liquid toxins or chemicals, the effect is reduced since the liquids starts to roll off the armor. Apply a +30 modifier when defending against liquid-based attacks.</description>
+				<energy>0</energy>
+				<kinetic>0</kinetic>
+				<creditCost>Trivial</creditCost>
+			</armorMod>
+			<armorMod>
+				<name>Offensive Armor</name>
+				<description>When activated, the outer layer of this armor is rigged to shock anyone or anything that contacts it with electricity. Treat its DV and effect as a shock baton (p. 334).</description>
+				<energy>0</energy>
+				<kinetic>0</kinetic>
+				<creditCost>Low</creditCost>
+			</armorMod>
+			<armorMod>
+				<name>Reactive Coating</name>
+				<description>A thick layer of advanced nanotech is applied to the armor, protecting it with a colony of nanobots designed to sense incoming attacks. When an attack strikes the coating, it detonates to disrupt the attack. Bursts and full autofire are treated as a single attack. A reactive coating increases the Armor Value by +5/+5, but each detonation automatically inflicts 1 point of damage on the wearer. Reactive armor also works against melee attacks, but the attacker also suffers 1d10 ÷ 2 (round up) points of damage per attack (armor protects) from the microexplosion. Reactive coating only works against 5 attacks, after which the specialized nanobot hive replenishes the coating at the rate of 1 use per hour.</description>
+				<energy>5</energy>
+				<kinetic>5</kinetic>
+				<creditCost>Moderate</creditCost>
+			</armorMod>
+			<armorMod>
+				<name>Refractive Glazing</name>
+				<description>A combination of reflectors, refractive metamaterials, and an energy transfer system with heat radiators provides extra protection against energy weapons. Increase the Armor Value by +3/+0.</description>
+				<energy>3</energy>
+				<kinetic>0</kinetic>
+				<creditCost>Low</creditCost>
+			</armorMod>
+			<armorMod>
+				<name>Self-Healing</name>
+				<description>The armor is equipped with a nanohive that acts like repair spray (p. 333).</description>
+				<energy>0</energy>
+				<kinetic>0</kinetic>
+				<creditCost>Moderate</creditCost>
+			</armorMod>
+			<armorMod>
+				<name>Shock Proof</name>
+				<description>Shock proof armor is electronically insulated to discharge and reduce the effect of shock weapons. Apply an additional +10 modifier when resisting the DV and effects of shock weapons (p. 204).</description>
+				<energy>0</energy>
+				<kinetic>0</kinetic>
+				<creditCost>Low</creditCost>
+			</armorMod>
+			<armorMod>
+				<name>Thermal Dampening</name>
+				<description>Thermal dampening obfuscates heat signatures by converting body heat into electric energy. It makes the target more difficult to spot with thermal sensors; apply a -30 modifier for Perception Tests.</description>
+				<energy>0</energy>
+				<kinetic>0</kinetic>
+				<creditCost>Moderate</creditCost>
+			</armorMod>
+			<gear>
+				<name>Fiberoptic Cable</name>
+				<description>Fiberoptic cables are used to establish wired connections between two devices. Given the ubiquity of radios and the tangled mess wires cause, they are typically only used for privacy (unlike radio communication, fiberoptic signals may not be intercepted) or in areas with heavy radio interference.</description>
+				<type>Communications</type>
+				<creditCost>Trivial</creditCost>
+			</gear>
+			<gear>
+				<name>Laser or Microwave Link</name>
+				<description>These portable devices are used to establish a tight-beam, line-of-sight communications channel with another laser or microwave link. The range of these transceivers varies widely with environmental factors, but approximates 50 kilometers in atmosphere and 500 kilometers in space (though horizon limits must be kept in mind, being 5 kilometers at ground level on Earth and less on smaller bodies). Lasers are subject to interference from fog, dirt, smoke, and similar visual chaff, while microwaves may be hindered by metallic obstructions. These links may only be intercepted by getting directly in between the beams. Some teams carry a micro version of this system, worn on their person, allowing line of sight intra-team communications that cannot be intercepted like radio.</description>
+				<type>Communications</type>
+				<creditCost>Moderate</creditCost>
+			</gear>
+			<gear>
+				<name>Radio Booster</name>
+				<description>This device boosts the range and sensitivity of short-range radios, like those from implants, ectos, or microbugs. The booster must be with the shorter-ranged device&apos;s range (or directly linked via fiberoptic cable). It will repeat any transmissions received from that device, but at its extended range of 25 kilometers in urban areas (250 kilometers remote areas). Broadcasts from a radio booster are easy to receive by anyone looking for broadcasts (see Wireless Scanning, p. 251), though transmissions may be stealthed (p. 252). Boosters are commonly used by characters traveling far from habitats or other civilized regions.</description>
+				<type>Communications</type>
+				<creditCost>Low</creditCost>
+			</gear>
+			<gear>
+				<name>Neutrino Transceiver</name>
+				<description>This transceiver is capable of generating and receiving neutrino signals at a range of at least 100 astronomical units. It is large, with a size of 8 cubic meters (in a cube 2 meters on a side), but they can be loaded onto large vehicles. To function, it must be connected to a large power plant, such as one found in habitats or large spacecraft. The cost and size of this device includes the computer necessary for quantum farcasting. </description>
+				<type>Communications</type>
+				<creditCost>Expensive</creditCost>
+			</gear>
+			<gear>
+				<name>Miniature Radio Farcaster</name>
+				<description>Miniature farcasters communicate with each other using standard radio transceivers. As noted above, they may only securely communicate with the other farcasters with which they are entangled. Most miniature farcasters are worn as jewelry or fitted into clothing or other equipment.</description>
+				<type>Communications</type>
+				<creditCost>Low</creditCost>
+			</gear>
+			<gear>
+				<name>Portable QE Comm</name>
+				<description>This is a handheld FTL communications device. The actual communications unit can be made as small as desired, but must be large enough to connect to or hold a qubit reservoir. Because qubit reservoirs are relatively large and must be replaced, they are rarely implanted. Some miniature farcasters are designed so that users can also attach qubit reservoirs to enable them to be used for both light speed and FTL communication.</description>
+				<type>Communications</type>
+				<creditCost>Low</creditCost>
+			</gear>
+			<gear>
+				<name>Qubit Reservoir (Low Capacity)</name>
+				<description>Low-capacity qubit reservoirs can be used for 10 hours of high-resolution video conferencing or meshbrowsing and 100 hours of voice or text only communications.</description>
+				<type>Communications</type>
+				<creditCost>High</creditCost>
+			</gear>
+			<gear>
+				<name>Qubit Reservoir (High Capacity)</name>
+				<description>High-capacity qubit reservoirs can be used for 100 hours of high-resolution video conferencing or meshbrowsing and 1,000 hours of voice or text only communications.</description>
+				<type>Communications</type>
+				<creditCost>Expensive</creditCost>
+			</gear>
+			<gear>
+				<name>Chameleon Cloak</name>
+				<description>This loose, poncho-like cloak contains a network of sensors that perceive wavelengths from microwave to ultra-violet. A similar network of miniature emitters precisely replicate the information its sensors receive, making the wearer seem transparent to those wavelengths. A chameleon cloak allows a character to effectively become invisible as long as they are stationary or not moving faster than a slow walk. When worn by someone moving faster, the cloak still provides a +30 modifier to Infiltration Tests to avoid being seen or noticed. Chameleon cloaks are not effective against radar, x-ray, or gamma-ray sensors. They do hide the character from thermal infrared, however, by absorbing the character&apos;s body heat into its heat sink. The cloak can only absorb a character&apos;s body heat for one hour before it must emit this heat. Heat emission also requires one hour, during which time the character is easily visible in the thermal infrared spectrum.</description>
+				<type>Covert and Espionage Tech</type>
+				<creditCost>Low</creditCost>
+			</gear>
+			<gear>
+				<name>Covert Operations Tool</name>
+				<description>This handheld device is the ultimate in infiltration technology. It contains both smart matter micromanipulators, cutting tools, and an advanced nanotechnology generator capable of producing nanobots that can bore or cut through almost any material and disable or open almost any electronic lock. Cutting out a lock or boring a 1-millimeter hole in a wall with a COT requires ((Durability + Armor) ÷ 10) seconds. Cutting out a 1-meter diameter hole in a wall requires ((Durability + Armor) ÷ 10) minutes. These same nanobots can later be used to repair this damage so that it is invisible to any but the most careful and detailed examination. A COT can easily open any old-fashioned mechanical lock simply by analyzing it and shaping an appropriate key, though this takes a full Action Turn. It can also open electronic locks by infiltrating them with nanobots that influence the lock&apos;s electronics, no matter what authentication system the lock uses. Opening electronic locks takes a full Action Turn, but success is practically guaranteed. Opening an electronic lock in this manner will, however, trigger an alarm and/or be logged as an event. For more details, see Electronic Locks, p. 291.</description>
+				<type>Covert and Espionage Tech</type>
+				<creditCost>High</creditCost>
+			</gear>
+			<gear>
+				<name>Cuffband</name>
+				<description>This smart plastic loop restricts around a prisoner&apos;s limbs when activated. If the prisoner struggles, it will tighten more. Cuffbands will inform the user if they are cut or loosened and are electronically- controlled, so the user can release the prisoner remotely. Some cuffband variants including a shock system (treat as a shock baton, p. 334) to zap and restrain unruly prisoners.</description>
+				<type>Covert and Espionage Tech</type>
+				<creditCost>Low</creditCost>
+			</gear>
+			<gear>
+				<name>Dazzler</name>
+				<description>The dazzler is a tiny laser system set on a rotating ball. When activated, it consistently spins and emits laser pulses in all directions. These laser pulses are not dangerous, but they detect the lenses of camera systems (including specs, viewers, and bot/ synthmorph sensors) and repeatedly zap them with laser pulses of varying strength to overload and dazzle them. For as long as a dazzler is active, any camera system (visual, infrared, and ultraviolet) within line of sight and within 200 meters is blinded.</description>
+				<type>Covert and Espionage Tech</type>
+				<creditCost>Moderate</creditCost>
+			</gear>
+			<gear>
+				<name>Disabler</name>
+				<description>This handy device emits an overloading surge that completely incapacitates and disables a synthetic morph or pod (anything with a cyberbrain) when it is plugged into an access jack and activated. The affected cyberbrain will be unable to function until the signal is deactivated, effectively shutting down the ego (or AI). In order to plug a disabler into an unwilling target, the target must first be grappled or a called shot must be successfully made in melee combat. This device does not work on larger synthetic morphs (like vehicles) or on cyberbrainless robots.</description>
+				<type>Covert and Espionage Tech</type>
+				<creditCost>High</creditCost>
+			</gear>
+			<gear>
+				<name>Fiber Eye</name>
+				<description>This is a flexible and electronically-controllable length of fiberoptic cable and viewer, which can be worked through cracks, under doors, and around corners to peep unobtrusively.</description>
+				<type>Covert and Espionage Tech</type>
+				<creditCost>Low</creditCost>
+			</gear>
+			<gear>
+				<name>Invisibility Cloak</name>
+				<description>This cloak is made of metamaterials with a negative refractive index, so that light actually bends around it, making it and anything it covers invisible. This invisibility works from the microwave to ultraviolet spectrums, but not against radar or x-rays. The drawback is that anything concealed within the cloak can&apos;t see out. This is easily overcome by using external sensor feeds (if available) and entoptics to navigate. Alternately, a small piece of anti-cloak, which cancels the cloak&apos;s invisibility properties when touched together, can be used to create a small window to peep out of, though this increases the chance of being spotted. Noticing such a window requires a Perception Test with a -30 modifier.</description>
+				<type>Covert and Espionage Tech</type>
+				<creditCost>High</creditCost>
+			</gear>
+			<gear>
+				<name>Microbug</name>
+				<description>This device is a tiny camera and microphone 1 millimeter across. It has the visual capabilities of a set of specs (p. 325). It can hear everything within 20 meters and see everything within the same range that is in its line of sight. A microbug can record up to 100 hours of information. Microbugs can be set to broadcast continuously, at set intervals, or only when they receive a special signal. If desired, they can also be set to only record if there is movement or voices in the room they are in. Microbugs have adhesive backs and can stick to almost any surface. Microbugs can also establish their location via mesh positioning or GPS, and so double as tracking devices.</description>
+				<type>Covert and Espionage Tech</type>
+				<creditCost>Trivial</creditCost>
+			</gear>
+			<gear>
+				<name>Microbug (Quantum Farcaster)</name>
+				<description>To avoid being detected by their radio transmissions, some microbugs are attached to miniature quantum farcasters (p. 314). These microbugs are much larger (1 centimeter) and easy to see, but their transmissions cannot be detected or blocked.</description>
+				<type>Covert and Espionage Tech</type>
+				<creditCost>Low</creditCost>
+			</gear>
+			<gear>
+				<name>Prisoner Mask</name>
+				<description>This hood tightens around the head of a prisoner, blocks all vision frequencies, and engages in low-level jamming in order to prevent any wireless communication via mesh inserts.</description>
+				<type>Covert and Espionage Tech</type>
+				<creditCost>Moderate</creditCost>
+			</gear>
+			<gear>
+				<name>Psi Jammer</name>
+				<description>This device jams frequencies used by brainwaves within a 20-meter radius. This has no effect on brain functions, but it does prevent any ranged used of psi sleights within this area of effect.</description>
+				<type>Covert and Espionage Tech</type>
+				<creditCost>Moderate</creditCost>
+			</gear>
+			<gear>
+				<name>Quantum Computer</name>
+				<description>These advanced devices make use of quantum computation, allowing them to handle extremely large numbers with ease. This makes them especially useful for codebreaking, as noted on p. 254.</description>
+				<type>Covert and Espionage Tech</type>
+				<creditCost>Expensive</creditCost>
+			</gear>
+			<gear>
+				<name>Smart Dust</name>
+				<description>This device is a walnut-sized specialized nanobot generator that creates tiny sensor nanobots, each one of which is a tiny sphere the diameter of a human hair. A packet of smart dust nanobots is sufficient to perform detailed surveillance on a large room like an auditorium has a volume of 1 cubic centimeter and contains 3 million nanobots. Each nanobot contains tiny cameras, microphones, a tiny computer, a radio, and chemical sensors, as well as short legs that allow them to walk and climb at a rate of 5 cm per second. When a character dumps a packet of smart dust in a room, it will cover every surface in the room within 20 minutes, including all furniture and the insides of every drawer and other space that is not airtight. At this point, the smart dust has recorded all data about the room that can be obtained by exceedingly detailed observation, including the DNA of everyone who has visited the room in the last week or two. The smart dust can then either broadcast a brief, highly compressed signal, or it can send all of its information to a few hundred nanobots that then walk to a pre-arranged destination for pickup and downloading by their user. The user need only find a single nanobot with a nanodetector to acquire the information obtained by the smart dust. If ordered to do so, the remaining nanobots can either power down and await further orders or self-destruct in a fashion that turns them into a tiny amount of dust made mostly of metal and silicon.</description>
+				<type>Covert and Espionage Tech</type>
+				<creditCost>Moderate</creditCost>
+			</gear>
+			<gear>
+				<name>Traction Pads</name>
+				<description>This set of specialized fingerless gloves, shoes, and kneepads is designed to emulate the pads on geckos&apos; feet. Characters can support themselves on a wall or ceiling by placing any two of these pads against any surface not made from a material specially designed to resist such devices. Characters can climb any surface and move easily across walls and ceilings that can support their weight (+30 to Climbing Tests). In addition to climbing, these devices are also very popular in zero-g environments. Wearing this item does not impair the user&apos;s agility or manual dexterity.</description>
+				<type>Covert and Espionage Tech</type>
+				<creditCost>Low</creditCost>
+			</gear>
+			<gear>
+				<name>White Noise Machine</name>
+				<description>This small and wearable device generates masking sounds that protect a conversation from being audibly recorded or overheard by anyone not in the immediate vicinity.</description>
+				<type>Covert and Espionage Tech</type>
+				<creditCost>Trivial</creditCost>
+			</gear>
+			<gear>
+				<name>X-Ray Emitter</name>
+				<description>This device is designed to be used with either the enhanced vision augmentation (p. 301) or specs (p. 325). It emits a focused beam of low-powered x-rays that allows the user of either device to both see and see through most objects using backscatter x-ray radiation (p. 303). This allows the character to literally see through walls and into containers, including ones made of metal.</description>
+				<type>Covert and Espionage Tech</type>
+				<creditCost>Low</creditCost>
+			</gear>
+			<gear>
+				<name>Drive</name>
+				<description>This nootropic speeds up left-right brain hemisphere communication, stimulates idea production, and improves concentration, with no usual side effects. Users receive a +5 bonus to COG while the drug lasts.</description>
+				<type>Drug</type>
+				<subtype>Cognitive</subtype>
+				<creditCost>Low</creditCost>
+			</gear>
+			<gear>
+				<name>Klar</name>
+				<description>Klar boosts alertness and enhances clarity and perception. Users report a feeling of being "elevated" to a higher level. They receive +5 INT while the drug lasts.</description>
+				<type>Drug</type>
+				<subtype>Cognitive</subtype>
+				<creditCost>Low</creditCost>
+			</gear>
+			<gear>
+				<name>Neem</name>
+				<description>Neem is a mnemonic drug that works by "tagging" experiences and mental input with a set of unique sensations that contribute to the formation of state-based memories. Neem gummy chews come in a variety of fruit flavors shaped like extinct old Earth animals. Neem gives characters a +20 bonus on COG Tests to recall information they learned while on Neem (see Memorizing and Remembering, p. 176). The drawback to Neem is that memories they accumulate while under the drug&apos;s influence have no emotional association. For example, a character who witnessed something horrible happening to a friend or who had a fight with a romantic partner while on Neem would feel no emotional connection whatsoever to what happened.</description>
+				<type>Drug</type>
+				<subtype>Cognitive</subtype>
+				<creditCost>Moderate</creditCost>
+			</gear>
+			<gear>
+				<name>BringIt</name>
+				<description>In some respects more a social than a combat drug, BringIt stimulates massive bursts of aggression pheromones designed to make the user the center of attention in a fight. In combat, opponents within 3 meters of the character not already in unarmed or melee combat with another character must pass a WIL × 3 Test or attack the character using BringIt. The nature of airborne pheromones is imprecise, however, so if the character using BringIt is within 1 meter of another character hostile to the character affected, the affected character may opt to attack the proximate character instead of the BringIt user. Characters using this drug suffer a -20 modifier on social skill tests.</description>
+				<type>Drug</type>
+				<subtype>Combat</subtype>
+				<creditCost>Low</creditCost>
+			</gear>
+			<gear>
+				<name>Grin</name>
+				<description>Grin is an effective opiate and pain suppressant. Users may ignore the -10 modifiers from 2 wounds (not cumulative with similar effects), and in fact may not even be aware they are injured. Grin users suffer from tunnel vision, however, and so suffer a -10 modifier on Perception Tests.</description>
+				<type>Drug</type>
+				<subtype>Combat</subtype>
+				<creditCost>Low</creditCost>
+			</gear>
+			<gear>
+				<name>Kick</name>
+				<description>Kick is a strong stimulant that increases the user&apos;s response time and puts them on edge. The character gains +10 REF and +1 Speed for the duration of the drug. Characters under the influence of Kick are twitchy, however, reacting in a jumpy, cat-like fashion to sudden or unexpected stimuli. At the gamemaster&apos;s discretion, they must make a WIL × 2 Test or react without thinking towards unexpected noises or other surprises. Long-term users suffer -5 COO.</description>
+				<type>Drug</type>
+				<subtype>Combat</subtype>
+				<creditCost>Moderate</creditCost>
+			</gear>
+			<gear>
+				<name>MRDR</name>
+				<description>MRDR is a straightforward and brutal combat drug. It increases pain tolerance, speed, and strength. The character receives +10 SOM, +1 Speed, +10 Durability, and may ignore the -10 modifier of one wound. Any damage incurred while under the effects of the drug is taken from the bonus Durability first. MRDR users are easily identifiable by the broken blood vessels in their eyes, tense posture, and visible tension in the muscles of the face, arms, and legs. Long-term users suffer -5 SOM.</description>
+				<type>Drug</type>
+				<subtype>Combat</subtype>
+				<creditCost>Low</creditCost>
+			</gear>
+			<gear>
+				<name>Phlo</name>
+				<description>Phlo increases alertness and coordination, making the user more graceful and nimble in a fray. The character gains +5 COO and +10 on Perception Tests for the duration of the drug. Everything feels possible to a character on Phlo, and so they are vulnerable to being goaded into actions that might be foolish or dangerous (apply a -10 modifier to appropriate Social Skill Tests).</description>
+				<type>Drug</type>
+				<subtype>Combat</subtype>
+				<creditCost>Moderate</creditCost>
+			</gear>
+			<gear>
+				<name>Bananas Furiosas</name>
+				<description>This drug reverses some of the effects of de-ionizing radiation on the cells of the body. Although a pill form is available, it most commonly comes in large bunches of bright orange-red bananas. Bananas reduce the severity of a radiation dosage (gamemaster determines effect).</description>
+				<type>Drug</type>
+				<subtype>Health</subtype>
+				<creditCost>Low</creditCost>
+			</gear>
+			<gear>
+				<name>Comfurt</name>
+				<description>This tasty yogurt treat blocks stress hormones, stabilizes mood, and relieves anxiety, allowing them to ignore the effect of 1 trauma and temporarily boosting Lucidity by +5. Any stress suffered while the drug is in effect is taken from the bonus Lucidity first. Comfurt also provides a +10 bonus when resisting attempts to manipulate the user&apos;s emotions. Excessive use of Comfurt can lead to chronic itchiness caused by histamine release.</description>
+				<type>Drug</type>
+				<subtype>Health</subtype>
+				<creditCost>Low</creditCost>
+			</gear>
+			<gear>
+				<name>Buzz</name>
+				<description>This gene-modified variant of BZ is an odorless, invisible, extremely powerful hallucinogen. Users or affected characters will undergo extremely realistic hallucinations for the duration, and may even "share" hallucinations with other affected characters. Characters will suffer a -30 modifier to any tests to remember what occurred while under the influence.</description>
+				<type>Drug</type>
+				<subtype>Recreational</subtype>
+				<creditCost>Moderate</creditCost>
+			</gear>
+			<gear>
+				<name>Mono No Aware</name>
+				<description>Taken from the Japanese term for sadness at the ephemerality of worldly things, this drug, typically ingested as a tea, is a depressant that induces a meditative state. Mono No Aware gives the character a +10 bonus on Art and Sense Tests. With frequent use, Mono No Aware reacts with pigments in the skin to create a pallor with a slight bluish tinge, even in darker-skinned morphs.</description>
+				<type>Drug</type>
+				<subtype>Recreational</subtype>
+				<creditCost>Low</creditCost>
+			</gear>
+			<gear>
+				<name>Orbital Hash</name>
+				<description>Good ol&apos; reefer - but grown in space using powerful lighting and post-singularity hydroponics. Because space is at a premium in habitats and scum barges, blocks of hashish are the preferred mode of transport and delivery. However, for the wealthy and on planets, buds in leaf form are not uncommon. Hash allows the character to ignore the effects of 1 trauma, but inflicts a -10 penalty on all memory-related tests and Knowledge Skill Tests. Hash users exhibit bloodshot eyes, lethargic behaviors, and the munchies.</description>
+				<type>Drug</type>
+				<subtype>Recreational</subtype>
+				<creditCost>Low</creditCost>
+			</gear>
+			<gear>
+				<name>Alpha</name>
+				<description>Alpha is a more subtle version of BringIt, popular with hypercorp execs, street thugs, and anyone else who wants to come across as a domineering asshole. The pharm designer who invented it had a retro sensibility (and maybe a sick sense of humor); Alpha is typically synthesized as a sparkling white powder designed to be snorted. Alpha stimulates production of threat pheromones, but less bluntly than BringIt. Alpha imparts confidence, a feeling of power, and alertness. Users can function without sleep for 4 days, after which point they need to catch up with at least 4 hours of sleep (remember morphs with basic biomods require less sleep). Dosed characters receive a +20 modifier on Intimidation Tests and +10 on Persuasion and Networking Tests where attitude is a factor (gamemaster discretion). These bonuses only apply to characters within 2 meters of the Alpha user. On the downside, alpha users are impatient, unfocused assholes. At the gamemaster&apos;s discretion, Social skill modifiers may be reversed to penalties with certain types of people. Additionally, Alpha users suffer -10 on all COG skill tests related to memory and coherent or logical thinking. Long-term users may suffer the COG penalty even when not on the drug; on it, they may be worse.</description>
+				<type>Drug</type>
+				<subtype>Social</subtype>
+				<creditCost>High</creditCost>
+			</gear>
+			<gear>
+				<name>Hither</name>
+				<description>Want to ooze sexy like a pleasure morph on a hot tin roof? For those desiring that slinky je-nesais- quoi, Hither is the tool. Hither is a clear, slippery gel, sometimes with a faint, musky, floral scent. Hither is applied to parts of the body with large concentrations of sweat glands, where the skin quickly absorbs it. Hither is a mild euphoriant, imparting a feeling of confidence and you-know-you-want-it-ness to the user. It also stimulates abundant production of lust pheromones. The character gains a +10 bonus on Persuasion Tests against targets who are possible to seduce. At the gamemaster&apos;s discretion, this extends to Deception, Impersonate, and Networking Tests.</description>
+				<type>Drug</type>
+				<subtype>Social</subtype>
+				<creditCost>Low</creditCost>
+			</gear>
+			<gear>
+				<name>Juice</name>
+				<description>This potent anti-depressant makes it almost impossible to have bad feelings or negative thoughts. The character is unnaturally happy - often irritatingly or strangely so. The character receives a +30 bonus against fear or attempts to manipulate their emotions in a negative direction, but is also likely to act inappropriately, like giggling over the massive amount of spilled blood or cheerfully changing the subject to inane topics when someone else is freaking out.</description>
+				<type>Drug</type>
+				<subtype>Social</subtype>
+				<creditCost>Low</creditCost>
+			</gear>
+			<gear>
+				<name>Frequency</name>
+				<description>Frequency (or Freeq) is a nanodrug designed as a tool for scientific visualization. It releases a small swarm of nanobots into the character&apos;s bloodstream that settle in the epidermis, where they act as sensors of electromagnetic radiation. This sensory input is then injected into the character&apos;s visual and tactile sensoria, hitting the user with a sequence of novel stimuli, typically a light show or weird tactile sensations. Aside from its recreational uses, Frequency is good at picking up on localized field radiation with a standard Perception Test. A character can take advantage of this to spot sensors and hidden electronics. Similar to now-obsolete 20th-century hallucinogens like LSD and psilocybin, however, a Frequency trip can be disorienting and upsetting (the gamemaster should apply any modifiers, mental stress, or even trauma as they feel appropriate). Characters typically experience a period about 1/3 of the way through their trip in which sensory input is extremely intense; during this period, which usually lasts about 2 hours, they are unable to read.</description>
+				<type>Nanodrug</type>
+				<creditCost>Moderate</creditCost>
+			</gear>
+			<gear>
+				<name>Gravy</name>
+				<description>Gravy assists characters in acclimating to high gravity environments. It comes in a variety of flavors and is often added as a sauce to food. For Gravy to be 100% effective, the character must begin using it in advance. Reduce penalties for high-gravity acclimation by 20.</description>
+				<type>Nanodrug</type>
+				<creditCost>Low</creditCost>
+			</gear>
+			<gear>
+				<name>Schizo</name>
+				<description>Schizo is a nanodrug that mirrors the effects of paranoid schizophrenia. It is popular in some hyperelite social circles as a truly daring and intriguing experience. A dose of schizo looks like a disposable antique razor blade. Making an incision in the skin releases a swarm of nanobots that travel to the central nervous system and induce the effects of the drug. While in effect, the character is severely paranoid and hears voices. How this plays out is at the discretion of the gamemaster, but should include irrational fears, unusual compulsions based on the instructions of the voice or voices, and a strong possibility that the character will behave in a violent or destructive fashion. The character may make WIL × 3 Tests to avoid violent acts against objects or strangers. Friends and trusted acquaintances are probably less likely to be targets of violence (+30 modifier to avoid hurting people the character cares about or destroying important possessions). Note that the character&apos;s muse is unaffected by Schizo and can make efforts to babysit the character. Characters who take Schizo suffer 1d10 mental stress. </description>
+				<type>Nanodrug</type>
+				<creditCost>Low</creditCost>
+			</gear>
+			<gear>
+				<name>DDR</name>
+				<description>Originally crafted by prankster hackers and distributed as a virus, DDR (for "Dance Dance Robot") triggers impulses in the target&apos;s motor control circuits. Primary targeting robot AIs, the effect is that targets "dance" in jerky, automated movements. Pleasure receptors are also activated so that dancing - and movement of any kind - feels good. Different software variants invoke different motions and styles. The target suffers a -20 modifier on other actions while dancing, but the dancing may be overridden with a WIL × 3 Test.</description>
+				<type>Narcoalgorithm</type>
+				<creditCost>Low</creditCost>
+			</gear>
+			<gear>
+				<name>Linkstate</name>
+				<description>This software actually connects the user to a peer-to-peer network, where it randomly connects to other linkstate users and samples a bit of their XP feed and randomly accessed memories - typically just enough to provide context, but not enough to acquire private personal details. These inputs are spliced together, their emotional inputs amplified, and then the entire package is spiked with some hormonal circuit triggers and artificial synaesthesia. The effect is a mind-blowing mixed sampling of people&apos;s lives, mashed together in a sensory soup, that hits the mind with a euphoric rush. Linkstate users are catatonic while under the effects (typical sessions run 3-4 hours), but afterwards they often report that they have flashbacks of events in other people&apos;s lives.</description>
+				<type>Narcoalgorithm</type>
+				<creditCost>Low</creditCost>
+			</gear>
 		</otherGear>
 		<weapons>
 		</weapons>
