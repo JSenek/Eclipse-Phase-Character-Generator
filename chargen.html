@@ -15,7 +15,7 @@
 		</script>
 		-->
 		<script src="js/modernizr.min.js" type="text/javascript"></script>
-				<script> //think this needs to be inline, wasn't working properly from an external file
+		<script> //think this needs to be inline, wasn't working properly from an external file
 			Modernizr.addTest('dataset', function(){ return 'dataset' in document.documentElement; });
 			Modernizr.load([
 			{
@@ -286,18 +286,7 @@
 					<p>Now that you have the basics of your character fleshed out, you can spend additional Customization Points (CP) to fine-tune your character. Not all customizations are equal-aptitudes, for example, are considerably more valuable than individual skills. To reflect this, CP must be spent at a specific ratio according to the specific boost desired.</p>
 					<div id="miscCPTable"></div>
 				</div>
-				<div id="fixeddiv">
-				<div id="startingRepdiv" class="c3"><strong>Remaining Rep points</strong>:<span id="remainingRepPts" class="c4"></span><br></div>
-					<div id="startingAptdiv" class="c3"><strong>Remaining Aptitude points</strong>:<span id="remainingAptPts" class="c5"></span><br></div>
-					<div id="positiveTraitsCPdiv" class="c3"><strong>CP Spent on Positive Traits</strong>:<span id="positiveTraitsCP" class="c5"></span><br></div>
-					<div id="negativeTraitsCPdiv" class="c3"><strong>CP Gained from Negative Traits</strong>:<span id="negativeTraitsCP" class="c5"></span><br></div>
-					<div id="negativeMorphTraitsCPdiv" class="c3"><strong>CP Gained from Morph Traits</strong>:<span id="negativeMorphTraitsCP" class="c5"></span><br></div>
-					<div id="activeSkillsCPdiv" class="c3"><strong>CP Spent on Active Skills</strong>:<span id="activeSkillsCP" class="c5"></span><br></div>
-					<div id="knowledgeSkillsCPdiv" class="c3"><strong>CP Spent on Knowledge Skills</strong>:<span id="knowledgeSkillsCP" class="c5"></span><br></div>
-					<div id="psiChiSleightsdiv" class="c3"><strong>Psi-Chi Sleights Purchased</strong>:<span id="psiChiSleights" class="c5"></span></div>
-					<div id="psiGammaSleightsdiv" class="c3"><strong>Psi-Gamma Sleights Purchased</strong>:<span id="psiGammaSleights" class="c5"></span></div>
-					<div id="totalCPdiv" class="c3"><strong>Total CP Remaining</strong>:<span id="totalCP" class="c5"></span><br></div>
-					<input type="button" name="previousButton" id="previousButton" value="Previous" disabled="true"><input type="button" name="nextButton" id="nextButton" value="Next"><br></div>
+
 			</div> <!-- chargen -->
 			<div id="FooterSection">
 				<a href="http://creativecommons.org/licenses/by-nc-sa/3.0/">
@@ -308,6 +297,20 @@
 				In accordance with that license, this content is also provided under the same license.<br>
 			</div>
 		</div> <!-- container div -->
+		<div id="fixeddiv">
+			<div id="startingRepdiv" class="c3"><strong>Remaining Rep points</strong>:<span id="remainingRepPts" class="c4"></span><br></div>
+			<div id="startingAptdiv" class="c3"><strong>Remaining Aptitude points</strong>:<span id="remainingAptPts" class="c5"></span><br></div>
+			<div id="positiveTraitsCPdiv" class="c3"><strong>CP Spent on Positive Traits</strong>:<span id="positiveTraitsCP" class="c5"></span><br></div>
+			<div id="negativeTraitsCPdiv" class="c3"><strong>CP Gained from Negative Traits</strong>:<span id="negativeTraitsCP" class="c5"></span><br></div>
+			<div id="negativeMorphTraitsCPdiv" class="c3"><strong>CP Gained from Morph Traits</strong>:<span id="negativeMorphTraitsCP" class="c5"></span><br></div>
+			<div id="activeSkillsCPdiv" class="c3"><strong>CP Spent on Active Skills</strong>:<span id="activeSkillsCP" class="c5"></span><br></div>
+			<div id="knowledgeSkillsCPdiv" class="c3"><strong>CP Spent on Knowledge Skills</strong>:<span id="knowledgeSkillsCP" class="c5"></span><br></div>
+			<div id="psiChiSleightsdiv" class="c3"><strong>Psi-Chi Sleights Purchased</strong>:<span id="psiChiSleights" class="c5"></span></div>
+			<div id="psiGammaSleightsdiv" class="c3"><strong>Psi-Gamma Sleights Purchased</strong>:<span id="psiGammaSleights" class="c5"></span></div>
+			<div id="totalCPdiv" class="c3"><strong>Total CP Remaining</strong>:<span id="totalCP" class="c5"></span><br></div>
+			<input type="button" name="previousButton" id="previousButton" value="Previous" disabled="true">
+			<input type="button" name="nextButton" id="nextButton" value="Next"><br>
+		</div> <!--fixeddiv -->		
 		<script src="js/fixeddiv.js"></script>
 	</body>
 </html>
