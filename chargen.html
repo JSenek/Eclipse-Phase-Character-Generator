@@ -15,13 +15,13 @@
 		</script>
 		-->
 		<script src="js/modernizr.min.js" type="text/javascript"></script>
-		<script src="js/chargen.js" type="text/javascript"></script>
-		<script> //think this needs to be inline, wasn't working properly from an external file
+				<script> //think this needs to be inline, wasn't working properly from an external file
 			Modernizr.addTest('dataset', function(){ return 'dataset' in document.documentElement; });
 			Modernizr.load([{
 				test : Modernizr.dataset,
 				nope : ['js/html5-dataset.js'],
 				callback : function (url, result, key) {
+					console.debug("modernizr.load returned " + result);
 					if (result) {
 						datasetAvailable = true;
 					} else {
@@ -29,7 +29,8 @@
 					}
 				}
 			}]);
-		</script>	
+		</script>
+		<script src="js/chargen.js" type="text/javascript"></script>
 		<style type="text/css">
 			span.c5 {color: black}
 			span.c4 {color: red}
@@ -233,8 +234,8 @@
 					<div id="morphDescription"></div>
 					<br>
 					<div id="morphOptions" class="c1"></div>
-					<strong>Background Restrictions</strong>: <span></span><br>
-					<strong>Faction Restrictions</strong>: <span></span><br>
+					<strong>Background Restrictions</strong>: <span id="morphBGRestrictions"></span><br>
+					<strong>Faction Restrictions</strong>: <span id="morphFacRestrictions"></span><br>
 					<input type="checkbox" name="traitBox" id="traitSecond SkinEgo"><strong>Second Skin Trait (15 CP)</strong>: If your character background or faction enforces a restriction on your starting morph (for example, uplifts must start with an uplift morph), this trait allows you to ignore that restriction and purchase a starting morph of your choice.<br>
 					<input type="checkbox" name="traitBox" id="traitExceptional AptitudeMorph"><strong>Exceptional Aptitude Trait (20 CP)</strong><select id="traitExceptional AptitudeMorphChoice">
 						<option value="COG">COG</option>
@@ -292,14 +293,14 @@
 				<div id="fixeddiv">
 				<div id="startingRepdiv" class="c3"><strong>Remaining Rep points</strong>:<span id="remainingRepPts" class="c4"></span><br></div>
 					<div id="startingAptdiv" class="c3"><strong>Remaining Aptitude points</strong>:<span id="remainingAptPts" class="c5"></span><br></div>
-					<div id="positiveTraitsCPdiv" class="c3"><strong>CP Spent on Positive Traits</strong>:<span class="c5"></span><br></div>
-					<div id="negativeTraitsCPdiv" class="c3"><strong>CP Gained from Negative Traits</strong>:<span class="c5"></span><br></div>
-					<div id="negativeMorphTraitsCPdiv" class="c3"><strong>CP Gained from Morph Traits</strong>:<span class="c5"></span><br></div>
-					<div id="activeSkillsCPdiv" class="c3"><strong>CP Spent on Active Skills</strong>:<span class="c5"></span><br></div>
-					<div id="knowledgeSkillsCPdiv" class="c3"><strong>CP Spent on Knowledge Skills</strong>:<span class="c5"></span><br></div>
-					<div id="psiChiSleightsdiv" class="c3"><strong>Psi-Chi Sleights Purchased</strong>:<span class="c5"></span></div>
-					<div id="psiGammaSleightsdiv" class="c3"><strong>Psi-Gamma Sleights Purchased</strong>:<span class="c5"></span></div>
-					<div id="totalCPdiv" class="c3"><strong>Total CP Remaining</strong>:<span class="c5"></span><br></div>
+					<div id="positiveTraitsCPdiv" class="c3"><strong>CP Spent on Positive Traits</strong>:<span id="positiveTraitsCP" class="c5"></span><br></div>
+					<div id="negativeTraitsCPdiv" class="c3"><strong>CP Gained from Negative Traits</strong>:<span id="negativeTraitsCP" class="c5"></span><br></div>
+					<div id="negativeMorphTraitsCPdiv" class="c3"><strong>CP Gained from Morph Traits</strong>:<span id="negativeMorphTraitsCP" class="c5"></span><br></div>
+					<div id="activeSkillsCPdiv" class="c3"><strong>CP Spent on Active Skills</strong>:<span id="activeSkillsCP" class="c5"></span><br></div>
+					<div id="knowledgeSkillsCPdiv" class="c3"><strong>CP Spent on Knowledge Skills</strong>:<span id="knowledgeSkillsCP" class="c5"></span><br></div>
+					<div id="psiChiSleightsdiv" class="c3"><strong>Psi-Chi Sleights Purchased</strong>:<span id="psiChiSleights" class="c5"></span></div>
+					<div id="psiGammaSleightsdiv" class="c3"><strong>Psi-Gamma Sleights Purchased</strong>:<span id="psiGammaSleights" class="c5"></span></div>
+					<div id="totalCPdiv" class="c3"><strong>Total CP Remaining</strong>:<span id="totalCP" class="c5"></span><br></div>
 					<input type="button" name="previousButton" id="previousButton" value="Previous" disabled="true"><input type="button" name="nextButton" id="nextButton" value="Next"><br></div>
 			</div> <!-- chargen -->
 			<div id="FooterSection">
