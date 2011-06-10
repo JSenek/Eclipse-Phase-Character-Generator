@@ -6,6 +6,7 @@
 	<!ELEMENT background (name,description,advantages,disadvantages,commonmorphs)>
 <!ELEMENT factions (faction+)>
 	<!ELEMENT faction (name,description,advantages,disadvantages,commonmorphs)>
+<!ELEMENT gearAndEquipment (personalAugmentation,otherGear,weapons)>
 <!ELEMENT morphs (morph+)>
 	<!ELEMENT morph (name,type,description,implants,mobility*,aptitudeMax,durability,woundThreshold,advantages,disadvantages,CPCost,creditCost,creditmin?,vision*)>
 <!ELEMENT traits (negativeTraits,positiveTraits)>
@@ -22,15 +23,21 @@
 <!ELEMENT advantages (text,statmod*,aptmod*,trait*,skillmod*,armor?,size?,attack*,limbs?)>
 <!ELEMENT aptitudeMax (text,COG,COO,INT,REF,SAV,SOM,WIL)>
 <!ELEMENT aptmod (name,choice*,quantity?,amount)>
-<!ELEMENT armor (energy,kinetic)>
+<!ELEMENT armor (energy,kinetic,description?,creditCost?,type?)>
 <!ELEMENT attack (name,dv*,skill*,field*,special*)>
+<!ELEMENT augmentation (name,description,type,subtype?,creditCost,armor?,skillmod?,aptmod?)>
 <!ELEMENT commonmorphs (text,commonmorph*)>
 <!ELEMENT disadvantages (text,restrictedmorph*,restrictedgear*,requiredmorph*,trait*,statmod*,aptmod*)>
+<!ELEMENT gear (name,description,type,creditCost)>
 <!ELEMENT implants (text,implant*)>
 <!ELEMENT mobility (name,walk,run)>
+<!ELEMENT personalAugmentation (augmentation*)>
+<!ELEMENT otherGear (gear*)>
 <!ELEMENT othermod (name,choice*,quantity?,(CPcost|amount))>
 <!ELEMENT skillmod ((name|category),choice*,field*,quantity?,(CPcost|amount))>
 <!ELEMENT statmod (name,quantity?,amount)>
+<!ELEMENT weapon (name,description,type,creditCost)>
+<!ELEMENT weapons (weapon*)>
 
 <!ELEMENT action (#PCDATA)>
 <!ELEMENT apt (#PCDATA)>
@@ -47,6 +54,7 @@
 <!ELEMENT description (#PCDATA)>
 <!ELEMENT durability (#PCDATA)>
 <!ELEMENT duration (#PCDATA)>
+<!ELEMENT dv (#PCDATA)>
 <!ELEMENT enables (#PCDATA)>
 <!ELEMENT energy (#PCDATA)>
 <!ELEMENT field (#PCDATA)>
@@ -69,6 +77,7 @@
 <!ELEMENT size (#PCDATA)>
 <!ELEMENT SOM (#PCDATA)>
 <!ELEMENT strainmod (#PCDATA)>
+<!ELEMENT subtype (#PCDATA)>
 <!ELEMENT text (#PCDATA)>
 <!ELEMENT trait (#PCDATA)>
 <!ELEMENT type (#PCDATA)>

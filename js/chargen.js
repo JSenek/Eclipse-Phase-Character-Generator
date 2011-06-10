@@ -159,7 +159,7 @@ function checkTraitReqs(type, name, source, silent) {
 function purchaseTrait(type, name, source, mod, free) {
 	var enables = 0, traitID = lookupTraitID(type, name, source), temp, i;
 	if (type === "positive") {
-		// Charge CP only if it's not already possessed and not free
+		// Charge CP only if its not already possessed and not free
 		if ((!myCharacter.ego.positiveTraits[traitID]) && (!myCharacter.morph.positiveTraits[traitID]) && (!free)) {
 			myCharacter.CP -= parseInt(positiveTraitData[traitID].getElementsByTagName("CP")[0].childNodes[0].nodeValue, 10) + mod;
 			myCharacter.CPSpentOnPositiveTraits += parseInt(positiveTraitData[traitID].getElementsByTagName("CP")[0].childNodes[0].nodeValue, 10) + mod;
@@ -182,7 +182,7 @@ function purchaseTrait(type, name, source, mod, free) {
 		}
 	}
 	if (type === "negative") {
-		// Give CP only if it's not already possessed and not free
+		// Give CP only if its not already possessed and not free
 		if ((!myCharacter.ego.negativeTraits[traitID]) && (!myCharacter.morph.negativeTraits[traitID]) && (!free)) {
 			myCharacter.CP += parseInt(negativeTraitData[traitID].getElementsByTagName("CP")[0].childNodes[0].nodeValue, 10) + mod;
 			myCharacter.CPGainedFromNegativeTraits += parseInt(negativeTraitData[traitID].getElementsByTagName("CP")[0].childNodes[0].nodeValue, 10) + mod;
