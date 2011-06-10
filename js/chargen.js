@@ -44,14 +44,6 @@ function Character() {
 	this.creditSpent = 0;
 }
 
-function highlightErrors(target,error) {
-	var color = "black";
-	if (error) {
-		color = "red";
-	}
-	target.style.color = color;
-}
-
 function keypress(e) {
 	var evtobj, unicode;
 	evtobj = (window.event)? event : e; //distinguish between IE's explicit event object (window.event) and Firefox's implicit.
@@ -775,7 +767,7 @@ function saveSection(section) { // Validate and save data
 }
 
 function setupSection(section) {
-	var output, i, q, j, field, flag, type, name, category, skillID, output, temp, temp2, tempData, maxVal, maxCP, costPer, multiplier, newCost, oldCost, newValue, oldValue, newTotal, baseValue;
+	var output, i, q, j, field, flag, type, name, category, skillID, output, temp, temp2, tempData, maxVal, maxCP, costPer, multiplier, newCost, oldCost, newValue, oldValue, newTotal, baseValue, statName;
 	if (section === "MorphSection") {
 		output = "None";
 		// Load background restrictions
@@ -1008,7 +1000,7 @@ function setupSection(section) {
 				break;
 			case 10:
 				type = "Rep";
-				name = "Circle-A";
+				name = "The @-list";
 				baseValue = myCharacter.ego.reputations.ARep;
 				break;
 			case 11:
@@ -1051,6 +1043,7 @@ function setupSection(section) {
 			maxCP = 999999;
 			costPer = 1;
 			multiplier = 1;
+			statName = "";
 			if (type === "Stat") {
 				switch (name) {
 				case "Credit":
@@ -1073,6 +1066,31 @@ function setupSection(section) {
 				multiplier = 10;
 				maxVal = 80;
 				maxCP = 35;
+				switch (name) {
+				case "The @-list":
+					statName = "ARep";
+					break;
+				case "CivicNet":
+					statName = "CRep";
+					break;
+				case "EcoWave":
+					statName = "ERep";
+					break;
+				case "Fame":
+					statName = "FRep";
+					break;
+				case "Guanxi":
+					statName = "GRep";
+					break;
+				case "The Eye":
+					statName = "IRep";
+					break;
+				case "RNA":
+					statName = "RRep";
+					break;	
+				default:
+					alert("Unknown rep " + name + ".");
+				}
 			}
 			document.getElementById("misc" + type + name + "Base").innerHTML = baseValue;
 			oldValue = parseInt(document.getElementById("misc" + type + name + "Value").innerHTML, 10);
@@ -1080,8 +1098,8 @@ function setupSection(section) {
 			oldCost = parseInt(document.getElementById("misc" + type + name + "Cost").innerHTML, 10);
 			newTotal = oldValue + baseValue;
 			newCost = newValue / multiplier * costPer;
-			// Reset to 0 and refund CP if new value  or cost is out of bounds
-			if ((newTotal < 0) || (newTotal > maxVal) || (newCost > maxCP)) {
+			// Reset to 0 and refund CP if new value  or cost is out of bounds or invalidated by blacklisted trait
+			if ((newTotal < 0) || (newTotal > maxVal) || (newCost > maxCP) || ((document.getElementById("traitBlacklistedEgo").checked) && (document.getElementById("traitBlacklistedChoice").value === statName))) {
 				newValue = 0;
 				newCost = 0;
 				document.getElementById("misc" + type + name + "Value").innerHTML = 0;
@@ -1320,16 +1338,6 @@ function selectMorph() {
 	updateCP();
 }
 
-function toggleMisc() {
-	var cost = parseInt(this.dataset.cost, 10);
-	 if (this.checked) {
-		myCharacter.CP += cost;
-	 } else {
-		myCharacter.CP -= cost;
-	 }
-	 updateCP();
-}
-
 function toggleSleight() {
 	var type = this.dataset.sleightType;
 	if (this.checked) {
@@ -1410,7 +1418,7 @@ function updateSkill(id, field, category) {
 }
 
 function incrementMiscCP() {
-	var costPer = 1, maxCP = 999999, maxVal = 999999, multiplier = 1, oldCost, newCost, baseValue, oldValue, newValue;
+	var costPer = 1, maxCP = 999999, maxVal = 999999, multiplier = 1, oldCost, newCost, baseValue, oldValue, newValue, statName;
 	if (this.dataset.type === "Stat") {
 		switch (this.dataset.name) {
 		case "Credit":
@@ -1430,6 +1438,35 @@ function incrementMiscCP() {
 		maxVal = 30;
 	}
 	if (this.dataset.type === "Rep") {
+		// Check blacklisted trait
+		switch (this.dataset.name) {
+			case "The @-list":
+				statName = "ARep";
+				break;
+			case "CivicNet":
+				statName = "CRep";
+				break;
+			case "EcoWave":
+				statName = "ERep";
+				break;
+			case "Fame":
+				statName = "FRep";
+				break;
+			case "Guanxi":
+				statName = "GRep";
+				break;
+			case "The Eye":
+				statName = "IRep";
+				break;
+			case "RNA":
+				statName = "RRep";
+				break;	
+			default:
+			alert("Unknown rep " + this.dataset.name + ".");
+		}
+		if ((document.getElementById("traitBlacklistedEgo").checked) && (document.getElementById("traitBlacklistedChoice").value === statName)) {
+			return;
+		}
 		multiplier = 10;
 		maxVal = 80;
 		maxCP = 35;
@@ -1941,7 +1978,7 @@ function initialSetup() {
 			break;
 		case 10:
 			type = "Rep";
-			name = "Circle-A";
+			name = "The @-list";
 			cost = "1 per 10";
 			break;
 		case 11:
@@ -1996,11 +2033,6 @@ function initialSetup() {
 	temp = document.getElementsByName("miscCPButton");
 	for (i = 0; i < temp.length; i++) {
 		temp[i].onclick = incrementMiscCP;
-	}
-	// Misc setup
-	temp = document.getElementsByName("miscBox");
-	for (i = 0; i < temp.length; i++) {
-		temp[i].onchange = toggleMisc;
 	}
 	// Document Ready
 	document.getElementById("previousButton").onclick = loadPrevious;
