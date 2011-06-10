@@ -23,7 +23,9 @@
 <!ELEMENT advantages (text,statmod*,aptmod*,trait*,skillmod*,armor?,size?,attack*,limbs?)>
 <!ELEMENT aptitudeMax (text,COG,COO,INT,REF,SAV,SOM,WIL)>
 <!ELEMENT aptmod (name,choice*,quantity?,amount)>
-<!ELEMENT armor (energy,kinetic,description?,creditCost?,type?)>
+<!ELEMENT armor (energy,kinetic,name?,description?,creditCost?,noPenaltyWith*,precludes*)>
+<!ELEMENT armorAccessory (energy,kinetic,name?,description?,creditCost?)>
+<!ELEMENT armorMod (energy,kinetic,name,description,creditCost)>
 <!ELEMENT attack (name,dv*,skill*,field*,special*)>
 <!ELEMENT augmentation (name,description,type*,subtype?,creditCost,armor?,skillmod*,aptmod*,statmod*)>
 <!ELEMENT commonmorphs (text,commonmorph*)>
@@ -32,7 +34,7 @@
 <!ELEMENT implants (text,implant*)>
 <!ELEMENT mobility (name,walk,run)>
 <!ELEMENT personalAugmentation (augmentation*)>
-<!ELEMENT otherGear (gear*)>
+<!ELEMENT otherGear (armor*,armorAccessory*,armorMod*,gear*)>
 <!ELEMENT othermod (name,choice*,quantity?,(CPcost|amount))>
 <!ELEMENT skillmod ((name|category),choice*,field*,quantity?,(CPcost|amount))>
 <!ELEMENT statmod (name,quantity?,amount)>
@@ -63,6 +65,8 @@
 <!ELEMENT kinetic (#PCDATA)>
 <!ELEMENT limbs (#PCDATA)>
 <!ELEMENT name (#PCDATA)>
+<!ELEMENT noPenaltyWith (#PCDATA)>
+<!ELEMENT precludes (#PCDATA)>
 <!ELEMENT quantity (#PCDATA)>
 <!ELEMENT range (#PCDATA)>
 <!ELEMENT REF (#PCDATA)>

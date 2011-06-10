@@ -1680,6 +1680,208 @@
 			</augmentation>
 		</personalAugmentation>
 		<otherGear>
+			<armor>
+				<name>Armor Clothing</name>
+				<description>The extra-resilient organoweave fibers and fullerene materials that offer basic protection against kinetic and energy weapons can be woven in with normal smart materials to create a wide range of discreet armor clothing that provides a subtle level of security. Such protective garments are indistinguishable from regular clothing and come in all styles and designs. Armor clothing provides an Armor Value of 3/4. </description>
+				<energy>3</energy>
+				<kinetic>4</kinetic>
+				<creditCost>Trivial</creditCost>
+			</armor>
+			<armor>
+				<name>Armor Vest</name>
+				<description>Armor vests provide more thorough protection to a body&apos;s vital areas, covering the abdomen and torso completely, protecting the neck with a rigid collar, and even providing wrap-under protection for the groin. Though armor vests are not bulky, they are obvious as armor. Armor vests may be worn with armor clothing without penalty. Armor vests provide an Armor Value of 6/6.</description>
+				<energy>6</energy>
+				<kinetic>6</kinetic>
+				<creditCost>Low</creditCost>
+				<noPenaltyWith>Armor Clothing</noPenaltyWith>
+			</armor>
+			<armor>
+				<name>Body Armor (Light)</name>
+				<description>These high performance armor outfits protect the wearer from head to toe. An integrated armor vest is supplemented with increased protection on the limbs and joints, while still managing to be flexible and non-restrictive. Body armor is typically worn by security and police forces, and supplemented with a helmet. It provides an Armor Value of 10/10.</description>
+				<energy>10</energy>
+				<kinetic>10</kinetic>
+				<creditCost>Low</creditCost>
+			</armor>
+			<armor>
+				<name>Body Armor (Heavy)</name>
+				<description>Similar to light body armor, but with extra protective layers, often ergonomically manufactured to conform to a specific character&apos;s body, and an environmental seal with climate control to protect the wearer from hostile environments. It provides an Armor Value of 13/13.</description>
+				<energy>13</energy>
+				<kinetic>13</kinetic>
+				<creditCost>Moderate</creditCost>
+			</armor>
+			<armor>
+				<name>Crash Suit</name>
+				<description>Designed for both industrial worksite safety and protection from accidental zero-G collisions, crash suits are also favored by sports enthusiasts and explorers. The basic jumpsuit offers comfortable protection equal to that of armor clothing. When activated with an electronic signal, however, elastic polymers within the suit stiffen and form rigid impact protection for vital areas. Crash suits provide an Armor Value of 3/4 when inactive and 4/6 when activated.</description>
+				<energy>4</energy>
+				<kinetic>6</kinetic>
+				<creditCost>Low</creditCost>
+			</armor>
+			<armorAccessory>
+				<name>Helmet (Light)</name>
+				<description>This armor accessory is usually worn with body armor or a battle suit. Light helmets are open and provide an Armor Value bonus of +2/+2. Helmets are often equipped with an ecto (p. 325), a radio booster (p. 313), and sensors equal to specs (see p. 325).</description>
+				<energy>2</energy>
+				<kinetic>2</kinetic>
+				<creditCost>Trivial</creditCost>
+			</armorAccessory>
+			<armorAccessory>
+				<name>Helmet (Heavy)</name>
+				<description>This armor accessory is usually worn with body armor or a battle suit. Full helmets latch on and provide an environmental seal with a 12 hour supply of air and add +3/+3. Helmets are often equipped with an ecto (p. 325), a radio booster (p. 313), and sensors equal to specs (see p. 325).</description>
+				<energy>3</energy>
+				<kinetic>3</kinetic>
+				<creditCost>Trivial</creditCost>
+			</armorAccessory>
+			<armorAccessory>
+				<name>Riot Shield</name>
+				<description>Used for mob suppression, riots shields are light-weight, tough, and may be set to electrify on command, stunning anyone who comes into contact with the outer surface (treat as shock glove effects, p. 334). Riot shields provide an Armor Value bonus of +3/+2.</description>
+				<energy>3</energy>
+				<kinetic>2</kinetic>
+				<creditCost>Low</creditCost>
+			</armorAccessory>
+			<armorAccessory>
+				<name>Second Skin</name>
+				<description>This lightweight bodysuit, woven from spider silks and fullerenes, is typically worn as an underlayer, though some athletes use it as a uniform. It provides minimal protection, but may be worn with other armor without penalty. It provides an Armor Value of 1/3.</description>
+				<energy>1</energy>
+				<kinetic>3</kinetic>
+				<creditCost>Low</creditCost>
+			</armorAccessory>
+			<armorAccessory>
+				<name>Smart Skin</name>
+				<description>Smart skin is an advanced nanofluid that covers the wearer&apos;s skin. It resembles liquid mercury but retains the texture and flexibility of normal skin until activated, at which point the material becomes rigid enough to protect the wearer and distribute the kinetic energy (though still flexible enough at the joints not to impede movement). A specialized hive, worn by the character, replenishes the nanobots and stores them when not in use. Deploying the nanobots across the body takes a full Action Turn. Smart skin has an Armor Value of 3/2, and may be worn with other armor without penalty.</description>
+				<energy>3</energy>
+				<kinetic>2</kinetic>
+				<creditCost>Low</creditCost>
+			</armorAccessory>
+			<gear>
+				<name>Spray Armor</name>
+				<description>This fast armor application comes in a spray can and disperses a smart chemical polymer that sticks to bare flesh (but does not adhere to hair and eyes). The polymer solidifies into a form fitting body armor fabric when exposed to body temperature with the look and feel of a latex suit. Spray armor does not work on synthetic morphs or on clothing or other armor. The color and feel of the armor can be adjusted with electric currents and additional polymers, making it popular among some socialite and nightlife scenes. The spray-on armor does not wash off, but degrades 1 point of armor (both energy and kinetic) every 12 hours. It may be removed with a special nanotech solvent. Spray armor has an Armor Value of 2/2.</description>
+				<creditCost>Low</creditCost>
+				<type>Armor</type>
+			</gear>
+			<armorMod>
+				<name>Ablative Patches</name>
+				<description>These thin and light slap-on patches of stick to armor and are designed to absorb heat and energy from beams and explosions, safely vaporizing and blowing hot gas away. Ablative patches increases the Armor Value by +4/+2, but each hit reduces both the energy and kinetic value of the ablative armor by 1.</description>
+				<energy>4</energy>
+				<kinetic>2</kinetic>
+				<creditCost>Trivial</creditCost>
+			</armorMod>
+			<armorMod>
+				<name>Chameleon Coating</name>
+				<description>This provides the armor with the same effect as the chameleon cloak (p. 315).</description>
+				<energy>0</energy>
+				<kinetic>0</kinetic>
+				<creditCost>Trivial</creditCost>
+			</armorMod>
+			<armorMod>
+				<name>Fireproofing</name>
+				<description>Fireproofing includes the addition of heat-resistant ceramic or fire-resistant layers, both capable of withstanding extremely high temperatures. Fireproofing increases the Armor Value by +2/+0, and provides an additional 10 points of armor against heat or fire specifically.</description>
+				<energy>2</energy>
+				<kinetic>0</kinetic>
+				<creditCost>Trivial</creditCost>
+			</armorMod>
+			<armorMod>
+				<name>Immunogenic System</name>
+				<description>The immunogenic mod adds an active nanobot swarm, maintained by a specialized hive, that coats the outer layer of armor and also the non-armored parts of the wearer&apos;s morph. It acts as an outer immune system designed to neutralize toxic agents and nanotoxins with which it comes into contact. This provides immunity to drugs, toxins, and nanotoxins applied dermally, such as with a slap patch or splash grenade. It has no effect on inhaled, oral, or injected drugs (including coated weapons).</description>
+				<energy>0</energy>
+				<kinetic>0</kinetic>
+				<creditCost>Low</creditCost>
+			</armorMod>
+			<armorMod>
+				<name>Lotus Coating</name>
+				<description>The armor has been impregnated with a superhydrophic coating (contact angle of around 170 degrees) that repels all water-like liquids. If the armor is splashed by liquid toxins or chemicals, the effect is reduced since the liquids starts to roll off the armor. Apply a +30 modifier when defending against liquid-based attacks.</description>
+				<energy>0</energy>
+				<kinetic>0</kinetic>
+				<creditCost>Trivial</creditCost>
+			</armorMod>
+			<armorMod>
+				<name>Offensive Armor</name>
+				<description>When activated, the outer layer of this armor is rigged to shock anyone or anything that contacts it with electricity. Treat its DV and effect as a shock baton (p. 334).</description>
+				<energy>0</energy>
+				<kinetic>0</kinetic>
+				<creditCost>Low</creditCost>
+			</armorMod>
+			<armorMod>
+				<name>Reactive Coating</name>
+				<description>A thick layer of advanced nanotech is applied to the armor, protecting it with a colony of nanobots designed to sense incoming attacks. When an attack strikes the coating, it detonates to disrupt the attack. Bursts and full autofire are treated as a single attack. A reactive coating increases the Armor Value by +5/+5, but each detonation automatically inflicts 1 point of damage on the wearer. Reactive armor also works against melee attacks, but the attacker also suffers 1d10 ÷ 2 (round up) points of damage per attack (armor protects) from the microexplosion. Reactive coating only works against 5 attacks, after which the specialized nanobot hive replenishes the coating at the rate of 1 use per hour.</description>
+				<energy>5</energy>
+				<kinetic>5</kinetic>
+				<creditCost>Moderate</creditCost>
+			</armorMod>
+			<armorMod>
+				<name>Refractive Glazing</name>
+				<description>A combination of reflectors, refractive metamaterials, and an energy transfer system with heat radiators provides extra protection against energy weapons. Increase the Armor Value by +3/+0.</description>
+				<energy>3</energy>
+				<kinetic>0</kinetic>
+				<creditCost>Low</creditCost>
+			</armorMod>
+			<armorMod>
+				<name>Self-Healing</name>
+				<description>The armor is equipped with a nanohive that acts like repair spray (p. 333).</description>
+				<energy>0</energy>
+				<kinetic>0</kinetic>
+				<creditCost>Moderate</creditCost>
+			</armorMod>
+			<armorMod>
+				<name>Shock Proof</name>
+				<description>Shock proof armor is electronically insulated to discharge and reduce the effect of shock weapons. Apply an additional +10 modifier when resisting the DV and effects of shock weapons (p. 204).</description>
+				<energy>0</energy>
+				<kinetic>0</kinetic>
+				<creditCost>Low</creditCost>
+			</armorMod>
+			<armorMod>
+				<name>Thermal Dampening</name>
+				<description>Thermal dampening obfuscates heat signatures by converting body heat into electric energy. It makes the target more difficult to spot with thermal sensors; apply a -30 modifier for Perception Tests.</description>
+				<energy>0</energy>
+				<kinetic>0</kinetic>
+				<creditCost>Moderate</creditCost>
+			</armorMod>
+			<gear>
+				<name>Fiberoptic Cable</name>
+				<description>Fiberoptic cables are used to establish wired connections between two devices. Given the ubiquity of radios and the tangled mess wires cause, they are typically only used for privacy (unlike radio communication, fiberoptic signals may not be intercepted) or in areas with heavy radio interference.</description>
+				<type>Communications</type>
+				<creditCost>Trivial</creditCost>
+			</gear>
+			<gear>
+				<name>Laser or Microwave Link</name>
+				<description>These portable devices are used to establish a tight-beam, line-of-sight communications channel with another laser or microwave link. The range of these transceivers varies widely with environmental factors, but approximates 50 kilometers in atmosphere and 500 kilometers in space (though horizon limits must be kept in mind, being 5 kilometers at ground level on Earth and less on smaller bodies). Lasers are subject to interference from fog, dirt, smoke, and similar visual chaff, while microwaves may be hindered by metallic obstructions. These links may only be intercepted by getting directly in between the beams. Some teams carry a micro version of this system, worn on their person, allowing line of sight intra-team communications that cannot be intercepted like radio.</description>
+				<type>Communications</type>
+				<creditCost>Moderate</creditCost>
+			</gear>
+			<gear>
+				<name>Radio Booster</name>
+				<description>This device boosts the range and sensitivity of short-range radios, like those from implants, ectos, or microbugs. The booster must be with the shorter-ranged device&apos;s range (or directly linked via fiberoptic cable). It will repeat any transmissions received from that device, but at its extended range of 25 kilometers in urban areas (250 kilometers remote areas). Broadcasts from a radio booster are easy to receive by anyone looking for broadcasts (see Wireless Scanning, p. 251), though transmissions may be stealthed (p. 252). Boosters are commonly used by characters traveling far from habitats or other civilized regions.</description>
+				<type>Communications</type>
+				<creditCost>Low</creditCost>
+			</gear>
+			<gear>
+				<name>Neutrino Transceiver</name>
+				<description>This transceiver is capable of generating and receiving neutrino signals at a range of at least 100 astronomical units. It is large, with a size of 8 cubic meters (in a cube 2 meters on a side), but they can be loaded onto large vehicles. To function, it must be connected to a large power plant, such as one found in habitats or large spacecraft. The cost and size of this device includes the computer necessary for quantum farcasting. </description>
+				<type>Communications</type>
+				<creditCost>Expensive</creditCost>
+			</gear>
+			<gear>
+				<name>Miniature Radio Farcaster</name>
+				<description>Miniature farcasters communicate with each other using standard radio transceivers. As noted above, they may only securely communicate with the other farcasters with which they are entangled. Most miniature farcasters are worn as jewelry or fitted into clothing or other equipment.</description>
+				<type>Communications</type>
+				<creditCost>Low</creditCost>
+			</gear>
+			<gear>
+				<name>Portable QE Comm</name>
+				<description>This is a handheld FTL communications device. The actual communications unit can be made as small as desired, but must be large enough to connect to or hold a qubit reservoir. Because qubit reservoirs are relatively large and must be replaced, they are rarely implanted. Some miniature farcasters are designed so that users can also attach qubit reservoirs to enable them to be used for both light speed and FTL communication.</description>
+				<type>Communications</type>
+				<creditCost>Low</creditCost>
+			</gear>
+			<gear>
+				<name>Qubit Reservoir (Low Capacity)</name>
+				<description>Low-capacity qubit reservoirs can be used for 10 hours of high-resolution video conferencing or meshbrowsing and 100 hours of voice or text only communications.</description>
+				<type>Communications</type>
+				<creditCost>High</creditCost>
+			</gear>
+			<gear>
+				<name>Qubit Reservoir (High Capacity)</name>
+				<description>High-capacity qubit reservoirs can be used for 100 hours of high-resolution video conferencing or meshbrowsing and 1,000 hours of voice or text only communications.</description>
+				<type>Communications</type>
+				<creditCost>Expensive</creditCost>
+			</gear>
 		</otherGear>
 		<weapons>
 		</weapons>
