@@ -2057,4 +2057,4 @@ function initialSetup() {
 	loadNext();
 }
 
-window.onload = initialSetup;
+//window.onload = initialSetup;

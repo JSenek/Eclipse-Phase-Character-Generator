@@ -14,7 +14,7 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js" type="text/javascript">
 		</script>
 		-->
-		<script src="js/modernizr.min.js" type="text/javascript"></script>
+		<script src="js/modernizr.min.js"></script>
 		<script> //think this needs to be inline, wasn't working properly from an external file
 			Modernizr.addTest('dataset', function(){ return 'dataset' in document.documentElement; });
 			Modernizr.load([
@@ -24,6 +24,7 @@
 				both : ['js/chargen.js'],
 				complete	: function () {
 					console.log("modernizr.load returned " + Modernizr.dataset);
+					initialSetup();
 				}
 			}]);
 		</script>
