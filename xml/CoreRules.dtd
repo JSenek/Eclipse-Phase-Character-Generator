@@ -25,7 +25,7 @@
 <!ELEMENT aptmod (name,choice*,quantity?,amount)>
 <!ELEMENT armor (energy,kinetic,description?,creditCost?,type?)>
 <!ELEMENT attack (name,dv*,skill*,field*,special*)>
-<!ELEMENT augmentation (name,description,type,subtype?,creditCost,armor?,skillmod?,aptmod?)>
+<!ELEMENT augmentation (name,description,type*,subtype?,creditCost,armor?,skillmod*,aptmod*,statmod*)>
 <!ELEMENT commonmorphs (text,commonmorph*)>
 <!ELEMENT disadvantages (text,restrictedmorph*,restrictedgear*,requiredmorph*,trait*,statmod*,aptmod*)>
 <!ELEMENT gear (name,description,type,creditCost)>

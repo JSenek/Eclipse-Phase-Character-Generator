@@ -52,6 +52,15 @@ function highlightErrors(target,error) {
 	target.style.color = color;
 }
 
+function keypress(e) {
+	var evtobj, unicode;
+	evtobj = (window.event)? event : e; //distinguish between IE's explicit event object (window.event) and Firefox's implicit.
+	unicode = (evtobj.charCode) ? evtobj.charCode : evtobj.keyCode;
+	if (unicode === 13) {
+		document.getElementById("nextButton").click();
+	}
+}
+
 function lookupSkillID(name) {
 	var i;
 	for (i = 0; i < skillData.length; i++) {
@@ -1997,6 +2006,7 @@ function initialSetup() {
 	document.getElementById("previousButton").onclick = loadPrevious;
 	document.getElementById("nextButton").onclick = loadNext;
 	document.getElementById("fixeddiv").style.display = "block";
+	document.onkeypress = keypress;
 	loadNext();
 }
 
