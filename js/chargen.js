@@ -1,7 +1,7 @@
 var myCharacter, currentSection;
 var backgroundData, factionData, morphData, skillData, positiveTraitData, negativeTraitData, psiData;
 var bgChoices, facChoices, morphChoices;
-
+var datasetAvailable = false;
 function Character() {
 	this.name = "";
 	this.concept = "";
