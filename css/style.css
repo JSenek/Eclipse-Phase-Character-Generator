@@ -17,7 +17,7 @@ strong {
 #FooterSection {
 	position: absolute;
 	width: 80%;
-	height : 60px;
+	height : auto;
 	bottom: 0px;
 }
 #fixeddiv {
@@ -31,6 +31,7 @@ strong {
 	padding: 16px; 
 	background:#FFFFFF; 
 	border:2px solid black;
+	z-index : 100;
 }
 
 .section {
