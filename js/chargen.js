@@ -516,16 +516,16 @@ function saveSection(section) { // Validate and save data
 				document.getElementById("facChoice" + i + "Field").value = "";
 			}
 			// Check for duplicate skill selections
-			if (tempList.hasOwnProperty("skill" + document.getElementById("bgChoice" + i).value)) {
-				if (tempList["skill" + document.getElementById("bgChoice" + i).value].hasOwnProperty("field" + document.getElementById("bgChoice" + i + "Field").value)) {
+			if (tempList.hasOwnProperty("skill" + document.getElementById("facChoice" + i).value)) {
+				if (tempList["skill" + document.getElementById("facChoice" + i).value].hasOwnProperty("field" + document.getElementById("facChoice" + i + "Field").value)) {
 					alert("You may not select the same skill twice.");
 					return 0;
 				} else {
-					tempList["skill" + document.getElementById("bgChoice" + i).value]["field" + document.getElementById("bgChoice" + i + "Field").value] = 1;
+					tempList["skill" + document.getElementById("facChoice" + i).value]["field" + document.getElementById("facChoice" + i + "Field").value] = 1;
 				}
 			} else {
-				tempList["skill" + document.getElementById("bgChoice" + i).value] = {};
-				tempList["skill" + document.getElementById("bgChoice" + i).value]["field" + document.getElementById("bgChoice" + i + "Field").value] = 1;
+				tempList["skill" + document.getElementById("facChoice" + i).value] = {};
+				tempList["skill" + document.getElementById("facChoice" + i).value]["field" + document.getElementById("facChoice" + i + "Field").value] = 1;
 			}
 		}
 		removeTemplate("faction");
