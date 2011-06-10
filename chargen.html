@@ -9,25 +9,20 @@
 		<!--[if lt IE 8]>
 		<link rel="stylesheet" href="css/blueprint/ie.css" type="text/css" media="screen, projection">
 		<![endif]-->
-
-		<!--
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js" type="text/javascript">
-		</script>
-		-->
-		<script src="js/modernizr.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+	   	<script src="js/modernizr.min.js"></script> -->
 		<script> //think this needs to be inline, wasn't working properly from an external file
 			Modernizr.addTest('dataset', function(){ return 'dataset' in document.documentElement; });
 			Modernizr.load([
 			{
 				test : Modernizr.dataset,
 				nope : ['js/html5-dataset.js'],
-				both : ['js/chargen.js'],
 				complete	: function () {
 					console.log("modernizr.load returned " + Modernizr.dataset);
-					initialSetup();
 				}
-			}]);
+			}]);	
 		</script>
+		<script src="js/chargen.js"></script>
 		<style type="text/css">
 			span.c5 {color: black}
 			span.c4 {color: red}
@@ -36,7 +31,7 @@
 			div.c1 {display: block;}
 		</style>
 	</head>
-	<body>
+	<body data-test-data-attr="Body" id="bodytag">
 		<div class="container">
 			<div id="chargen">
 				<div id="LoadingSection" class="c1">Loading, please wait...</div>

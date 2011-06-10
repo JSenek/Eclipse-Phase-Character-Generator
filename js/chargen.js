@@ -1915,7 +1915,7 @@ function initialSetup() {
 	document.getElementById("morph").innerHTML = output;
 	document.getElementById("morph").value = 0;
 	document.getElementById("morph").onchange = selectMorph;
-	selectMorph();
+	//selectMorph();
 	applyTemplate("morph");
 	// Learned Skills
 	output = "";
