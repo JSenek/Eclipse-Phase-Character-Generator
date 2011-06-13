@@ -126,7 +126,7 @@ function checkTraitReqs(type, name, source, silent) {
 		return 0;
 	}
 	// Check if another trait is required first.
-	if (tempData[traitID].getElementsByTagName("requires").length !== 0) {
+	if (tempData[traitID].hasOwnProperty("requires")) {
 		if ((!myCharacter.ego[type + "Traits"][lookupTraitID(type, tempData[traitID].getElementsByTagName("requires")[0].childNodes[0].nodeValue, source)]) && (!myCharacter.morph[type + "Traits"][lookupTraitID(type, tempData[traitID].getElementsByTagName("requires")[0].childNodes[0].nodeValue, source)])) {
 			if (!silent) {
 				alert(name + " requires " + tempData[traitID].getElementsByTagName("requires")[0].childNodes[0].nodeValue + ".");
@@ -1743,7 +1743,7 @@ function initialSetup() {
 				temp = "<tr>";
 				temp += "<td><input type=\"checkbox\" name=\"traitBox\" id=\"trait" + name + source + "\" data-trait-name=\"" + name + "\" data-trait-type=\"" + type + "\" data-trait-source=\"" + source + "\" "; // Check box
 				// No traits are purchased by default, so any requirements will not have been met
-				if (tempData[j].getElementsByTagName("requires").length !== 0) { 
+				if (tempData[j].hasOwnProperty("requires")) { 
 					temp += "disabled=\"true\" ";
 				}
 				temp +="/><\/td>"; // Check box
@@ -1915,7 +1915,7 @@ function initialSetup() {
 	document.getElementById("morph").innerHTML = output;
 	document.getElementById("morph").value = 0;
 	document.getElementById("morph").onchange = selectMorph;
-	//selectMorph();
+	selectMorph();
 	applyTemplate("morph");
 	// Learned Skills
 	output = "";
@@ -2057,4 +2057,4 @@ function initialSetup() {
 	loadNext();
 }
 
-//window.onload = initialSetup;
+window.onload = initialSetup;

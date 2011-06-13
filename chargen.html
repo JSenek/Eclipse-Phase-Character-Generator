@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta name="generator" content="HTML Tidy for Linux (vers 6 November 2007), see www.w3.org">
 		<title>A Simple Eclipse Character Generator</title>
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 		<link rel="stylesheet" href="css/blueprint/screen.css" type="text/css" media="screen, projection">
@@ -10,8 +9,8 @@
 		<link rel="stylesheet" href="css/blueprint/ie.css" type="text/css" media="screen, projection">
 		<![endif]-->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
-	   	<script src="js/modernizr.min.js"></script> -->
-		<script> //think this needs to be inline, wasn't working properly from an external file
+	   	<script src="js/modernizr.min.js"></script>
+		<script> // Check for html5 dataset support
 			Modernizr.addTest('dataset', function(){ return 'dataset' in document.documentElement; });
 			Modernizr.load([
 			{
@@ -113,7 +112,7 @@
 						</tr>
 					</table>
 					<br>
-					<input type="checkbox" name="traitBox" id="traitExceptional AptitudeEgo"><strong>Exceptional Aptitude Trait (20 CP)</strong><select id="traitExceptional AptitudeEgoChoice">
+					<input type="checkbox" name="traitBox" id="traitExceptional AptitudeEgo" data-trait-name="Exceptional Aptitude" data-trait-type="positive" data-trait-source="Ego"><strong>Exceptional Aptitude Trait (20 CP)</strong><select id="traitExceptional AptitudeEgoChoice">
 						<option value="COG">COG</option>
 						<option value="COO">COO</option>
 						<option value="INT">INT</option>
@@ -122,7 +121,7 @@
 						<option value="SOM">SOM</option>
 						<option value="WIL">WIL</option>
 					</select>: As an ego trait, the character may raise the maximum for a particular chosen aptitude to 40 rather than 30 (p. 122). Note that this trait just raises the maximum, it does not give the character 10 more aptitude points. This trait may only be taken by a morph or ego once.<br>
-					<input type="checkbox" name="traitBox" id="traitFeebleEgo"><strong>Feeble Trait (-20 CP)</strong><select id="traitFeebleEgoChoice">
+					<input type="checkbox" name="traitBox" id="traitFeebleEgo" data-trait-name="Feeble" data-trait-type="negative" data-trait-source="Ego"><strong>Feeble Trait (-20 CP)</strong><select id="traitFeebleEgoChoice">
 						<option value="COG">COG</option>
 						<option value="COO">COO</option>
 						<option value="INT">INT</option>
@@ -130,7 +129,7 @@
 						<option value="SAV">SAV</option>
 						<option value="SOM">SOM</option>
 						<option value="WIL">WIL</option>
-				</select>: The character is particularly weak with one aptitude. That aptitude must be purchased at a rating lower than 5 and may never be upgraded during character advancement. The aptitude maximum is 10, no matter what morph the character is wearing.<br></div>
+					</select>: The character is particularly weak with one aptitude. That aptitude must be purchased at a rating lower than 5 and may never be upgraded during character advancement. The aptitude maximum is 10, no matter what morph the character is wearing.<br></div>
 				<div id="EgoTraitsSection" class="section">
 					<div class="c2">
 						<h2>Traits</h2>
@@ -207,7 +206,7 @@
 						</tr>
 					</table>
 					<br>
-					<input type="checkbox" name="traitBox" id="traitBlacklistedEgo"><strong>Blacklisted Trait (-5 or -20 CP)</strong><select id="traitBlacklistedChoice">
+					<input type="checkbox" name="traitBox" id="traitBlacklistedEgo" data-trait-name="Blacklisted" data-trait-type="negative" data-trait-source="Ego"><strong>Blacklisted Trait (-5 or -20 CP)</strong><select id="traitBlacklistedChoice">
 						<option value="ARep">The @-list</option>
 						<option value="CRep">CivicNet</option>
 						<option value="ERep">EcoWave</option>
@@ -228,8 +227,8 @@
 					<div id="morphOptions" class="c1"></div>
 					<strong>Background Restrictions</strong>: <span id="morphBGRestrictions"></span><br>
 					<strong>Faction Restrictions</strong>: <span id="morphFacRestrictions"></span><br>
-					<input type="checkbox" name="traitBox" id="traitSecond SkinEgo"><strong>Second Skin Trait (15 CP)</strong>: If your character background or faction enforces a restriction on your starting morph (for example, uplifts must start with an uplift morph), this trait allows you to ignore that restriction and purchase a starting morph of your choice.<br>
-					<input type="checkbox" name="traitBox" id="traitExceptional AptitudeMorph"><strong>Exceptional Aptitude Trait (20 CP)</strong><select id="traitExceptional AptitudeMorphChoice">
+					<input type="checkbox" name="traitBox" id="traitSecond SkinEgo" data-trait-name="Second Skin" data-trait-type="positive" data-trait-source="Ego"><strong>Second Skin Trait (15 CP)</strong>: If your character background or faction enforces a restriction on your starting morph (for example, uplifts must start with an uplift morph), this trait allows you to ignore that restriction and purchase a starting morph of your choice.<br>
+					<input type="checkbox" name="traitBox" id="traitExceptional AptitudeMorph" data-trait-name="Exceptional Aptitude" data-trait-type="positive" data-trait-source="Morph"><strong>Exceptional Aptitude Trait (20 CP)</strong><select id="traitExceptional AptitudeMorphChoice">
 						<option value="COG">COG</option>
 						<option value="COO">COO</option>
 						<option value="INT">INT</option>
@@ -273,8 +272,8 @@
 					<p>Each character must purchase a minimum of 300 CP of Knowledge skills.</p>
 					<div id="KnowledgeSkills"></div>
 					<br>
-					<input type="checkbox" name="traitBox" id="traitExpertEgo"><strong>Expert Trait (10 CP)</strong><select id="traitExpertChoice"></select><input type="text" id="traitExpertField" maxlength="20">: The character is a legend in the use of one particular skill. The character may raise one learned skill over 80, to a maximum of 90, during character creation. This trait does not actually increase the skill, it just raises the maximum. This trait may only be taken once.<br>
-					<input type="checkbox" name="traitBox" id="traitIncompetentEgo"><strong>Incompetent Trait (-10 CP)</strong><select id="traitIncompetentChoice"></select>: The character is completely incapable of performing a particular chosen active skill, no matter any training they may receive. They may not buy this skill during character creation or later advancement, and the modifier for defaulting to the linked aptitude of this particular skill is -10. This may not be used for exotic weapon skills, and should be used for a skill that could be of use to the character.<br></div>
+					<input type="checkbox" name="traitBox" id="traitExpertEgo" data-trait-name="Expert" data-trait-type="positive" data-trait-source="Ego"><strong>Expert Trait (10 CP)</strong><select id="traitExpertChoice"></select><input type="text" id="traitExpertField" maxlength="20">: The character is a legend in the use of one particular skill. The character may raise one learned skill over 80, to a maximum of 90, during character creation. This trait does not actually increase the skill, it just raises the maximum. This trait may only be taken once.<br>
+					<input type="checkbox" name="traitBox" id="traitIncompetentEgo" data-trait-name="Incompetent" data-trait-type="negative" data-trait-source="Ego"><strong>Incompetent Trait (-10 CP)</strong><select id="traitIncompetentChoice"></select>: The character is completely incapable of performing a particular chosen active skill, no matter any training they may receive. They may not buy this skill during character creation or later advancement, and the modifier for defaulting to the linked aptitude of this particular skill is -10. This may not be used for exotic weapon skills, and should be used for a skill that could be of use to the character.<br></div>
 				<div id="MiscCPSection" class="c3">
 					<div class="c2">
 						<h2>Spend Remaining CP</h2>
