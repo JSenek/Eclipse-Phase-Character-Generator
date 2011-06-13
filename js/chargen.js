@@ -75,21 +75,21 @@ function objectLength(obj) {
 
 function updateCP() {
 	document.getElementById("totalCP").innerHTML = myCharacter.CP;
-	document.getElementById("totalCP").color = (myCharacter.CP >= 0) ? "black" : "red";
+	document.getElementById("totalCP").style.color = (myCharacter.CP >= 0) ? "black" : "red";
 	document.getElementById("activeSkillsCP").innerHTML = myCharacter.CPSpentOnActiveSkills;
-	document.getElementById("activeSkillsCP").color = (myCharacter.CPSpentOnActiveSkills < 400) ? "red" : "black";
+	document.getElementById("activeSkillsCP").style.color = (myCharacter.CPSpentOnActiveSkills < 400) ? "red" : "black";
 	document.getElementById("knowledgeSkillsCP").innerHTML = myCharacter.CPSpentOnKnowledgeSkills;
-	document.getElementById("knowledgeSkillsCP").color = (myCharacter.CPSpentOnKnowledgeSkills < 300) ? "red" : "black";
+	document.getElementById("knowledgeSkillsCP").style.color = (myCharacter.CPSpentOnKnowledgeSkills < 300) ? "red" : "black";
 	document.getElementById("negativeMorphTraitsCP").innerHTML = myCharacter.CPGainedFromNegativeMorphTraits;
-	document.getElementById("negativeMorphTraitsCP").color = (myCharacter.CPGainedFromNegativeMorphTraits <= 25) ? "black" : "red";
+	document.getElementById("negativeMorphTraitsCP").style.color = (myCharacter.CPGainedFromNegativeMorphTraits <= 25) ? "black" : "red";
 	document.getElementById("negativeTraitsCP").innerHTML = myCharacter.CPGainedFromNegativeTraits;
-	document.getElementById("negativeTraitsCP").color = (myCharacter.CPGainedFromNegativeTraits <= 50) ? "black" : "red";
+	document.getElementById("negativeTraitsCP").style.color = (myCharacter.CPGainedFromNegativeTraits <= 50) ? "black" : "red";
 	document.getElementById("positiveTraitsCP").innerHTML = myCharacter.CPSpentOnPositiveTraits;
-	document.getElementById("positiveTraitsCP").color = (myCharacter.CPSpentOnPositiveTraits <= 50) ? "black": "red";
+	document.getElementById("positiveTraitsCP").style.color = (myCharacter.CPSpentOnPositiveTraits <= 50) ? "black": "red";
 	document.getElementById("psiChiSleights").innerHTML = myCharacter.ego.psiSleights.totalChi;
-	document.getElementById("psiChiSleights").color = (myCharacter.ego.psiSleights.totalChi > 5) ? "red": "black";
+	document.getElementById("psiChiSleights").style.color = (myCharacter.ego.psiSleights.totalChi > 5) ? "red": "black";
 	document.getElementById("psiGammaSleights").innerHTML = myCharacter.ego.psiSleights.totalGamma;
-	document.getElementById("psiGammaSleights").color = (myCharacter.ego.psiSleights.totalGamma > 5) ? "red": "black";
+	document.getElementById("psiGammaSleights").style.color = (myCharacter.ego.psiSleights.totalGamma > 5) ? "red": "black";
 }
 
 // Trait Functions
@@ -1512,7 +1512,7 @@ function updateStartApt() {
 	total -= parseInt(document.getElementById("startSOM").value, 10);
 	total -= parseInt(document.getElementById("startWIL").value, 10);
 	document.getElementById("remainingAptPts").innerHTML = total;
-	document.getElementById("remainingAptPts").color = (total !== 0) ? "red" : "black";
+	document.getElementById("remainingAptPts").style.color = (total !== 0) ? "red" : "black";
 }
 
 function updateStartRep() {
@@ -1525,7 +1525,7 @@ function updateStartRep() {
 	total -= parseInt(document.getElementById("startIRep").value, 10);
 	total -= parseInt(document.getElementById("startRRep").value, 10);
 	document.getElementById("remainingRepPts").innerHTML = total;
-	document.getElementById("remainingRepPts").color = (total !== 0) ? "red" : "black";
+	document.getElementById("remainingRepPts").style.color = (total !== 0) ? "red" : "black";
 }
 
 function updateFixedDiv() {
