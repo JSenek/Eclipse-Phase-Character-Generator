@@ -1,7 +1,6 @@
 var myCharacter, currentSection;
 var backgroundData, factionData, morphData, skillData, positiveTraitData, negativeTraitData, psiData;
 var bgChoices, facChoices, morphChoices;
-
 function Character() {
 	this.name = "";
 	this.concept = "";
@@ -160,7 +159,7 @@ function checkTraitReqs(type, name, source, silent) {
 function purchaseTrait(type, name, source, mod, free) {
 	var enables = 0, traitID = lookupTraitID(type, name, source), temp, i;
 	if (type === "positive") {
-		// Charge CP only if it's not already possessed and not free
+		// Charge CP only if its not already possessed and not free
 		if ((!myCharacter.ego.positiveTraits[traitID]) && (!myCharacter.morph.positiveTraits[traitID]) && (!free)) {
 			myCharacter.CP -= parseInt(positiveTraitData[traitID].getElementsByTagName("CP")[0].childNodes[0].nodeValue, 10) + mod;
 			myCharacter.CPSpentOnPositiveTraits += parseInt(positiveTraitData[traitID].getElementsByTagName("CP")[0].childNodes[0].nodeValue, 10) + mod;
@@ -183,7 +182,7 @@ function purchaseTrait(type, name, source, mod, free) {
 		}
 	}
 	if (type === "negative") {
-		// Give CP only if it's not already possessed and not free
+		// Give CP only if its not already possessed and not free
 		if ((!myCharacter.ego.negativeTraits[traitID]) && (!myCharacter.morph.negativeTraits[traitID]) && (!free)) {
 			myCharacter.CP += parseInt(negativeTraitData[traitID].getElementsByTagName("CP")[0].childNodes[0].nodeValue, 10) + mod;
 			myCharacter.CPGainedFromNegativeTraits += parseInt(negativeTraitData[traitID].getElementsByTagName("CP")[0].childNodes[0].nodeValue, 10) + mod;
@@ -1916,7 +1915,7 @@ function initialSetup() {
 	document.getElementById("morph").innerHTML = output;
 	document.getElementById("morph").value = 0;
 	document.getElementById("morph").onchange = selectMorph;
-	selectMorph();
+	//selectMorph();
 	applyTemplate("morph");
 	// Learned Skills
 	output = "";
@@ -2058,4 +2057,4 @@ function initialSetup() {
 	loadNext();
 }
 
-window.onload = initialSetup;
+//window.onload = initialSetup;
