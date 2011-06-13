@@ -5,6 +5,12 @@
 @author Elijah Grey - eligrey.com
 @license http://www.gnu.org/licenses/lgpl.html
 */
+
+function toCamelCase(str)
+{
+    return str.replace(/\-./g, function(substr){ return substr.charAt(1).toUpperCase();});
+}
+
 Element.prototype.setDataAttribute = function(name, value) {
 	if ( value !== undefined ) return this.setAttribute('data-'+name, value);
 	else return this.removeDataAttribute(name);
@@ -29,7 +35,7 @@ if ( !Element.prototype.__lookupGetter__("dataset") ) {
 	  function dataSetterFunc(ref_el, attrName) { return function(val){ return ref_el.setDataAttribute(attrName, val) } };
 	  for ( attr in this.attributes ) {
 		if ( this.attributes.hasOwnProperty(attr) && this.attributes[attr].name && /^data-[a-z_\-\d]*$/i.test(this.attributes[attr].name) ) {
-			var attrName = this.attributes[attr].name.substr(5), attrVal = this.attributes[attr].value;
+			var attrName = toCamelCase(this.attributes[attr].name.substr(5)), attrVal = this.attributes[attr].value;
 			try {
 				HTML5_DOMStringMap.__defineGetter__(attrName, lambda(attrVal || '') );
 				HTML5_DOMStringMap.__defineSetter__(attrName, dataSetterFunc(this, attrName) );
