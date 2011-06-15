@@ -768,7 +768,6 @@ function saveSection(section) { // Validate and save data
 function setupSection(section) {
 	var output, i, q, j, field, flag, type, name, category, skillID, output, temp, temp2, tempData, maxVal, maxCP, costPer, multiplier, newCost, oldCost, newValue, oldValue, newTotal, baseValue, statName;
 	if (section === "MorphSection") {
-		selectMorph();
 		output = "None";
 		// Load background restrictions
 		if (backgroundData[myCharacter.ego.background].getElementsByTagName("requiredmorph").length !== 0) {
@@ -1916,6 +1915,7 @@ function initialSetup() {
 	document.getElementById("morph").innerHTML = output;
 	document.getElementById("morph").value = 0;
 	document.getElementById("morph").onchange = selectMorph;
+	selectMorph();
 	// Learned Skills
 	output = "";
 	for (i = 0; i < skillData.length; i++) {

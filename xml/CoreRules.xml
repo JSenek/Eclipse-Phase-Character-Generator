@@ -2120,6 +2120,211 @@
 				<type>Narcoalgorithm</type>
 				<creditCost>Low</creditCost>
 			</gear>
+			<gear>
+				<name>Atropine</name>
+				<description>Though poisonous in large doses, atropine is an effective antidote against nerve agents like BTX2 and Nervex. Easily synthesized in a maker, atropine will avert the effect whether taken soon before or after dosage by a nerve agent.</description>
+				<type>Chemical</type>
+				<creditCost>Trivial</creditCost>
+			</gear>
+			<gear>
+				<name>DMSO</name>
+				<description>This chemical acts as a carrier, allowing other chemicals to be absorbed through the skin. It allows any chemical agent to be applied dermally.</description>
+				<type>Chemical</type>
+				<creditCost>Trivial</creditCost>
+			</gear>
+			<gear>
+				<name>Liquid Thermite</name>
+				<description>Similar to scrapper&apos;s gel, liquid thermite comes in a gel form that is easily applied under all environmental conditions (by the nature of its chemical reaction, thermite is oxygenated and will burn underwater or in space). It is ignited with an electric charge, burning at temperatures exceeding 2,500 degrees Celsius and melting through whatever it is touching. Liquid thermite floors 3d10 + 5 DV per Action turn to whatever it is touching. Armor will also be burnt through, offering no protection once the full Armor rating has been reached.</description>
+				<type>Chemical</type>
+				<creditCost>Moderate</creditCost>
+			</gear>
+			<gear>
+				<name>NotWater</name>
+				<description>NotWater is an effective liquid fire retardant that does not get objects wet, no matter how absorbent they are - it simply beads up and slides right off.</description>
+				<type>Chemical</type>
+				<creditCost>Trivial</creditCost>
+			</gear>
+			<gear>
+				<name>Scrapper&apos;s Gel</name>
+				<description>This goo turns into a potent acid when given an electrical charge. It comes in a gel-like state and may be smeared like jelly, and may even be used in space. In acid form, scrapper&apos;s gel does 1d10 + 5 DV per Action Turn to anything it touches, unless the material has been treated against acid. Armor will protect against this acid at first, but the acid will eat through the armor, so that it will no longer protect after its full armor value has been reached.</description>
+				<type>Chemical</type>
+				<creditCost>Low</creditCost>
+			</gear>
+			<gear>
+				<name>Slip</name>
+				<description>This liquid is almost entirely frictionless. When spread around an area (commonly used in splash grenades), anyone attempting to walk or run on the affected surface must make a COO Test or fall down. Likewise, any coated surface becomes extremely hard to grip onto, requiring a SOM Test to hang on. Anyone attempting to grapple a slip-soaked character suffers a -30 modifier.</description>
+				<type>Chemical</type>
+				<creditCost>Low</creditCost>
+			</gear>
+			<gear>
+				<name>Tracker Dye</name>
+				<description>This liquid is colorless at normal light but becomes recognizable under pre-specified different wavelengths (such as infrared or ultraviolet).</description>
+				<type>Chemical</type>
+				<creditCost>Trivial</creditCost>
+			</gear>
+			<gear>
+				<name>BTX</name>
+				<description>BTX-squared (also called Frog Bite) is a genetically-enhanced variant of the extremely potent cardiotoxic and neurotoxic batrachotoxin. It leads to fast paralysis and cardiac arrest that usually kills the target within a few Action Turns. Affected characters suffer 2d10 + 10 damage a turn for 3 Action Turns; medichines reduce this damage by half. They must also make a SOM × 2 Test (+30 with medichines) or be paralyzed for 1 hour.</description>
+				<type>Toxin</type>
+				<creditCost>High</creditCost>
+			</gear>
+			<gear>
+				<name>CR Gas</name>
+				<description>This potent incapacitating agent causes eye twitching and temporary blindness, severe coughing and breathing difficulty, skin irritation, and panic. Affected characters suffer 1d10 ÷ 2 damage, a -30 modifier to sight-based Perception Tests, and a -20 modifier to all other actions for 20 minutes (5 minutes if the character has medichines). </description>
+				<type>Toxin</type>
+				<creditCost>Low</creditCost>
+			</gear>
+			<gear>
+				<name>Flight</name>
+				<description>This drug is derived from human pheromones released due to fear, and is intended to instill alarm or even terror in the character. Affected characters must make a WIL × 3 Test (+30 with medichines) or suffer a panic attack, flooring 1d10 stress. Dosed characters also suffer a -30 modifier for resisting intimidation or fear-based emotional manipulations. Flight affects last for 1 hour (5 minutes with medichines).</description>
+				<type>Toxin</type>
+				<creditCost>Low</creditCost>
+			</gear>
+			<gear>
+				<name>Nervex</name>
+				<description>Derived from deadly nerve agents like cyclosarin, VX, and novichok, this genetically-modified toxin is deployed as a colorless, odorless gas that turns safely inert 10 minutes after deployment. It causes involuntary contraction of the muscles, seizures, and death by respiratory failure. One minute after exposure, the character must make a SOM Test or be incapacitated by seizures, paralysis, or nausea and vomiting; unaffected characters still suffer a -20 modifier to all actions. After 10 minutes, the character will die unless an antidote (such as atropine, p. 323) is applied. Characters with medichines suffer the initial effects, but recover after 5 minutes.</description>
+				<type>Toxin</type>
+				<creditCost>High</creditCost>
+			</gear>
+			<gear>
+				<name>Oxytocin-A</name>
+				<description>A genetically-improved variant of oxytocin, this drug induces trust in the recipient. Drugged characters suffer a -30 modifier on all WIL and Kinesics Tests where trust is a factor. Medichines provide immunity.</description>
+				<type>Toxin</type>
+				<creditCost>Low</creditCost>
+			</gear>
+			<gear>
+				<name>Twitch</name>
+				<description>Twitch is a convulsive agent, a nonlethal nerve gas. Affected characters must succeed in a SOM Test (+30 with medichines) or become incapacitated with severe muscle tremors. Unaffected characters still suffer a -20 on all actions. The effects of Twitch last for 10 minutes, 5 if the character has medichines.</description>
+				<type>Toxin</type>
+				<creditCost>Low</creditCost>
+			</gear>
+			<gear>
+				<name>Disruption</name>
+				<description>This nanotoxin attacks the myelin sheath on nerves, disrupting nerve impulses and flooring symptoms of multiple sclerosis. Every hour the morph suffers a -5 modifier to COO, REF, and COG. If any aptitudes are reduced to zero,the morph is effectively paralyzed and catatonic.</description>
+				<type>Nanotoxin</type>
+				<creditCost>Moderate</creditCost>
+			</gear>
+			<gear>
+				<name>Necrosis</name>
+				<description>Necrosis nanobots attack the walls of cells inside the body, killing tissue. This nanotoxin floors 1d10 ÷ 2 damage per Action Turn for one minute, after which the nanobots disable and flush from the body. Necrosis only affects biomorphs.</description>
+				<type>Nanotoxin</type>
+				<creditCost>Moderate</creditCost>
+			</gear>
+			<gear>
+				<name>Neuropath</name>
+				<description>These nanobots are designed to stimulate the pain receptors of a morph on a systemic level to cause agony and impairment. While most neuropaths target biological receptors, variants are available that induce comparable (phantom) pain stimulations in the cyberbrains of synthmorphs to create an equivalent effect. The affected character must succeed in a WIL × 3 Test or become incapacitated. Even if they succeed, they suffer -30 from the floored agony. Any form of pain resistance that allows a character to ignore wound modifiers will negate the neuropath pain modifier by an appropriate amount.</description>
+				<type>Nanotoxin</type>
+				<creditCost>Moderate</creditCost>
+			</gear>
+			<gear>
+				<name>Nutcracker</name>
+				<description>Nutcrackers are nanobots designed to locate, migrate, and decompose the synthdiamond case of a cortical stack within a morph by attacking its crystal lattice. This process takes approximately 6 hours, after which the cortical stack is destroyed. These nanobots also attack the cortical stack&apos;s connections to the (cyber)brain and brain-mapping nanobots. After 1 hour, the victim will be aware that their cortical stack is threatened. After 3 hours, all connections will be severed and the cortical stack will no longer be able to back up the character.</description>
+				<type>Nanotoxin</type>
+				<creditCost>High</creditCost>
+			</gear>
+			<gear>
+				<name>Degen</name>
+				<description>Characters exposed to this degenerative neurological disease must make a DUR × 2 Test or become infected. Medichines will defeat the disease, but others will not show signs of infection for 1 week, when the symptoms of a rapidly progressing dementia will become clear: memory loss, personality changes, and hallucinations. If untreated, Degen will progress for another week with more serious symptoms, including speech impediments, jerky movements, loss of balance and coordination, and even seizures. This is reflected by a 5 point loss in all aptitudes per day (after the first week). When any aptitude reaches 0, the character dies. Degen is notorious for its effect in corrupting cortical stack backups before infection symptoms manifest.</description>
+				<type>Pathogen</type>
+				<creditCost>Expensive</creditCost>
+			</gear>
+			<gear>
+				<name>Trigger</name>
+				<description>Trigger is a designer virus that selectively targets and infects mast cells to trigger a hyper-allergic reaction. The resulting anaphylactic shock due to systemic vasodilatation (associated with a sudden drop in blood pressure) and bronchial swelling (resulting in constriction and difficulty breathing) usually leads to death in a matter of minutes after onset, if not treated. Infected characters must succeed in a DUR Test (using their current Durability score minus damage) or die quickly. Even medichines have difficulty reacting in time against this virus; characters with medichines must make a DUR × 2 Test to survive.</description>
+				<type>Pathogen</type>
+				<creditCost>Expensive</creditCost>
+			</gear>
+			<gear>
+				<name>Inhibitor</name>
+				<description>Inhibitor is a cocktail of neurochemicals that block some brain receptor and transmitter functions in an attempt to reduce psi-waves and block or impair sleights. This drug is commonly used to restrain async prisoners from using their abilities. A drugged character must make a WIL × 2 Test. If they fail, they lose all psi abilities for the drug&apos;s duration. If they succeed, they suffer a -30 impairment on Psi skills and all strain is doubled. Inhibitor has an unfortunate side effect of doping the character down, however; apply a -10 modifier to their COG. Inhibitor-influenced characters tend to have a glazed, dopey expression and have difficulty getting excited or emotional.</description>
+				<type>Psi drug</type>
+				<creditCost>High</creditCost>
+			</gear>
+			<gear>
+				<name>Psi-Opener</name>
+				<description>Psi-opener drugs are variants of the Watts-MacLeod strain with a temporary effect and which do not permanently alter the user&apos;s brain. Psiopener temporarily imbues the user with the ability to use one particular sleight, regardless of whether or not they have the Psi trait. Each type of Psi-opener is customized for a particular sleight. While primarily intended for non-asyncs, non-asyncs may not possess Psi skills, so they must default to WIL. For this reason, Psi-Opener is often doubled up with Psike-out. Using Psi-opener is a mind-wrenching experience. Users are occasionally subject to hallucinations (gamemaster discretion). When the drug wears off, it floors 1d10 points of mental stress, +2 if the drug imbues a psi-gamma sleight.</description>
+				<type>Psi drug</type>
+				<creditCost>Expensive</creditCost>
+			</gear>
+			<gear>
+				<name>Psike-Out</name>
+				<description>Psike-out bolsters an async&apos;s psi abilities. Apply a +20 modifier to the async&apos;s Psi skill tests for the drug&apos;s duration. However, also apply +2 to all strain DVs for the drug&apos;s duration. Psike-out is mentally addictive, with an Addiction modifier of -10.</description>
+				<type>Psi drug</type>
+				<creditCost>Expensive</creditCost>
+			</gear>
+			<gear>
+				<name>Ecto</name>
+				<description>Ectos are the external version of basic mesh inserts (p. 300), minus the medical sensors. These colorful devices serve as a wearable mesh terminal, PDA, locator, and camera-phone. The devices are flexible (often worn as bracelets), dirt-resistant, self-cleaning, and may be stretched out to increase screen size. They may project holographic displays and are typically equipped with wireless-enabled glasses or contact lenses and decorative earpieces or earrings so that the user may access augmented reality. Given the ubiquity of mesh inserts, ectos are growing less common, but they are still used by bioconservatives, others without implants, and those who prefer to access the mesh via an external device for security concerns.</description>
+				<type>Everyday</type>
+				<creditCost>Low</creditCost>
+			</gear>
+			<gear>
+				<name>Holographic Projectors</name>
+				<description>These devices are capable of projecting high-definition, ultra-realistic three-dimensional images and movies. From a distance (20+ meters), such holograms can be difficult to distinguish as fake, but up close they are easier to see for what they are (+20 Perception Test modifier). Holograms do not appear wavelengths other than visual light, and so are easily identified by anyone with enhanced vision.</description>
+				<type>Everyday</type>
+				<creditCost>Low</creditCost>
+			</gear>
+			<gear>
+				<name>Micrograv Shoes</name>
+				<description>These shoes are equipped with velcro and/or a magnetic system, allowing the wearer to walk normally on appropriate surfaces in micrograv and zero-G environments, rather than floating or bouncing.</description>
+				<type>Everyday</type>
+				<creditCost>Trivial</creditCost>
+			</gear>
+			<gear>
+				<name>Portable Sensor</name>
+				<description>This is a small portable (possibly even wearable) sensor system. The type of sensor must be chosen (for example: infrared, lidar, radar, x-ray). Combined sensor systems are also available, at a cumulative cost. See Radio and Sensor Ranges, p. 299. and Using Enhanced Senses, p. 302.</description>
+				<type>Everyday</type>
+				<creditCost>Moderate</creditCost>
+			</gear>
+			<gear>
+				<name>Smart Clothing</name>
+				<description>Smart clothing can change its color, texture, and even its cut, taking only a minute or two to transform from a solid color jumpsuit to a plaid party dress or a replica of a pinstriped, late 20th century business suit. It can also camouflage the wearer, providing a +20 bonus to Infiltration Tests to avoid being seen, as long as the wearer is stationary or not moving faster than a slow walk, and as long as the wearer is completely covered or also using chameleon skin (p. 303) of the same color/pattern. If incompletely camouflaged, or if moving faster, reduce the modifier to +10. Smart clothing also keeps the character warm or cool, allowing the character to exist comfortably in environments from -40 to 70 C.</description>
+				<type>Everyday</type>
+				<creditCost>Low</creditCost>
+			</gear>
+			<armor>
+				<name>Smart Vac Clothing</name>
+				<description>Just like regular smart clothing, this outfit can also transform into a light vacsuit (p. 333). It also functions as armor with a rating of 2/4.</description>
+				<kinetic>2</kinetic>
+				<energy>4</energy>
+				<creditCost>Moderate</creditCost>
+			</armor>
+			<gear>
+				<name>Specs</name>
+				<description>Specs are vision-enhancing glasses. They deliver sensory data directly into the wearer&apos;s visual cortex by connecting with their basic mesh inserts (p. 300), though visual displays are available for bioconservatives and other characters without implants. Specs extend the range of the wearer&apos;s vision from terahertz waves to gamma rays (p. 302). Specs include a t-ray emitter (p. 306), however, using x-rays, or gamma rays for visual purposes requires a separate emitter, since neither of these sorts of radiation are common inside habitats, or in any safe environments. Specs have a variable focus equivalent to 5 power magnifiers and provide the wearer with a +10 bonus to all Perception Tests involving vision.</description>
+				<type>Everyday</type>
+				<creditCost>Low</creditCost>
+			</gear>
+			<gear>
+				<name>Tools (Kit)</name>
+				<description>Portable. Each set of tools applies to a particular skill, such as Hardware: Electronics or Hardware: Groundraft.</description>
+				<type>Everyday</type>
+				<creditCost>Low</creditCost>
+			</gear>
+			<gear>
+				<name>Tools (Shop)</name>
+				<description>Can fit into a large vehicle. Each set of tools applies to a particular skill, such as Hardware: Electronics or Hardware: Groundraft.</description>
+				<type>Everyday</type>
+				<creditCost>High</creditCost>
+			</gear>
+			<gear>
+				<name>Tools (Facility)</name>
+				<description>Large and non-mobile. Each set of tools applies to a particular skill, such as Hardware: Electronics or Hardware: Groundraft.</description>
+				<type>Everyday</type>
+				<creditCost>Expensive</creditCost>
+			</gear>
+			<gear>
+				<name>Utilitool</name>
+				<description>This hand tool includes a specialized small nanobot generator. In its basic form, a utilitool is the size and shape of a large fountain pen. It can transform into almost any tool, however, from a wrench, knife, or powered screwdriver to a rotary grinder or pair of pliers. Some inexpensive utilitools are optimized for specialized tasks, like cooking or wilderness survival, but more expensive models become almost any imaginable hand tool. Utilitools are normally mentally controlled using the character&apos;s basic mesh inserts. Characters without such implants can control the tool via voice commands and touch controls. Characters using a utilitool gain a +10 modifier to skills involving repairing or modifying devices with mechanical parts, opening locks, disarming alarm systems, or performing first aid.</description>
+				<type>Everyday</type>
+				<creditCost>Low</creditCost>
+			</gear>
+			<gear>
+				<name>Viewers</name>
+				<description>These small and highly advanced binoculars possess all the visual enhancement of specs (p. 325), but also provide 50x magnification. They also include a directional microphone that magnifies sound from the direction the viewers are pointed by a factor of 50. Viewers provide the user with a +30 bonus to all Perception Tests involving vision or hearing for the target they are aimed at. This bonus is not cumulative with bonuses from any other device or augmentation.</description>
+				<type>Everyday</type>
+				<creditCost>Low</creditCost>
+			</gear>
 		</otherGear>
 		<weapons>
 		</weapons>
