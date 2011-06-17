@@ -2325,6 +2325,259 @@
 				<type>Everyday</type>
 				<creditCost>Low</creditCost>
 			</gear>
+			<gear>
+				<name>Healing vats</name>
+				<description>Healing vats were the first type of nanotech medicine developed and remain the most powerful medical devices in common use. With the exception of a few exceptionally deadly nanoplagues, a healing vat can cure any disease and heal any injury. As long as the patient is alive when they are place in the healing vat, they will not only survive, but emerge without a scratch. A healing vat can even take a severed head (as long as it has been stabilized by medichines or nanotech first aid) and regrow an entire body based on the head&apos;s genetics. If the patient&apos;s body or medical records contain information about their implants, bioware, or advanced nanotechnology, all of these modifications are also fully restored. Few people suffer injuries serious enough to require a healing vat. Most are used as a safe and easy way to perform bodysculpting or to install implants or bioware. Healing vats use specialized nanomachines to either alter the patient&apos;s body or integrate implants or bioware. One advantage of using a healing vat is that no additional healing time is needed, the patient leaves the vat fully recovered from the augmentation and ready to go. Every hospital, clinic, bodyshop, and augmentation parlor has several healing vats. The time required by a healing vat varies with the severity of the damage it is healing or the extent of the modification being made, as noted on the Healing Vat table, p. 327.</description>
+				<type>Nanotechnology</type>
+				<subtype>Basic</subtype>
+				<creditCost>High</creditCost>
+			</gear>
+			<gear>
+				<name>Nanodetectors</name>
+				<description>Nanodetectors are small devices that suck in air and micro debris in order to scan for and detect nanobots. Given that nanobots are so small, the density of nanobots in the area has a large impact on its success. The nanodetector has a base skill of 30 for detecting nanobots, modified by +30 if an active nanoswarm or hive is present, +0 if a nanoswarm or hive was active recently, and -10 for the presence of nanobots outside of a swarm or hive. Once a nanobot is detected it may be analyzed either by the user or the nanodetector&apos;s AI, using Academics: Nanotechnology 30 skill. Nanodetectors are often worn and left on, set to alert the user if a hostile nanoswarm is detected.</description>
+				<type>Nanotechnology</type>
+				<subtype>Basic</subtype>
+				<creditCost>Low</creditCost>
+			</gear>
+			<gear>
+				<name>Desktop Cornucopia Machine</name>
+				<description>Cornucopia machines (CMs) are general-purpose nanofabricators. The smallest CMs are desk-sized cubes approximately half a meter on a side with a volume of at least 40 liters. They can produce any small object, from tools to well-folded suits of clothing to handguns or a bowl of cereal. It is sometimes possible to assemble larger items, but they must be manufactured in smaller pieces and then assembled (likely requiring an appropriate Hardware Test). While users can purchase bulk raw materials, CMs also come equipped with a disassembler. The user loads garbage and other objects into the disassembler so that they can be turned into raw materials for the CM. All legally-available disassemblers only deconstruct non-living material.</description>
+				<type>Nanotechnology</type>
+				<subtype>Basic</subtype>
+				<creditCost>Expensive</creditCost>
+			</gear>
+			<gear>
+				<name>Fabber</name>
+				<description>Fabbers are specialized nanofabricators, portable and considerably smaller than CMs. There are a wide variety of portable fabbers, including ones that can make any hand tool or small piece of personal electronics, ones that can turn any organic material into food and drink, and ones that can create any drug or medicine as well as bandages and specialized dressings. The most common fabbers have a volume of 4 liters. Larger hand tools and devices are produced as 2 or 3 separate parts that must be fitted together. Like CMs, fabbers also contain miniature disposal units.</description>
+				<type>Nanotechnology</type>
+				<subtype>Basic</subtype>
+				<creditCost>Moderate</creditCost>
+			</gear>
+			<gear>
+				<name>Maker</name>
+				<description>Makers are specially-designed to produce food and drink for the user. Raw materials can be provided by the addition of any water-containing liquid and collected biomass like leftover food, grass, dirt, dead animals, or transhuman waste. Some models are built into standard vacsuits. Makers can produce water and various flavored beverages, as well as ration bars or thick pudding-like edible gels. With adequate raw material, a maker can indefinitely provide food and drink for up to three transhumans. Most units, however, have a very limited range of flavors and textures that are widely considered to be fairly bad. Models with a wider and better range of flavors and textures are more expensive, but produce food that is considered adequate or occasionally good.</description>
+				<type>Nanotechnology</type>
+				<subtype>Basic</subtype>
+				<creditCost>Moderate</creditCost>
+			</gear>
+			<gear>
+				<name>General Hive</name>
+				<description>General hives are capable of producing any conceivable type of nanobot with the right blueprints and/or programming. Even at their smallest size they are not really portable, with a minimum size being cubes 30 centimeters on a side and a volume of 25 liters.</description>
+				<type>Nanotechnology</type>
+				<subtype>Advanced</subtype>
+				<creditCost>Expensive</creditCost>
+			</gear>
+			<gear>
+				<name>Specialized Hive</name>
+				<description>Specialized hives are far more common than general hives, though they can produce only one type of nanomachines (i.e., choose one type of nanoswarm per hive). The smallest specialized hives are approximately the size of a 12-gauge shotgun shell or a large cherry tomato.</description>
+				<type>Nanotechnology</type>
+				<subtype>Advanced</subtype>
+				<creditCost>Moderate</creditCost>
+			</gear>
+			<gear>
+				<name>Ego bridges</name>
+				<description>Ego bridges are vat devices used for uploading and downloading minds. See Backups and Uploading, p. 268, and Resleeving, p. 271.</description>
+				<type>Nanotechnology</type>
+				<subtype>Advanced</subtype>
+				<creditCost>Expensive</creditCost>
+			</gear>
+			<gear>
+				<name>Cleaners</name>
+				<description>This nanoswarm cleans, polishes, and removes dirt and stains. It may be used on an area, specific objects, or people. Some facilities employ permanent cleaner swarms to keep their area spotless. Cleaners may also be programmed to remove specific toxins, chemicals, or other hazardous substances in order to decontaminate an area. Covert operatives and criminals sometimes use cleaners to eliminate any evidence they may have left at a scene usable for forensics purposes, such as blood, hair, or anything that could be DNA-typed.</description>
+				<type>Nanotechnology</type>
+				<subtype>Advanced</subtype>
+				<creditCost>Low</creditCost>
+			</gear>
+			<gear>
+				<name>Disassemblers</name>
+				<description>Also known as smart corrosives, these nanobots break down any matter. Their advantage over common acids is that not only are they able to break down any material by using energy to disrupt chemical bonds, but that they can be programmed to take apart certain components while ignoring others, leaving them intact. Disassemblers are a common weapon used against synthmorphs, eating away their components without having to worry about accidentally splashing biomorphs. Upon contact, these nanobots floor 1d10 ÷ 2 damage (round up) per Action Turn. Accumulated damage counts as a wound when the Wound Threshold is reached. Both Energy and Kinetic armor protect against this damage, but these armors are eaten away as well, so the Armor Value is reduced by the soaked DV.</description>
+				<type>Nanotechnology</type>
+				<subtype>Advanced</subtype>
+				<creditCost>High</creditCost>
+			</gear>
+			<gear>
+				<name>Engineers</name>
+				<description>Engineer microswarms are used for various construction purposes: erecting walls, digging tunnels, sealing holes, reinforcing foundations, and so on.</description>
+				<type>Nanotechnology</type>
+				<subtype>Advanced</subtype>
+				<creditCost>Moderate</creditCost>
+			</gear>
+			<gear>
+				<name>Fixers</name>
+				<description>This is the nanoswarm version of repair spray (p. 333).</description>
+				<type>Nanotechnology</type>
+				<subtype>Advanced</subtype>
+				<creditCost>Moderate</creditCost>
+			</gear>
+			<gear>
+				<name>Injectors</name>
+				<description>Injector microswarms are equipped with tiny needles and a drug payload. A biological target affected by an injector swarm suffers 1 point of damage and the effects of the carried drug, chemical, or toxin.</description>
+				<type>Nanotechnology</type>
+				<subtype>Advanced</subtype>
+				<creditCost>Moderate</creditCost>
+			</gear>
+			<gear>
+				<name>Gardeners</name>
+				<description>This microswarm is useful for a number of agricultural purposes: killing weeds, planting seeds, trimming plants, pollinating, and even harvesting small items. It may also be programmed to simply defoliate an area.</description>
+				<type>Nanotechnology</type>
+				<subtype>Advanced</subtype>
+				<creditCost>Moderate</creditCost>
+			</gear>
+			<gear>
+				<name>Guardians</name>
+				<description>Guardians watch for and attack other unauthorized swarms. Guardians cause 1d10 ÷ 2 damage (round up) on other swarms they come into contact with per Action Turn.</description>
+				<type>Nanotechnology</type>
+				<subtype>Advanced</subtype>
+				<creditCost>Moderate</creditCost>
+			</gear>
+			<gear>
+				<name>Proteans</name>
+				<description>This nanoswarm is designed to disassemble other materials and objects and to create a single specific, pre-programmed device from the components (much like a specialized nanofabricator). The proteans must be able to scavenge appropriate raw materials (for example, to create a metallic device the nanobots must transform something else made of metal). The construction time takes 1 hour per cost category of the item (1 hour for a Trivial cost item, 2 hours for Low, etc.).</description>
+				<type>Nanotechnology</type>
+				<subtype>Advanced</subtype>
+				<creditCost>High</creditCost>
+			</gear>
+			<gear>
+				<name>Saboteurs</name>
+				<description>Sab nanobots are designed to infiltrate electronics or machinery and sabotage them in small but difficult to discern ways: severing connections, disabling components, gumming up moving parts, etc. Saboteurs floor damage on devices similar to disassemblers, but the target is not destroyed and such damage is not immediately obvious. They floor 1d10 ÷ 2 points of damage to synthmorphs, bots, and other devices every Action Turn. Armor has no effect, but accumulated damage counts as a wound when the Wound Threshold is reached.</description>
+				<type>Nanotechnology</type>
+				<subtype>Advanced</subtype>
+				<creditCost>High</creditCost>
+			</gear>
+			<gear>
+				<name>Scouts</name>
+				<description>A scout nanoswarm will systematically map and explore an area, collecting samples of all materials and substances it encounters. The samples are carried back to the hive or canister and chemically analyzed. Scouts can also be used for forensic purposes, collecting DNA samples, analyzing chemical residues, and examining other evidence.</description>
+				<type>Nanotechnology</type>
+				<subtype>Advanced</subtype>
+				<creditCost>High</creditCost>
+			</gear>
+			<gear>
+				<name>Taggants</name>
+				<description>Taggants seek to lodge themselves onto everything in their area of dispersal. Each carries a unique identifier, so that if it is found later, the tagged person or object can be linked back to the point they were tagged. Taggants can be programmed to remain silent, only responding to query broadcasts made with the proper crypto codes, or they can be programmed to broadcast their location back to the deployer via the mesh.</description>
+				<type>Nanotechnology</type>
+				<subtype>Advanced</subtype>
+				<creditCost>Low</creditCost>
+			</gear>
+			<gear>
+				<name>Fur Coat</name>
+				<description>A so-called "fur coat" is outerwear made from a living primitive organism. The creature&apos;s skin, fur, or scales are real. The organism is cultivated from transgenic stocks and grown around molds into clothing shapes, often with actual usefulness: polar bear parkas, seal diving suits, porcupine coats, etc. Fur coats are modified with wireless controls and haptic systems, so they can be made to move, shiver, massage, or prickle up on command.</description>
+				<type>Pet</type>
+				<creditCost>Low</creditCost>
+			</gear>
+			<gear>
+				<name>Smart Dogs</name>
+				<description>Commonly used as discriminatory guardians, smart dogs are sometimes enhanced with combative bioware or cybernetics.</description>
+				<type>Pet</type>
+				<creditCost>Moderate</creditCost>
+			</gear>
+			<gear>
+				<name>Smart Monkey</name>
+				<description>Commonly used by criminal groups for minor larceny such as pickpocketing, smart monkeys can be useful and intelligent aides.</description>
+				<type>Pet</type>
+				<creditCost>Moderate</creditCost>
+			</gear>
+			<gear>
+				<name>Smart Rats</name>
+				<description>These upgrades of the common Norwegian rat are clever and dexterous, and they easily fit into a pocket or hood.</description>
+				<type>Pet</type>
+				<creditCost>Low</creditCost>
+			</gear>
+			<gear>
+				<name>Space Roach</name>
+				<description>Grown to the size of a small dog, these insects are often biosculpted for bright colors and patterns. They are useful for minor janitorial duties.</description>
+				<type>Pet</type>
+				<creditCost>Low</creditCost>
+			</gear>
+			<gear>
+				<name>Disassembly Tools</name>
+				<description>These tools are useful for salvage ops, breaking down wrecks, or dissembling anything from a habitat room to a vehicle or synthmorph. They include plasma torches, laser cutters, pneumatic jaws, and smart tools like spanners and wrenches that can be adapted to a wide array of connections and fittings.</description>
+				<type>Scavenger tech</type>
+				<creditCost>High</creditCost>
+			</gear>
+			<gear>
+				<name>Mobile Lab</name>
+				<description>The mobile lab is a handheld device that contains all different types of sensors to investigate organic and inorganic liquid, gaseous, and solid components (from soil to tissue samples) and compositions. It performs material analysis using different methods of spectrometry and biochemical testing, comparing results to a built-in database of element and compound spectra. Its built in AI comes equipped with Academic: Chemistry 30.</description>
+				<type>Scavenger tech</type>
+				<creditCost>Moderate</creditCost>
+			</gear>
+			<gear>
+				<name>Specimen Container</name>
+				<description>This capsule container is designed to hold samples of any sort (chemical, biological, etc.) in near stasis. It can be programmed to reproduce whatever conditions the user specifies, from cryogenic freezing to extreme heat, or even vacuum or high-pressure atmosphere.</description>
+				<type>Scavenger tech</type>
+				<creditCost>Low</creditCost>
+			</gear>
+			<gear>
+				<name>Superthermite Charges</name>
+				<description>These powerful and highly stable demolition charges are made from a combination of nanometals and metal oxides. A single charge can be used to create an explosive blast flooring 2d10+5 damage. This charge can be shaped with a successful Demolitions Test, focusing the blast in a particular 90-degree direction (for example, to blow through a door). This triples the damage of the blast in the focused direction; in all other directions, the damage is reduced to 1/3rd (round down). Multiple charges apply a cumulative effect.</description>
+				<type>Scavenger tech</type>
+				<creditCost>Moderate</creditCost>
+			</gear>
+			<gear>
+				<name>Anonymous Accounts</name>
+				<description>These accounts are crucial for anyone who wants to be discreet with their online transactions. See Anonymous Account Services, p. 252.</description>
+				<type>Services</type>
+				<creditCost>Moderate</creditCost>
+			</gear>
+			<gear>
+				<name>Backup</name>
+				<description>A single, one-time backup without insurance is sometimes all the poor can afford, hoping that they can buy backup insurance later or that someone that cared about them will see to a resleeving.</description>
+				<type>Services</type>
+				<creditCost>Moderate</creditCost>
+			</gear>
+			<gear>
+				<name>Backup Insurance</name>
+				<description>In the event of verifiable death, or after a set period of being missing, backup insurance will arrange for your cortical stack to be retrieved and your ego downloaded into another morph. If the cortical stack cannot be retrieved, your most recent backup is used. Most policies require that the holder provide a backup to be uploaded into secure storage at least twice a year. This industry works in a manner similar to insurance underwriting in terms of cost and individuals engaged in high risk professions can expect to pay a premium for the service. Additionally, attempts to retrieve a cortical stack are minimal unless one wants to pay for some extra effort (a thriving industry of paramilitary ego-repo operatives exists for this purpose).</description>
+				<type>Services</type>
+				<creditCost>Moderate</creditCost>
+			</gear>
+			<gear>
+				<name>Body Bank</name>
+				<description>People who are egocasting to another station but whom hope to download back into the same body they have before when they return may put the morph on ice for the duration of their absence.</description>
+				<type>Services</type>
+				<creditCost>Moderate</creditCost>
+			</gear>
+			<gear>
+				<name>Bot or Pod Rental</name>
+				<description>When you need a helping hand or a personal companion for a day or two, renting a bot or pod is often the way to go.</description>
+				<type>Services</type>
+				<creditCost>Moderate</creditCost>
+			</gear>
+			<gear>
+				<name>Egocasting</name>
+				<description>This is the use of a farcaster to transmit an ego/infomorph. Farcasting is not cheap, and the cost is impacted by factors such as distance to receiver station and priority service (paying extra to get bumped ahead in line).</description>
+				<type>Services</type>
+				<creditCost>Expensive</creditCost>
+			</gear>
+			<gear>
+				<name>Fake Ego ID</name>
+				<description>This forged ID will pass in most inner system and Jovian Republic habitats, and sometimes others.</description>
+				<type>Services</type>
+				<creditCost>High</creditCost>
+			</gear>
+			<gear>
+				<name>Psychosurgery</name>
+				<description>A character can purchase time in an immersive high-fidelity simulspace with expert care from psychosurgeons and AIs in order to cope with derangements and disorders that build up as a result of existing in a transhuman universe. For an additional price the procedure can be time shifted to speed up the relative time within the simulspace. For more details, see Mental Healing and Psychotherapy, p. 215, and Psychosurgery, p. 229. </description>
+				<type>Services</type>
+				<creditCost>Moderate</creditCost>
+			</gear>
+			<gear>
+				<name>Simulspace Subscription</name>
+				<description>This will by you access to the simulspace of your choice, whether you want it for a private meeting/vacation or to play the latest and hottest VR game.</description>
+				<type>Services</type>
+				<creditCost>Moderate</creditCost>
+			</gear>
+			<gear>
+				<name>Space Travel (Local)</name>
+				<description>Space transport cost depends on a number of factors like distance, quality of lodgings, and how much cargo you&apos;re bringing with. At the low end, an intra-habitat shuttle trip within the same cluster, or a trip to or from a planetary body&apos;s surface and orbit, is not cheap but affordable.</description>
+				<type>Services</type>
+				<creditCost>High</creditCost>
+			</gear>
+			<gear>
+				<name>Space Travel (Distant)</name>
+				<description>Just about anything else is progressively more costly.</description>
+				<type>Services</type>
+				<creditCost>Expensive</creditCost>
+			</gear>
 		</otherGear>
 		<weapons>
 		</weapons>
