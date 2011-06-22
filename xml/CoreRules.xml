@@ -2578,6 +2578,247 @@
 				<type>Services</type>
 				<creditCost>Expensive</creditCost>
 			</gear>
+			<gear>
+				<name>AR Illusions</name>
+				<description>These databases of AR clips can be used to create realistic illusions in someone&apos;s entoptic display. See Augmented Reality Illusions, p. 259.</description>
+				<type>Software</type>
+				<subtype>Programs</subtype>
+				<creditCost>Moderate</creditCost>
+			</gear>
+			<gear>
+				<name>Exploit</name>
+				<description>Exploits are hacker tools that take advantage of known vulnerabilities in other software. They are required for intrusion attempts (p. 254).</description>
+				<type>Software</type>
+				<subtype>Programs</subtype>
+				<creditCost>High</creditCost>
+			</gear>
+			<gear>
+				<name>Facial or Image Recognition</name>
+				<description>This program can be used to take an image and run a pattern-matching search among public archives. Similar version of this program exist for other biometrics: gait recognition, vocal recognition, etc.</description>
+				<type>Software</type>
+				<subtype>Programs</subtype>
+				<creditCost>Low</creditCost>
+			</gear>
+			<gear>
+				<name>Firewall</name>
+				<description>This program protects a device from hostile intrusion. Every system comes with a standard version of this software by default.</description>
+				<type>Software</type>
+				<subtype>Programs</subtype>
+				<creditCost>Low</creditCost>
+			</gear>
+			<gear>
+				<name>Sniffer</name>
+				<description>Sniffer programs collect all of the transmission that pass to, from, or through the device they are running on. See Sniffing, p. 252.</description>
+				<type>Software</type>
+				<subtype>Programs</subtype>
+				<creditCost>Moderate</creditCost>
+			</gear>
+			<gear>
+				<name>Spoof</name>
+				<description>Spoof is a hacker tool used to fake commands and transmissions, making them seem as if they came from another source. See Spoofing Authentication, p. 255.</description>
+				<type>Software</type>
+				<subtype>Programs</subtype>
+				<creditCost>Moderate</creditCost>
+			</gear>
+			<gear>
+				<name>Tactical Networks</name>
+				<description>These programs allow people in the same squad to share tactical data in real-time. See Tactical Networks, p. 205.</description>
+				<type>Software</type>
+				<subtype>Programs</subtype>
+				<creditCost>Moderate/creditCost>
+			</gear>
+			<gear>
+				<name>Tracking</name>
+				<description>This software is used to track people by their presence online. See Scanning, Tracking, and Monitoring, p. 251.</description>
+				<type>Software</type>
+				<subtype>Programs</subtype>
+				<creditCost>Moderate</creditCost>
+			</gear>
+			<gear>
+				<name>XP</name>
+				<description>Experience playback recordings are clips of someone else&apos;s experiences. Depending on the content, some XP (porn, snuff, crime, etc.) may be restricted in certain jurisdictions. Some XP clips are intentionally modified so that their emotive tracks are more intense, giving the viewer a greater thrill.</description>
+				<type>Software</type>
+				<subtype>Programs</subtype>
+				<creditCost>Low</creditCost>
+			</gear>
+			<gear>
+				<name>Bot or Vehicle AI</name>
+				<description>These AIs are designed to be capable of piloting the robot/vehicle without transhuman assistance. REF 20. Skills: Hardware: Electronics 20, Infosec 20, Interests: [Bot/Vehicle] Specs 80, Interface 40, Research 20, Perception 40, Pilot: [appropriate field] 40.</description>
+				<type>Software</type>
+				<subtype>AI</subtype>
+				<creditCost>High</creditCost>
+			</gear>
+			<gear>
+				<name>Device AI</name>
+				<description>These AIs are designed to operate a particular device without transhuman assistance. Skills: Infosec 20, Interests: [Device] Specs 80, Interface 30 (Device Specialization), Programming 20, Research 20, Perception 20.</description>
+				<type>Software</type>
+				<subtype>AI</subtype>
+				<creditCost>Moderate</creditCost>
+			</gear>
+			<gear>
+				<name>Kaos AI</name>
+				<description>Kaos AIs are used by hackers and covert ops teams to create distractions and sabotage systems. REF 20. Skills: Hardware: Electronics 40, Infosec 40, Interface 40, Professional: Security System 80, Programming 40, Research 20, Perception 30 plus one weapon skill at 40.</description>
+				<type>Software</type>
+				<subtype>AI</subtype>
+				<creditCost>Expensive</creditCost>
+			</gear>
+			<gear>
+				<name>Security AI</name>
+				<description>Security AIs provide overwatch for electronic systems. Skills: Hardware: Electronics 30, Infosec 40, Interface 40, Professional: Security Systems 80, Programming 40, Research 20, Perception 30, plus one weapon skill at 40.</description>
+				<type>Software</type>
+				<subtype>AI</subtype>
+				<creditCost>High</creditCost>
+			</gear>
+			<gear>
+				<name>Standard Muse</name>
+				<description>Muses are digital entities that have been designed as personal assistants and lifelong companions for transhumans (see AIs and Muses, p. 264). INT 20. Skills: Academics: Psychology 60, Hardware: Electronics 30, Infosec 30, Interface 40, Professional: Accounting 60, Programming 20, Research 30, Perception 30, plus three other Knowledge skills at 40.</description>
+				<type>Software</type>
+				<subtype>AI</subtype>
+				<creditCost>High</creditCost>
+			</gear>
+			<gear>
+				<name>Bedlam</name>
+				<description>Bedlam programs assault the ego with traumatic mental input, inflicting mental stress. Victims are overwhelmed with horrific, monstrous, sanity-ripping sensory and emotional input. Each attack causes 1d10 SV.</description>
+				<type>Software</type>
+				<subtype>Scorchers</subtype>
+				<creditCost>High</creditCost>
+			</gear>
+			<gear>
+				<name>Cauterizer</name>
+				<description>This scorch program rips into the ego with destructive neurofeedback routines. Each attack with a cauterizer inflicts 1d10 + 5 DV on the target ego. This damage is reflected as digitized neurological damage.</description>
+				<type>Software</type>
+				<subtype>Scorchers</subtype>
+				<creditCost>High</creditCost>
+			</gear>
+			<gear>
+				<name>Nightmare</name>
+				<description>Nightmare programs trigger anxiety and panic attacks within the victim by stimulating the neural circuitry representing the amygdala and hippocampus. The target ego must make a WIL × 2 Test. If they succeed, they are shaken but otherwise unaffected, suffering a -10 modifier to all actions until the end of the next Action Turn. If they fail, they suffers 1d10 ÷ 2 stress damage and are overcome with panic. This causes them either to blindly flee, have a nervous breakdown, or cower in frozen shock (gamemaster&apos;s discretion). This panic episode lasts for 1 Action Turn per 10 points of MoF.</description>
+				<type>Software</type>
+				<subtype>Scorchers</subtype>
+				<creditCost>High</creditCost>
+			</gear>
+			<gear>
+				<name>Shutter</name>
+				<description>Shutters target the victim&apos;s sensory cortices, inflicting a -30 modifier to one chosen sense. Double this modifier if the attacking hacker scored an Excellent Success. This modifier reduces at the rate of 10 points per Action Turn.</description>
+				<type>Software</type>
+				<subtype>Scorchers</subtype>
+				<creditCost>High</creditCost>
+			</gear>
+			<gear>
+				<name>Spasm</name>
+				<description>Spasm programs are design to incapacitate the ego with excruciating pain. Affected targets must immediately make a WIL × 2 Test. If they fail, they immediately convulse, are disabled, and writhe in agony for 1 Action Turns per 10 full points of MoF. If they succeed, they still suffer a -30 modifier to all actions, which reduces at the rate of 10 points per Action Turn. Due to the nature of the delivery, pain tolerance of any sort has no effect.</description>
+				<type>Software</type>
+				<subtype>Scorchers</subtype>
+				<creditCost>High</creditCost>
+			</gear>
+			<gear>
+				<name>Standard Skillsoft</name>
+				<description>These programs provide the character with a rating of up to 40 in a single Active skill.</description>
+				<type>Software</type>
+				<subtype>Skillsofts</subtype>
+				<creditCost>High</creditCost>
+			</gear>
+			<gear>
+				<name>Breadcrumb Positioning System</name>
+				<description>This worn device leaves micro "breadcrumbs" behind as the character moves. These devices interact with mesh inserts (or ectos) as long as they are within range (50 meters), allowing the user to map their position in relation to the breadcrumb trail. This is useful in derelict habitats, wilderness, and other areas where there is no local functioning mesh, and is helpful both for mapping and for finding one&apos;s way back.</description>
+				<type>Survival</type>
+				<creditCost>Low</creditCost>
+			</gear>
+			<gear>
+				<name>Electrogravitics Net</name>
+				<description>Also called a safety net, this failsafe system uses electric fields to counter gravity when falling. While the system is not able to actually levitate heavy objects, it will slow down a fall enough that the user can land safely if the gravitational force is not too high (the fall height is not greater than 50 meters in 1G). Generating these electric fields consumes a lot of energy, so the net is only charged for one use only and needs to be recharged afterwards.</description>
+				<type>Survival</type>
+				<creditCost>Moderate</creditCost>
+			</gear>
+			<gear>
+				<name>Electronic Rope</name>
+				<description>The fibers in this rope can be controlled electronically, making it move in a snakelike fashion, stiffen up, and even wrap around objects. Typically comes in a 50- meter length capable of supporting 250 kg.</description>
+				<type>Survival</type>
+				<creditCost>Low</creditCost>
+			</gear>
+			<gear>
+				<name>Emergency Bubble</name>
+				<description>Commonly used as a last resort "life raft" on spaceships, an emergency bubble is made of advanced smart materials and comes in a portable package that can be quickly inflated (1 Action Turn) around the user, usually inside an airlock. The bubble has a 5-meter diameter and can comfortably accommodate 4 people. It maintains 1 atmosphere of pressure in a vacuum, protect the inhabitants from temperatures ranging from -175 to 140? C, and provide light, breathable air and water and food recycling for up to four human-sized inhabitants, using its built in maker (p. 327). It features a simple airlock, carries an emergency distress beacon (below), and can be transparent, opaque, or polarized. It is powered by a small nuclear battery and also includes comfortable inflatable furniture.</description>
+				<type>Survival</type>
+				<creditCost>Moderate</creditCost>
+			</gear>
+			<gear>
+				<name>Emergency Distress Beacon</name>
+				<description>This small but powerful transmitter is powered by a nuclear battery and will broadcast any programmed distress call for years. Though portable and medium-sized, this beacon has a range of 500 km in urban areas and 5,000 km elsewhere.</description>
+				<type>Survival</type>
+				<creditCost>Moderate</creditCost>
+			</gear>
+			<gear>
+				<name>Flashlight</name>
+				<description>These handheld, wearable, or portable lights can display light in the normal visual spectrum, infrared, or ultraviolet, as desired.</description>
+				<type>Survival</type>
+				<creditCost>Trivial</creditCost>
+			</gear>
+			<gear>
+				<name>Nanobandage</name>
+				<description>Characters without medichines must rely on external sources of healing. The most common option is the nanobandage - a plum-sized advanced nanotechnology generator built into a reusable, selfsterilizing bandage. It can treat all forms of injury and illness, from poisoning to burns to trauma. Characters simply apply the bandage to the wound and let the nanobots do the work. It removes pain and discomfort and speeds healing (see Biomorph Healing, p. 208). For especially severe injuries, physical first aid such as setting bones and removing projectiles may be necessary (gamemaster&apos;s choice). If the wounds are too severe (the patient has suffered more than five wounds), the unit places the patient in medical stasis and radios for emergency services.</description>
+				<type>Survival</type>
+				<creditCost>Trivial</creditCost>
+			</gear>
+			<gear>
+				<name>Repair Spray</name>
+				<description>This nanobot generator creates nanobots designed to repair synthmorphs, vehicles, and other common objects. Repair spray contains the specifications and plans for almost all commonly used synthmorphs and devices and is a ubiquitous household item. If it does not contain the specifications for something it is being used to repair, it must query the object&apos;s voice for these details, otherwise it cannot repair it. Simply touch it to the damaged area, push the button on top, and it sprays out a number of nanobots sufficient to make repairs. These nanobots repair 1d10 points of damage per 2 hours. Once all damage is restored, the nanobots repair wounds at the rate of 1 per day. Repair spray also cleans and polishes items and returns them to a pristine and new state. Repair spray is not effective on any object with more than 3 wounds, but it provides a +30 to all repair rolls on anything too badly damaged for it to fully repair (see Synthmorph and Object Repair, p. 208).</description>
+				<type>Survival</type>
+				<creditCost>Low</creditCost>
+			</gear>
+			<gear>
+				<name>Shelter Dome</name>
+				<description>A variant of the emergency bubble, this package unfolds into a dome with a 2.5-meter ceiling and a floor 4 meters across. To safely use this shelter, it must be staked down to the surface it is placed on.</description>
+				<type>Survival</type>
+				<creditCost>Moderate</creditCost>
+			</gear>
+			<gear>
+				<name>Spindle</name>
+				<description>A spindle is an advanced nanotechnology generator that produces a super-strong cable. It can produce up to 2 kilometers of 0.2 millimeter diameter line than can support up to 250 kilograms before it needs more raw materials. The spindle can produce up to 20 meters of cable every second. It can produce line in a continuous length or cut the cable it produces to any length. Spindles can also reabsorb their cable, retracting it at a rate of 5 m per second. As long as it is recharged and has small amounts of additional material added every 1,000 hours of use, a spindle can keep producing and retracting cable indefinitely. By setting the maximum production speed at 10 meters per second a character with a spindle can safely jump off a building and land safely, using the cable to slow their descent.</description>
+				<type>Survival</type>
+				<creditCost>Moderate</creditCost>
+			</gear>
+			<gear>
+				<name>Spindle Climber</name>
+				<description>This device attaches to a spindle and transforms it into a highly effective climbing device. The spindle climber has two functions. First, it attaches hardened tips to the spindle&apos;s cable and fires it at high speed, up to 50 meters, with sufficient force to imbed the tip into almost any sufficiently durable surface. Second, the spindle climber can pull itself and up to 250 kg up the cable at a speed of up to 2m sec. A spindle climber has enough power to shoot and pull up the cable 50 times before it must be recharged. A spindle fits inside a spindle climber</description>
+				<type>Survival</type>
+				<creditCost>Low</creditCost>
+			</gear>
+			<armor>
+				<name>Vacsuit (Light)</name>
+				<description>Everyone living in a sealed habitat owns at least one of these suits. They come in a variety of forms. Inexpensive versions are typically lightweight jumpsuits made of simple smart fabric that adjusts to fit and folds up small enough to fit into a coat pocket. The suit can transform into a vacsuit in 2 full Action Turns and do so either on command or if their sensors reveal that life support is needed. All models include a lightweight belt or torc containing a miniature oxygen tank and advanced rebreather unit that provides 3 hours of air. However, the suits contain no food or water recycling. All models include an ecto (p. 325) and a headlight, but typically little else beyond atmosphere sensors to let the wearer know when it is safe to take off the suit. They protect the wearer from temperatures from -75 to 100 C. These vacuum suits also provide an Armor rating of 5/5 and instantly self-seal breaches unless more than 20 points of damage are inflicted at once.</description>
+				<energy>5</energy>
+				<kinetic>5</kinetic>
+				<creditCost>Low</creditCost>
+			</armor>
+			<armor>
+				<name>Vacsuit (Light, Smartfabric)</name>
+				<description>Everyone living in a sealed habitat owns at least one of these suits. They come in a variety of forms. The best models include suits of high-end smart clothing that can transform into a vacsuit and an advanced nanotech generator the size of a large orange that deploy nanobots that cover the user and fit together into a vacuum suit. The suit can transform into a vacsuit in 2 full Action Turns and do so either on command or if their sensors reveal that life support is needed. All models include a lightweight belt or torc containing a miniature oxygen tank and advanced rebreather unit that provides 3 hours of air. However, the suits contain no food or water recycling. All models include an ecto (p. 325) and a headlight, but typically little else beyond atmosphere sensors to let the wearer know when it is safe to take off the suit. They protect the wearer from temperatures from -75 to 100 C. These vacuum suits also provide an Armor rating of 5/5 and instantly self-seal breaches unless more than 20 points of damage are inflicted at once.</description>
+				<energy>5</energy>
+				<kinetic>5</kinetic>
+				<creditCost>Moderate</creditCost>
+			</armor>
+			<armor>
+				<name>Vacsuit (Standard)</name>
+				<description>These suits resemble light vacsuits made from thicker and more durable materials that resist tearing and provides the wearer with light armor. They are fitted with more substantial life support belts that includes a maker (p. 327) capable of recycling all wastes and producing air for up to 48 hours and food and water indefinitely. Each suit also contains an ecto (p. 325), a radio booster (p. 313), and sensors equal to specs (see p. 325). These suits have an Armor rating of 7/7 and protect the wearer from temperatures from -175 to 140 C. They can almost instantly seal any hole unless more than 30 points of damage are inflicted at once.</description>
+				<energy>7</energy>
+				<kinetic>7</kinetic>
+				<creditCost>Moderate</creditCost>
+			</armor>
+			<armor>
+				<name>Vacsuit (Standard, Smartfabric)</name>
+				<description>These suits resemble light vacsuits made from thicker and more durable materials that resist tearing and provides the wearer with light armor. They are fitted with more substantial life support belts that includes a maker (p. 327) capable of recycling all wastes and producing air for up to 48 hours and food and water indefinitely. The best suits are made of smart materials that can transform from standard clothing to vacuum suits in a single Action Turn, and will do so automatically if life support is needed. Each suit also contains an ecto (p. 325), a radio booster (p. 313), and sensors equal to specs (see p. 325). These suits have an Armor rating of 7/7 and protect the wearer from temperatures from -175 to 140 C. They can almost instantly seal any hole unless more than 30 points of damage are inflicted at once.</description>
+				<energy>7</energy>
+				<kinetic>7</kinetic>
+				<creditCost>High</creditCost>
+			</armor>
+			<armor>
+				<name>Hard Suit</name>
+				<description>This heavy-duty suit can almost be considered a miniature space ship. Hard Suits look like large metallic ovals with jointed arms and legs. They are quite heavy, but the user can move relatively easily by using servo assist motors in all the major joints of the arms and legs. Unlike other vacsuits, they are solid and can resist both vacuum and up to 100 atmospheres of external pressure. Characters wearing hard suits can safely explore the upper atmosphere of a gas giant. They are well armored against punctures and radiation and possess miniature plasma thrusters capable of delivering 0.01G for 10 hours. A built-in high quality maker produces sufficient food, air, and water that a user can remain in a hard suit indefinitely. Explorers have used them continuously for up to 2 months. Their gloves incorporate smart materials that allow each hand to use the equivalent of a utilitool (p. 326). Hard suits also contain radios and sensors equivalent to those on standard vacsuits. These suits have an Armor rating of 15/15, are maintained by a fixer nanohive (p. 329), and are instantly self-sealing of any breach unless more than 30 points of damage are inflicted at once. They protect the wearer from temperatures of -200 to 180 C.</description>
+				<energy>15</energy>
+				<kinetic>15</kinetic>
+				<creditCost>High</creditCost>
+			</armor>
 		</otherGear>
 		<weapons>
 		</weapons>
