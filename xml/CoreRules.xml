@@ -2625,7 +2625,7 @@
 				<description>These programs allow people in the same squad to share tactical data in real-time. See Tactical Networks, p. 205.</description>
 				<type>Software</type>
 				<subtype>Programs</subtype>
-				<creditCost>Moderate/creditCost>
+				<creditCost>Moderate</creditCost>
 			</gear>
 			<gear>
 				<name>Tracking</name>
