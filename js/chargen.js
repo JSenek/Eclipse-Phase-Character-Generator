@@ -45,7 +45,7 @@ function Character() {
 
 function keypress(e) {
 	var evtobj, unicode;
-	evtobj = (window.event)? event : e; //distinguish between IE's explicit event object (window.event) and Firefox's implicit.
+	evtobj = (window.event) ? event : e; //distinguish between IE's explicit event object (window.event) and Firefox's implicit.
 	unicode = (evtobj.charCode) ? evtobj.charCode : evtobj.keyCode;
 	if (unicode === 13) {
 		document.getElementById("nextButton").click();
@@ -85,11 +85,11 @@ function updateCP() {
 	document.getElementById("negativeTraitsCP").innerHTML = myCharacter.CPGainedFromNegativeTraits;
 	document.getElementById("negativeTraitsCP").style.color = (myCharacter.CPGainedFromNegativeTraits <= 50) ? "black" : "red";
 	document.getElementById("positiveTraitsCP").innerHTML = myCharacter.CPSpentOnPositiveTraits;
-	document.getElementById("positiveTraitsCP").style.color = (myCharacter.CPSpentOnPositiveTraits <= 50) ? "black": "red";
+	document.getElementById("positiveTraitsCP").style.color = (myCharacter.CPSpentOnPositiveTraits <= 50) ? "black" : "red";
 	document.getElementById("psiChiSleights").innerHTML = myCharacter.ego.psiSleights.totalChi;
-	document.getElementById("psiChiSleights").style.color = (myCharacter.ego.psiSleights.totalChi > 5) ? "red": "black";
+	document.getElementById("psiChiSleights").style.color = (myCharacter.ego.psiSleights.totalChi > 5) ? "red" : "black";
 	document.getElementById("psiGammaSleights").innerHTML = myCharacter.ego.psiSleights.totalGamma;
-	document.getElementById("psiGammaSleights").style.color = (myCharacter.ego.psiSleights.totalGamma > 5) ? "red": "black";
+	document.getElementById("psiGammaSleights").style.color = (myCharacter.ego.psiSleights.totalGamma > 5) ? "red" : "black";
 }
 
 // Trait Functions
@@ -112,7 +112,7 @@ function lookupTraitID(type, name, source) {
 function checkTraitReqs(type, name, source, silent) {
 	var tempData, traitID, i, flag, morphType;
 	traitID = lookupTraitID(type, name, source);
-	if (type === "positive"){
+	if (type === "positive") {
 		tempData = positiveTraitData;
 	} else {
 		tempData = negativeTraitData;
@@ -164,13 +164,13 @@ function purchaseTrait(type, name, source, mod, free) {
 			myCharacter.CP -= parseInt(positiveTraitData[traitID].getElementsByTagName("CP")[0].childNodes[0].nodeValue, 10) + mod;
 			myCharacter.CPSpentOnPositiveTraits += parseInt(positiveTraitData[traitID].getElementsByTagName("CP")[0].childNodes[0].nodeValue, 10) + mod;
 		}
-		if (source === "Ego"){
-				myCharacter.ego.positiveTraits[traitID] = 1;
-			} else {
-				myCharacter.morph.positiveTraits[traitID] = 1;
+		if (source === "Ego") {
+			myCharacter.ego.positiveTraits[traitID] = 1;
+		} else {
+			myCharacter.morph.positiveTraits[traitID] = 1;
 		}
-		if (positiveTraitData[traitID].getElementsByTagName("enables").length !== 0){
-				enables = positiveTraitData[traitID].getElementsByTagName("enables")[0].childNodes[0].nodeValue;
+		if (positiveTraitData[traitID].getElementsByTagName("enables").length !== 0) {
+			enables = positiveTraitData[traitID].getElementsByTagName("enables")[0].childNodes[0].nodeValue;
 		}
 		if (name === "Psi (Level 2)") { // Enable gamma sleights
 			temp = document.getElementsByName("sleightBox");
@@ -193,12 +193,12 @@ function purchaseTrait(type, name, source, mod, free) {
 		if (name === "Blacklisted") { // Lock in blacklisted choice, since its cost fluxates
 			document.getElementById("traitBlacklistedChoice").disabled = true;
 		}
-		if (source === "Ego"){
+		if (source === "Ego") {
 			myCharacter.ego.negativeTraits[traitID] = 1;
 		} else {
 			myCharacter.morph.negativeTraits[traitID] = 1;
 		}
-		if (negativeTraitData[traitID].getElementsByTagName("enables").length !== 0){
+		if (negativeTraitData[traitID].getElementsByTagName("enables").length !== 0) {
 			enables = negativeTraitData[traitID].getElementsByTagName("enables")[0].childNodes[0].nodeValue;
 		}
 	}
@@ -217,7 +217,7 @@ function removeTrait(type, name, source, mod, norefund) {
 		}
 		myCharacter.ego.positiveTraits[traitID] = 0;
 		myCharacter.morph.positiveTraits[traitID] = 0;
-		if (positiveTraitData[traitID].getElementsByTagName("enables").length !== 0){
+		if (positiveTraitData[traitID].getElementsByTagName("enables").length !== 0) {
 			enables = positiveTraitData[traitID].getElementsByTagName("enables")[0].childNodes[0].nodeValue;
 		}
 			// Refund and/or disable psi sleights
@@ -227,8 +227,8 @@ function removeTrait(type, name, source, mod, norefund) {
 				if ((temp[i].checked) && (temp[i].dataset.sleightType === "Chi")) {
 					temp[i].checked = false;
 					myCharacter.CP += 5;
-					myCharacter.ego.psiSleights["totalChi"]--;
-					myCharacter.ego.psiSleights["Chi"][temp[i].dataset.sleightId] = 0;
+					myCharacter.ego.psiSleights.totalChi--;
+					myCharacter.ego.psiSleights.Chi[temp[i].dataset.sleightId] = 0;
 				}
 			}
 		}
@@ -239,8 +239,8 @@ function removeTrait(type, name, source, mod, norefund) {
 					if (temp[i].checked) {
 						temp[i].checked = false;
 						myCharacter.CP += 5;
-						myCharacter.ego.psiSleights["totalGamma"]--;
-						myCharacter.ego.psiSleights["Gamma"][temp[i].dataset.sleightId] = 0;
+						myCharacter.ego.psiSleights.totalGamma--;
+						myCharacter.ego.psiSleights.Gamma[temp[i].dataset.sleightId] = 0;
 					}
 					temp[i].disabled = true;
 				}	
@@ -260,7 +260,7 @@ function removeTrait(type, name, source, mod, norefund) {
 		}
 		myCharacter.ego.negativeTraits[traitID] = 0;
 		myCharacter.morph.negativeTraits[traitID] = 0;
-		if (negativeTraitData[traitID].getElementsByTagName("enables").length !== 0){
+		if (negativeTraitData[traitID].getElementsByTagName("enables").length !== 0) {
 			enables = negativeTraitData[traitID].getElementsByTagName("enables")[0].childNodes[0].nodeValue;
 		}
 	}
@@ -275,7 +275,7 @@ function removeTrait(type, name, source, mod, norefund) {
 }
 
 function applyTemplate(origin) { // Apply faction, background, or morph features
-	var j, k, type, name, source, tempData, amount;
+	var j, k, type, name, source, tempData, amount, data;
 	switch (origin) {
 	case "background":
 		source = "Ego";
@@ -328,7 +328,7 @@ function applyTemplate(origin) { // Apply faction, background, or morph features
 }
 
 function removeTemplate(origin) { // Remove faction, background, or morph features
-	var j, k, type, name, source, tempData;
+	var j, k, type, name, source, tempData, data, amount;
 	switch (origin) {
 	case "background":
 		source = "Ego";
@@ -353,7 +353,7 @@ function removeTemplate(origin) { // Remove faction, background, or morph featur
 		type = (j === 0) ? "positive" : "negative";
 		for (k = 0; k < tempData.length; k++) {
 			name = tempData[k].childNodes[0].nodeValue;
-			if (document.getElementById("trait" + name + source).checked){
+			if (document.getElementById("trait" + name + source).checked) {
 				document.getElementById("trait" + name + source).checked = false;// Un-check
 				removeTrait(type, name, source, 0, true); // Remove (norefund)
 			}
@@ -434,7 +434,7 @@ function toggleTrait() {
 		}
 	}
 	if (this.checked) {
-		if (!checkTraitReqs(type, name, source, false)){
+		if (!checkTraitReqs(type, name, source, false)) {
 			this.checked = false;
 		} else {
 			purchaseTrait(type, name, source, mod, false);
@@ -445,680 +445,6 @@ function toggleTrait() {
 	updateCP();
 }
 	
-function saveSection(section) { // Validate and save data
-	var temp, tempArray = [], tempArray2 = [], tempList = {}, invalid = 0, i, j, morphName, morphType, found, error = false;
-	// Check CP
-	if (myCharacter.CP < 0) {
-		alert("You do not have enough CP.");
-		return 0;
-	}
-	if (myCharacter.CPSpentOnPositiveTraits > 50) {
-		alert("You may not spend more than 50 CP on positive traits.");
-		return 0;
-	}
-	if (myCharacter.CPGainedFromNegativeTraits > 50) {
-		alert("You may not purchase more than 50 CP worth of negative traits.");
-		return 0;
-	}
-	if (section === "ConceptSection") {
-		// Name and Concept
-		myCharacter.name = document.getElementById("charName").value;
-		myCharacter.concept = document.getElementById("concept").value;
-	}
-	if (section === "BackgroundSection") {
-		// Background
-		// Enforce specific fields as required in Background descriptions
-		if (backgroundData[document.getElementById("bg").value].getElementsByTagName("name")[0].childNodes[0].nodeValue === "Original Space Colonist") {
-			if (skillData[document.getElementById("bgChoice1").value].getElementsByTagName("name")[0].childNodes[0].nodeValue === "Pilot") {
-				document.getElementById("bgChoice1Field").value = "Spacecraft";
-			}
-		}
-		tempList = {};
-		for (i = 1; i <= bgChoices; i++) {
-			// Check if skill requires a field
-			if (skillData[document.getElementById("bgChoice" + i).value].getElementsByTagName("fields")[0].childNodes[0].nodeValue === "Yes") {
-				if (document.getElementById("bgChoice" + i + "Field").value === "") {
-					alert("One of your selected skills requires a field.");
-					error = true;
-					return 0;
-				}
-			} else { // Clear the field if not required
-				document.getElementById("bgChoice" + i + "Field").value = "";
-			}
-			// Check for duplicate skill selections
-			if (tempList.hasOwnProperty("skill" + document.getElementById("bgChoice" + i).value)) {
-				if (tempList["skill" + document.getElementById("bgChoice" + i).value].hasOwnProperty("field" + document.getElementById("bgChoice" + i + "Field").value)) {
-					alert("You may not select the same skill twice.");
-					return 0;
-				} else {
-					tempList["skill" + document.getElementById("bgChoice" + i).value]["field" + document.getElementById("bgChoice" + i + "Field").value] = 1;
-				}
-			} else {
-				tempList["skill" + document.getElementById("bgChoice" + i).value] = {};
-				tempList["skill" + document.getElementById("bgChoice" + i).value]["field" + document.getElementById("bgChoice" + i + "Field").value] = 1;
-			}
-		}
-		removeTemplate("background");
-		myCharacter.ego.background = document.getElementById("bg").value;
-		applyTemplate("background");
-	}
-	if (section === "FactionSection") {
-		// Faction
-		tempList = {};
-		for (i = 1; i <= facChoices; i++) {
-			// Check if skill requires a field
-			if (skillData[document.getElementById("facChoice" + i).value].getElementsByTagName("fields")[0].childNodes[0].nodeValue === "Yes") {
-				if (document.getElementById("facChoice" + i + "Field").value === "") {
-					alert("One of your selected skills requires a field.");
-					return 0;
-				}
-			} else { // Clear the field if not required
-				document.getElementById("facChoice" + i + "Field").value = "";
-			}
-			// Check for duplicate skill selections
-			if (tempList.hasOwnProperty("skill" + document.getElementById("facChoice" + i).value)) {
-				if (tempList["skill" + document.getElementById("facChoice" + i).value].hasOwnProperty("field" + document.getElementById("facChoice" + i + "Field").value)) {
-					alert("You may not select the same skill twice.");
-					return 0;
-				} else {
-					tempList["skill" + document.getElementById("facChoice" + i).value]["field" + document.getElementById("facChoice" + i + "Field").value] = 1;
-				}
-			} else {
-				tempList["skill" + document.getElementById("facChoice" + i).value] = {};
-				tempList["skill" + document.getElementById("facChoice" + i).value]["field" + document.getElementById("facChoice" + i + "Field").value] = 1;
-			}
-		}
-		removeTemplate("faction");
-		myCharacter.ego.faction = parseInt(document.getElementById("fac").value, 10);
-		applyTemplate("faction");
-	}
-	if (section === "AptitudesFreePointsSection") {
-		// Aptitudes
-		// Check free points spent
-		if (parseInt(document.getElementById("remainingAptPts").innerHTML, 10) > 0) {
-			alert("You have not assigned all of your free Attribute Points.");
-			return 0;
-		}
-		if (parseInt(document.getElementById("remainingAptPts").innerHTML, 10) < 0) {
-			alert("You have assigned too many free Attribute Points.");
-			return 0;
-		}
-		// Check for Feeble trait compliance
-		if ((document.getElementById("traitFeebleEgo").checked) && (document.getElementById("start" + document.getElementById("traitFeebleEgoChoice").value).value > 4)) {
-			alert("You must purchase the aptitude specified by the Feeble trait at a rating lower than 5.");
-			return 0;
-		}
-		// Check for max and min value compliance
-		for (i = 1; i <= 7; i++) {
-			temp = "";
-			switch (i) {
-			case 1:
-				temp = "COG";
-				break;
-			case 2:
-				temp = "COO";
-				break;
-			case 3:
-				temp = "INT";
-				break;
-			case 4:
-				temp = "REF";
-				break;
-			case 5:
-				temp = "SAV";
-				break;
-			case 6:
-				temp = "SOM";
-				break;
-			case 7:
-				temp = "WIL";
-				break;
-			default:
-				return 1;
-			}
-			// Check for max
-			if ((parseInt(document.getElementById("start" + temp).value, 10) > 30) && ((!document.getElementById("traitExceptional AptitudeEgo").checked) || (document.getElementById("traitExceptional AptitudeEgoChoice").value !== temp))) {
-				alert("No aptitude my be raised above 30 unless you take the Exceptional Aptitude trait for it.");
-				return 0;
-			}
-			// Check for min
-			if ((parseInt(document.getElementById("start" + temp).value, 10) < 5) && ((!document.getElementById("traitFeebleEgo").checked) || (document.getElementById("traitFeebleEgoChoice").value !== temp))) {
-				alert("No aptitude my be lowered below 5 unless you take the Feeble trait for it.");
-				return 0;
-			}
-			// Save the value
-			myCharacter.ego[temp] = parseInt(document.getElementById("start" + temp).value, 10);
-		}
-	}
-	if (section === "PsiSleightsSection") {
-		if ((myCharacter.ego.psiSleights["totalGamma"] > 5) || (myCharacter.ego.psiSleights["totalChi"] > 5)) {
-			alert("No more than 5 psi-chi and 5 psi-gamma sleights may be bought during character creation.");
-			return 0;
-		}
-	}
-	if (section === "RepFreePointsSection") {
-		// Rep
-		if (parseInt(document.getElementById("remainingRepPts").innerHTML, 10) > 0) {
-			alert("You have not assigned all of your Rep Points.");
-			return 0;
-		}
-		if (parseInt(document.getElementById("remainingRepPts").innerHTML, 10) < 0) {
-			alert("You have assigned too many Rep Points.");
-			return 0;
-		}
-		// Ensure rep selected for Blacklisted trait (if checked) is set to 0.
-		if ((document.getElementById("traitBlacklistedEgo").checked) && (parseInt(document.getElementById("start" + document.getElementById("traitBlacklistedChoice").value).value, 10) !== 0)) {
-			alert("You may not have a Rep score higher than 0 in your Blacklisted selection.");
-			return 0;
-		}
-		myCharacter.ego.reputations.ARep = parseInt(document.getElementById("startARep").value, 10);
-		myCharacter.ego.reputations.CRep = parseInt(document.getElementById("startCRep").value, 10);
-		myCharacter.ego.reputations.ERep = parseInt(document.getElementById("startERep").value, 10);
-		myCharacter.ego.reputations.FRep = parseInt(document.getElementById("startFRep").value, 10);
-		myCharacter.ego.reputations.GRep = parseInt(document.getElementById("startGRep").value, 10);
-		myCharacter.ego.reputations.IRep = parseInt(document.getElementById("startIRep").value, 10);
-		myCharacter.ego.reputations.RRep = parseInt(document.getElementById("startRRep").value, 10);
-	}
-	if (section === "MorphSection") {
-		// Morph
-		tempList = {};
-		// Check aptitude bonus selections
-		for (i = 1; i <= morphChoices; i++) {
-			if (tempList.hasOwnProperty(document.getElementById("morphChoice" + i).value)) {
-				alert("You cannot select the same aptitude twice.");
-				return 0;
-			} else {
-				tempList[document.getElementById("morphChoice" + i).value] = 1;
-			}
-		}
-		// Check CP
-		if (myCharacter.CPGainedFromNegativeMorphTraits > 25) {
-		alert("You may not purchase more than 25 CP worth of negative morph traits.");
-		return 0;
-		}
-		// Check for Second Skin trait - this overrides any further validity checks
-		if (!document.getElementById("traitSecond SkinEgo").checked) {
-			morphName = morphData[document.getElementById("morph").value].getElementsByTagName("name")[0].childNodes[0].nodeValue;
-			morphType = morphData[document.getElementById("morph").value].getElementsByTagName("type")[0].childNodes[0].nodeValue;
-			// Check for background required morphs
-			found = (backgroundData[myCharacter.ego.background].getElementsByTagName("requiredmorph").length < 1) ? 1 : 0;
-			for (i = 0; i < backgroundData[myCharacter.ego.background].getElementsByTagName("requiredmorph").length; i++) {
-				if ((backgroundData[myCharacter.ego.background].getElementsByTagName("requiredmorph")[i].childNodes[0].nodeValue === morphName) || (backgroundData[myCharacter.ego.background].getElementsByTagName("requiredmorph")[i].childNodes[0].nodeValue === morphType)) {
-					found = 1;
-				}
-			}
-			if (!found) {
-				alert("Your background requires a different morph than the one you selected.");
-				return 0;
-			}
-			// Check for faction required morphs
-			found = (factionData[myCharacter.ego.faction].getElementsByTagName("requiredmorph").length < 1) ? 1 : 0;
-			for (i = 0; i < factionData[myCharacter.ego.faction].getElementsByTagName("requiredmorph").length; i++) {
-				if ((factionData[myCharacter.ego.faction].getElementsByTagName("requiredmorph")[i].childNodes[0].nodeValue === morphName) || (factionData[myCharacter.ego.faction].getElementsByTagName("requiredmorph")[i].childNodes[0].nodeValue === morphType)) {
-					found = 1;
-				}
-			}
-			if (!found) {
-				alert("Your faction requires a different morph than the one you selected.");
-				return 0;
-			}
-			// Check for background morph restrictions
-			for (i = 0; i < backgroundData[myCharacter.ego.background].getElementsByTagName("restrictedmorph").length; i++) {
-				if ((backgroundData[myCharacter.ego.background].getElementsByTagName("restrictedmorph")[i].childNodes[0].nodeValue === morphName) || (backgroundData[myCharacter.ego.background].getElementsByTagName("restrictedmorph")[i].childNodes[0].nodeValue === morphType)) {
-					invalid = 1;
-				}
-			}
-			if (invalid) {
-				alert("Your background does not permit the morph you selected.");
-				return 0;
-			}
-			// Check for faction morph restrictions
-			for (i = 0; i < factionData[myCharacter.ego.faction].getElementsByTagName("restrictedmorph").length; i++) {
-				if ((factionData[myCharacter.ego.faction].getElementsByTagName("restrictedmorph")[i].childNodes[0].nodeValue === morphName) || (factionData[myCharacter.ego.faction].getElementsByTagName("restrictedmorph")[i].childNodes[0].nodeValue === morphType)) {
-					invalid = 1;
-				}
-			}
-			if (invalid) {
-				alert("Your faction does not permit the morph you selected.");
-				return 0;
-			}
-		}
-		myCharacter.morph.ID = parseInt(document.getElementById("morph").value, 10);
-		document.getElementById("negativeMorphTraitsCPdiv").style.display = "none";
-		document.getElementById("fixeddiv").style.height = "75";
-	}
-	if (section === "SkillsSection") {
-		// Learned Skills
-			// Check CP
-		if (myCharacter.CPSpentOnActiveSkills < 400) {
-			alert("You must must purchase a minimum of 400 CP of Active skills.");
-			return 0;
-		}
-		if (myCharacter.CPSpentOnKnowledgeSkills < 300) {
-			alert("You must must purchase a minimum of 400 CP of Active skills.");
-			return 0;
-		}
-		// Check Incompetent trait
-		if ((document.getElementById("traitIncompetentEgo").checked) && (parseInt(document.getElementById("skill" + document.getElementById("traitIncompetentChoice").value + "field1purchased").value, 10) !== 0)){
-			alert("You may not buy the skill selected for the Incompetent trait.");
-			return 0;
-		}
-		// Check and store data
-		myCharacter.ego.skills = [];
-		i = 0;
-		while (document.getElementById("skill" + i + "field1total") !== null) {
-			myCharacter.ego.skills[i] = {};
-			myCharacter.ego.skills[i].field = {};
-			j = 1;
-			while (document.getElementById("skill" + i + "field" + j + "total") !== null) {
-				// One last check for blank field with purchased amount. This can happen if a user deletes the text in the field after purchasing ranks.
-				if ((document.getElementById("skill" + i + "field" + j + "input") !== null) && (document.getElementById("skill" + i + "field" + j + "input").value.replace(/^\s+|\s+$/g, '') === "") && (parseInt(document.getElementById("skill" + i + "field" + j + "purchased").value, 10) !== 0)) {
-					alert("You may not purchase a blank field.");
-					return 0;
-				}
-				// Skip entries with blank fields
-				if ((document.getElementById("skill" + i + "field" + j + "input") !== null) && (document.getElementById("skill" + i + "field" + j + "input").value !== "")) {
-					if ((parseInt(document.getElementById("skill" + i + "field" + j + "purchased").value, 10) !== 0) && (parseInt(document.getElementById("skill" + i + "field" + j + "total").innerHTML, 10) > 80)) {
-						// Only allow over 80 if Expert Trait is checked, the skill matches, and either there is no field or the fields match too
-						if (((!document.getElementById("traitExpertEgo").checked) || (parseInt(document.getElementById("traitExpertChoice").value, 10) !== i)) || ((document.getElementById("skill" + i + "field" + j + "input") !== null) && (document.getElementById("skill" + i + "field" + j + "input").value !== document.getElementById("traitExpertField").value))) {
-							alert("No learned skill may be raised over 80 during character creation (unless you have the Expert trait for that skill).");
-							return 0;
-						} else if (parseInt(document.getElementById("skill" + i + "field" + j + "total").innerHTML, 10) > 90) {
-							alert("No learned skill may be raised over 90 during character creation.");
-							return 0;
-						}
-					}
-					if (document.getElementById("skill" + i + "field" + j + "input") === null) {
-						temp = "none";
-					} else {
-						temp = document.getElementById("skill" + i + "field" + j + "input").value;
-					}
-					 // Check for duplicates
-					if (myCharacter.ego.skills[i].field.hasOwnProperty(temp)) {
-						alert("You may not purchase the same skill-field twice.");
-						return 0;
-					}
-					// Everything checks out so far
-					myCharacter.ego.skills[i].field[temp] = {};
-					myCharacter.ego.skills[i].field[temp].total = parseInt(document.getElementById("skill" + i + "field" + j + "amount").innerHTML, 10) + parseInt(document.getElementById("skill" + i + "field" + j + "purchased").value, 10);
-					// Apply -10 if incompetent
-					if ((document.getElementById("traitIncompetentEgo").checked) && (parseInt(document.getElementById("traitIncompetentChoice").value, 10) === i)) {
-						myCharacter.ego.skills[i].field[temp].total -= 10;
-					}
-					// Save specialization if present
-					if (document.getElementById("skill" + i + "field" + j + "specbox").checked){
-						myCharacter.ego.skills[i].field[temp].specialization = document.getElementById("skill" + i + "field" + j + "spectext").value;
-						// Make sure a specialization was selected
-						if (myCharacter.ego.skills[i].field[temp].specialization.replace(/^\s+|\s+$/g, '') === ""){
-							alert("You must name a specialization when purchased.");
-							return 0;
-						}
-					}
-				}
-				j++;
-			}
-			i++;
-		}
-	}
-	if (section === "MiscCPSection") {
-	}
-	return 1;
-}
-
-function setupSection(section) {
-	var output, i, q, j, field, flag, type, name, category, skillID, output, temp, temp2, tempData, maxVal, maxCP, costPer, multiplier, newCost, oldCost, newValue, oldValue, newTotal, baseValue, statName;
-	if (section === "MorphSection") {
-		output = "None";
-		// Load background restrictions
-		if (backgroundData[myCharacter.ego.background].getElementsByTagName("requiredmorph").length !== 0) {
-			output = "";
-			for (i = 0; i < backgroundData[myCharacter.ego.background].getElementsByTagName("requiredmorph").length; i++) {
-				output += "Required Morph (";
-				output += backgroundData[myCharacter.ego.background].getElementsByTagName("requiredmorph")[i].childNodes[0].nodeValue + ")";
-				if ((i + 1) !== backgroundData[myCharacter.ego.background].getElementsByTagName("requiredmorph").length) {
-					output += ", ";
-				}
-			}
-		}
-		if (backgroundData[myCharacter.ego.background].getElementsByTagName("restrictedmorph").length !== 0) {
-			if (output === "None") {
-				output = "";
-			} else {
-				output += ", ";
-			}
-			for (i = 0; i < backgroundData[myCharacter.ego.background].getElementsByTagName("restrictedmorph").length; i++) {
-				output += "Restricted Morph (";
-				output += backgroundData[myCharacter.ego.background].getElementsByTagName("restrictedmorph")[i].childNodes[0].nodeValue + ")";
-				if ((i + 1) !== backgroundData[myCharacter.ego.background].getElementsByTagName("restrictedmorph").length) {
-					output += ", ";
-				}
-			}
-		}
-		document.getElementById("morphBGRestrictions").innerHTML = output;
-		// Load faction restrictions
-		output = "None";
-		if (factionData[myCharacter.ego.faction].getElementsByTagName("requiredmorph").length !== 0) {
-			output = "";
-			for (i = 0; i < factionData[myCharacter.ego.faction].getElementsByTagName("requiredmorph").length; i++) {
-				output += "Required Morph (";
-				output += factionData[myCharacter.ego.faction].getElementsByTagName("requiredmorph")[i].childNodes[0].nodeValue + ")";
-				if ((i + 1) !== factionData[myCharacter.ego.faction].getElementsByTagName("requiredmorph").length) {
-					output += ", ";
-				}
-			}
-		}
-		if (factionData[myCharacter.ego.faction].getElementsByTagName("restrictedmorph").length !== 0) {
-			if (output === "None") {
-				output = "";
-			} else {
-				output += ", ";
-			}
-			for (i = 0; i < factionData[myCharacter.ego.faction].getElementsByTagName("restrictedmorph").length; i++) {
-				output += "Restricted Morph (";
-				output += factionData[myCharacter.ego.faction].getElementsByTagName("restrictedmorph")[i].childNodes[0].nodeValue + ")";
-				if ((i + 1) !== factionData[myCharacter.ego.faction].getElementsByTagName("restrictedmorph").length) {
-					output += ", ";
-				}
-			}
-		}
-		document.getElementById("morphFacRestrictions").innerHTML = output;
-	}
-	if (section === "RepFreePointsSection") {
-		myCharacter.ego.reputations.total = 50;
-		// Load background and faction reputation data
-		for (i = 0; i < factionData[myCharacter.ego.faction].getElementsByTagName("statmod").length; i++) {
-			if (factionData[myCharacter.ego.faction].getElementsByTagName("statmod")[i].getElementsByTagName("name")[0].childNodes[0].nodeValue === "REP") {
-				myCharacter.ego.reputations.total += parseInt(factionData[myCharacter.ego.faction].getElementsByTagName("statmod")[i].getElementsByTagName("amount")[0].childNodes[0].nodeValue, 10);
-			}
-		}
-		for (i = 0; i < backgroundData[myCharacter.ego.background].getElementsByTagName("statmod").length; i++) {
-			if (backgroundData[myCharacter.ego.background].getElementsByTagName("statmod")[i].getElementsByTagName("name")[0].childNodes[0].nodeValue === "REP") {
-				myCharacter.ego.reputations.total += parseInt(backgroundData[myCharacter.ego.background].getElementsByTagName("statmod")[i].getElementsByTagName("amount")[0].childNodes[0].nodeValue, 10);
-			}
-		}
-		updateStartRep();
-	}
-	if (section === "SkillsSection") {
-		// Reset skills data
-		myCharacter.ego.skills = [];
-		for (i = 0; i < skillData.length; i++) {
-			myCharacter.ego.skills[i] = {};
-			myCharacter.ego.skills[i].field = {};
-			myCharacter.ego.skills[i].field.none = {};
-			myCharacter.ego.skills[i].field.none.mod = 0;
-		}
-		// All characters get +70 to their natural language for free
-		skillID = lookupSkillID("Language");
-		myCharacter.ego.skills[skillID].field.Natural = {};
-		myCharacter.ego.skills[skillID].field.Natural.mod = 70;
-		// Refund and reset CP
-		myCharacter.CP += myCharacter.CPSpentOnKnowledgeSkills + myCharacter.CPSpentOnActiveSkills;
-		myCharacter.CPSpentOnKnowledgeSkills = 0;
-		myCharacter.CPSpentOnActiveSkills = 0;
-		// Load background and faction skill data
-		for (j = 0; j < 2; j++) {
-			tempData = (j === 0) ? backgroundData[myCharacter.ego.background].getElementsByTagName("skillmod") : factionData[myCharacter.ego.faction].getElementsByTagName("skillmod");
-			for (i = 0; i < tempData.length; i++) {
-				if ((tempData[i].getElementsByTagName("name")[0].childNodes[0].nodeValue !== "Choice") && (tempData[i].getElementsByTagName("amount").length !== 0)) {
-					skillID = lookupSkillID(tempData[i].getElementsByTagName("name")[0].childNodes[0].nodeValue);
-					if (tempData[i].getElementsByTagName("field").length !== 0) {
-						// Check if the field already exists. If not, create it.
-						if (myCharacter.ego.skills[skillID].field.hasOwnProperty(tempData[i].getElementsByTagName("field")[0].childNodes[0].nodeValue)) {
-							myCharacter.ego.skills[skillID].field[tempData[i].getElementsByTagName("field")[0].childNodes[0].nodeValue].mod = parseInt(tempData[i].getElementsByTagName("amount")[0].childNodes[0].nodeValue, 10);
-						} else {
-							myCharacter.ego.skills[skillID].field[tempData[i].getElementsByTagName("field")[0].childNodes[0].nodeValue] = {};
-							myCharacter.ego.skills[skillID].field[tempData[i].getElementsByTagName("field")[0].childNodes[0].nodeValue].mod = parseInt(tempData[i].getElementsByTagName("amount")[0].childNodes[0].nodeValue, 10);
-						}
-					} else {
-						myCharacter.ego.skills[skillID].field.none.mod = parseInt(tempData[i].getElementsByTagName("amount")[0].childNodes[0].nodeValue, 10);
-					}
-				}
-			}
-			// Load skill choices data
-			temp = (j === 0) ? "bg" : "fac";
-			temp2 = (j === 0) ? bgChoices : facChoices;
-			for (i = 1; i <= temp2; i++) {
-				if (document.getElementById(temp + "Choice" + i + "Field").value === "") {
-					myCharacter.ego.skills[document.getElementById(temp + "Choice" + i).value].field.none.mod += parseInt(document.getElementById(temp + "Choice" + i + "Amount").innerHTML, 10);
-				} else {
-					// Check if the field already exists. If not, create it.
-					if (myCharacter.ego.skills[document.getElementById(temp + "Choice" + i).value].field.hasOwnProperty(document.getElementById(temp + "Choice" + i + "Field").value)) {
-						myCharacter.ego.skills[document.getElementById(temp + "Choice" + i).value].field[document.getElementById(temp + "Choice" + i + "Field").value].mod += parseInt(document.getElementById(temp + "Choice" + i + "Amount").innerHTML, 10);
-					} else {	
-						myCharacter.ego.skills[document.getElementById(temp + "Choice" + i).value].field[document.getElementById(temp + "Choice" + i + "Field").value] = {};
-						myCharacter.ego.skills[document.getElementById(temp + "Choice" + i).value].field[document.getElementById(temp + "Choice" + i + "Field").value].mod = parseInt(document.getElementById(temp + "Choice" + i + "Amount").innerHTML, 10);
-					}
-				}
-			}
-		}
-		// Assemble skills output
-		for (q = 0; q < 2; q++) {
-			category = (q === 0) ? "Active" : "Knowledge";
-			output = "<table><tr><td><strong>Skill Name<\/strong><\/td><td><strong>Field<\/strong><\/td><td><strong>Aptitude<\/strong><\/td><td><strong>Mods<\/strong><\/td><td><strong>Base<\/strong><\/td><td><strong>Purchased<\/strong><\/td><td><strong>Total<\/strong><\/td><td><strong>Cost<\/strong><\/td><td><strong><\/strong><\/td><td><strong>Specialization<\/strong><\/td><\/tr>";
-			for (i = 0; i < myCharacter.ego.skills.length; i++) {
-				field = 1;
-				flag = 0;
-				for (j = 0; j < skillData[i].getElementsByTagName("category").length; j++) {
-					if (skillData[i].getElementsByTagName("category")[j].childNodes[0].nodeValue === category) {
-						flag = 1;
-					}
-				}
-				if (flag) {
-					for (j in myCharacter.ego.skills[i].field) {
-						if (myCharacter.ego.skills[i].field.hasOwnProperty(j)) {
-							if ((j !== "none") || (skillData[i].getElementsByTagName("fields")[0].childNodes[0].nodeValue === "No")) { // Skip the "none"s in skills with fields
-								output += "<tr><td>" + skillData[i].getElementsByTagName("name")[0].childNodes[0].nodeValue + "<\/td>"; // Name
-								if (j === "none") {
-									output += "<td>-<\/td>"; // Leave Field blank
-								} else {
-									output += "<td><input id=\"skill" + i + "field" + field + "input\" type=\"text\" maxlength=\"20\" value=\"" + j + "\" disabled=\"true\" /><\/td>"; // Field
-								}
-								output += "<td>" + skillData[i].getElementsByTagName("apt")[0].childNodes[0].nodeValue + " (" + myCharacter.ego[skillData[i].getElementsByTagName("apt")[0].childNodes[0].nodeValue] + ")<\/td>"; // Linked Apt
-								output += "<td id=\"skill" + i + "field" + field + "amount\">" + myCharacter.ego.skills[i].field[j].mod + "<\/td>"; // Mods
-								output += "<td id=\"skill" + i + "field" + field + "base\">" + (parseInt(myCharacter.ego[skillData[i].getElementsByTagName("apt")[0].childNodes[0].nodeValue], 10) + myCharacter.ego.skills[i].field[j].mod) + "<\/td>"; // Base
-								output += "<td><input id=\"skill" + i + "field" + field + "purchased\" type=\"text\" maxlength=\"2\" value=\"0\" onChange=\"updateSkill(" + i + "," + field + ",'" + category + "')\" /><\/td>"; // Amount purchased
-								output += "<td id=\"skill" + i + "field" + field + "total\">" + (parseInt(myCharacter.ego[skillData[i].getElementsByTagName("apt")[0].childNodes[0].nodeValue], 10) + myCharacter.ego.skills[i].field[j].mod) + "<\/td>"; // Total
-								output += "<td id=\"skill" + i + "field" + field + "cost\">0<\/td>"; // CP Cost
-								temp = ((parseInt(myCharacter.ego[skillData[i].getElementsByTagName("apt")[0].childNodes[0].nodeValue], 10) + myCharacter.ego.skills[i].field[j].mod) >= 30) ? "":" disabled " ;
-								output += "<td><input id=\"skill" + i + "field" + field + "specbox\" type=\"checkbox\" onclick=\"toggleSpec(" + i + "," + field + ")\"" + temp + "/></td>"; // Spec Checkbox
-								output += "<td><input id=\"skill" + i + "field" + field + "spectext\" type=\"text\" maxlength=\"20\" disabled=\"true\" /></td><\/tr>"; // Spec field
-								field++;
-							}
-						}
-					}
-					// Provide three extra slots for skills with fields
-					if (skillData[i].getElementsByTagName("fields")[0].childNodes[0].nodeValue === "Yes") {
-						for (j = 0; j < 3; j++) {
-							output += "<tr><td>" + skillData[i].getElementsByTagName("name")[0].childNodes[0].nodeValue + "<\/td>"; // Name
-							output += "<td><input id=\"skill" + i + "field" + field + "input\" type=\"text\" maxlength=\"20\" /><\/td>"; // Field
-							output += "<td>" + skillData[i].getElementsByTagName("apt")[0].childNodes[0].nodeValue + " (" + myCharacter.ego[skillData[i].getElementsByTagName("apt")[0].childNodes[0].nodeValue] + ")<\/td>"; // Linked Apt
-							output += "<td id=\"skill" + i + "field" + field + "amount\">0<\/td>"; // Mods
-							output += "<td id=\"skill" + i + "field" + field + "base\">" + myCharacter.ego[skillData[i].getElementsByTagName("apt")[0].childNodes[0].nodeValue] + "<\/td>"; // Base
-							output += "<td><input id=\"skill" + i + "field" + field + "purchased\" type=\"text\" maxlength=\"2\" value=\"0\" onChange=\"updateSkill(" + i + "," + field + ",'" + category + "')\" /><\/td>"; // Amount purchased
-							output += "<td id=\"skill" + i + "field" + field + "total\">" + myCharacter.ego[skillData[i].getElementsByTagName("apt")[0].childNodes[0].nodeValue] + "<\/td>"; // Total
-							output += "<td id=\"skill" + i + "field" + field + "cost\">0<\/td>"; // CP Cost
-							temp = (parseInt(myCharacter.ego[skillData[i].getElementsByTagName("apt")[0].childNodes[0].nodeValue], 10) >= 30) ? "":" disabled " ;
-							output += "<td><input id=\"skill" + i + "field" + field + "specbox\" type=\"checkbox\" onclick=\"toggleSpec(" + i + "," + field + ")\"" + temp + "/></td>"; // Spec Checkbox
-							output += "<td><input id=\"skill" + i + "field" + field + "spectext\" type=\"text\" maxlength=\"20\" disabled=\"true\" /></td><\/tr>"; // Spec field
-							field++;
-						}
-					}
-				}
-			}
-			output += "<\/table>";
-			document.getElementById(category + "Skills").innerHTML = output;
-		}
-	}
-	if (section === "MiscCPSection") {
-		for (i = 1; i <= 16; i++) {
-			switch (i) {
-			case 1:
-				type = "Stat";
-				name = "Moxie";
-				baseValue = myCharacter.ego.MOX;
-				break;
-			case 2:
-				type = "Stat";
-				name = "Credit";
-				baseValue = myCharacter.ego.CRED;
-				break;
-			case 3:
-				type = "Apt";
-				name = "COG";
-				baseValue = myCharacter.ego.COG;
-				break;
-			case 4:
-				type = "Apt";
-				name = "COO";
-				baseValue = myCharacter.ego.COO;
-				break;
-			case 5:
-				type = "Apt";
-				name = "INT";
-				baseValue = myCharacter.ego.INT;
-				break;
-			case 6:
-				type = "Apt";
-				name = "REF";
-				baseValue = myCharacter.ego.REF;
-				break;
-			case 7:
-				type = "Apt";
-				name = "SAV";
-				baseValue = myCharacter.ego.SAV;
-				break;
-			case 8:
-				type = "Apt";
-				name = "SOM";
-				baseValue = myCharacter.ego.SOM;
-				break;
-			case 9:
-				type = "Apt";
-				name = "WIL";
-				baseValue = myCharacter.ego.WIL;
-				break;
-			case 10:
-				type = "Rep";
-				name = "The @-list";
-				baseValue = myCharacter.ego.reputations.ARep;
-				break;
-			case 11:
-				type = "Rep";
-				name = "CivicNet";
-				baseValue = myCharacter.ego.reputations.CRep;
-				break;
-			case 12:
-				type = "Rep";
-				name = "EcoWave";
-				baseValue = myCharacter.ego.reputations.ERep;
-				break;
-			case 13:
-				type = "Rep";
-				name = "Fame";
-				baseValue = myCharacter.ego.reputations.FRep;
-				break;
-			case 14:
-				type = "Rep";
-				name = "Guanxi";
-				baseValue = myCharacter.ego.reputations.GRep;
-				break;
-			case 15:
-				type = "Rep";
-				name = "The Eye";
-				baseValue = myCharacter.ego.reputations.IRep;
-				break;
-			case 16:
-				type = "Rep";
-				name = "RNA";
-				baseValue = myCharacter.ego.reputations.RRep;
-				break;
-			default:
-				type = "";
-				name = "";
-				cost = "";
-				baseValue = 0;
-			}
-			maxVal = 999999;
-			maxCP = 999999;
-			costPer = 1;
-			multiplier = 1;
-			statName = "";
-			if (type === "Stat") {
-				switch (name) {
-				case "Credit":
-					multiplier = 1000;
-					maxCP = 100;
-					break;
-				case "Moxie":
-					costPer = 15;
-					maxVal = 10;
-					break;
-				default:
-				 alert("Unknown stat " + name + ".");
-				}
-			}
-			if (type === "Apt") {
-				costPer = 10;
-				maxVal = 30;
-				// Check exceptional aptitude trait
-				if ((document.getElementById("traitExceptional AptitudeEgo").checked) && (document.getElementById("traitExceptional AptitudeEgoChoice").value === name)) {
-					maxVal = 40;
-				}
-				// Check feeble trait
-				if ((document.getElementById("traitFeebleEgo").checked) && (document.getElementById("traitFeebleEgoChoice").value === name)) {
-					maxVal = 4;
-				}
-			}
-			if (type === "Rep") {
-				multiplier = 10;
-				maxVal = 80;
-				maxCP = 35;
-				switch (name) {
-				case "The @-list":
-					statName = "ARep";
-					break;
-				case "CivicNet":
-					statName = "CRep";
-					break;
-				case "EcoWave":
-					statName = "ERep";
-					break;
-				case "Fame":
-					statName = "FRep";
-					break;
-				case "Guanxi":
-					statName = "GRep";
-					break;
-				case "The Eye":
-					statName = "IRep";
-					break;
-				case "RNA":
-					statName = "RRep";
-					break;	
-				default:
-					alert("Unknown rep " + name + ".");
-				}
-			}
-			document.getElementById("misc" + type + name + "Base").innerHTML = baseValue;
-			oldValue = parseInt(document.getElementById("misc" + type + name + "Value").innerHTML, 10);
-			newValue = oldValue;
-			oldCost = parseInt(document.getElementById("misc" + type + name + "Cost").innerHTML, 10);
-			newTotal = oldValue + baseValue;
-			newCost = newValue / multiplier * costPer;
-			// Reset to 0 and refund CP if new value  or cost is out of bounds or invalidated by blacklisted trait
-			if ((newTotal < 0) || (newTotal > maxVal) || (newCost > maxCP) || ((document.getElementById("traitBlacklistedEgo").checked) && (document.getElementById("traitBlacklistedChoice").value === statName))) {
-				newValue = 0;
-				newCost = 0;
-				document.getElementById("misc" + type + name + "Value").innerHTML = 0;
-			}
-			myCharacter.CP -= newCost - oldCost;
-			document.getElementById("misc" + type + name + "Cost").innerHTML = newCost;
-			document.getElementById("misc" + type + name + "TotalValue").innerHTML = newTotal;
-		}
-	}
-	return 1;
-}
-
 function selectBG() {
 	var output, i, j, k, l, m, quantity, numChoices, value, skillName, num;
 	num = parseInt(document.getElementById("bg").value, 10);
@@ -1322,11 +648,11 @@ function selectMorph() {
 	// Refund and reenable all morph traits
 	temp = document.getElementsByName("traitBox");
 	for (i = 0; i < temp.length; i++) {
-		if (temp[i].dataset.traitSource === "Morph"){
+		if (temp[i].dataset.traitSource === "Morph") {
 			if (temp[i].disabled) {
 				temp[i].disabled = false;
 			}
-			if (temp[i].checked){
+			if (temp[i].checked) {
 				temp[i].checked = false;
 				removeTrait(temp[i].dataset.traitType, temp[i].dataset.traitName, temp[i].dataset.traitSource, 0, false);
 			}
@@ -1336,7 +662,7 @@ function selectMorph() {
 	applyTemplate("morph");
 	// Disable invalid traits
 	for (i = 0; i < temp.length; i++) {
-		if ((temp[i].dataset.traitSource === "Morph") && (!temp[i].disabled)){
+		if ((temp[i].dataset.traitSource === "Morph") && (!temp[i].disabled)) {
 			if (!checkTraitReqs(temp[i].dataset.traitType, temp[i].dataset.traitName, temp[i].dataset.traitSource, true)) {
 				temp[i].disabled = true;
 			}
@@ -1437,7 +763,7 @@ function incrementMiscCP() {
 			maxVal = 10;
 			break;
 		default:
-		 alert("Unknown stat " + this.dataset.name + ".");
+			alert("Unknown stat " + this.dataset.name + ".");
 		}
 	}
 	if (this.dataset.type === "Apt") {
@@ -1455,28 +781,28 @@ function incrementMiscCP() {
 	if (this.dataset.type === "Rep") {
 		// Check blacklisted trait
 		switch (this.dataset.name) {
-			case "The @-list":
-				statName = "ARep";
-				break;
-			case "CivicNet":
-				statName = "CRep";
-				break;
-			case "EcoWave":
-				statName = "ERep";
-				break;
-			case "Fame":
-				statName = "FRep";
-				break;
-			case "Guanxi":
-				statName = "GRep";
-				break;
-			case "The Eye":
-				statName = "IRep";
-				break;
-			case "RNA":
-				statName = "RRep";
-				break;	
-			default:
+		case "The @-list":
+			statName = "ARep";
+			break;
+		case "CivicNet":
+			statName = "CRep";
+			break;
+		case "EcoWave":
+			statName = "ERep";
+			break;
+		case "Fame":
+			statName = "FRep";
+			break;
+		case "Guanxi":
+			statName = "GRep";
+			break;
+		case "The Eye":
+			statName = "IRep";
+			break;
+		case "RNA":
+			statName = "RRep";
+			break;	
+		default:
 			alert("Unknown rep " + this.dataset.name + ".");
 		}
 		if ((document.getElementById("traitBlacklistedEgo").checked) && (document.getElementById("traitBlacklistedChoice").value === statName)) {
@@ -1528,7 +854,6 @@ function updateStartRep() {
 }
 
 function updateFixedDiv() {
-	var div = document.getElementById("fixeddiv");
 	// Reset and hide all
 	document.getElementById("positiveTraitsCPdiv").style.display = "none";
 	document.getElementById("negativeTraitsCPdiv").style.display = "none";
@@ -1584,6 +909,678 @@ function updateFixedDiv() {
 	}
 }
 
+function saveSection(section) { // Validate and save data
+	var temp, tempList = {}, invalid = 0, i, j, morphName, morphType, found, error = false;
+	// Check CP
+	if (myCharacter.CP < 0) {
+		alert("You do not have enough CP.");
+		return 0;
+	}
+	if (myCharacter.CPSpentOnPositiveTraits > 50) {
+		alert("You may not spend more than 50 CP on positive traits.");
+		return 0;
+	}
+	if (myCharacter.CPGainedFromNegativeTraits > 50) {
+		alert("You may not purchase more than 50 CP worth of negative traits.");
+		return 0;
+	}
+	if (section === "ConceptSection") {
+		// Name and Concept
+		myCharacter.name = document.getElementById("charName").value;
+		myCharacter.concept = document.getElementById("concept").value;
+	}
+	if (section === "BackgroundSection") {
+		// Background
+		// Enforce specific fields as required in Background descriptions
+		if (backgroundData[document.getElementById("bg").value].getElementsByTagName("name")[0].childNodes[0].nodeValue === "Original Space Colonist") {
+			if (skillData[document.getElementById("bgChoice1").value].getElementsByTagName("name")[0].childNodes[0].nodeValue === "Pilot") {
+				document.getElementById("bgChoice1Field").value = "Spacecraft";
+			}
+		}
+		tempList = {};
+		for (i = 1; i <= bgChoices; i++) {
+			// Check if skill requires a field
+			if (skillData[document.getElementById("bgChoice" + i).value].getElementsByTagName("fields")[0].childNodes[0].nodeValue === "Yes") {
+				if (document.getElementById("bgChoice" + i + "Field").value === "") {
+					alert("One of your selected skills requires a field.");
+					error = true;
+					return 0;
+				}
+			} else { // Clear the field if not required
+				document.getElementById("bgChoice" + i + "Field").value = "";
+			}
+			// Check for duplicate skill selections
+			if (tempList.hasOwnProperty("skill" + document.getElementById("bgChoice" + i).value)) {
+				if (tempList["skill" + document.getElementById("bgChoice" + i).value].hasOwnProperty("field" + document.getElementById("bgChoice" + i + "Field").value)) {
+					alert("You may not select the same skill twice.");
+					return 0;
+				} else {
+					tempList["skill" + document.getElementById("bgChoice" + i).value]["field" + document.getElementById("bgChoice" + i + "Field").value] = 1;
+				}
+			} else {
+				tempList["skill" + document.getElementById("bgChoice" + i).value] = {};
+				tempList["skill" + document.getElementById("bgChoice" + i).value]["field" + document.getElementById("bgChoice" + i + "Field").value] = 1;
+			}
+		}
+		removeTemplate("background");
+		myCharacter.ego.background = document.getElementById("bg").value;
+		applyTemplate("background");
+	}
+	if (section === "FactionSection") {
+		// Faction
+		tempList = {};
+		for (i = 1; i <= facChoices; i++) {
+			// Check if skill requires a field
+			if (skillData[document.getElementById("facChoice" + i).value].getElementsByTagName("fields")[0].childNodes[0].nodeValue === "Yes") {
+				if (document.getElementById("facChoice" + i + "Field").value === "") {
+					alert("One of your selected skills requires a field.");
+					return 0;
+				}
+			} else { // Clear the field if not required
+				document.getElementById("facChoice" + i + "Field").value = "";
+			}
+			// Check for duplicate skill selections
+			if (tempList.hasOwnProperty("skill" + document.getElementById("facChoice" + i).value)) {
+				if (tempList["skill" + document.getElementById("facChoice" + i).value].hasOwnProperty("field" + document.getElementById("facChoice" + i + "Field").value)) {
+					alert("You may not select the same skill twice.");
+					return 0;
+				} else {
+					tempList["skill" + document.getElementById("facChoice" + i).value]["field" + document.getElementById("facChoice" + i + "Field").value] = 1;
+				}
+			} else {
+				tempList["skill" + document.getElementById("facChoice" + i).value] = {};
+				tempList["skill" + document.getElementById("facChoice" + i).value]["field" + document.getElementById("facChoice" + i + "Field").value] = 1;
+			}
+		}
+		removeTemplate("faction");
+		myCharacter.ego.faction = parseInt(document.getElementById("fac").value, 10);
+		applyTemplate("faction");
+	}
+	if (section === "AptitudesFreePointsSection") {
+		// Aptitudes
+		// Check free points spent
+		if (parseInt(document.getElementById("remainingAptPts").innerHTML, 10) > 0) {
+			alert("You have not assigned all of your free Attribute Points.");
+			return 0;
+		}
+		if (parseInt(document.getElementById("remainingAptPts").innerHTML, 10) < 0) {
+			alert("You have assigned too many free Attribute Points.");
+			return 0;
+		}
+		// Check for Feeble trait compliance
+		if ((document.getElementById("traitFeebleEgo").checked) && (document.getElementById("start" + document.getElementById("traitFeebleEgoChoice").value).value > 4)) {
+			alert("You must purchase the aptitude specified by the Feeble trait at a rating lower than 5.");
+			return 0;
+		}
+		// Check for max and min value compliance
+		for (i = 1; i <= 7; i++) {
+			temp = "";
+			switch (i) {
+			case 1:
+				temp = "COG";
+				break;
+			case 2:
+				temp = "COO";
+				break;
+			case 3:
+				temp = "INT";
+				break;
+			case 4:
+				temp = "REF";
+				break;
+			case 5:
+				temp = "SAV";
+				break;
+			case 6:
+				temp = "SOM";
+				break;
+			case 7:
+				temp = "WIL";
+				break;
+			default:
+				return 1;
+			}
+			// Check for max
+			if ((parseInt(document.getElementById("start" + temp).value, 10) > 30) && ((!document.getElementById("traitExceptional AptitudeEgo").checked) || (document.getElementById("traitExceptional AptitudeEgoChoice").value !== temp))) {
+				alert("No aptitude my be raised above 30 unless you take the Exceptional Aptitude trait for it.");
+				return 0;
+			}
+			// Check for min
+			if ((parseInt(document.getElementById("start" + temp).value, 10) < 5) && ((!document.getElementById("traitFeebleEgo").checked) || (document.getElementById("traitFeebleEgoChoice").value !== temp))) {
+				alert("No aptitude my be lowered below 5 unless you take the Feeble trait for it.");
+				return 0;
+			}
+			// Save the value
+			myCharacter.ego[temp] = parseInt(document.getElementById("start" + temp).value, 10);
+		}
+	}
+	if (section === "PsiSleightsSection") {
+		if ((myCharacter.ego.psiSleights.totalGamma > 5) || (myCharacter.ego.psiSleights.totalChi > 5)) {
+			alert("No more than 5 psi-chi and 5 psi-gamma sleights may be bought during character creation.");
+			return 0;
+		}
+	}
+	if (section === "RepFreePointsSection") {
+		// Rep
+		if (parseInt(document.getElementById("remainingRepPts").innerHTML, 10) > 0) {
+			alert("You have not assigned all of your Rep Points.");
+			return 0;
+		}
+		if (parseInt(document.getElementById("remainingRepPts").innerHTML, 10) < 0) {
+			alert("You have assigned too many Rep Points.");
+			return 0;
+		}
+		// Ensure rep selected for Blacklisted trait (if checked) is set to 0.
+		if ((document.getElementById("traitBlacklistedEgo").checked) && (parseInt(document.getElementById("start" + document.getElementById("traitBlacklistedChoice").value).value, 10) !== 0)) {
+			alert("You may not have a Rep score higher than 0 in your Blacklisted selection.");
+			return 0;
+		}
+		myCharacter.ego.reputations.ARep = parseInt(document.getElementById("startARep").value, 10);
+		myCharacter.ego.reputations.CRep = parseInt(document.getElementById("startCRep").value, 10);
+		myCharacter.ego.reputations.ERep = parseInt(document.getElementById("startERep").value, 10);
+		myCharacter.ego.reputations.FRep = parseInt(document.getElementById("startFRep").value, 10);
+		myCharacter.ego.reputations.GRep = parseInt(document.getElementById("startGRep").value, 10);
+		myCharacter.ego.reputations.IRep = parseInt(document.getElementById("startIRep").value, 10);
+		myCharacter.ego.reputations.RRep = parseInt(document.getElementById("startRRep").value, 10);
+	}
+	if (section === "MorphSection") {
+		// Morph
+		tempList = {};
+		// Check aptitude bonus selections
+		for (i = 1; i <= morphChoices; i++) {
+			if (tempList.hasOwnProperty(document.getElementById("morphChoice" + i).value)) {
+				alert("You cannot select the same aptitude twice.");
+				return 0;
+			} else {
+				tempList[document.getElementById("morphChoice" + i).value] = 1;
+			}
+		}
+		// Check CP
+		if (myCharacter.CPGainedFromNegativeMorphTraits > 25) {
+			alert("You may not purchase more than 25 CP worth of negative morph traits.");
+			return 0;
+		}
+		// Check for Second Skin trait - this overrides any further validity checks
+		if (!document.getElementById("traitSecond SkinEgo").checked) {
+			morphName = morphData[document.getElementById("morph").value].getElementsByTagName("name")[0].childNodes[0].nodeValue;
+			morphType = morphData[document.getElementById("morph").value].getElementsByTagName("type")[0].childNodes[0].nodeValue;
+			// Check for background required morphs
+			found = (backgroundData[myCharacter.ego.background].getElementsByTagName("requiredmorph").length < 1) ? 1 : 0;
+			for (i = 0; i < backgroundData[myCharacter.ego.background].getElementsByTagName("requiredmorph").length; i++) {
+				if ((backgroundData[myCharacter.ego.background].getElementsByTagName("requiredmorph")[i].childNodes[0].nodeValue === morphName) || (backgroundData[myCharacter.ego.background].getElementsByTagName("requiredmorph")[i].childNodes[0].nodeValue === morphType)) {
+					found = 1;
+				}
+			}
+			if (!found) {
+				alert("Your background requires a different morph than the one you selected.");
+				return 0;
+			}
+			// Check for faction required morphs
+			found = (factionData[myCharacter.ego.faction].getElementsByTagName("requiredmorph").length < 1) ? 1 : 0;
+			for (i = 0; i < factionData[myCharacter.ego.faction].getElementsByTagName("requiredmorph").length; i++) {
+				if ((factionData[myCharacter.ego.faction].getElementsByTagName("requiredmorph")[i].childNodes[0].nodeValue === morphName) || (factionData[myCharacter.ego.faction].getElementsByTagName("requiredmorph")[i].childNodes[0].nodeValue === morphType)) {
+					found = 1;
+				}
+			}
+			if (!found) {
+				alert("Your faction requires a different morph than the one you selected.");
+				return 0;
+			}
+			// Check for background morph restrictions
+			for (i = 0; i < backgroundData[myCharacter.ego.background].getElementsByTagName("restrictedmorph").length; i++) {
+				if ((backgroundData[myCharacter.ego.background].getElementsByTagName("restrictedmorph")[i].childNodes[0].nodeValue === morphName) || (backgroundData[myCharacter.ego.background].getElementsByTagName("restrictedmorph")[i].childNodes[0].nodeValue === morphType)) {
+					invalid = 1;
+				}
+			}
+			if (invalid) {
+				alert("Your background does not permit the morph you selected.");
+				return 0;
+			}
+			// Check for faction morph restrictions
+			for (i = 0; i < factionData[myCharacter.ego.faction].getElementsByTagName("restrictedmorph").length; i++) {
+				if ((factionData[myCharacter.ego.faction].getElementsByTagName("restrictedmorph")[i].childNodes[0].nodeValue === morphName) || (factionData[myCharacter.ego.faction].getElementsByTagName("restrictedmorph")[i].childNodes[0].nodeValue === morphType)) {
+					invalid = 1;
+				}
+			}
+			if (invalid) {
+				alert("Your faction does not permit the morph you selected.");
+				return 0;
+			}
+		}
+		myCharacter.morph.ID = parseInt(document.getElementById("morph").value, 10);
+		document.getElementById("negativeMorphTraitsCPdiv").style.display = "none";
+		document.getElementById("fixeddiv").style.height = "75";
+	}
+	if (section === "SkillsSection") {
+		// Learned Skills
+			// Check CP
+		if (myCharacter.CPSpentOnActiveSkills < 400) {
+			alert("You must must purchase a minimum of 400 CP of Active skills.");
+			return 0;
+		}
+		if (myCharacter.CPSpentOnKnowledgeSkills < 300) {
+			alert("You must must purchase a minimum of 400 CP of Active skills.");
+			return 0;
+		}
+		// Check Incompetent trait
+		if ((document.getElementById("traitIncompetentEgo").checked) && (parseInt(document.getElementById("skill" + document.getElementById("traitIncompetentChoice").value + "field1purchased").value, 10) !== 0)) {
+			alert("You may not buy the skill selected for the Incompetent trait.");
+			return 0;
+		}
+		// Check and store data
+		myCharacter.ego.skills = [];
+		i = 0;
+		while (document.getElementById("skill" + i + "field1total") !== null) {
+			myCharacter.ego.skills[i] = {};
+			myCharacter.ego.skills[i].field = {};
+			j = 1;
+			while (document.getElementById("skill" + i + "field" + j + "total") !== null) {
+				// One last check for blank field with purchased amount. This can happen if a user deletes the text in the field after purchasing ranks.
+				if ((document.getElementById("skill" + i + "field" + j + "input") !== null) && (document.getElementById("skill" + i + "field" + j + "input").value.replace(/^\s+|\s+$/g, '') === "") && (parseInt(document.getElementById("skill" + i + "field" + j + "purchased").value, 10) !== 0)) {
+					alert("You may not purchase a blank field.");
+					return 0;
+				}
+				// Skip entries with blank fields
+				if ((document.getElementById("skill" + i + "field" + j + "input") !== null) && (document.getElementById("skill" + i + "field" + j + "input").value !== "")) {
+					if ((parseInt(document.getElementById("skill" + i + "field" + j + "purchased").value, 10) !== 0) && (parseInt(document.getElementById("skill" + i + "field" + j + "total").innerHTML, 10) > 80)) {
+						// Only allow over 80 if Expert Trait is checked, the skill matches, and either there is no field or the fields match too
+						if (((!document.getElementById("traitExpertEgo").checked) || (parseInt(document.getElementById("traitExpertChoice").value, 10) !== i)) || ((document.getElementById("skill" + i + "field" + j + "input") !== null) && (document.getElementById("skill" + i + "field" + j + "input").value !== document.getElementById("traitExpertField").value))) {
+							alert("No learned skill may be raised over 80 during character creation (unless you have the Expert trait for that skill).");
+							return 0;
+						} else if (parseInt(document.getElementById("skill" + i + "field" + j + "total").innerHTML, 10) > 90) {
+							alert("No learned skill may be raised over 90 during character creation.");
+							return 0;
+						}
+					}
+					if (document.getElementById("skill" + i + "field" + j + "input") === null) {
+						temp = "none";
+					} else {
+						temp = document.getElementById("skill" + i + "field" + j + "input").value;
+					}
+					 // Check for duplicates
+					if (myCharacter.ego.skills[i].field.hasOwnProperty(temp)) {
+						alert("You may not purchase the same skill-field twice.");
+						return 0;
+					}
+					// Everything checks out so far
+					myCharacter.ego.skills[i].field[temp] = {};
+					myCharacter.ego.skills[i].field[temp].total = parseInt(document.getElementById("skill" + i + "field" + j + "amount").innerHTML, 10) + parseInt(document.getElementById("skill" + i + "field" + j + "purchased").value, 10);
+					// Apply -10 if incompetent
+					if ((document.getElementById("traitIncompetentEgo").checked) && (parseInt(document.getElementById("traitIncompetentChoice").value, 10) === i)) {
+						myCharacter.ego.skills[i].field[temp].total -= 10;
+					}
+					// Save specialization if present
+					if (document.getElementById("skill" + i + "field" + j + "specbox").checked) {
+						myCharacter.ego.skills[i].field[temp].specialization = document.getElementById("skill" + i + "field" + j + "spectext").value;
+						// Make sure a specialization was selected
+						if (myCharacter.ego.skills[i].field[temp].specialization.replace(/^\s+|\s+$/g, '') === "") {
+							alert("You must name a specialization when purchased.");
+							return 0;
+						}
+					}
+				}
+				j++;
+			}
+			i++;
+		}
+	}
+	return 1;
+}
+
+function setupSection(section) {
+	var output, i, q, j, field, flag, type, name, category, skillID, temp, temp2, tempData, maxVal, maxCP, costPer, multiplier, cost, newCost, oldCost, newValue, oldValue, newTotal, baseValue, statName;
+	if (section === "MorphSection") {
+		output = "None";
+		// Load background restrictions
+		if (backgroundData[myCharacter.ego.background].getElementsByTagName("requiredmorph").length !== 0) {
+			output = "";
+			for (i = 0; i < backgroundData[myCharacter.ego.background].getElementsByTagName("requiredmorph").length; i++) {
+				output += "Required Morph (";
+				output += backgroundData[myCharacter.ego.background].getElementsByTagName("requiredmorph")[i].childNodes[0].nodeValue + ")";
+				if ((i + 1) !== backgroundData[myCharacter.ego.background].getElementsByTagName("requiredmorph").length) {
+					output += ", ";
+				}
+			}
+		}
+		if (backgroundData[myCharacter.ego.background].getElementsByTagName("restrictedmorph").length !== 0) {
+			if (output === "None") {
+				output = "";
+			} else {
+				output += ", ";
+			}
+			for (i = 0; i < backgroundData[myCharacter.ego.background].getElementsByTagName("restrictedmorph").length; i++) {
+				output += "Restricted Morph (";
+				output += backgroundData[myCharacter.ego.background].getElementsByTagName("restrictedmorph")[i].childNodes[0].nodeValue + ")";
+				if ((i + 1) !== backgroundData[myCharacter.ego.background].getElementsByTagName("restrictedmorph").length) {
+					output += ", ";
+				}
+			}
+		}
+		document.getElementById("morphBGRestrictions").innerHTML = output;
+		// Load faction restrictions
+		output = "None";
+		if (factionData[myCharacter.ego.faction].getElementsByTagName("requiredmorph").length !== 0) {
+			output = "";
+			for (i = 0; i < factionData[myCharacter.ego.faction].getElementsByTagName("requiredmorph").length; i++) {
+				output += "Required Morph (";
+				output += factionData[myCharacter.ego.faction].getElementsByTagName("requiredmorph")[i].childNodes[0].nodeValue + ")";
+				if ((i + 1) !== factionData[myCharacter.ego.faction].getElementsByTagName("requiredmorph").length) {
+					output += ", ";
+				}
+			}
+		}
+		if (factionData[myCharacter.ego.faction].getElementsByTagName("restrictedmorph").length !== 0) {
+			if (output === "None") {
+				output = "";
+			} else {
+				output += ", ";
+			}
+			for (i = 0; i < factionData[myCharacter.ego.faction].getElementsByTagName("restrictedmorph").length; i++) {
+				output += "Restricted Morph (";
+				output += factionData[myCharacter.ego.faction].getElementsByTagName("restrictedmorph")[i].childNodes[0].nodeValue + ")";
+				if ((i + 1) !== factionData[myCharacter.ego.faction].getElementsByTagName("restrictedmorph").length) {
+					output += ", ";
+				}
+			}
+		}
+		document.getElementById("morphFacRestrictions").innerHTML = output;
+	}
+	if (section === "RepFreePointsSection") {
+		myCharacter.ego.reputations.total = 50;
+		// Load background and faction reputation data
+		for (i = 0; i < factionData[myCharacter.ego.faction].getElementsByTagName("statmod").length; i++) {
+			if (factionData[myCharacter.ego.faction].getElementsByTagName("statmod")[i].getElementsByTagName("name")[0].childNodes[0].nodeValue === "REP") {
+				myCharacter.ego.reputations.total += parseInt(factionData[myCharacter.ego.faction].getElementsByTagName("statmod")[i].getElementsByTagName("amount")[0].childNodes[0].nodeValue, 10);
+			}
+		}
+		for (i = 0; i < backgroundData[myCharacter.ego.background].getElementsByTagName("statmod").length; i++) {
+			if (backgroundData[myCharacter.ego.background].getElementsByTagName("statmod")[i].getElementsByTagName("name")[0].childNodes[0].nodeValue === "REP") {
+				myCharacter.ego.reputations.total += parseInt(backgroundData[myCharacter.ego.background].getElementsByTagName("statmod")[i].getElementsByTagName("amount")[0].childNodes[0].nodeValue, 10);
+			}
+		}
+		updateStartRep();
+	}
+	if (section === "SkillsSection") {
+		// Reset skills data
+		myCharacter.ego.skills = [];
+		for (i = 0; i < skillData.length; i++) {
+			myCharacter.ego.skills[i] = {};
+			myCharacter.ego.skills[i].field = {};
+			myCharacter.ego.skills[i].field.none = {};
+			myCharacter.ego.skills[i].field.none.mod = 0;
+		}
+		// All characters get +70 to their natural language for free
+		skillID = lookupSkillID("Language");
+		myCharacter.ego.skills[skillID].field.Natural = {};
+		myCharacter.ego.skills[skillID].field.Natural.mod = 70;
+		// Refund and reset CP
+		myCharacter.CP += myCharacter.CPSpentOnKnowledgeSkills + myCharacter.CPSpentOnActiveSkills;
+		myCharacter.CPSpentOnKnowledgeSkills = 0;
+		myCharacter.CPSpentOnActiveSkills = 0;
+		// Load background and faction skill data
+		for (j = 0; j < 2; j++) {
+			tempData = (j === 0) ? backgroundData[myCharacter.ego.background].getElementsByTagName("skillmod") : factionData[myCharacter.ego.faction].getElementsByTagName("skillmod");
+			for (i = 0; i < tempData.length; i++) {
+				if ((tempData[i].getElementsByTagName("name")[0].childNodes[0].nodeValue !== "Choice") && (tempData[i].getElementsByTagName("amount").length !== 0)) {
+					skillID = lookupSkillID(tempData[i].getElementsByTagName("name")[0].childNodes[0].nodeValue);
+					if (tempData[i].getElementsByTagName("field").length !== 0) {
+						// Check if the field already exists. If not, create it.
+						if (myCharacter.ego.skills[skillID].field.hasOwnProperty(tempData[i].getElementsByTagName("field")[0].childNodes[0].nodeValue)) {
+							myCharacter.ego.skills[skillID].field[tempData[i].getElementsByTagName("field")[0].childNodes[0].nodeValue].mod = parseInt(tempData[i].getElementsByTagName("amount")[0].childNodes[0].nodeValue, 10);
+						} else {
+							myCharacter.ego.skills[skillID].field[tempData[i].getElementsByTagName("field")[0].childNodes[0].nodeValue] = {};
+							myCharacter.ego.skills[skillID].field[tempData[i].getElementsByTagName("field")[0].childNodes[0].nodeValue].mod = parseInt(tempData[i].getElementsByTagName("amount")[0].childNodes[0].nodeValue, 10);
+						}
+					} else {
+						myCharacter.ego.skills[skillID].field.none.mod = parseInt(tempData[i].getElementsByTagName("amount")[0].childNodes[0].nodeValue, 10);
+					}
+				}
+			}
+			// Load skill choices data
+			temp = (j === 0) ? "bg" : "fac";
+			temp2 = (j === 0) ? bgChoices : facChoices;
+			for (i = 1; i <= temp2; i++) {
+				if (document.getElementById(temp + "Choice" + i + "Field").value === "") {
+					myCharacter.ego.skills[document.getElementById(temp + "Choice" + i).value].field.none.mod += parseInt(document.getElementById(temp + "Choice" + i + "Amount").innerHTML, 10);
+				} else {
+					// Check if the field already exists. If not, create it.
+					if (myCharacter.ego.skills[document.getElementById(temp + "Choice" + i).value].field.hasOwnProperty(document.getElementById(temp + "Choice" + i + "Field").value)) {
+						myCharacter.ego.skills[document.getElementById(temp + "Choice" + i).value].field[document.getElementById(temp + "Choice" + i + "Field").value].mod += parseInt(document.getElementById(temp + "Choice" + i + "Amount").innerHTML, 10);
+					} else {	
+						myCharacter.ego.skills[document.getElementById(temp + "Choice" + i).value].field[document.getElementById(temp + "Choice" + i + "Field").value] = {};
+						myCharacter.ego.skills[document.getElementById(temp + "Choice" + i).value].field[document.getElementById(temp + "Choice" + i + "Field").value].mod = parseInt(document.getElementById(temp + "Choice" + i + "Amount").innerHTML, 10);
+					}
+				}
+			}
+		}
+		// Assemble skills output
+		for (q = 0; q < 2; q++) {
+			category = (q === 0) ? "Active" : "Knowledge";
+			output = "<table><tr><td><strong>Skill Name<\/strong><\/td><td><strong>Field<\/strong><\/td><td><strong>Aptitude<\/strong><\/td><td><strong>Mods<\/strong><\/td><td><strong>Base<\/strong><\/td><td><strong>Purchased<\/strong><\/td><td><strong>Total<\/strong><\/td><td><strong>Cost<\/strong><\/td><td><strong><\/strong><\/td><td><strong>Specialization<\/strong><\/td><\/tr>";
+			for (i = 0; i < myCharacter.ego.skills.length; i++) {
+				field = 1;
+				flag = 0;
+				for (j = 0; j < skillData[i].getElementsByTagName("category").length; j++) {
+					if (skillData[i].getElementsByTagName("category")[j].childNodes[0].nodeValue === category) {
+						flag = 1;
+					}
+				}
+				if (flag) {
+					for (j in myCharacter.ego.skills[i].field) {
+						if (myCharacter.ego.skills[i].field.hasOwnProperty(j)) {
+							if ((j !== "none") || (skillData[i].getElementsByTagName("fields")[0].childNodes[0].nodeValue === "No")) { // Skip the "none"s in skills with fields
+								output += "<tr><td>" + skillData[i].getElementsByTagName("name")[0].childNodes[0].nodeValue + "<\/td>"; // Name
+								if (j === "none") {
+									output += "<td>-<\/td>"; // Leave Field blank
+								} else {
+									output += "<td><input id=\"skill" + i + "field" + field + "input\" type=\"text\" maxlength=\"20\" value=\"" + j + "\" disabled=\"true\" /><\/td>"; // Field
+								}
+								output += "<td>" + skillData[i].getElementsByTagName("apt")[0].childNodes[0].nodeValue + " (" + myCharacter.ego[skillData[i].getElementsByTagName("apt")[0].childNodes[0].nodeValue] + ")<\/td>"; // Linked Apt
+								output += "<td id=\"skill" + i + "field" + field + "amount\">" + myCharacter.ego.skills[i].field[j].mod + "<\/td>"; // Mods
+								output += "<td id=\"skill" + i + "field" + field + "base\">" + (parseInt(myCharacter.ego[skillData[i].getElementsByTagName("apt")[0].childNodes[0].nodeValue], 10) + myCharacter.ego.skills[i].field[j].mod) + "<\/td>"; // Base
+								output += "<td><input id=\"skill" + i + "field" + field + "purchased\" type=\"text\" maxlength=\"2\" value=\"0\" onChange=\"updateSkill(" + i + "," + field + ",'" + category + "')\" /><\/td>"; // Amount purchased
+								output += "<td id=\"skill" + i + "field" + field + "total\">" + (parseInt(myCharacter.ego[skillData[i].getElementsByTagName("apt")[0].childNodes[0].nodeValue], 10) + myCharacter.ego.skills[i].field[j].mod) + "<\/td>"; // Total
+								output += "<td id=\"skill" + i + "field" + field + "cost\">0<\/td>"; // CP Cost
+								temp = ((parseInt(myCharacter.ego[skillData[i].getElementsByTagName("apt")[0].childNodes[0].nodeValue], 10) + myCharacter.ego.skills[i].field[j].mod) >= 30) ? "" : " disabled ";
+								output += "<td><input id=\"skill" + i + "field" + field + "specbox\" type=\"checkbox\" onclick=\"toggleSpec(" + i + "," + field + ")\"" + temp + "/></td>"; // Spec Checkbox
+								output += "<td><input id=\"skill" + i + "field" + field + "spectext\" type=\"text\" maxlength=\"20\" disabled=\"true\" /></td><\/tr>"; // Spec field
+								field++;
+							}
+						}
+					}
+					// Provide three extra slots for skills with fields
+					if (skillData[i].getElementsByTagName("fields")[0].childNodes[0].nodeValue === "Yes") {
+						for (j = 0; j < 3; j++) {
+							output += "<tr><td>" + skillData[i].getElementsByTagName("name")[0].childNodes[0].nodeValue + "<\/td>"; // Name
+							output += "<td><input id=\"skill" + i + "field" + field + "input\" type=\"text\" maxlength=\"20\" /><\/td>"; // Field
+							output += "<td>" + skillData[i].getElementsByTagName("apt")[0].childNodes[0].nodeValue + " (" + myCharacter.ego[skillData[i].getElementsByTagName("apt")[0].childNodes[0].nodeValue] + ")<\/td>"; // Linked Apt
+							output += "<td id=\"skill" + i + "field" + field + "amount\">0<\/td>"; // Mods
+							output += "<td id=\"skill" + i + "field" + field + "base\">" + myCharacter.ego[skillData[i].getElementsByTagName("apt")[0].childNodes[0].nodeValue] + "<\/td>"; // Base
+							output += "<td><input id=\"skill" + i + "field" + field + "purchased\" type=\"text\" maxlength=\"2\" value=\"0\" onChange=\"updateSkill(" + i + "," + field + ",'" + category + "')\" /><\/td>"; // Amount purchased
+							output += "<td id=\"skill" + i + "field" + field + "total\">" + myCharacter.ego[skillData[i].getElementsByTagName("apt")[0].childNodes[0].nodeValue] + "<\/td>"; // Total
+							output += "<td id=\"skill" + i + "field" + field + "cost\">0<\/td>"; // CP Cost
+							temp = (parseInt(myCharacter.ego[skillData[i].getElementsByTagName("apt")[0].childNodes[0].nodeValue], 10) >= 30) ? "" : " disabled ";
+							output += "<td><input id=\"skill" + i + "field" + field + "specbox\" type=\"checkbox\" onclick=\"toggleSpec(" + i + "," + field + ")\"" + temp + "/></td>"; // Spec Checkbox
+							output += "<td><input id=\"skill" + i + "field" + field + "spectext\" type=\"text\" maxlength=\"20\" disabled=\"true\" /></td><\/tr>"; // Spec field
+							field++;
+						}
+					}
+				}
+			}
+			output += "<\/table>";
+			document.getElementById(category + "Skills").innerHTML = output;
+		}
+	}
+	if (section === "MiscCPSection") {
+		for (i = 1; i <= 16; i++) {
+			switch (i) {
+			case 1:
+				type = "Stat";
+				name = "Moxie";
+				baseValue = myCharacter.ego.MOX;
+				break;
+			case 2:
+				type = "Stat";
+				name = "Credit";
+				baseValue = myCharacter.ego.CRED;
+				break;
+			case 3:
+				type = "Apt";
+				name = "COG";
+				baseValue = myCharacter.ego.COG;
+				break;
+			case 4:
+				type = "Apt";
+				name = "COO";
+				baseValue = myCharacter.ego.COO;
+				break;
+			case 5:
+				type = "Apt";
+				name = "INT";
+				baseValue = myCharacter.ego.INT;
+				break;
+			case 6:
+				type = "Apt";
+				name = "REF";
+				baseValue = myCharacter.ego.REF;
+				break;
+			case 7:
+				type = "Apt";
+				name = "SAV";
+				baseValue = myCharacter.ego.SAV;
+				break;
+			case 8:
+				type = "Apt";
+				name = "SOM";
+				baseValue = myCharacter.ego.SOM;
+				break;
+			case 9:
+				type = "Apt";
+				name = "WIL";
+				baseValue = myCharacter.ego.WIL;
+				break;
+			case 10:
+				type = "Rep";
+				name = "The @-list";
+				baseValue = myCharacter.ego.reputations.ARep;
+				break;
+			case 11:
+				type = "Rep";
+				name = "CivicNet";
+				baseValue = myCharacter.ego.reputations.CRep;
+				break;
+			case 12:
+				type = "Rep";
+				name = "EcoWave";
+				baseValue = myCharacter.ego.reputations.ERep;
+				break;
+			case 13:
+				type = "Rep";
+				name = "Fame";
+				baseValue = myCharacter.ego.reputations.FRep;
+				break;
+			case 14:
+				type = "Rep";
+				name = "Guanxi";
+				baseValue = myCharacter.ego.reputations.GRep;
+				break;
+			case 15:
+				type = "Rep";
+				name = "The Eye";
+				baseValue = myCharacter.ego.reputations.IRep;
+				break;
+			case 16:
+				type = "Rep";
+				name = "RNA";
+				baseValue = myCharacter.ego.reputations.RRep;
+				break;
+			default:
+				type = "";
+				name = "";
+				cost = "";
+				baseValue = 0;
+			}
+			maxVal = 999999;
+			maxCP = 999999;
+			costPer = 1;
+			multiplier = 1;
+			statName = "";
+			if (type === "Stat") {
+				switch (name) {
+				case "Credit":
+					multiplier = 1000;
+					maxCP = 100;
+					break;
+				case "Moxie":
+					costPer = 15;
+					maxVal = 10;
+					break;
+				default:
+					alert("Unknown stat " + name + ".");
+				}
+			}
+			if (type === "Apt") {
+				costPer = 10;
+				maxVal = 30;
+				// Check exceptional aptitude trait
+				if ((document.getElementById("traitExceptional AptitudeEgo").checked) && (document.getElementById("traitExceptional AptitudeEgoChoice").value === name)) {
+					maxVal = 40;
+				}
+				// Check feeble trait
+				if ((document.getElementById("traitFeebleEgo").checked) && (document.getElementById("traitFeebleEgoChoice").value === name)) {
+					maxVal = 4;
+				}
+			}
+			if (type === "Rep") {
+				multiplier = 10;
+				maxVal = 80;
+				maxCP = 35;
+				switch (name) {
+				case "The @-list":
+					statName = "ARep";
+					break;
+				case "CivicNet":
+					statName = "CRep";
+					break;
+				case "EcoWave":
+					statName = "ERep";
+					break;
+				case "Fame":
+					statName = "FRep";
+					break;
+				case "Guanxi":
+					statName = "GRep";
+					break;
+				case "The Eye":
+					statName = "IRep";
+					break;
+				case "RNA":
+					statName = "RRep";
+					break;	
+				default:
+					alert("Unknown rep " + name + ".");
+				}
+			}
+			document.getElementById("misc" + type + name + "Base").innerHTML = baseValue;
+			oldValue = parseInt(document.getElementById("misc" + type + name + "Value").innerHTML, 10);
+			newValue = oldValue;
+			oldCost = parseInt(document.getElementById("misc" + type + name + "Cost").innerHTML, 10);
+			newTotal = oldValue + baseValue;
+			newCost = newValue / multiplier * costPer;
+			// Reset to 0 and refund CP if new value  or cost is out of bounds or invalidated by blacklisted trait
+			if ((newTotal < 0) || (newTotal > maxVal) || (newCost > maxCP) || ((document.getElementById("traitBlacklistedEgo").checked) && (document.getElementById("traitBlacklistedChoice").value === statName))) {
+				newValue = 0;
+				newCost = 0;
+				document.getElementById("misc" + type + name + "Value").innerHTML = 0;
+			}
+			myCharacter.CP -= newCost - oldCost;
+			document.getElementById("misc" + type + name + "Cost").innerHTML = newCost;
+			document.getElementById("misc" + type + name + "TotalValue").innerHTML = newTotal;
+		}
+	}
+	return 1;
+}
+
 function loadNext() {
 	var nextSection;
 	if (!saveSection(currentSection)) {
@@ -1606,7 +1603,7 @@ function loadNext() {
 		nextSection = "EgoTraitsSection";
 		break;
 	case "EgoTraitsSection":
-		if (myCharacter.ego.positiveTraits[lookupTraitID("positive","Psi (Level 1)","Ego")]) {
+		if (myCharacter.ego.positiveTraits[lookupTraitID("positive", "Psi (Level 1)", "Ego")]) {
 			nextSection = "PsiSleightsSection";
 		} else {
 			nextSection = "RepFreePointsSection";
@@ -1624,6 +1621,9 @@ function loadNext() {
 	case "SkillsSection":
 		nextSection = "MiscCPSection";
 		break;
+	case "MiscCPSection":
+		nextSection = "outputSection";
+		break;
 	default:
 		alert("Unexpected section " + currentSection + ".");
 		return;
@@ -1638,7 +1638,7 @@ function loadNext() {
 	updateCP();
 	updateFixedDiv();
 	// Button mods
-	if (currentSection === "MiscCPSection") {
+	if (currentSection === "outputSection") {
 		this.disabled = true;
 	}
 	if (currentSection !== "ConceptSection") {
@@ -1646,7 +1646,7 @@ function loadNext() {
 	}
 }
 
-function loadPrevious () {
+function loadPrevious() {
 	var previousSection;
 	// Check CP
 	if (myCharacter.CP < 0) {
@@ -1678,7 +1678,7 @@ function loadPrevious () {
 		previousSection = "EgoTraitsSection";
 		break;
 	case "RepFreePointsSection":
-		if (myCharacter.ego.positiveTraits[lookupTraitID("positive","Psi (Level 1)","Ego")]) {
+		if (myCharacter.ego.positiveTraits[lookupTraitID("positive", "Psi (Level 1)", "Ego")]) {
 			previousSection = "PsiSleightsSection";
 		} else {
 			previousSection = "EgoTraitsSection";
@@ -1692,7 +1692,10 @@ function loadPrevious () {
 		break;
 	case "MiscCPSection":
 		previousSection = "SkillsSection";
-		break
+		break;
+	case "outputSection":
+		previousSection = "MiscCPSection";
+		break;
 	default:
 		alert("Unexpected section " + currentSection + ".");
 		return;
@@ -1746,7 +1749,7 @@ function initialSetup() {
 				if (tempData[j].hasOwnProperty("requires")) { 
 					temp += "disabled=\"true\" ";
 				}
-				temp +="/><\/td>"; // Check box
+				temp += "/><\/td>"; // Check box
 				temp += "<td>" + cost + "<\/td>"; // Cost
 				temp += "<td><strong>" + name + "<\/strong><\/td>"; // Name
 				temp += "<td>" + source + "<\/td>"; // Source
@@ -1771,7 +1774,6 @@ function initialSetup() {
 	// psiSleights
 	for (i = 0; i < 2; i++) {
 		type = (i === 0) ? "Chi" : "Gamma";
-		myCharacter.ego.psiSleights
 		tempData = psiData[0].getElementsByTagName(type)[0].getElementsByTagName("sleight");
 		// name,description,enables?,requires?,type?,action?,range?,duration?,strainmod?,skill?,skillmod*,othermod*
 		output = "<table><tr><td><\/td><td><strong>Name<\/strong><\/td><td><strong>Type<\/strong><\/td><td><strong>Action<\/strong><\/td><td><strong>Range<\/strong><\/td><td><strong>Duration<\/strong><\/td><td><strong>Strainmod<\/strong><\/td><td><strong>Skill<\/strong><\/td><\/tr><tr><td><\/td><td><strong>Description<\/strong><\/td><td><\/td><td><\/td><td><\/td><td><\/td><td><\/td><td><\/td><\/tr>";
@@ -1792,7 +1794,7 @@ function initialSetup() {
 			if (tempData[j].getElementsByTagName("strainmod").length !== 0) {
 				output += tempData[j].getElementsByTagName("strainmod")[0].childNodes[0].nodeValue;
 			}
-			output +="<\/strong><\/td>"; // Strainmod
+			output += "<\/strong><\/td>"; // Strainmod
 			output += "<td><strong>";
 			if (tempData[j].getElementsByTagName("skill").length !== 0) {
 				output += tempData[j].getElementsByTagName("skill")[0].childNodes[0].nodeValue;
@@ -2035,14 +2037,14 @@ function initialSetup() {
 		output += "<td>" + name + "<\/td>";
 		output += "<td>" + cost + "<\/td>";
 		output += "<td><div id=\"misc" + type + name + "Base\"><\/div><\/td>";
-		output += "<td><input name=\"miscCPButton\" type=\"button\" value=\"-\" data-type=\"" + type +"\" data-name=\"" + name + "\" data-direction=\"-1\" /><\/td>";
+		output += "<td><input name=\"miscCPButton\" type=\"button\" value=\"-\" data-type=\"" + type + "\" data-name=\"" + name + "\" data-direction=\"-1\" /><\/td>";
 		output += "<td><div id=\"misc" + type + name + "Value\">0<\/div><\/td>";
-		output += "<td><input name=\"miscCPButton\" type=\"button\" value=\"+\" data-type=\"" + type +"\" data-name=\"" + name + "\" data-direction=\"1\" /><\/td>";
+		output += "<td><input name=\"miscCPButton\" type=\"button\" value=\"+\" data-type=\"" + type + "\" data-name=\"" + name + "\" data-direction=\"1\" /><\/td>";
 		output += "<td><div id=\"misc" + type + name + "TotalValue\"><\/div><\/td>";
 		output += "<td><div id=\"misc" + type + name + "Cost\">0<\/div><\/td>";
 		output += "<\/tr>";
 	}
-	output+= "<\/table>";
+	output += "<\/table>";
 	document.getElementById("miscCPTable").innerHTML = output;
 	temp = document.getElementsByName("miscCPButton");
 	for (i = 0; i < temp.length; i++) {
