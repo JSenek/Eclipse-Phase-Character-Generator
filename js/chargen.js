@@ -1,6 +1,15 @@
-var myCharacter, currentSection;
-var backgroundData, factionData, morphData, skillData, positiveTraitData, negativeTraitData, psiData;
-var bgChoices, facChoices, morphChoices;
+var myCharacter;
+var currentSection;
+var backgroundData;
+var factionData;
+var morphData;
+var skillData;
+var positiveTraitData;
+var negativeTraitData;
+var psiData;
+var bgChoices;
+var facChoices;
+var morphChoices;
 function Character() {
 	this.name = "";
 	this.concept = "";
@@ -44,10 +53,11 @@ function Character() {
 }
 
 function keypress(e) {
-	var evtobj, unicode;
-	evtobj = (window.event) ? event : e; //distinguish between IE's explicit event object (window.event) and Firefox's implicit.
-	unicode = (evtobj.charCode) ? evtobj.charCode : evtobj.keyCode;
-	if (unicode === 13) {
+    var evtobj;
+    var unicode;
+    evtobj = (window.event) ? event : e; //distinguish between IE's explicit event object (window.event) and Firefox's implicit.
+    unicode = (evtobj.charCode) ? evtobj.charCode : evtobj.keyCode;
+    if (unicode === 13) {
 		document.getElementById("nextButton").click();
 	}
 }
@@ -64,7 +74,8 @@ function lookupSkillID(name) {
 }
 
 function objectLength(obj) {
-    var length = 0, key;
+    var length = 0;
+    var key;
     for (key in obj) {
         if (obj.hasOwnProperty(key)) {
 			length++;
@@ -110,23 +121,27 @@ function lookupTraitID(type, name, source) {
 }
 
 function checkTraitReqs(type, name, source, silent) {
-	var tempData, traitID, i, flag, morphType;
-	traitID = lookupTraitID(type, name, source);
-	if (type === "positive") {
+    var tempData;
+    var traitID;
+    var i;
+    var flag;
+    var morphType;
+    traitID = lookupTraitID(type, name, source);
+    if (type === "positive") {
 		tempData = positiveTraitData;
 	} else {
 		tempData = negativeTraitData;
 	}
-	// Infomorphs aren't really morphs and can't buy morph traits
-	morphType = morphData[myCharacter.morph.ID].getElementsByTagName("type")[0].childNodes[0].nodeValue;
-	if ((morphType === "Infomorph") && (source === "Morph")) {
+    // Infomorphs aren't really morphs and can't buy morph traits
+    morphType = morphData[myCharacter.morph.ID].getElementsByTagName("type")[0].childNodes[0].nodeValue;
+    if ((morphType === "Infomorph") && (source === "Morph")) {
 		if (!silent) {
 			alert("This trait requires a physical body.");
 		}
 		return 0;
 	}
-	// Check if another trait is required first.
-	if (tempData[traitID].hasOwnProperty("requires")) {
+    // Check if another trait is required first.
+    if (tempData[traitID].hasOwnProperty("requires")) {
 		if ((!myCharacter.ego[type + "Traits"][lookupTraitID(type, tempData[traitID].getElementsByTagName("requires")[0].childNodes[0].nodeValue, source)]) && (!myCharacter.morph[type + "Traits"][lookupTraitID(type, tempData[traitID].getElementsByTagName("requires")[0].childNodes[0].nodeValue, source)])) {
 			if (!silent) {
 				alert(name + " requires " + tempData[traitID].getElementsByTagName("requires")[0].childNodes[0].nodeValue + ".");
@@ -134,10 +149,10 @@ function checkTraitReqs(type, name, source, silent) {
 			return 0;
 		}
 	}
-	// Check for morph compliance
-	tempData = tempData[traitID].getElementsByTagName("requiredmorph");
-	flag = (tempData.length === 0) ? 1 : 0;
-	for (i = 0; i < tempData.length; i++) {
+    // Check for morph compliance
+    tempData = tempData[traitID].getElementsByTagName("requiredmorph");
+    flag = (tempData.length === 0) ? 1 : 0;
+    for (i = 0; i < tempData.length; i++) {
 		// Check if morph name or type match
 		if ((morphData[myCharacter.morph.ID].getElementsByTagName("name")[0].childNodes[0].nodeValue === tempData[i].childNodes[0].nodeValue) || (morphType === tempData[i].childNodes[0].nodeValue)) {
 			flag = 1;
@@ -147,18 +162,21 @@ function checkTraitReqs(type, name, source, silent) {
 			flag = 1;
 		}
 	}
-	if (!flag) {
+    if (!flag) {
 		if (!silent) {
 			alert(name + " is not compatible with your selected morph.");
 		}
 		return 0;
 	}
-	return 1;
+    return 1;
 }
 
 function purchaseTrait(type, name, source, mod, free) {
-	var enables = 0, traitID = lookupTraitID(type, name, source), temp, i;
-	if (type === "positive") {
+    var enables = 0;
+    var traitID = lookupTraitID(type, name, source);
+    var temp;
+    var i;
+    if (type === "positive") {
 		// Charge CP only if its not already possessed and not free
 		if ((!myCharacter.ego.positiveTraits[traitID]) && (!myCharacter.morph.positiveTraits[traitID]) && (!free)) {
 			myCharacter.CP -= parseInt(positiveTraitData[traitID].getElementsByTagName("CP")[0].childNodes[0].nodeValue, 10) + mod;
@@ -181,7 +199,7 @@ function purchaseTrait(type, name, source, mod, free) {
 			}
 		}
 	}
-	if (type === "negative") {
+    if (type === "negative") {
 		// Give CP only if its not already possessed and not free
 		if ((!myCharacter.ego.negativeTraits[traitID]) && (!myCharacter.morph.negativeTraits[traitID]) && (!free)) {
 			myCharacter.CP += parseInt(negativeTraitData[traitID].getElementsByTagName("CP")[0].childNodes[0].nodeValue, 10) + mod;
@@ -202,15 +220,18 @@ function purchaseTrait(type, name, source, mod, free) {
 			enables = negativeTraitData[traitID].getElementsByTagName("enables")[0].childNodes[0].nodeValue;
 		}
 	}
-	// Enable any traits that depend on this one
-	if (enables !== 0) {
+    // Enable any traits that depend on this one
+    if (enables !== 0) {
 		document.getElementById("trait" + enables + source).disabled = false;
 	}
 }
 
 function removeTrait(type, name, source, mod, norefund) {
-	var enables = 0, traitID = lookupTraitID(type, name, source), temp, i;
-	if (type === "positive") {
+    var enables = 0;
+    var traitID = lookupTraitID(type, name, source);
+    var temp;
+    var i;
+    if (type === "positive") {
 		if (((myCharacter.ego.positiveTraits[traitID]) || (myCharacter.morph.positiveTraits[traitID])) && (!norefund)) {
 			myCharacter.CP += parseInt(positiveTraitData[traitID].getElementsByTagName("CP")[0].childNodes[0].nodeValue, 10) + mod;
 			myCharacter.CPSpentOnPositiveTraits -= parseInt(positiveTraitData[traitID].getElementsByTagName("CP")[0].childNodes[0].nodeValue, 10) + mod;
@@ -247,7 +268,7 @@ function removeTrait(type, name, source, mod, norefund) {
 			}
 		}
 	}
-	if (type === "negative") {
+    if (type === "negative") {
 		if (((myCharacter.ego.negativeTraits[traitID]) || (myCharacter.morph.negativeTraits[traitID])) && (!norefund)) {
 			myCharacter.CP -= parseInt(negativeTraitData[traitID].getElementsByTagName("CP")[0].childNodes[0].nodeValue, 10) + mod;
 			myCharacter.CPGainedFromNegativeTraits -= parseInt(negativeTraitData[traitID].getElementsByTagName("CP")[0].childNodes[0].nodeValue, 10) + mod;
@@ -264,8 +285,8 @@ function removeTrait(type, name, source, mod, norefund) {
 			enables = negativeTraitData[traitID].getElementsByTagName("enables")[0].childNodes[0].nodeValue;
 		}
 	}
-	// Disable and refund any traits that depend on this one
-	if (enables !== 0) {
+    // Disable and refund any traits that depend on this one
+    if (enables !== 0) {
 		document.getElementById("trait" + enables + source).disabled = true;
 		if (document.getElementById("trait" + enables + source).checked) {
 			document.getElementById("trait" + enables + source).checked = false;
@@ -274,9 +295,18 @@ function removeTrait(type, name, source, mod, norefund) {
 	}
 }
 
-function applyTemplate(origin) { // Apply faction, background, or morph features
-	var j, k, type, name, source, tempData, amount, data;
-	switch (origin) {
+function applyTemplate(origin) {
+    // Apply faction, background, or morph features
+    var j;
+
+    var k;
+    var type;
+    var name;
+    var source;
+    var tempData;
+    var amount;
+    var data;
+    switch (origin) {
 	case "background":
 		source = "Ego";
 		data = backgroundData[myCharacter.ego.background];
@@ -293,7 +323,7 @@ function applyTemplate(origin) { // Apply faction, background, or morph features
 		alert("Unexpected template origin " + origin + ".");
 		return;
 	}
-	for (j = 0; j < 2; j++) {
+    for (j = 0; j < 2; j++) {
 		tempData = (j === 0) ? data.getElementsByTagName("advantages") : data.getElementsByTagName("disadvantages");
 		// Apply traits
 		tempData = tempData[0].getElementsByTagName("trait");
@@ -327,9 +357,18 @@ function applyTemplate(origin) { // Apply faction, background, or morph features
 	}
 }
 
-function removeTemplate(origin) { // Remove faction, background, or morph features
-	var j, k, type, name, source, tempData, data, amount;
-	switch (origin) {
+function removeTemplate(origin) {
+    // Remove faction, background, or morph features
+    var j;
+
+    var k;
+    var type;
+    var name;
+    var source;
+    var tempData;
+    var data;
+    var amount;
+    switch (origin) {
 	case "background":
 		source = "Ego";
 		data = backgroundData[myCharacter.ego.background];
@@ -346,7 +385,7 @@ function removeTemplate(origin) { // Remove faction, background, or morph featur
 		alert("Unexpected template origin " + origin + ".");
 		return;
 	}
-	for (j = 0; j < 2; j++) {
+    for (j = 0; j < 2; j++) {
 		tempData = (j === 0) ? data.getElementsByTagName("advantages") : data.getElementsByTagName("disadvantages");
 		// Remove traits
 		tempData = tempData[0].getElementsByTagName("trait");
@@ -383,12 +422,16 @@ function removeTemplate(origin) { // Remove faction, background, or morph featur
 }
 
 function toggleTrait() {
-	var mod = 0, facName, type, name, source;
-	type = this.dataset.traitType;
-	name = this.dataset.traitName;
-	source = this.dataset.traitSource;
-	// Adjust mod if own faction was selected for Blacklisted trait
-	if (name === "Blacklisted") {
+    var mod = 0;
+    var facName;
+    var type;
+    var name;
+    var source;
+    type = this.dataset.traitType;
+    name = this.dataset.traitName;
+    source = this.dataset.traitSource;
+    // Adjust mod if own faction was selected for Blacklisted trait
+    if (name === "Blacklisted") {
 		facName = factionData[myCharacter.ego.faction].getElementsByTagName("name")[0].childNodes[0].nodeValue;
 		switch (document.getElementById("traitBlacklistedChoice").value) {
 		case "ARep":
@@ -424,8 +467,8 @@ function toggleTrait() {
 			alert("Unexpected Blacklisted trait choice " + document.getElementById("traitBlacklistedChoice").value);
 		}
 	}
-	// Adjust mod if uplift is buying or removing certain traits
-	if (morphData[myCharacter.morph.ID].getElementsByTagName("type") === "Uplift") {
+    // Adjust mod if uplift is buying or removing certain traits
+    if (morphData[myCharacter.morph.ID].getElementsByTagName("type") === "Uplift") {
 		if ((name === "Striking Looks (Level 1)") || (name === "Striking Looks (Level 2)")) {
 			mod -= 5;
 		}
@@ -433,7 +476,7 @@ function toggleTrait() {
 			mod -= 5;
 		}
 	}
-	if (this.checked) {
+    if (this.checked) {
 		if (!checkTraitReqs(type, name, source, false)) {
 			this.checked = false;
 		} else {
@@ -442,26 +485,36 @@ function toggleTrait() {
 	} else {
 		removeTrait(type, name, source, mod, false);
 	}
-	updateCP();
+    updateCP();
 }
-	
+
 function selectBG() {
-	var output, i, j, k, l, m, quantity, numChoices, value, skillName, num;
-	num = parseInt(document.getElementById("bg").value, 10);
-	// Assemble background descriptive text
-	output = "<strong>Description:<\/strong> ";
-	output += backgroundData[num].getElementsByTagName("description")[0].childNodes[0].nodeValue + "<br />";
-	output += "<strong>Advantages:<\/strong> ";
-	output += backgroundData[num].getElementsByTagName("advantages")[0].getElementsByTagName("text")[0].childNodes[0].nodeValue + "<br />";
-	output += "<strong>Disadvantages:<\/strong> ";
-	output += backgroundData[num].getElementsByTagName("disadvantages")[0].getElementsByTagName("text")[0].childNodes[0].nodeValue + "<br />";
-	output += "<strong>Common Morphs:<\/strong> ";
-	output += backgroundData[num].getElementsByTagName("commonmorphs")[0].getElementsByTagName("text")[0].childNodes[0].nodeValue + "<br />";
-	document.getElementById("bgDescription").innerHTML = output;
-	// Assemble background skill choices
-	output = "";
-	bgChoices = 0;
-	for (i = 0; i < backgroundData[num].getElementsByTagName("skillmod").length; i++) {
+    var output;
+    var i;
+    var j;
+    var k;
+    var l;
+    var m;
+    var quantity;
+    var numChoices;
+    var value;
+    var skillName;
+    var num;
+    num = parseInt(document.getElementById("bg").value, 10);
+    // Assemble background descriptive text
+    output = "<strong>Description:<\/strong> ";
+    output += backgroundData[num].getElementsByTagName("description")[0].childNodes[0].nodeValue + "<br />";
+    output += "<strong>Advantages:<\/strong> ";
+    output += backgroundData[num].getElementsByTagName("advantages")[0].getElementsByTagName("text")[0].childNodes[0].nodeValue + "<br />";
+    output += "<strong>Disadvantages:<\/strong> ";
+    output += backgroundData[num].getElementsByTagName("disadvantages")[0].getElementsByTagName("text")[0].childNodes[0].nodeValue + "<br />";
+    output += "<strong>Common Morphs:<\/strong> ";
+    output += backgroundData[num].getElementsByTagName("commonmorphs")[0].getElementsByTagName("text")[0].childNodes[0].nodeValue + "<br />";
+    document.getElementById("bgDescription").innerHTML = output;
+    // Assemble background skill choices
+    output = "";
+    bgChoices = 0;
+    for (i = 0; i < backgroundData[num].getElementsByTagName("skillmod").length; i++) {
 		if (backgroundData[num].getElementsByTagName("skillmod")[i].getElementsByTagName("name")[0].childNodes[0].nodeValue === "Choice") {
 			quantity = (backgroundData[num].getElementsByTagName("skillmod")[i].getElementsByTagName("quantity").length !== 0) ? backgroundData[num].getElementsByTagName("skillmod")[i].getElementsByTagName("quantity")[0].childNodes[0].nodeValue : 1;
 			for (j = 0; j < quantity; j++) {
@@ -503,26 +556,36 @@ function selectBG() {
 			}
 		}
 	}
-	document.getElementById("bgOptions").innerHTML = output;
+    document.getElementById("bgOptions").innerHTML = output;
 }
 
 function selectFac() {
-	var output = "", i, j, k, l, m, quantity, numChoices, value, skillName, num;
-	num = parseInt(document.getElementById("fac").value, 10);
-	// Assemble new faction descriptive text
-	output += "<strong>Description:<\/strong> ";
-	output += factionData[num].getElementsByTagName("description")[0].childNodes[0].nodeValue + "<br />";
-	output += "<strong>Advantages:<\/strong> ";
-	output += factionData[num].getElementsByTagName("advantages")[0].getElementsByTagName("text")[0].childNodes[0].nodeValue + "<br />";
-	output += "<strong>Disadvantages:<\/strong> ";
-	output += factionData[num].getElementsByTagName("disadvantages")[0].getElementsByTagName("text")[0].childNodes[0].nodeValue + "<br />";
-	output += "<strong>Common Morphs:<\/strong> ";
-	output += factionData[num].getElementsByTagName("commonmorphs")[0].getElementsByTagName("text")[0].childNodes[0].nodeValue + "<br />";
-	document.getElementById("facDescription").innerHTML = output;
-	// Assemble faction skill choices
-	output = "";
-	facChoices = 0;
-	for (i = 0; i < factionData[num].getElementsByTagName("skillmod").length; i++) {
+    var output = "";
+    var i;
+    var j;
+    var k;
+    var l;
+    var m;
+    var quantity;
+    var numChoices;
+    var value;
+    var skillName;
+    var num;
+    num = parseInt(document.getElementById("fac").value, 10);
+    // Assemble new faction descriptive text
+    output += "<strong>Description:<\/strong> ";
+    output += factionData[num].getElementsByTagName("description")[0].childNodes[0].nodeValue + "<br />";
+    output += "<strong>Advantages:<\/strong> ";
+    output += factionData[num].getElementsByTagName("advantages")[0].getElementsByTagName("text")[0].childNodes[0].nodeValue + "<br />";
+    output += "<strong>Disadvantages:<\/strong> ";
+    output += factionData[num].getElementsByTagName("disadvantages")[0].getElementsByTagName("text")[0].childNodes[0].nodeValue + "<br />";
+    output += "<strong>Common Morphs:<\/strong> ";
+    output += factionData[num].getElementsByTagName("commonmorphs")[0].getElementsByTagName("text")[0].childNodes[0].nodeValue + "<br />";
+    document.getElementById("facDescription").innerHTML = output;
+    // Assemble faction skill choices
+    output = "";
+    facChoices = 0;
+    for (i = 0; i < factionData[num].getElementsByTagName("skillmod").length; i++) {
 		if (factionData[num].getElementsByTagName("skillmod")[i].getElementsByTagName("name")[0].childNodes[0].nodeValue === "Choice") {
 			quantity = (factionData[num].getElementsByTagName("skillmod")[i].getElementsByTagName("quantity").length !== 0) ? factionData[num].getElementsByTagName("skillmod")[i].getElementsByTagName("quantity")[0].childNodes[0].nodeValue : 1;
 			for (j = 0; j < quantity; j++) {
@@ -565,25 +628,33 @@ function selectFac() {
 			}
 		}
 	}
-	document.getElementById("facOptions").innerHTML = output;
-}	
+    document.getElementById("facOptions").innerHTML = output;
+}
 
 function selectMorph() {
-	var num, i, j, k, output, quantity, numChoices, aptName, temp;
-	num = parseInt(document.getElementById("morph").value, 10);
-	// Refund and charge CP
-	myCharacter.CP += parseInt(morphData[myCharacter.morph.temp].getElementsByTagName("CPCost")[0].childNodes[0].nodeValue, 10);
-	myCharacter.morph.temp = parseInt(document.getElementById("morph").value, 10);
-	myCharacter.CP -= parseInt(morphData[myCharacter.morph.temp].getElementsByTagName("CPCost")[0].childNodes[0].nodeValue, 10);
-	// Assemble morph descriptive text
-	output = "";
-	output += "<strong>Description:<\/strong> ";
-	output += morphData[num].getElementsByTagName("description")[0].childNodes[0].nodeValue + "<br />";
-	output += "<strong>Type:<\/strong> ";
-	output += morphData[num].getElementsByTagName("type")[0].childNodes[0].nodeValue + "<br />";
-	output += "<strong>Implants/Enhancements:<\/strong> ";
-	output += morphData[num].getElementsByTagName("implants")[0].getElementsByTagName("text")[0].childNodes[0].nodeValue + "<br />";
-	if (morphData[num].getElementsByTagName("mobility").length !== 0) {
+    var num;
+    var i;
+    var j;
+    var k;
+    var output;
+    var quantity;
+    var numChoices;
+    var aptName;
+    var temp;
+    num = parseInt(document.getElementById("morph").value, 10);
+    // Refund and charge CP
+    myCharacter.CP += parseInt(morphData[myCharacter.morph.temp].getElementsByTagName("CPCost")[0].childNodes[0].nodeValue, 10);
+    myCharacter.morph.temp = parseInt(document.getElementById("morph").value, 10);
+    myCharacter.CP -= parseInt(morphData[myCharacter.morph.temp].getElementsByTagName("CPCost")[0].childNodes[0].nodeValue, 10);
+    // Assemble morph descriptive text
+    output = "";
+    output += "<strong>Description:<\/strong> ";
+    output += morphData[num].getElementsByTagName("description")[0].childNodes[0].nodeValue + "<br />";
+    output += "<strong>Type:<\/strong> ";
+    output += morphData[num].getElementsByTagName("type")[0].childNodes[0].nodeValue + "<br />";
+    output += "<strong>Implants/Enhancements:<\/strong> ";
+    output += morphData[num].getElementsByTagName("implants")[0].getElementsByTagName("text")[0].childNodes[0].nodeValue + "<br />";
+    if (morphData[num].getElementsByTagName("mobility").length !== 0) {
 		output += "<strong>Mobility:<\/strong> ";
 		for (i = 0; i < morphData[num].getElementsByTagName("mobility").length; i++) {
 			output += morphData[num].getElementsByTagName("mobility")[i].getElementsByTagName("name")[0].childNodes[0].nodeValue + " ";
@@ -595,25 +666,25 @@ function selectMorph() {
 		}
 		output += "<br />";
 	}
-	output += "<strong>Aptitude Maximum:<\/strong> ";
-	output += morphData[num].getElementsByTagName("aptitudeMax")[0].getElementsByTagName("text")[0].childNodes[0].nodeValue + "<br />";
-	output += "<strong>Durability:<\/strong> ";
-	output += morphData[num].getElementsByTagName("durability")[0].childNodes[0].nodeValue + "<br />";
-	output += "<strong>Wound Threshold:<\/strong> ";
-	output += morphData[num].getElementsByTagName("woundThreshold")[0].childNodes[0].nodeValue + "<br />";
-	output += "<strong>Advantages:<\/strong> ";
-	output += morphData[num].getElementsByTagName("advantages")[0].getElementsByTagName("text")[0].childNodes[0].nodeValue + "<br />";
-	output += "<strong>Disadvantages:<\/strong> ";
-	output += morphData[num].getElementsByTagName("disadvantages")[0].getElementsByTagName("text")[0].childNodes[0].nodeValue + "<br />";
-	output += "<strong>CP Cost:<\/strong> ";
-	output += morphData[num].getElementsByTagName("CPCost")[0].childNodes[0].nodeValue + "<br />";
-	output += "<strong>Credit Cost:<\/strong> ";
-	output += morphData[num].getElementsByTagName("creditCost")[0].childNodes[0].nodeValue + "<br />";
-	document.getElementById("morphDescription").innerHTML = output;
-	// Assemble morph aptitude choices
-	output = "";
-	morphChoices = 0;
-	for (i = 0; i < morphData[num].getElementsByTagName("aptmod").length; i++) {
+    output += "<strong>Aptitude Maximum:<\/strong> ";
+    output += morphData[num].getElementsByTagName("aptitudeMax")[0].getElementsByTagName("text")[0].childNodes[0].nodeValue + "<br />";
+    output += "<strong>Durability:<\/strong> ";
+    output += morphData[num].getElementsByTagName("durability")[0].childNodes[0].nodeValue + "<br />";
+    output += "<strong>Wound Threshold:<\/strong> ";
+    output += morphData[num].getElementsByTagName("woundThreshold")[0].childNodes[0].nodeValue + "<br />";
+    output += "<strong>Advantages:<\/strong> ";
+    output += morphData[num].getElementsByTagName("advantages")[0].getElementsByTagName("text")[0].childNodes[0].nodeValue + "<br />";
+    output += "<strong>Disadvantages:<\/strong> ";
+    output += morphData[num].getElementsByTagName("disadvantages")[0].getElementsByTagName("text")[0].childNodes[0].nodeValue + "<br />";
+    output += "<strong>CP Cost:<\/strong> ";
+    output += morphData[num].getElementsByTagName("CPCost")[0].childNodes[0].nodeValue + "<br />";
+    output += "<strong>Credit Cost:<\/strong> ";
+    output += morphData[num].getElementsByTagName("creditCost")[0].childNodes[0].nodeValue + "<br />";
+    document.getElementById("morphDescription").innerHTML = output;
+    // Assemble morph aptitude choices
+    output = "";
+    morphChoices = 0;
+    for (i = 0; i < morphData[num].getElementsByTagName("aptmod").length; i++) {
 		if (morphData[num].getElementsByTagName("aptmod")[i].getElementsByTagName("name")[0].childNodes[0].nodeValue === "Choice") {
 			quantity = (morphData[num].getElementsByTagName("aptmod")[i].getElementsByTagName("quantity").length !== 0) ? morphData[num].getElementsByTagName("aptmod")[i].getElementsByTagName("quantity")[0].childNodes[0].nodeValue : 1;
 			for (j = 0; j < quantity; j++) {
@@ -643,11 +714,11 @@ function selectMorph() {
 			}
 		}
 	}
-	document.getElementById("morphOptions").innerHTML = output;
-	removeTemplate("morph");
-	// Refund and reenable all morph traits
-	temp = document.getElementsByName("traitBox");
-	for (i = 0; i < temp.length; i++) {
+    document.getElementById("morphOptions").innerHTML = output;
+    removeTemplate("morph");
+    // Refund and reenable all morph traits
+    temp = document.getElementsByName("traitBox");
+    for (i = 0; i < temp.length; i++) {
 		if (temp[i].dataset.traitSource === "Morph") {
 			if (temp[i].disabled) {
 				temp[i].disabled = false;
@@ -658,17 +729,17 @@ function selectMorph() {
 			}
 		}
 	}
-	myCharacter.morph.ID = myCharacter.morph.temp;
-	applyTemplate("morph");
-	// Disable invalid traits
-	for (i = 0; i < temp.length; i++) {
+    myCharacter.morph.ID = myCharacter.morph.temp;
+    applyTemplate("morph");
+    // Disable invalid traits
+    for (i = 0; i < temp.length; i++) {
 		if ((temp[i].dataset.traitSource === "Morph") && (!temp[i].disabled)) {
 			if (!checkTraitReqs(temp[i].dataset.traitType, temp[i].dataset.traitName, temp[i].dataset.traitSource, true)) {
 				temp[i].disabled = true;
 			}
 		}
 	}
-	updateCP();
+    updateCP();
 }
 
 function toggleSleight() {
@@ -699,16 +770,24 @@ function toggleSpec(skill, field) {
 }
 
 function updateSkill(id, field, category) {
-	var value, total, cost, change, i, k, l, tempData, flag;
-	value = parseInt(document.getElementById("skill" + id + "field" + field + "purchased").value, 10);
-	// Set value to 0 if value is invalid or the field entry exists and has been left blank.
-	if ((value < 0) || (isNaN(value)) || ((document.getElementById("skill" + id + "field" + field + "input") !== null) && (document.getElementById("skill" + id + "field" + field + "input").value.replace(/^\s+|\s+$/g, '') === ""))) {
+    var value;
+    var total;
+    var cost;
+    var change;
+    var i;
+    var k;
+    var l;
+    var tempData;
+    var flag;
+    value = parseInt(document.getElementById("skill" + id + "field" + field + "purchased").value, 10);
+    // Set value to 0 if value is invalid or the field entry exists and has been left blank.
+    if ((value < 0) || (isNaN(value)) || ((document.getElementById("skill" + id + "field" + field + "input") !== null) && (document.getElementById("skill" + id + "field" + field + "input").value.replace(/^\s+|\s+$/g, '') === ""))) {
 		value = 0;
 	}
-	value = Math.round(value);
-	total = value + parseInt(document.getElementById("skill" + id + "field" + field + "base").innerHTML, 10);
-	// Enable or disable specialization box?
-	if (total >= 30) {
+    value = Math.round(value);
+    total = value + parseInt(document.getElementById("skill" + id + "field" + field + "base").innerHTML, 10);
+    // Enable or disable specialization box?
+    if (total >= 30) {
 		document.getElementById("skill" + id + "field" + field + "specbox").disabled = false;
 	} else {
 		if (document.getElementById("skill" + id + "field" + field + "specbox").checked) {
@@ -717,10 +796,10 @@ function updateSkill(id, field, category) {
 		}
 		document.getElementById("skill" + id + "field" + field + "specbox").disabled = true;
 	}
-	// Ranks that push the total over 60 cost double
-	cost = (total < 60) ? value : value + (total - 60);
-	// Check if faction or background provides a CP cost mod and adjust
-	for (i = 0; i < 2; i++) {
+    // Ranks that push the total over 60 cost double
+    cost = (total < 60) ? value : value + (total - 60);
+    // Check if faction or background provides a CP cost mod and adjust
+    for (i = 0; i < 2; i++) {
 		tempData = (i === 0) ? factionData[myCharacter.ego.faction].getElementsByTagName("skillmod") : backgroundData[myCharacter.ego.background].getElementsByTagName("skillmod");
 		for (k = 0; k < tempData.length; k++) {
 			if (tempData[k].getElementsByTagName("CPcost").length !== 0) {
@@ -741,18 +820,27 @@ function updateSkill(id, field, category) {
 			}
 		}
 	}
-	change = cost - parseInt(document.getElementById("skill" + id + "field" + field + "cost").innerHTML, 10);
-	myCharacter.CP -= change;
-	myCharacter["CPSpentOn" + category + "Skills"] += change;
-	document.getElementById("skill" + id + "field" + field + "purchased").value = value;
-	document.getElementById("skill" + id + "field" + field + "total").innerHTML = total;
-	document.getElementById("skill" + id + "field" + field + "cost").innerHTML = cost;
-	updateCP();
+    change = cost - parseInt(document.getElementById("skill" + id + "field" + field + "cost").innerHTML, 10);
+    myCharacter.CP -= change;
+    myCharacter["CPSpentOn" + category + "Skills"] += change;
+    document.getElementById("skill" + id + "field" + field + "purchased").value = value;
+    document.getElementById("skill" + id + "field" + field + "total").innerHTML = total;
+    document.getElementById("skill" + id + "field" + field + "cost").innerHTML = cost;
+    updateCP();
 }
 
 function incrementMiscCP() {
-	var costPer = 1, maxCP = 999999, maxVal = 999999, multiplier = 1, oldCost, newCost, baseValue, oldValue, newValue, statName;
-	if (this.dataset.type === "Stat") {
+    var costPer = 1;
+    var maxCP = 999999;
+    var maxVal = 999999;
+    var multiplier = 1;
+    var oldCost;
+    var newCost;
+    var baseValue;
+    var oldValue;
+    var newValue;
+    var statName;
+    if (this.dataset.type === "Stat") {
 		switch (this.dataset.name) {
 		case "Credit":
 			multiplier = 1000;
@@ -766,7 +854,7 @@ function incrementMiscCP() {
 			alert("Unknown stat " + this.dataset.name + ".");
 		}
 	}
-	if (this.dataset.type === "Apt") {
+    if (this.dataset.type === "Apt") {
 		costPer = 10;
 		maxVal = 30;
 		// Check exceptional aptitude trait
@@ -778,7 +866,7 @@ function incrementMiscCP() {
 			maxVal = 4;
 		}
 	}
-	if (this.dataset.type === "Rep") {
+    if (this.dataset.type === "Rep") {
 		// Check blacklisted trait
 		switch (this.dataset.name) {
 		case "The @-list":
@@ -812,19 +900,19 @@ function incrementMiscCP() {
 		maxVal = 80;
 		maxCP = 35;
 	}
-	baseValue = parseInt(document.getElementById("misc" + this.dataset.type + this.dataset.name + "Base").innerHTML, 10);
-	oldValue = parseInt(document.getElementById("misc" + this.dataset.type + this.dataset.name + "Value").innerHTML, 10);
-	oldCost = parseInt(document.getElementById("misc" + this.dataset.type + this.dataset.name + "Cost").innerHTML, 10);
-	newValue = oldValue + multiplier * parseInt(this.dataset.direction, 10);
-	newCost = oldCost + costPer * parseInt(this.dataset.direction, 10);
-	if ((newValue < 0) || (newValue + baseValue > maxVal) || (newCost > maxCP)) {
+    baseValue = parseInt(document.getElementById("misc" + this.dataset.type + this.dataset.name + "Base").innerHTML, 10);
+    oldValue = parseInt(document.getElementById("misc" + this.dataset.type + this.dataset.name + "Value").innerHTML, 10);
+    oldCost = parseInt(document.getElementById("misc" + this.dataset.type + this.dataset.name + "Cost").innerHTML, 10);
+    newValue = oldValue + multiplier * parseInt(this.dataset.direction, 10);
+    newCost = oldCost + costPer * parseInt(this.dataset.direction, 10);
+    if ((newValue < 0) || (newValue + baseValue > maxVal) || (newCost > maxCP)) {
 		return;
 	}
-	myCharacter.CP -= newCost - oldCost;
-	document.getElementById("misc" + this.dataset.type + this.dataset.name + "Value").innerHTML = newValue;
-	document.getElementById("misc" + this.dataset.type + this.dataset.name + "Cost").innerHTML = newCost;
-	document.getElementById("misc" + this.dataset.type + this.dataset.name + "TotalValue").innerHTML = newValue + baseValue;
-	updateCP();
+    myCharacter.CP -= newCost - oldCost;
+    document.getElementById("misc" + this.dataset.type + this.dataset.name + "Value").innerHTML = newValue;
+    document.getElementById("misc" + this.dataset.type + this.dataset.name + "Cost").innerHTML = newCost;
+    document.getElementById("misc" + this.dataset.type + this.dataset.name + "TotalValue").innerHTML = newValue + baseValue;
+    updateCP();
 }
 
 function updateStartApt() {
@@ -909,27 +997,37 @@ function updateFixedDiv() {
 	}
 }
 
-function saveSection(section) { // Validate and save data
-	var temp, tempList = {}, invalid = 0, i, j, morphName, morphType, found, error = false;
-	// Check CP
-	if (myCharacter.CP < 0) {
+function saveSection(section) {
+    // Validate and save data
+    var temp;
+
+    var tempList = {};
+    var invalid = 0;
+    var i;
+    var j;
+    var morphName;
+    var morphType;
+    var found;
+    var error = false;
+    // Check CP
+    if (myCharacter.CP < 0) {
 		alert("You do not have enough CP.");
 		return 0;
 	}
-	if (myCharacter.CPSpentOnPositiveTraits > 50) {
+    if (myCharacter.CPSpentOnPositiveTraits > 50) {
 		alert("You may not spend more than 50 CP on positive traits.");
 		return 0;
 	}
-	if (myCharacter.CPGainedFromNegativeTraits > 50) {
+    if (myCharacter.CPGainedFromNegativeTraits > 50) {
 		alert("You may not purchase more than 50 CP worth of negative traits.");
 		return 0;
 	}
-	if (section === "ConceptSection") {
+    if (section === "ConceptSection") {
 		// Name and Concept
 		myCharacter.name = document.getElementById("charName").value;
 		myCharacter.concept = document.getElementById("concept").value;
 	}
-	if (section === "BackgroundSection") {
+    if (section === "BackgroundSection") {
 		// Background
 		// Enforce specific fields as required in Background descriptions
 		if (backgroundData[document.getElementById("bg").value].getElementsByTagName("name")[0].childNodes[0].nodeValue === "Original Space Colonist") {
@@ -966,7 +1064,7 @@ function saveSection(section) { // Validate and save data
 		myCharacter.ego.background = document.getElementById("bg").value;
 		applyTemplate("background");
 	}
-	if (section === "FactionSection") {
+    if (section === "FactionSection") {
 		// Faction
 		tempList = {};
 		for (i = 1; i <= facChoices; i++) {
@@ -996,7 +1094,7 @@ function saveSection(section) { // Validate and save data
 		myCharacter.ego.faction = parseInt(document.getElementById("fac").value, 10);
 		applyTemplate("faction");
 	}
-	if (section === "AptitudesFreePointsSection") {
+    if (section === "AptitudesFreePointsSection") {
 		// Aptitudes
 		// Check free points spent
 		if (parseInt(document.getElementById("remainingAptPts").innerHTML, 10) > 0) {
@@ -1054,13 +1152,13 @@ function saveSection(section) { // Validate and save data
 			myCharacter.ego[temp] = parseInt(document.getElementById("start" + temp).value, 10);
 		}
 	}
-	if (section === "PsiSleightsSection") {
+    if (section === "PsiSleightsSection") {
 		if ((myCharacter.ego.psiSleights.totalGamma > 5) || (myCharacter.ego.psiSleights.totalChi > 5)) {
 			alert("No more than 5 psi-chi and 5 psi-gamma sleights may be bought during character creation.");
 			return 0;
 		}
 	}
-	if (section === "RepFreePointsSection") {
+    if (section === "RepFreePointsSection") {
 		// Rep
 		if (parseInt(document.getElementById("remainingRepPts").innerHTML, 10) > 0) {
 			alert("You have not assigned all of your Rep Points.");
@@ -1083,7 +1181,7 @@ function saveSection(section) { // Validate and save data
 		myCharacter.ego.reputations.IRep = parseInt(document.getElementById("startIRep").value, 10);
 		myCharacter.ego.reputations.RRep = parseInt(document.getElementById("startRRep").value, 10);
 	}
-	if (section === "MorphSection") {
+    if (section === "MorphSection") {
 		// Morph
 		tempList = {};
 		// Check aptitude bonus selections
@@ -1151,7 +1249,7 @@ function saveSection(section) { // Validate and save data
 		document.getElementById("negativeMorphTraitsCPdiv").style.display = "none";
 		document.getElementById("fixeddiv").style.height = "75";
 	}
-	if (section === "SkillsSection") {
+    if (section === "SkillsSection") {
 		// Learned Skills
 			// Check CP
 		if (myCharacter.CPSpentOnActiveSkills < 400) {
@@ -1224,12 +1322,36 @@ function saveSection(section) { // Validate and save data
 			i++;
 		}
 	}
-	return 1;
+    return 1;
 }
 
 function setupSection(section) {
-	var output, i, q, j, field, flag, type, name, category, skillID, temp, temp2, tempData, maxVal, maxCP, costPer, multiplier, cost, newCost, oldCost, newValue, oldValue, newTotal, baseValue, statName;
-	if (section === "MorphSection") {
+    var output;
+    var i;
+    var q;
+    var j;
+    var field;
+    var flag;
+    var type;
+    var name;
+    var category;
+    var skillID;
+    var temp;
+    var temp2;
+    var tempData;
+    var maxVal;
+    var maxCP;
+    var costPer;
+    var multiplier;
+    var cost;
+    var newCost;
+    var oldCost;
+    var newValue;
+    var oldValue;
+    var newTotal;
+    var baseValue;
+    var statName;
+    if (section === "MorphSection") {
 		output = "None";
 		// Load background restrictions
 		if (backgroundData[myCharacter.ego.background].getElementsByTagName("requiredmorph").length !== 0) {
@@ -1285,7 +1407,7 @@ function setupSection(section) {
 		}
 		document.getElementById("morphFacRestrictions").innerHTML = output;
 	}
-	if (section === "RepFreePointsSection") {
+    if (section === "RepFreePointsSection") {
 		myCharacter.ego.reputations.total = 50;
 		// Load background and faction reputation data
 		for (i = 0; i < factionData[myCharacter.ego.faction].getElementsByTagName("statmod").length; i++) {
@@ -1300,7 +1422,7 @@ function setupSection(section) {
 		}
 		updateStartRep();
 	}
-	if (section === "SkillsSection") {
+    if (section === "SkillsSection") {
 		// Reset skills data
 		myCharacter.ego.skills = [];
 		for (i = 0; i < skillData.length; i++) {
@@ -1411,7 +1533,7 @@ function setupSection(section) {
 			document.getElementById(category + "Skills").innerHTML = output;
 		}
 	}
-	if (section === "MiscCPSection") {
+    if (section === "MiscCPSection") {
 		for (i = 1; i <= 16; i++) {
 			switch (i) {
 			case 1:
@@ -1578,7 +1700,7 @@ function setupSection(section) {
 			document.getElementById("misc" + type + name + "TotalValue").innerHTML = newTotal;
 		}
 	}
-	return 1;
+    return 1;
 }
 
 function loadNext() {
@@ -1713,23 +1835,35 @@ function loadPrevious() {
 }
 
 function initialSetup() {
-	var i, j, output, output2, temp, tempData, name, cost, description, source, type, xmlDoc, xmlhttp;
-	currentSection = "LoadingSection";
-	// Load data objects
-	xmlhttp = new XMLHttpRequest();			
-	xmlhttp.open("GET", "xml/CoreRules.xml", false);
-	xmlhttp.send();
-	xmlDoc = xmlhttp.responseXML;
-	backgroundData = xmlDoc.getElementsByTagName("backgrounds")[0].getElementsByTagName("background");
-	factionData = xmlDoc.getElementsByTagName("factions")[0].getElementsByTagName("faction");
-	morphData = xmlDoc.getElementsByTagName("morphs")[0].getElementsByTagName("morph");
-	skillData = xmlDoc.getElementsByTagName("skills")[0].getElementsByTagName("skill");
-	positiveTraitData = xmlDoc.getElementsByTagName("positiveTraits")[0].getElementsByTagName("trait");
-	negativeTraitData = xmlDoc.getElementsByTagName("negativeTraits")[0].getElementsByTagName("trait");
-	psiData = xmlDoc.getElementsByTagName("psisleights");
-	myCharacter = new Character();
-	// Traits
-	for (i = 0; i < 2; i++) {
+    var i;
+    var j;
+    var output;
+    var output2;
+    var temp;
+    var tempData;
+    var name;
+    var cost;
+    var description;
+    var source;
+    var type;
+    var xmlDoc;
+    var xmlhttp;
+    currentSection = "LoadingSection";
+    // Load data objects
+    xmlhttp = new XMLHttpRequest();
+    xmlhttp.open("GET", "xml/CoreRules.xml", false);
+    xmlhttp.send();
+    xmlDoc = xmlhttp.responseXML;
+    backgroundData = xmlDoc.getElementsByTagName("backgrounds")[0].getElementsByTagName("background");
+    factionData = xmlDoc.getElementsByTagName("factions")[0].getElementsByTagName("faction");
+    morphData = xmlDoc.getElementsByTagName("morphs")[0].getElementsByTagName("morph");
+    skillData = xmlDoc.getElementsByTagName("skills")[0].getElementsByTagName("skill");
+    positiveTraitData = xmlDoc.getElementsByTagName("positiveTraits")[0].getElementsByTagName("trait");
+    negativeTraitData = xmlDoc.getElementsByTagName("negativeTraits")[0].getElementsByTagName("trait");
+    psiData = xmlDoc.getElementsByTagName("psisleights");
+    myCharacter = new Character();
+    // Traits
+    for (i = 0; i < 2; i++) {
 		type = (i === 0) ? "positive" : "negative";
 		tempData = (i === 0) ? positiveTraitData : negativeTraitData;
 		output = "<table><tr><td><strong><\/strong><\/td><td><strong>Cost<\/strong><\/td><td><strong>Name<\/strong><\/td><td><strong>Source<\/strong><\/td><td><strong>Description<\/strong><\/td><\/tr>"; // Ego
@@ -1767,12 +1901,12 @@ function initialSetup() {
 		document.getElementById(type + "EgoTraits").innerHTML = output;
 		document.getElementById(type + "MorphTraits").innerHTML = output2;
 	}
-	temp = document.getElementsByName("traitBox");
-	for (i = 0; i < temp.length; i++) {
+    temp = document.getElementsByName("traitBox");
+    for (i = 0; i < temp.length; i++) {
 		temp[i].onchange = toggleTrait;
 	}
-	// psiSleights
-	for (i = 0; i < 2; i++) {
+    // psiSleights
+    for (i = 0; i < 2; i++) {
 		type = (i === 0) ? "Chi" : "Gamma";
 		tempData = psiData[0].getElementsByTagName(type)[0].getElementsByTagName("sleight");
 		// name,description,enables?,requires?,type?,action?,range?,duration?,strainmod?,skill?,skillmod*,othermod*
@@ -1807,36 +1941,36 @@ function initialSetup() {
 		output += "<\/table>";
 		document.getElementById("psi-" + type).innerHTML = output;
 	}
-	temp = document.getElementsByName("sleightBox");
-	for (i = 0; i < temp.length; i++) {
+    temp = document.getElementsByName("sleightBox");
+    for (i = 0; i < temp.length; i++) {
 		temp[i].onchange = toggleSleight;
 	}
-	// Backgrounds
-	output = "";
-	for (i = 0; i < backgroundData.length; i++) {
+    // Backgrounds
+    output = "";
+    for (i = 0; i < backgroundData.length; i++) {
 		output += "<option value='" + i + "'>";
 		output += backgroundData[i].getElementsByTagName("name")[0].childNodes[0].nodeValue;
 		output += "<\/option>";
 	}
-	document.getElementById("bg").innerHTML = output;
-	document.getElementById("bg").value = 0;
-	selectBG();
-	document.getElementById("bg").onchange = selectBG;
-	applyTemplate("background");
-	// Factions
-	output = "";
-	for (i = 0; i < factionData.length; i++) {
+    document.getElementById("bg").innerHTML = output;
+    document.getElementById("bg").value = 0;
+    selectBG();
+    document.getElementById("bg").onchange = selectBG;
+    applyTemplate("background");
+    // Factions
+    output = "";
+    for (i = 0; i < factionData.length; i++) {
 		output += "<option value='" + i + "'>";
 		output += factionData[i].getElementsByTagName("name")[0].childNodes[0].nodeValue;
 		output += "<\/option>";
 	}
-	document.getElementById("fac").innerHTML = output;
-	document.getElementById("fac").value = 0;
-	selectFac(0);
-	document.getElementById("fac").onchange = selectFac;
-	applyTemplate("faction");
-	// Aptitudes
-	for (i = 1; i <= 7; i++) {
+    document.getElementById("fac").innerHTML = output;
+    document.getElementById("fac").value = 0;
+    selectFac(0);
+    document.getElementById("fac").onchange = selectFac;
+    applyTemplate("faction");
+    // Aptitudes
+    for (i = 1; i <= 7; i++) {
 		temp = "";
 		switch (i) {
 		case 1:
@@ -1870,9 +2004,9 @@ function initialSetup() {
 		document.getElementById("start" + temp).value = 15;
 		document.getElementById("start" + temp).onchange = updateStartApt;
 	}
-	document.getElementById("remainingAptPts").innerHTML = 0;
-	// Rep
-	for (i = 1; i <= 7; i++) {
+    document.getElementById("remainingAptPts").innerHTML = 0;
+    // Rep
+    for (i = 1; i <= 7; i++) {
 		temp = "";
 		switch (i) {
 		case 1:
@@ -1907,27 +2041,27 @@ function initialSetup() {
 		document.getElementById("start" + temp + "Rep").value = 0;
 		document.getElementById("start" + temp + "Rep").onchange = updateStartRep;
 	}
-	// Morphs
-	output = "";
-	for (i = 0; i < morphData.length; i++) {
+    // Morphs
+    output = "";
+    for (i = 0; i < morphData.length; i++) {
 		output += "<option value='" + i + "'>";
 		output += morphData[i].getElementsByTagName("name")[0].childNodes[0].nodeValue;
 		output += "<\/option>";
 	}
-	document.getElementById("morph").innerHTML = output;
-	document.getElementById("morph").value = 0;
-	document.getElementById("morph").onchange = selectMorph;
-	selectMorph();
-	// Learned Skills
-	output = "";
-	for (i = 0; i < skillData.length; i++) {
+    document.getElementById("morph").innerHTML = output;
+    document.getElementById("morph").value = 0;
+    document.getElementById("morph").onchange = selectMorph;
+    selectMorph();
+    // Learned Skills
+    output = "";
+    for (i = 0; i < skillData.length; i++) {
 		output += "<option value='" + i + "'>";
 		output += skillData[i].getElementsByTagName("name")[0].childNodes[0].nodeValue;
 		output += "<\/option>";
 	}
-	document.getElementById("traitExpertChoice").innerHTML = output;
-	output = "";
-	for (i = 0; i < skillData.length; i++) {
+    document.getElementById("traitExpertChoice").innerHTML = output;
+    output = "";
+    for (i = 0; i < skillData.length; i++) {
 		name = skillData[i].getElementsByTagName("name")[0].childNodes[0].nodeValue;
 		temp = 0;
 		for (j = 0; j < skillData[i].getElementsByTagName("category").length; j++) {
@@ -1942,10 +2076,10 @@ function initialSetup() {
 			output += "<\/option>";
 		}
 	}
-	document.getElementById("traitIncompetentChoice").innerHTML = output;
-	// Misc CP setup
-	output = "<table><tr><td><strong>Type<\/strong><\/td><td><strong>Name<\/strong><\/td><td><strong>Cost to Raise<\/strong><\/td><td><strong>Base Value<\/strong><\/td><td><\/td><td><strong>Purchased<\/strong><\/td><td><\/td><td><strong>Total Value<\/strong><\/td><td><strong>Total Cost<\/strong><\/td><\/tr>";
-	for (i = 1; i <= 16; i++) {
+    document.getElementById("traitIncompetentChoice").innerHTML = output;
+    // Misc CP setup
+    output = "<table><tr><td><strong>Type<\/strong><\/td><td><strong>Name<\/strong><\/td><td><strong>Cost to Raise<\/strong><\/td><td><strong>Base Value<\/strong><\/td><td><\/td><td><strong>Purchased<\/strong><\/td><td><\/td><td><strong>Total Value<\/strong><\/td><td><strong>Total Cost<\/strong><\/td><\/tr>";
+    for (i = 1; i <= 16; i++) {
 		switch (i) {
 		case 1:
 			type = "Stat";
@@ -2044,18 +2178,18 @@ function initialSetup() {
 		output += "<td><div id=\"misc" + type + name + "Cost\">0<\/div><\/td>";
 		output += "<\/tr>";
 	}
-	output += "<\/table>";
-	document.getElementById("miscCPTable").innerHTML = output;
-	temp = document.getElementsByName("miscCPButton");
-	for (i = 0; i < temp.length; i++) {
+    output += "<\/table>";
+    document.getElementById("miscCPTable").innerHTML = output;
+    temp = document.getElementsByName("miscCPButton");
+    for (i = 0; i < temp.length; i++) {
 		temp[i].onclick = incrementMiscCP;
 	}
-	// Document Ready
-	document.getElementById("previousButton").onclick = loadPrevious;
-	document.getElementById("nextButton").onclick = loadNext;
-	document.getElementById("fixeddiv").style.display = "block";
-	document.onkeypress = keypress;
-	loadNext();
+    // Document Ready
+    document.getElementById("previousButton").onclick = loadPrevious;
+    document.getElementById("nextButton").onclick = loadNext;
+    document.getElementById("fixeddiv").style.display = "block";
+    document.onkeypress = keypress;
+    loadNext();
 }
 
 window.onload = initialSetup;
