@@ -18,8 +18,7 @@ var fixedMenu =
           : document.layers[fixedMenuId]
 };
 
-fixedMenu.computeShifts = function()
-{
+fixedMenu.computeShifts = () => {
     fixedMenu.shiftX = fixedMenu.hasInner
         ? pageXOffset
         : fixedMenu.hasElement
@@ -59,8 +58,7 @@ fixedMenu.computeShifts = function()
     }
 };
 
-fixedMenu.moveMenu = function()
-{
+fixedMenu.moveMenu = () => {
     fixedMenu.computeShifts();
 
     if (fixedMenu.currentX != fixedMenu.shiftX
@@ -85,15 +83,13 @@ fixedMenu.moveMenu = function()
     fixedMenu.menu.style.bottom = '';
 };
 
-fixedMenu.floatMenu = function()
-{
+fixedMenu.floatMenu = () => {
     fixedMenu.moveMenu();
     setTimeout('fixedMenu.floatMenu()', 20);
 };
 
 // addEvent designed by Aaron Moore
-fixedMenu.addEvent = function(element, listener, handler)
-{
+fixedMenu.addEvent = (element, listener, handler) => {
     if(typeof element[listener] != 'function' || 
        typeof element[listener + '_num'] == 'undefined')
     {
@@ -103,8 +99,7 @@ fixedMenu.addEvent = function(element, listener, handler)
             element[listener + 0] = element[listener];
             element[listener + '_num']++;
         }
-        element[listener] = function(e)
-        {
+        element[listener] = e => {
             var r = true;
             e = (e) ? e : window.event;
             for(var i = 0; i < element[listener + '_num']; i++)
@@ -122,8 +117,7 @@ fixedMenu.addEvent = function(element, listener, handler)
     element[listener + '_num']++;
 };
 
-fixedMenu.supportsFixed = function()
-{
+fixedMenu.supportsFixed = () => {
     var testDiv = document.createElement("div");
     testDiv.id = "testingPositionFixed";
     testDiv.style.position = "fixed";
@@ -145,8 +139,7 @@ fixedMenu.supportsFixed = function()
     return false;
 };
 
-fixedMenu.init = function()
-{
+fixedMenu.init = () => {
     if (fixedMenu.supportsFixed())
         fixedMenu.menu.style.position = "fixed";
     else
